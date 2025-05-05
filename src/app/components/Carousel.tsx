@@ -29,13 +29,12 @@ export default function Carousel({ slides }: CarouselProps) {
   if (!slides.length) return <div className="h-screen">Loading...</div>;
 
   return (
-<div className="relative w-full h-screen overflow-hidden">
-{slides.map((slide, index) => (
+    <div className="relative w-full h-screen overflow-hidden">
+      {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === current ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <Image
             src={getImageSrc(slide.image)}
@@ -44,9 +43,9 @@ export default function Carousel({ slides }: CarouselProps) {
             priority
             className="object-cover"
           />
-<div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-center p-4 text-lg sm:text-3xl font-semibold backdrop-blur-sm">
-  <span className="animate-fade-in">{slide.caption}</span>
-</div>
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-center p-4 text-lg sm:text-3xl font-semibold backdrop-blur-sm">
+            <span className="animate-fade-in">{slide.caption}</span>
+          </div>
         </div>
       ))}
     </div>

@@ -1,8 +1,7 @@
 "use client";
 
-
 import React, { useState, useEffect } from "react";
-import Layout from  "@/app/components/Layout";
+import Layout from "@/app/components/Layout";
 import "./globals.css";
 
 export default function RootLayout({
@@ -10,43 +9,77 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<string | null>(null);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load saved theme from localStorage
-    const savedTheme = localStorage.getItem("theme");
+    // Get saved theme from localStorage, if available
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     if (savedTheme) {
       setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
+      // Instead of setting a data attribute, toggle the 'dark' class
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     } else {
-      // Default to light mode
       setTheme("light");
-      document.documentElement.setAttribute("data-theme", "light");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
-  // Toggle theme between light and dark
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500); // Simulated delay for UI smoothness
+    return () => clearTimeout(timer);
+  }, []);
+
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme); // Save theme to localStorage
+    // Toggle the dark class on <html>
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
-    <html lang="en" data-theme={theme}>
+    <html lang="en">
       <head>
         <title>Badminton Association</title>
       </head>
-      <body>
-        <div>
+      <body className="relative flex flex-col min-h-screen">
+        {/* Loading Spinner */}
+        {loading && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent pointer-events-none">
+            <div className="text-6xl sm:text-8xl animate-spin-slow pointer-events-auto">
+              🏸
+            </div>
+          </div>
+        )}
+
+        {/* Layout Wrapper */}
+        <div
+          className={`transition-opacity duration-500 ${
+            loading
+              ? "opacity-50 pointer-events-none blur-md select-none"
+              : "opacity-100"
+          }`}
+        >
+          {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="absolute top-4 right-4 p-2 bg-gray-200 rounded-full"
+            className="absolute top-4 right-4 p-2 bg-gray-200 rounded-full z-50 shadow-md hover:bg-gray-300 transition-all sm:top-6 sm:right-6 sm:p-3"
           >
             {theme === "light" ? "🌙" : "☀️"}
           </button>
-          <Layout>{children}</Layout>
+
+          <Layout>
+            <main className="pt-1">{children}</main>
+          </Layout>
         </div>
       </body>
     </html>
