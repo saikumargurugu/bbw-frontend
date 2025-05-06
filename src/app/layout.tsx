@@ -9,12 +9,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"dark" | "dark">("dark");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Get saved theme from localStorage, if available
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const savedTheme = localStorage.getItem("theme") as "dark" | "dark" | null;
     if (savedTheme) {
       setTheme(savedTheme);
       // Instead of setting a data attribute, toggle the 'dark' class
@@ -24,7 +24,7 @@ export default function RootLayout({
         document.documentElement.classList.remove("dark");
       }
     } else {
-      setTheme("light");
+      setTheme("dark");
       document.documentElement.classList.remove("dark");
     }
   }, []);
@@ -35,7 +35,7 @@ export default function RootLayout({
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
+    const newTheme = theme === "dark" ? "dark" : "dark";
     setTheme(newTheme);
     // Toggle the dark class on <html>
     if (newTheme === "dark") {
@@ -74,7 +74,7 @@ export default function RootLayout({
             onClick={toggleTheme}
             className="absolute top-4 right-4 p-2 bg-gray-200 rounded-full z-50 shadow-md hover:bg-gray-300 transition-all sm:top-6 sm:right-6 sm:p-3"
           >
-            {theme === "light" ? "🌙" : "☀️"}
+            {theme === "dark" ? "🌙" : "☀️"}
           </button>
 
           <Layout>

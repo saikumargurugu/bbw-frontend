@@ -8,8 +8,10 @@ import AcademyPage from '@/app/pages/academy';
 import SocialsPage from '@/app/pages/socials';
 
 
-export default function Page({ params }: { params: { slug: string } }) {
-    switch (params.slug) {
+
+export default async function Page({ params }: { params: { slug: string } }) {
+    const { slug } = params;
+      switch (slug) {
         case 'club':
             return <Club />;
         case 'contact':
