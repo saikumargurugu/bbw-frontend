@@ -2,7 +2,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-export default function Footer() {
+export default function Footer({fotterText}:{fotterText:string}) {
   return (
     <Box
       sx={{
@@ -12,7 +12,7 @@ export default function Footer() {
         padding: "20px 0",
       }}
     >
-      <Typography variant="body1">© 2025 Badminton Association. All rights reserved.</Typography>
+      <Typography variant="body1">{fotterText}</Typography>
     </Box>
   );
 }

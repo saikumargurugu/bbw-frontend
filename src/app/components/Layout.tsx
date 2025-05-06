@@ -1,13 +1,16 @@
 // components/Layout.tsx
 import React from "react";
-import { Container } from "@mui/material";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { layOutProps } from "../types";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+
+
+
+export default function Layout({ children, layOutProps }: { children: React.ReactNode, layOutProps: layOutProps }) {
   return (
     <div>
-      <Navbar />
+      <Navbar navLinks = {layOutProps.navLinks} />
       <div>{children}</div>
       <Footer />
     </div>

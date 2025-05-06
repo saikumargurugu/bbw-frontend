@@ -4,6 +4,20 @@ import React, { useState, useEffect } from "react";
 import Layout from "@/app/components/Layout";
 import "./globals.css";
 
+const layOutProps= {
+  'navLinks' : [
+    { label: "Home", href: "/" },
+    { label: "Club", href: "/club" },
+    { label: "Services", href: "/services" },
+    { label: "Academy", href: "/academy" },
+    { label: "Court Hire", href: "/court-hire" },
+    { label: "Socials", href: "/socials" },
+    { label: "Contact", href: "/contact" },
+  ],
+  'fotterText': '© 2025 Badminton Association. All rights reserved.'
+  
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -77,7 +91,7 @@ export default function RootLayout({
             {theme === "dark" ? "🌙" : "☀️"}
           </button>
 
-          <Layout>
+          <Layout layOutProps={layOutProps}>
             <main className="pt-1">{children}</main>
           </Layout>
         </div>
