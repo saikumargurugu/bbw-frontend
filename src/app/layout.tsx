@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import Layout from "@/app/components/Layout";
 import "./globals.css";
 
-const layOutProps= {
-  'navLinks' : [
+const layOutProps = {
+  navLinks: [
     { label: "Home", href: "/" },
     { label: "Club", href: "/club" },
     { label: "Services", href: "/services" },
@@ -13,25 +13,24 @@ const layOutProps= {
     { label: "Court Hire", href: "/court-hire" },
     { label: "Socials", href: "/socials" },
     { label: "Contact", href: "/contact" },
+    { label: "Sign In", href: "/sign-up" },
   ],
-  'fotterText': '© 2025 Badminton Association. All rights reserved.'
-  
-}
+  footerText: "© 2025 Badminton Association. All rights reserved.",
+};
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<"dark" | "dark">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Get saved theme from localStorage, if available
-    const savedTheme = localStorage.getItem("theme") as "dark" | "dark" | null;
+    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
     if (savedTheme) {
       setTheme(savedTheme);
-      // Instead of setting a data attribute, toggle the 'dark' class
       if (savedTheme === "dark") {
         document.documentElement.classList.add("dark");
       } else {
@@ -39,7 +38,7 @@ export default function RootLayout({
       }
     } else {
       setTheme("dark");
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("dark");
     }
   }, []);
 
@@ -49,9 +48,8 @@ export default function RootLayout({
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "dark" : "dark";
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    // Toggle the dark class on <html>
     if (newTheme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -76,25 +74,25 @@ export default function RootLayout({
         )}
 
         {/* Layout Wrapper */}
-        <div
-          className={`transition-opacity duration-500 ${
-            loading
-              ? "opacity-50 pointer-events-none blur-md select-none"
-              : "opacity-100"
-          }`}
-        >
-          {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            className="absolute top-4 right-4 p-2 bg-gray-200 rounded-full z-50 shadow-md hover:bg-gray-300 transition-all sm:top-6 sm:right-6 sm:p-3"
+          <div
+            className={`transition-opacity duration-500 ${
+              loading
+                ? "opacity-50 pointer-events-none blur-md select-none"
+                : "opacity-100"
+            }`}
           >
-            {theme === "dark" ? "🌙" : "☀️"}
-          </button>
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="absolute top-4 right-4 p-2 bg-gray-200 rounded-full z-50 shadow-md hover:bg-gray-300 transition-all sm:top-6 sm:right-6 sm:p-3"
+            >
+              {theme === "dark" ? "🌙" : "☀️"}
+            </button>
 
-          <Layout layOutProps={layOutProps}>
-            <main className="pt-1">{children}</main>
-          </Layout>
-        </div>
+            <Layout layOutProps={layOutProps}>
+              <main className="pt-1">{children}</main>
+            </Layout>
+          </div>
       </body>
     </html>
   );

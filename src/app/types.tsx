@@ -8,8 +8,6 @@ type navBarTypes = {
     fotterText: string
   }
   
-
-
   export type {
     navBarTypes,
     layOutProps
