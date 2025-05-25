@@ -12,26 +12,14 @@ import {
   ListItem,
   Box,
   useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
 
-// const navLinks = [
-//   { label: "Home", href: "/" },
-//   { label: "Club", href: "/club" },
-//   { label: "Services", href: "/services" },
-//   { label: "Academy", href: "/academy" },
-//   { label: "Court Hire", href: "/court-hire" },
-//   { label: "Socials", href: "/socials" },
-//   { label: "Contact", href: "/contact" },
-// ];
-
-export default function Navbar({navLinks}:{navLinks: navBarTypes[]}) {
+export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery("(max-width: 960px)"); // Directly use a media query string
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -41,10 +29,10 @@ export default function Navbar({navLinks}:{navLinks: navBarTypes[]}) {
   const drawer = (
     <Box className="w-60 p-2 bg-white dark:bg-gray-900 h-full" role="presentation">
       <List>
-        {navLinks.map((link: string, idx: number) => (
+        {navLinks.map((link: navBarTypes, idx: number) => (
           <ListItem
             key={idx}
-            button
+            component="div"
             onClick={handleDrawerToggle}
             className="my-1 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition-colors px-2"
           >

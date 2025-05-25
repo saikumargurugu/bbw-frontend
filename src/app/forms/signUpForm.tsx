@@ -1,0 +1,192 @@
+"use client";
+
+import React, { useState } from "react";
+import { Grid, Button, Typography } from "@mui/material";
+import TextInput from "../components/inputs/TextInput";
+import FileInput from "../components/inputs/FileInput";
+import CustomDatePicker from "../components/inputs/DatePicker";
+import AddressInput from "../components/inputs/AddressInput";
+import axios from "axios";
+
+interface Address {
+    street: string;
+    city: string;
+    state: string;
+    country: string;
+    postalCode: string;
+}
+
+const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (message: string) => void }> = ({
+    onSuccess,
+    onError,
+}) => {
+    const [formData, setFormData] = useState<{
+        [key: string]: any;
+    }>({
+        username: "",
+        email: "",
+        phone: "",
+        date_of_birth: null,
+        address: {
+            street: "",
+            city: "",
+            state: "",
+            country: "",
+            postalCode: "",
+        },
+        profile_picture: null,
+    });
+
+    const formConfig = [
+        {
+            type: "text",
+            label: "Username",
+            name: "username",
+            required: true,
+        },
+        {
+            type: "email",
+            label: "Email",
+            name: "email",
+            required: true,
+        },
+        {
+            type: "tel",
+            label: "Phone",
+            name: "phone",
+        },
+        {
+            type: "date",
+            label: "Date of Birth",
+            name: "date_of_birth",
+            component: "CustomDatePicker",
+        },
+        {
+            type: "address",
+            label: "Address",
+            name: "address",
+            component: "AddressInput",
+        },
+        // {
+        //     type: "file",
+        //     label: "Profile Picture",
+        //     name: "profile_picture",
+        //     component: "FileInput",
+        // },
+    ];
+
+    const buttonConfig = {
+        label: "Sign Up",
+        type: "submit",
+        variant: "contained",
+        color: "primary",
+        fullWidth: true,
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            setFormData((prev) => ({ ...prev, profile_picture: e.target.files[0] }));
+        }
+    };
+
+    const handleDateChange = (date: Date | null) => {
+        setFormData((prev) => ({ ...prev, date_of_birth: date }));
+    };
+
+    const handleAddressChange = (address: Address) => {
+        setFormData((prev) => ({ ...prev, address }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const formDataToSend = new FormData();
+        Object.entries(formData).forEach(([key, value]) => {
+            if (value !== null) {
+                formDataToSend.append(key, value as any);
+            }
+        });
+
+        try {
+            await axios.post("/api/auth/signup/", formDataToSend, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+            onSuccess("User registered successfully!");
+        } catch (err: any) {
+            onError(err.response?.data?.message || "Something went wrong!");
+        }
+    };
+
+    const renderField = (field: any) => {
+        switch (field.component) {
+            case "CustomDatePicker":
+                return (
+                    <CustomDatePicker
+                        label={field.label}
+                        value={formData[field.name]}
+                        onChange={handleDateChange}
+                        includeTime={false}
+                        placeholder={`Enter your ${field.label.toLowerCase()}`}
+                        helperText={`Please select your ${field.label.toLowerCase()}`}
+                        textFieldProps={{
+                            variant: "outlined",
+                            size: "small",
+                            fullWidth: true,
+                        }}
+                    />
+                );
+            case "AddressInput":
+                return <AddressInput onChange={handleAddressChange} />;
+            case "FileInput":
+                return (
+                    <FileInput
+                        name={field.name}
+                        onChange={handleFileChange}
+                        accept="image/*"
+                    />
+                );
+            default:
+                return (
+                    <TextInput
+                        label={field.label}
+                        name={field.name}
+                        type={field.type}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        required={field.required}
+                    />
+                );
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <Grid container direction="column" spacing={3}>
+                {formConfig.map((field, index) => (
+                    <Grid item key={index}>
+                        {renderField(field)}
+                    </Grid>
+                ))}
+                <Grid item>
+                    <Button
+                        type={buttonConfig.type}
+                        variant={buttonConfig.variant}
+                        color={buttonConfig.color}
+                        fullWidth={buttonConfig.fullWidth}
+                    >
+                        {buttonConfig.label}
+                    </Button>
+                </Grid>
+            </Grid>
+        </form>
+    );
+};
+
+export default SignUpForm;

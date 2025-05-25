@@ -12,7 +12,7 @@ const config: Config = {
             },
         },
     },
-    darkMode: 'class', // Enable dark mode
+    // darkMode: 'class', // Enable dark mode
     plugins: [],
 };
 
