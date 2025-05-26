@@ -94,8 +94,10 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         }
     };
 
-    const handleDateChange = (date: Date | null) => {
-        setFormData((prev) => ({ ...prev, date_of_birth: date }));
+    const handleDateChange = (date: React.ChangeEvent<HTMLInputElement> | null) => {
+        console.log("Selected date:", date);
+        
+        setFormData((prev) => ({ ...prev, date_of_birth: date.target.value }));
     };
 
     const handleAddressChange = (address: Address) => {

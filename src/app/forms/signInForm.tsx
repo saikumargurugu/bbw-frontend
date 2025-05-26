@@ -13,6 +13,29 @@ const SignInForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         password: "",
     });
 
+    const formConfig = [
+        {
+            type: "email",
+            label: "Email",
+            name: "email",
+            required: true,
+        },
+        {
+            type: "password",
+            label: "Password",
+            name: "password",
+            required: true,
+        },
+    ];
+
+    const buttonConfig = {
+        label: "Sign In",
+        type: "submit",
+        variant: "contained",
+        color: "primary",
+        fullWidth: true,
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setSignInData((prev) => ({ ...prev, [name]: value }));
@@ -29,38 +52,38 @@ const SignInForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         }
     };
 
+    const renderField = (field: any) => {
+        return (
+            <TextField
+                label={field.label}
+                name={field.name}
+                type={field.type}
+                value={signInData[field.name]}
+                onChange={handleChange}
+                fullWidth
+                variant="outlined"
+                size="small"
+                required={field.required}
+            />
+        );
+    };
+
     return (
         <form onSubmit={handleSubmit}>
-            <Grid container spacing={3}>
-                <Grid item xs={12}>
-                    <TextField
-                        label="Email"
-                        name="email"
-                        type="email"
-                        value={signInData.email}
-                        onChange={handleChange}
-                        fullWidth
-                        variant="outlined"
-                        size="small"
-                        required
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        label="Password"
-                        name="password"
-                        type="password"
-                        value={signInData.password}
-                        onChange={handleChange}
-                        fullWidth
-                        variant="outlined"
-                        size="small"
-                        required
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <Button type="submit" variant="contained" color="primary" fullWidth>
-                        Sign In
+            <Grid container direction="column" spacing={3}>
+                {formConfig.map((field, index) => (
+                    <Grid item key={index}>
+                        {renderField(field)}
+                    </Grid>
+                ))}
+                <Grid item>
+                    <Button
+                        type={buttonConfig.type}
+                        variant={buttonConfig.variant}
+                        color={buttonConfig.color}
+                        fullWidth={buttonConfig.fullWidth}
+                    >
+                        {buttonConfig.label}
                     </Button>
                 </Grid>
             </Grid>

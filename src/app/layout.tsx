@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@/app/components/Layout";
 import "./globals.css";
+import { Provider } from "react-redux";
+import store from "./redux-store/store";
+
 
 const layOutProps = {
   navLinks: [
@@ -20,7 +23,7 @@ const layOutProps = {
 
 export default function RootLayout({
   children,
-}: {
+}: {  
   children: React.ReactNode;
 }) {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -74,12 +77,13 @@ export default function RootLayout({
         )}
 
         {/* Layout Wrapper */}
+        <Provider store={store}>
+
           <div
-            className={`transition-opacity duration-500 ${
-              loading
-                ? "opacity-50 pointer-events-none blur-md select-none"
-                : "opacity-100"
-            }`}
+            className={`transition-opacity duration-500 ${loading
+              ? "opacity-50 pointer-events-none blur-md select-none"
+              : "opacity-100"
+              }`}
           >
             {/* Theme Toggle Button */}
             <button
@@ -93,6 +97,7 @@ export default function RootLayout({
               <main className="pt-1">{children}</main>
             </Layout>
           </div>
+        </Provider>
       </body>
     </html>
   );
