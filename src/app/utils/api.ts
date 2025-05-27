@@ -1,8 +1,11 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
+// Backend base URL from environment variables
+const backendBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000/api";
+
 // Create an Axios instance with default configuration
 const apiClient = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://api.example.com", // Base URL for API
+    baseURL: backendBaseUrl, // Use the backend base URL
     timeout: 5000, // Request timeout in milliseconds
     headers: {
         "Content-Type": "application/json",
