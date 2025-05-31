@@ -12,7 +12,7 @@ export default function Layout({ children, layOutProps }: { children: React.Reac
     <div>
       <Navbar navLinks = {layOutProps.navLinks} />
       <div>{children}</div>
-      <Footer />
+      <Footer fotterText={layOutProps.fotterText} />
     </div>
   );
 }

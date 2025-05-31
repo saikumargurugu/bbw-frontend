@@ -1,63 +1,53 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface ApiCallState {
+  loading: boolean;
+  success: boolean;
+  error: string | null;
+}
 
 interface ApiState {
-    loading: boolean;
-    success: boolean;
-    error: string | null;
+  models: Record<string, any>; // Store data dynamically for different models
+  status: { [key: string]: ApiCallState }; // Track the status of each API call separately
 }
 
 const initialState: ApiState = {
-    loading: false,
-    success: false,
-    error: null,
+  models: {}, // Initialize as an empty object for storing data
+  status: {}, // Initialize as an empty object for tracking API call statuses
 };
 
-// Generic async thunk for API calls
-export const apiCall = createAsyncThunk(
-    "api/call",
-    async (
-        { url, method, data }: { url: string; method: "GET" | "POST" | "PUT" | "DELETE"; data?: any },
-        { rejectWithValue }
-    ) => {
-        try {
-            const response = await axios({ url, method, data });
-            return response.data; // Return the response data
-        } catch (error: any) {
-            return rejectWithValue(error.response?.data?.message || "Something went wrong");
-        }
-    }
-);
-
 const apiSlice = createSlice({
-    name: "api",
-    initialState,
-    reducers: {
-        resetApiState: (state) => {
-            state.loading = false;
-            state.success = false;
-            state.error = null;
-        },
+  name: "api",
+  initialState,
+  reducers: {
+    apiCallStarted(state, action: PayloadAction<string>) {
+      const model = action.payload;
+
+      // Ensure the status object for the model is initialized
+      if (!state.status[model]) {
+        state.status[model] = { loading: false, success: false, error: null };
+      }
+
+      // Set the loading state for the model
+      state.status[model] = { loading: true, success: false, error: null };
     },
-    extraReducers: (builder) => {
-        builder
-            .addCase(apiCall.pending, (state) => {
-                state.loading = true;
-                state.success = false;
-                state.error = null;
-            })
-            .addCase(apiCall.fulfilled, (state) => {
-                state.loading = false;
-                state.success = true;
-                state.error = null;
-            })
-            .addCase(apiCall.rejected, (state, action: PayloadAction<any>) => {
-                state.loading = false;
-                state.success = false;
-                state.error = action.payload;
-            });
+    apiCallSucceeded(state, action: PayloadAction<{ model: string; data: any }>) {
+      const { model, data } = action.payload;
+
+      // Store the data for the model
+      state.models[model] = data;
+
+      // Update the status for the model
+      state.status[model] = { loading: false, success: true, error: null };
     },
+    apiCallFailed(state, action: PayloadAction<{ model: string; error: string }>) {
+      const { model, error } = action.payload;
+
+      // Update the error state for the model
+      state.status[model] = { loading: false, success: false, error };
+    },
+  },
 });
 
-export const { resetApiState } = apiSlice.actions;
+export const { apiCallStarted, apiCallSucceeded, apiCallFailed } = apiSlice.actions;
 export default apiSlice.reducer;

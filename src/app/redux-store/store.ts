@@ -6,7 +6,7 @@ const store = configureStore({
     reducer: {
         user: userReducer,
         api: apiReducer, // Add the API slice here
-    },
+    } as Record<string, any>, // Explicitly type the reducer object
     // No need to explicitly add redux-thunk; it's included by default
 });
 

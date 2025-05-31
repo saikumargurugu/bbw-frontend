@@ -29,5 +29,39 @@ const userSlice = createSlice({
     },
 });
 
+interface APIState {
+  data: any;
+  status: "idle" | "loading" | "succeeded" | "failed";
+  error: string | null;
+}
+
+const apiInitialState: APIState = {
+  data: null,
+  status: "idle",
+  error: null,
+};
+
+const apiSlice = createSlice({
+  name: "api",
+  initialState: apiInitialState,
+  reducers: {
+    apiCallStarted(state) {
+      state.status = "loading";
+      state.error = null;
+    },
+    apiCallSucceeded(state, action: PayloadAction<any>) {
+      state.status = "succeeded";
+      state.data = action.payload;
+    },
+    apiCallFailed(state, action: PayloadAction<string>) {
+      state.status = "failed";
+      state.error = action.payload;
+    },
+  },
+});
+
 export const { setUser, clearUser } = userSlice.actions;
-export default userSlice.reducer;
+export const { apiCallStarted, apiCallSucceeded, apiCallFailed } = apiSlice.actions;
+
+const rootReducer = { user: userSlice.reducer, api: apiSlice.reducer };
+export default rootReducer;

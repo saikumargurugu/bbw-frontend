@@ -91,8 +91,10 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         }
     };
 
-    const handleDateChange = (date: Date | null) => {
-        setFormData((prev) => ({ ...prev, date_of_birth: date }));
+
+    const handleDateChange = (event: { target: { name: string; value: Date | null } }) => {
+        const { value } = event.target;        
+        setFormData((prev) => ({ ...prev, date_of_birth: value }));
     };
 
     const handleAddressChange = (address: Address) => {
@@ -116,11 +118,7 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         });
 
         try {
-            const response = await apiCall("/auth/signup/", "POST", formDataToSend, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
+            const response = await apiCall("/auth/signup/", "POST", formDataToSend);
             onSuccess(response.message || "User registered successfully!");
         } catch (err: any) {
             onError(err || "Something went wrong!");
@@ -140,6 +138,8 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
                         includeTime={false}
                         placeholder={`Enter your ${field.label.toLowerCase()}`}
                         helperText={`Please select your ${field.label.toLowerCase()}`}
+                        minDate={new Date("1900-01-01")} // Minimum date
+                        maxDate={new Date()} // Maximum date (today)                
                         textFieldProps={{
                             variant: "outlined",
                             size: "small",
@@ -174,6 +174,7 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
     return (
         <form onSubmit={handleSubmit}>
             <Grid container direction="column" spacing={3}>
+
                 {formConfig.map((field, index) => (
                     <Grid item key={index}>
                         {renderField(field)}

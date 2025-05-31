@@ -1,93 +1,89 @@
 "use client";
 
 import React, { useState } from "react";
-import { Grid, Button, TextField } from "@mui/material";
-import axios from "axios";
+import { Button, TextField, Box, Typography } from "@mui/material";
+import useUserLogin from "../api/auth/useUserLogin";
+import { apiCall } from "../utils/api";
 
 const SignInForm: React.FC<{ onSuccess: (message: string) => void; onError: (message: string) => void }> = ({
     onSuccess,
     onError,
 }) => {
-    const [signInData, setSignInData] = useState({
-        email: "",
-        password: "",
-    });
-
-    const formConfig = [
-        {
-            type: "email",
-            label: "Email",
-            name: "email",
-            required: true,
-        },
-        {
-            type: "password",
-            label: "Password",
-            name: "password",
-            required: true,
-        },
-    ];
-
-    const buttonConfig = {
-        label: "Sign In",
-        type: "submit",
-        variant: "contained",
-        color: "primary",
-        fullWidth: true,
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setSignInData((prev) => ({ ...prev, [name]: value }));
-    };
+    const login = useUserLogin(); // Use the custom hook
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [isForgotPassword, setIsForgotPassword] = useState(false); // State to toggle forgot password mode
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        try {
-            await axios.post("/api/auth/signin/", signInData);
-            onSuccess("Signed in successfully!");
-        } catch (err: any) {
-            onError(err.response?.data?.message || "Invalid email or password!");
+        
+        if (isForgotPassword) {
+            // Handle forgot password functionality
+            try {
+                await await apiCall(
+                    "/auth/forgot-password/",
+                    "POST",
+                    { email },
+                ).then((res) => { 
+                if (res ) {
+                onSuccess("Password reset email sent successfully!");
+                }
+                else {
+                    onError("Failed to send password reset email. Please try again.");
+                }});
+            } catch (err: any) {
+                console.error("Error sending password reset email:", err);
+                onError("Failed to send password reset email. Please try again.");
+            }
+        } else {
+            // Handle login functionality
+            try {
+                const res= await login(email, password)
+                if (res) {
+                        onSuccess("Login successful!");
+                    } else {
+                        onError("Login failed. Please check your credentials.");
+                    }
+                }
+         catch (err) {
+                onError("Login failed. Please check your credentials.");
+            }
         }
     };
 
-    const renderField = (field: any) => {
-        return (
-            <TextField
-                label={field.label}
-                name={field.name}
-                type={field.type}
-                value={signInData[field.name]}
-                onChange={handleChange}
-                fullWidth
-                variant="outlined"
-                size="small"
-                required={field.required}
-            />
-        );
-    };
-
     return (
-        <form onSubmit={handleSubmit}>
-            <Grid container direction="column" spacing={3}>
-                {formConfig.map((field, index) => (
-                    <Grid item key={index}>
-                        {renderField(field)}
-                    </Grid>
-                ))}
-                <Grid item>
-                    <Button
-                        type={buttonConfig.type}
-                        variant={buttonConfig.variant}
-                        color={buttonConfig.color}
-                        fullWidth={buttonConfig.fullWidth}
-                    >
-                        {buttonConfig.label}
-                    </Button>
-                </Grid>
-            </Grid>
-        </form>
+        <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <TextField
+                label="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                fullWidth
+            />
+            {!isForgotPassword && (
+                <TextField
+                    label="Password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    fullWidth
+                />
+            )}
+            <Button type="submit" variant="contained" color="primary" fullWidth>
+                {isForgotPassword ? "Send Reset Email" : "Sign In"}
+            </Button>
+            <Typography
+                variant="body2"
+                color="primary"
+                align="center"
+                sx={{ cursor: "pointer", mt: 1 }}
+                onClick={() => setIsForgotPassword(!isForgotPassword)}
+            >
+                {isForgotPassword ? "Back to Sign In" : "Forgot Password?"}
+            </Typography>
+        </Box>
     );
 };
 
