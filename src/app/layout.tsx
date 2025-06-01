@@ -3,6 +3,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@/app/components/Layout";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
+import { Provider } from "react-redux";
+import store from "./redux-store/store";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const layOutProps = {
   navLinks: [
@@ -15,12 +20,12 @@ const layOutProps = {
     { label: "Contact", href: "/contact" },
     { label: "Sign In", href: "/sign-up" },
   ],
-  footerText: "© 2025 Badminton Association. All rights reserved.",
+  fotterText: "© 2025 Badminton Association. All rights reserved.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: {  
   children: React.ReactNode;
 }) {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -74,13 +79,16 @@ export default function RootLayout({
         )}
 
         {/* Layout Wrapper */}
+        <Provider store={store}>
+
           <div
-            className={`transition-opacity duration-500 ${
-              loading
-                ? "opacity-50 pointer-events-none blur-md select-none"
-                : "opacity-100"
-            }`}
+            className={`transition-opacity duration-500 ${loading
+              ? "opacity-50 pointer-events-none blur-md select-none"
+              : "opacity-100"
+              }`}
           >
+          <ToastContainer position="top-right" autoClose={3000} />
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
@@ -93,6 +101,7 @@ export default function RootLayout({
               <main className="pt-1">{children}</main>
             </Layout>
           </div>
+        </Provider>
       </body>
     </html>
   );

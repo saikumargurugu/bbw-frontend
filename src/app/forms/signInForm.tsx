@@ -1,70 +1,89 @@
 "use client";
 
 import React, { useState } from "react";
-import { Grid, Button, TextField } from "@mui/material";
-import axios from "axios";
+import { Button, TextField, Box, Typography } from "@mui/material";
+import useUserLogin from "../api/auth/useUserLogin";
+import { apiCall } from "../utils/api";
 
 const SignInForm: React.FC<{ onSuccess: (message: string) => void; onError: (message: string) => void }> = ({
     onSuccess,
     onError,
 }) => {
-    const [signInData, setSignInData] = useState({
-        email: "",
-        password: "",
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setSignInData((prev) => ({ ...prev, [name]: value }));
-    };
+    const login = useUserLogin(); // Use the custom hook
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [isForgotPassword, setIsForgotPassword] = useState(false); // State to toggle forgot password mode
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        try {
-            await axios.post("/api/auth/signin/", signInData);
-            onSuccess("Signed in successfully!");
-        } catch (err: any) {
-            onError(err.response?.data?.message || "Invalid email or password!");
+        
+        if (isForgotPassword) {
+            // Handle forgot password functionality
+            try {
+                await await apiCall(
+                    "/auth/forgot-password/",
+                    "POST",
+                    { email },
+                ).then((res) => { 
+                if (res ) {
+                onSuccess("Password reset email sent successfully!");
+                }
+                else {
+                    onError("Failed to send password reset email. Please try again.");
+                }});
+            } catch (err: any) {
+                console.error("Error sending password reset email:", err);
+                onError("Failed to send password reset email. Please try again.");
+            }
+        } else {
+            // Handle login functionality
+            try {
+                const res= await login(email, password)
+                if (res) {
+                        onSuccess("Login successful!");
+                    } else {
+                        onError("Login failed. Please check your credentials.");
+                    }
+                }
+         catch (err) {
+                onError("Login failed. Please check your credentials.");
+            }
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <Grid container spacing={3}>
-                <Grid item xs={12}>
-                    <TextField
-                        label="Email"
-                        name="email"
-                        type="email"
-                        value={signInData.email}
-                        onChange={handleChange}
-                        fullWidth
-                        variant="outlined"
-                        size="small"
-                        required
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        label="Password"
-                        name="password"
-                        type="password"
-                        value={signInData.password}
-                        onChange={handleChange}
-                        fullWidth
-                        variant="outlined"
-                        size="small"
-                        required
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <Button type="submit" variant="contained" color="primary" fullWidth>
-                        Sign In
-                    </Button>
-                </Grid>
-            </Grid>
-        </form>
+        <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <TextField
+                label="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                fullWidth
+            />
+            {!isForgotPassword && (
+                <TextField
+                    label="Password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    fullWidth
+                />
+            )}
+            <Button type="submit" variant="contained" color="primary" fullWidth>
+                {isForgotPassword ? "Send Reset Email" : "Sign In"}
+            </Button>
+            <Typography
+                variant="body2"
+                color="primary"
+                align="center"
+                sx={{ cursor: "pointer", mt: 1 }}
+                onClick={() => setIsForgotPassword(!isForgotPassword)}
+            >
+                {isForgotPassword ? "Back to Sign In" : "Forgot Password?"}
+            </Typography>
+        </Box>
     );
 };
 

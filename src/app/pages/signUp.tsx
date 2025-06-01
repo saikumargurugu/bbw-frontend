@@ -18,8 +18,8 @@ const SignUp: React.FC = () => {
 
     return (
         <Box sx={{ maxWidth: 600, margin: "auto", padding: 4 }}>
-            <Paper elevation={3} sx={{ padding: 4, borderRadius: 2 }}>
-                <Tabs value={activeTab} onChange={handleTabChange} centered>
+            <Paper elevation={3} sx={{ padding: 4, borderRadius: 2, justifyContent: "space-around" }}>
+                <Tabs value={activeTab} onChange={handleTabChange} centered sx={{ mb: 5 }}>
                     <Tab label="Sign Up" />
                     <Tab label="Sign In" />
                 </Tabs>

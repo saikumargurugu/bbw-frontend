@@ -6,7 +6,7 @@ import TextInput from "../components/inputs/TextInput";
 import FileInput from "../components/inputs/FileInput";
 import CustomDatePicker from "../components/inputs/DatePicker";
 import AddressInput from "../components/inputs/AddressInput";
-import axios from "axios";
+import { apiCall } from "../utils/api"; // Import the apiCall function
 
 interface Address {
     street: string;
@@ -36,6 +36,8 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         },
         profile_picture: null,
     });
+
+    const [loading, setLoading] = useState(false); // State to manage loading
 
     const formConfig = [
         {
@@ -67,20 +69,15 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
             name: "address",
             component: "AddressInput",
         },
-        // {
-        //     type: "file",
-        //     label: "Profile Picture",
-        //     name: "profile_picture",
-        //     component: "FileInput",
-        // },
     ];
 
     const buttonConfig = {
-        label: "Sign Up",
+        label: loading ? "Signing Up..." : "Sign Up", // Show loading text
         type: "submit",
         variant: "contained",
         color: "primary",
         fullWidth: true,
+        disabled: loading, // Disable button while loading
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -94,8 +91,10 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         }
     };
 
-    const handleDateChange = (date: Date | null) => {
-        setFormData((prev) => ({ ...prev, date_of_birth: date }));
+
+    const handleDateChange = (event: { target: { name: string; value: Date | null } }) => {
+        const { value } = event.target;        
+        setFormData((prev) => ({ ...prev, date_of_birth: value }));
     };
 
     const handleAddressChange = (address: Address) => {
@@ -104,23 +103,27 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setLoading(true); // Set loading to true
 
         const formDataToSend = new FormData();
         Object.entries(formData).forEach(([key, value]) => {
-            if (value !== null) {
+            if (key === "address" && typeof value === "object") {
+                // Flatten address object into individual fields
+                Object.entries(value).forEach(([addressKey, addressValue]) => {
+                    formDataToSend.append(`address[${addressKey}]`, addressValue as any);
+                });
+            } else if (value !== null) {
                 formDataToSend.append(key, value as any);
             }
         });
 
         try {
-            await axios.post("/api/auth/signup/", formDataToSend, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-            onSuccess("User registered successfully!");
+            const response = await apiCall("/auth/signup/", "POST", formDataToSend);
+            onSuccess(response.message || "User registered successfully!");
         } catch (err: any) {
-            onError(err.response?.data?.message || "Something went wrong!");
+            onError(err || "Something went wrong!");
+        } finally {
+            setLoading(false); // Set loading to false
         }
     };
 
@@ -135,6 +138,8 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
                         includeTime={false}
                         placeholder={`Enter your ${field.label.toLowerCase()}`}
                         helperText={`Please select your ${field.label.toLowerCase()}`}
+                        minDate={new Date("1900-01-01")} // Minimum date
+                        maxDate={new Date()} // Maximum date (today)                
                         textFieldProps={{
                             variant: "outlined",
                             size: "small",
@@ -169,6 +174,7 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
     return (
         <form onSubmit={handleSubmit}>
             <Grid container direction="column" spacing={3}>
+
                 {formConfig.map((field, index) => (
                     <Grid item key={index}>
                         {renderField(field)}
@@ -180,6 +186,7 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
                         variant={buttonConfig.variant}
                         color={buttonConfig.color}
                         fullWidth={buttonConfig.fullWidth}
+                        disabled={buttonConfig.disabled}
                     >
                         {buttonConfig.label}
                     </Button>
