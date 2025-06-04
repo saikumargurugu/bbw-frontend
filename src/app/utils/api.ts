@@ -80,7 +80,7 @@ export const apiCall = async <T>(
         console.log("API response:1111", response);
         
         if (response.status === 200 || response.status === 201) {
-            toast.success("Request successful!");
+            // toast.success("Request successful!");
             return response.data;
         }
     } catch (error: any) {
