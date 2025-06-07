@@ -11,6 +11,7 @@ const useUserLogin = () => {
 
   // Access the API status for the "authUser" model
   const apiStatus = useSelector((state: RootState) => state.api.status);
+  const authUserObject = useSelector((state: RootState) => state.api.models.authUser || {});
   console.log('apiStatus',apiStatus);
   
   const login = async (email: string, password: string) => {
@@ -25,11 +26,26 @@ const useUserLogin = () => {
       console.log("API Status:", apiStatus);
 
       // Check if the API call was successful
-      if (!apiStatus.error && apiStatus.sucuss) {
+      console.log(apiStatus.authUser.success, "apiStatus.authUser.success");
+      
+      if (apiStatus.authUser.success===true) {
+        console.log("Login successful, response:", authUserObject);
+        
+        const userSession = {
+          isLoggedIn: true,
+          token: authUserObject.access, 
+          user: authUserObject.user, 
+          refresh: authUserObject.refresh,
+        };
+        localStorage.setItem("userSession", JSON.stringify(userSession)); // Save session to localStorage
+
         console.log("Login successful:", res);
-        router.push("/"); // Redirect to the home page on success
+        router.push("/"); 
+      } else if(apiStatus.authUser.error=== true) {
+      console.log(apiStatus, "apiStatus.authUser.failure");
+        alert(res?.error?.message|| "Login failed");
       } else {
-        alert(res.error.message|| "Login failed");
+        alert("Oops something went wrong please try again later.");
       }
       return res; // Return the response for further handling if needed
     } catch (err) {

@@ -21,7 +21,11 @@ export default function CourtHirePage() {
   const toggleSlot = (slot: string) => {
     setSelectedSlots((prev) => {
       const newSet = new Set(prev);
-      newSet.has(slot) ? newSet.delete(slot) : newSet.add(slot);
+      if (newSet.has(slot)) {
+        newSet.delete(slot);
+      } else {
+        newSet.add(slot);
+      }
       return newSet;
     });
   };
@@ -59,8 +63,6 @@ export default function CourtHirePage() {
           </Button>
         </Box>
       )}
-
-      {/* Booking UI - Displays only when "Book Now" is clicked */}
       {showBooking && (
         <section className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-cyan-700 dark:text-cyan-300 mb-6 text-center">Select Your Booking Slots</h2>

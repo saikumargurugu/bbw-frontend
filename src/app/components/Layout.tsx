@@ -4,14 +4,14 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { layOutProps } from "../types";
 
-
-
-
-export default function Layout({ children, layOutProps }: { children: React.ReactNode, layOutProps: layOutProps }) {
+export default function Layout({ children, layOutProps }: { children: React.ReactNode; layOutProps: layOutProps }) {
   return (
-    <div>
-      <Navbar navLinks = {layOutProps.navLinks} />
-      <div>{children}</div>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Navbar navLinks={layOutProps.navLinks} />
+      <main style={{ flex: 1 }}>
+        {/* Page content */}
+        {children}
+      </main>
       <Footer fotterText={layOutProps.fotterText} />
     </div>
   );
