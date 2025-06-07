@@ -18,6 +18,7 @@ const layOutProps = {
     { label: "Court Hire", href: "/court-hire" },
     { label: "Socials", href: "/socials" },
     { label: "Contact", href: "/contact" },
+    { label: "Shop", href: "/shop" },
     { label: "Sign In", href: "/sign-up" },
   ],
   fotterText: "© 2025 Badminton Association. All rights reserved.",
