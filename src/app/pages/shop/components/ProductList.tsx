@@ -1,12 +1,13 @@
-"use strict";
+"use client";
 import React from "react";
 import ProductCard from "./ProductCard";
+import { Slide } from "@/app/components/Carousel";
 
 interface Product {
   id: string;
   name: string;
   price: number;
-  image: string;
+  images: Slide[];
 }
 
 interface ProductListProps {
@@ -16,7 +17,7 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ products, onAddToCart }) => {
   return (
-    <div className="product-list">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
       {products.map((product) => (
         <ProductCard key={product.id} {...product} onAddToCart={onAddToCart} />
       ))}
