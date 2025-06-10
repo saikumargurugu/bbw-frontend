@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Router from "next/router";
 // Backend base URL from environment variables
 const backendBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000/api";
 
@@ -14,11 +14,16 @@ const apiClient = axios.create({
     },
 });
 
-// Add a request interceptor
+// Add a request interceptor to include the token from local storage
 apiClient.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem("authToken");
-        if (token) {
+        const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") || "false");
+        const token = localStorage.getItem("token");
+
+        console.log("Is Logged In:", isLoggedIn); // Debugging log
+        console.log("Token:", token); // Debugging log
+
+        if (isLoggedIn && token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
         return config;
@@ -29,7 +34,7 @@ apiClient.interceptors.request.use(
     }
 );
 
-// Add a response interceptor
+// Add a response interceptor to handle errors
 apiClient.interceptors.response.use(
     <T>(response: AxiosResponse<T>) => response,
     (error: any) => {
@@ -40,6 +45,9 @@ apiClient.interceptors.response.use(
             switch (status) {
                 case 401:
                     toast.error(`Unauthorized! Please log in again. ${error.message}`);
+                    if (typeof window !== "undefined") {
+                        Router.push("/");
+                    }
                     break;
                 case 403:
                     toast.error(`Forbidden! You don't have access to this resource. ${error.message}`);
@@ -70,15 +78,15 @@ export const apiCall = async <T>(
     config?: AxiosRequestConfig
 ): Promise<T> => {
     try {
-        console.log("API response:1112233322", url);
+        console.log("API request URL:", url);
         const response = await apiClient.request<T>({
             url,
             method,
             data,
             ...config,
         });
-        console.log("API response:1111", response);
-        
+        console.log("API response:", response);
+
         if (response.status === 200 || response.status === 201) {
             // toast.success("Request successful!");
             return response.data;

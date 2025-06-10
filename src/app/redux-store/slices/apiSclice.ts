@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface ApiCallState {
   loading: boolean;
   success: boolean;
-  error: string | null;
+  error: boolean | string | null; // Can be a string for error messages
 }
 
 interface ApiState {
@@ -25,7 +25,7 @@ const apiSlice = createSlice({
 
       // Ensure the status object for the model is initialized
       if (!state.status[model]) {
-        state.status[model] = { loading: false, success: false, error: null };
+        state.status[model] = { loading: false, success: false, error: false };
       }
 
       // Set the loading state for the model
@@ -38,13 +38,12 @@ const apiSlice = createSlice({
       state.models[model] = data;
 
       // Update the status for the model
-      state.status[model] = { loading: false, success: true, error: null };
+      state.status[model] = { loading: false, success: true, error: false };
     },
     apiCallFailed(state, action: PayloadAction<{ model: string; error: string }>) {
-      const { model, error } = action.payload;
-
-      // Update the error state for the model
-      state.status[model] = { loading: false, success: false, error };
+      const { model } = action.payload;
+      state.models[model] = []; // Clear the model data on error
+      state.status[model] = { loading: false, success: false, error: true };
     },
   },
 });
