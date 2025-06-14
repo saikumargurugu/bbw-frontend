@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface ApiCallState {
   loading: boolean;
   success: boolean;
-  error: string | null;
+  error: boolean | string | null; // Can be a string for error messages
 }
 
 interface ApiState {
@@ -12,8 +12,49 @@ interface ApiState {
 }
 
 const initialState: ApiState = {
-  models: {}, // Initialize as an empty object for storing data
-  status: {}, // Initialize as an empty object for tracking API call statuses
+  models: {
+    layoutRoutes: {
+      navLinks: [],
+      fotterText: "",
+    },
+    products: [], 
+    brands: [], 
+    categories: [], 
+    authUser: {}, 
+    users: {}, 
+  }, 
+  status: {
+    layoutRoutes: {
+      loading: false,
+      success: false,
+      error: false,
+  }, 
+    products: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    brands: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    categories: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    authUser: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    users: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+}
 };
 
 const apiSlice = createSlice({
@@ -25,7 +66,7 @@ const apiSlice = createSlice({
 
       // Ensure the status object for the model is initialized
       if (!state.status[model]) {
-        state.status[model] = { loading: false, success: false, error: null };
+        state.status[model] = { loading: false, success: false, error: false };
       }
 
       // Set the loading state for the model
@@ -38,13 +79,12 @@ const apiSlice = createSlice({
       state.models[model] = data;
 
       // Update the status for the model
-      state.status[model] = { loading: false, success: true, error: null };
+      state.status[model] = { loading: false, success: true, error: false };
     },
     apiCallFailed(state, action: PayloadAction<{ model: string; error: string }>) {
-      const { model, error } = action.payload;
-
-      // Update the error state for the model
-      state.status[model] = { loading: false, success: false, error };
+      const { model } = action.payload;
+      state.models[model] = initialState.models[model]||{}; // Clear the model data on error
+      state.status[model] = { loading: false, success: false, error: true };
     },
   },
 });

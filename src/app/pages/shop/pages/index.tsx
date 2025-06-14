@@ -2,140 +2,99 @@
 
 import React, { useState, useEffect } from "react";
 import ProductList from "../components/ProductList";
-import { Slide } from "@/app/components/Carousel";
 import FiltersSidebar from "../components/FilterSidebar";
-
-const mockProducts = [
-  { id: "1", name: "Badminton Racket", price: 49.99, 
-    images: [
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-        {
-          image: "https://www.shutterstock.com/shutterstock/photos/2985383/display_1500/stock-photo-two-shuttlecocks-and-tube-isolated-on-a-black-background-2985383.jpg", 
-          caption: "Agility in Motion" 
-         },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2463008837/display_1500/stock-photo-old-tennis-racket-cover-isolated-on-white-background-2463008837.jpg", 
-         caption: "Team Spirit" 
-        },
-      ] 
-        },
-  { id: "2", name: "Shuttlecock Pack", price: 19.99, 
-    images:  [
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-        {
-          image: "https://www.shutterstock.com/shutterstock/photos/2985383/display_1500/stock-photo-two-shuttlecocks-and-tube-isolated-on-a-black-background-2985383.jpg", 
-          caption: "Agility in Motion" 
-         },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2463008837/display_1500/stock-photo-old-tennis-racket-cover-isolated-on-white-background-2463008837.jpg", 
-         caption: "Team Spirit" 
-        },
-      ] 
-        },
-  { id: "3", name: "Sports Shoes", price: 59.99, 
-    images:  [
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-        {
-          image: "https://www.shutterstock.com/shutterstock/photos/2985383/display_1500/stock-photo-two-shuttlecocks-and-tube-isolated-on-a-black-background-2985383.jpg", 
-          caption: "Agility in Motion" 
-         },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2463008837/display_1500/stock-photo-old-tennis-racket-cover-isolated-on-white-background-2463008837.jpg", 
-         caption: "Team Spirit" 
-        },
-      ] 
-        },
-  { id: "4", name: "Badminton Bag", price: 39.99, 
-    images:  [
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-        {
-          image: "https://www.shutterstock.com/shutterstock/photos/2985383/display_1500/stock-photo-two-shuttlecocks-and-tube-isolated-on-a-black-background-2985383.jpg", 
-          caption: "Agility in Motion" 
-         },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2100411874/display_1500/stock-vector-badminton-racket-and-shuttlecock-vector-illustration-of-sports-equipment-eps-2100411874.jpg", 
-         caption: "Master the Smash" 
-        },
-      
-      {
-         image: "https://www.shutterstock.com/shutterstock/photos/2463008837/display_1500/stock-photo-old-tennis-racket-cover-isolated-on-white-background-2463008837.jpg", 
-         caption: "Team Spirit" 
-        },
-      ]  
-        },
-];
-
-const mockCategories = [
-  { name: "Sports Equipment", subcategories: ["Badminton", "Tennis", "Football"] },
-  { name: "Apparel", subcategories: ["Shoes", "Jerseys", "Accessories"] },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/app/redux-store/store";
+import { fetchBrands, fetchCategories, fetchProducts } from "@/app/api/redux-store/actions/productActions";
 
 const ShopPage: React.FC = () => {
-  const [products, setProducts] = useState<{ id: string; name: string; price: number; images: Slide[] }[]>([]);
-  const [cart, setCart] = useState<{ id: string; name: string; price: number; images: Slide[]; quantity: number }[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedSubcategories, setSelectedSubcategories] = useState<string[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const dispatch = useDispatch<AppDispatch>();
+
+  // Access products, brands, categories from Redux store
+  const products = useSelector((state: RootState) => state.api.models.products || []);
+  const brands = useSelector((state: RootState) => state.api.models.brands || []);
+  const categories = useSelector((state: RootState) => state.api.models.categories || []);
 
   useEffect(() => {
-    // Load mock data instead of fetching from API
-    setProducts(mockProducts);
-    setFilteredProducts(mockProducts);
-  }, []);
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        await fetchProducts(dispatch);
+        await fetchBrands(dispatch);
+        await fetchCategories(dispatch);
+      } catch (error) {
+        // Optionally, show an error message here
+        console.error("Failed to fetch shop data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [dispatch]);
 
-  const handleAddToCart = (id: string) => {
+  useEffect(() => {
+    const filtered = products.results && products.results.length>0&&products.results.filter((product) => {
+      const inCategory =
+        selectedCategories.length === 0 ||
+        selectedCategories.includes(product.category?.name);
+
+      const inSubcategory =
+        selectedSubcategories.length === 0 ||
+        (product.category?.subcategories || []).some((sub) =>
+          selectedSubcategories.includes(sub.name)
+        );
+      const inBrand =
+        selectedBrands.length === 0 ||
+        selectedBrands.includes(product.brand?.name);
+
+      return inCategory && inSubcategory && inBrand;
+    });
+    setFilteredProducts(filtered);
+  }, [products, selectedCategories, selectedSubcategories, selectedBrands]);
+
+  const handleAddToCart = (id: number) => {
     const product = products.find((p) => p.id === id);
     if (product) {
-      setCart([...cart, { ...product, quantity: 1 }]);
+      // Add product to cart logic
     }
   };
-
-  const handleFilterChange = (category: string, subcategory: string) => {
-    const filtered = mockProducts.filter((product) =>
-      subcategory ? product.name.includes(subcategory) : product.name.includes(category)
-    );
-    setFilteredProducts(filtered);
+  const handleFilterChange = (
+    categories: string[],
+    subcategories: string[],
+    brands: string[]
+  ) => {
+    setSelectedCategories(categories);
+    setSelectedSubcategories(subcategories);
+    setSelectedBrands(brands);
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="text-lg">Loading...</span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex">
-      <FiltersSidebar categories={mockCategories} onFilterChange={handleFilterChange} />
+      <FiltersSidebar
+        categories={categories}
+        brands={brands}
+        onFilterChange={handleFilterChange}
+      />
       <div className="flex-1 p-4">
         <h1>Shop</h1>
-        <ProductList products={filteredProducts} onAddToCart={handleAddToCart} />
+        {filteredProducts && filteredProducts.length > 0 ? (
+          <ProductList products={filteredProducts} onAddToCart={handleAddToCart} />
+        ) : (
+          <div>No products found.</div>
+        )}
       </div>
     </div>
   );

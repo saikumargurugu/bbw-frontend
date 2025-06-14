@@ -24,7 +24,8 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  console.log("navLinks in NavBar:", navLinks);
+  
   // Sidebar content for mobile view
   const drawer = (
     <Box className="w-60 p-2 bg-white dark:bg-gray-900 h-full" role="presentation">

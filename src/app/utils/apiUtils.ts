@@ -31,7 +31,9 @@ export const getApi = (
   const url = appendQueryParams(endpoint, params);
   dispatch(apiCallStarted(model)); // Pass the model name to track status
   try {
-    const response = await apiCall("GET", url);
+
+    console.log("Fetching data from URL:", url); // Log the URL being fetched
+    const response = await apiCall(url, "GET");
     dispatch(apiCallSucceeded({ model, data: response })); // Pass the model and data to the reducer
 
     if (showToast) {

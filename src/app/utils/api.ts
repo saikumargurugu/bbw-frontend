@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Router from "next/router";
 // Backend base URL from environment variables
 const backendBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000/api";
 
@@ -14,11 +14,16 @@ const apiClient = axios.create({
     },
 });
 
-// Add a request interceptor
+// Add a request interceptor to include the token from local storage
 apiClient.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem("authToken");
-        if (token) {
+        const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") || "false");
+        const token = localStorage.getItem("token");
+
+        console.log("Is Logged In:", isLoggedIn); // Debugging log
+        console.log("Token:", token); // Debugging log
+
+        if (isLoggedIn && token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
         return config;
@@ -29,18 +34,60 @@ apiClient.interceptors.request.use(
     }
 );
 
-// Add a response interceptor
+// Token refresh function
+async function refreshAccessToken() {
+    const refresh = localStorage.getItem("refresh");
+    if (!refresh) return null;
+
+    try {
+        const response = await axios.post(
+            `${backendBaseUrl}/token/refresh/`,
+            { refresh },
+            { headers: { "Content-Type": "application/json" } }
+        );
+        const { access } = response.data;
+        if (access) {
+            localStorage.setItem("token", access);
+            return access;
+        }
+    } catch (err) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("refresh");
+        localStorage.removeItem("isLoggedIn");
+        return null;
+    }
+}
+
+// Add a response interceptor to handle errors
 apiClient.interceptors.response.use(
     <T>(response: AxiosResponse<T>) => response,
-    (error: any) => {
+    async (error: any) => {
+        const originalRequest = error.config;
+
+        if (
+            error.response &&
+            error.response.status === 401 &&
+            !originalRequest._retry
+        ) {
+            originalRequest._retry = true;
+            const newAccessToken = await refreshAccessToken();
+            if (newAccessToken) {
+                originalRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
+                return apiClient(originalRequest);
+            } else {
+                toast.error("Session expired. Please log in again.");
+                if (typeof window !== "undefined") {
+                    Router.push("/");
+                }
+                return Promise.reject(error);
+            }
+        }
+
         if (error.response) {
             const { status, data } = error.response;
             console.log("Response error:", status, data);
 
             switch (status) {
-                case 401:
-                    toast.error(`Unauthorized! Please log in again. ${error.message}`);
-                    break;
                 case 403:
                     toast.error(`Forbidden! You don't have access to this resource. ${error.message}`);
                     break;
@@ -70,15 +117,15 @@ export const apiCall = async <T>(
     config?: AxiosRequestConfig
 ): Promise<T> => {
     try {
-        console.log("API response:1112233322", url);
+        console.log("API request URL:", url);
         const response = await apiClient.request<T>({
             url,
             method,
             data,
             ...config,
         });
-        console.log("API response:1111", response);
-        
+        console.log("API response:", response);
+
         if (response.status === 200 || response.status === 201) {
             // toast.success("Request successful!");
             return response.data;

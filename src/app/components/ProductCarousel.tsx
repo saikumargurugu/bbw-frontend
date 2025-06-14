@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import Loader from './Loader';
+import InlineLoader from './childLoader';
 
 export type Slide = {
   image: string;
@@ -30,7 +32,13 @@ export default function Carousel({ slides, className }: CarouselProps) {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  if (!slides.length) return <div className="h-screen">Loading...</div>;
+  if (!slides.length) {
+    return (
+      <div className="flex items-center justify-center">
+        <InlineLoader show className="bg-black rounded-full" />
+      </div>
+    );
+  }
 
   return (
     <div className={`relative overflow-hidden ${className || 'w-full h-screen'}`}>
