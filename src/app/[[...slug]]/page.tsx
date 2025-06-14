@@ -12,8 +12,6 @@ import ProductDetailPage from '../pages/shop/products/details/page';
 export default async function Page({ params }: { params: { slug?: string[] } }) {
     const resolvedParams = await params;
     const slugs = resolvedParams.slug || [];
-    console.log("Slugs:", slugs);
-
     // Handle /shop/products/1/details
     if (
         slugs[0] === 'shop' &&

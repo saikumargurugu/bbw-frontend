@@ -17,10 +17,7 @@ export default function MainComponent({ loading, children }: { loading: boolean;
     const layOutProps = useSelector((state: RootState) => state.api.models.layoutRoutes || {});
     const layOutLoadingStatus = useSelector((state: RootState) => state.api.status.layoutRoutes || {});
   
-    const dispatch = useDispatch<AppDispatch>();
-    console.log("layOutProps", layOutProps);
-    console.log("layOutLoadingStatus", layOutLoadingStatus);
-    
+    const dispatch = useDispatch<AppDispatch>();    
     useEffect(() => {
       const fetchData = async () => {
         // setLoading(true);

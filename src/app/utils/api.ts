@@ -20,9 +20,6 @@ apiClient.interceptors.request.use(
         const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn") || "false");
         const token = localStorage.getItem("token");
 
-        console.log("Is Logged In:", isLoggedIn); // Debugging log
-        console.log("Token:", token); // Debugging log
-
         if (isLoggedIn && token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
@@ -85,8 +82,6 @@ apiClient.interceptors.response.use(
 
         if (error.response) {
             const { status, data } = error.response;
-            console.log("Response error:", status, data);
-
             switch (status) {
                 case 403:
                     toast.error(`Forbidden! You don't have access to this resource. ${error.message}`);
@@ -117,15 +112,12 @@ export const apiCall = async <T>(
     config?: AxiosRequestConfig
 ): Promise<T> => {
     try {
-        console.log("API request URL:", url);
         const response = await apiClient.request<T>({
             url,
             method,
             data,
             ...config,
         });
-        console.log("API response:", response);
-
         if (response.status === 200 || response.status === 201) {
             // toast.success("Request successful!");
             return response.data;

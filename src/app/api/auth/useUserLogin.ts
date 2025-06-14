@@ -16,7 +16,6 @@ const useUserLogin = () => {
     error: false
   }});
   const authUserObject = useSelector((state: RootState) => state.api.models.authUser || {});
-  console.log("apiStatus", apiStatus);
 
   // Function to update local storage
   const updateLocalStorage = (authUserObject: any) => {
@@ -24,7 +23,6 @@ const useUserLogin = () => {
     localStorage.setItem("token", authUserObject.access);
     localStorage.setItem("user", JSON.stringify(authUserObject.user));
     localStorage.setItem("refresh", authUserObject.refresh);
-    console.log("Local storage updated successfully.");
   };
 
   const login = (email: string, password: string) => {

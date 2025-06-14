@@ -4,9 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { layOutProps } from "../types";
 
-export default function Layout({ children, layOutProps }: { children: React.ReactNode; layOutProps: layOutProps }) {
-  console.log("Layout Props:in NavBar", layOutProps);
-  
+export default function Layout({ children, layOutProps }: { children: React.ReactNode; layOutProps: layOutProps }) {  
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Navbar navLinks={layOutProps.navLinks} />
