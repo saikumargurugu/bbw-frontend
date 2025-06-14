@@ -4,31 +4,35 @@ import React, { useState, useEffect } from "react";
 import Layout from "@/app/components/Layout";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
-import { Provider } from "react-redux";
-import store from "./redux-store/store";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import store, { AppDispatch, RootState } from "./redux-store/store";
 import "react-toastify/dist/ReactToastify.css";
+import { fetchLayoutRoutes } from "./api/redux-store/actions/generalActions";
+import Loader from "./components/Loader";
+import MainComponent from "./MainComponent";
 
 
-const layOutProps = {
-  navLinks: [
-    { label: "Home", href: "/" },
-    { label: "Club", href: "/club" },
-    { label: "Services", href: "/services" },
-    { label: "Academy", href: "/academy" },
-    { label: "Court Hire", href: "/court-hire" },
-    { label: "Socials", href: "/socials" },
-    { label: "Contact", href: "/contact" },
-    { label: "Shop", href: "/shop" },
-    { label: "Sign In", href: "/sign-up" },
-  ],
-  fotterText: "© 2025 Badminton Association. All rights reserved.",
-};
+  const layOutProps = {
+    navLinks: [
+      { label: "Home", href: "/" },
+      { label: "Club", href: "/club" },
+      { label: "Services", href: "/services" },
+      { label: "Academy", href: "/academy" },
+      { label: "Court Hire", href: "/court-hire" },
+      { label: "Socials", href: "/socials" },
+      { label: "Contact", href: "/contact" },
+      { label: "Shop", href: "/shop" },
+      { label: "Sign In", href: "/sign-up" },
+    ],
+    fotterText: "© 2025 Badminton Association. All rights reserved.",
+  };
 
 export default function RootLayout({
   children,
 }: {  
   children: React.ReactNode;
 }) {
+
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [loading, setLoading] = useState(true);
 
@@ -71,39 +75,32 @@ export default function RootLayout({
       </head>
       <body className="relative flex flex-col min-h-screen">
         {/* Loading Spinner */}
-        {loading && (
+        {/* {loading && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent pointer-events-none">
             <div className="text-6xl sm:text-8xl animate-spin-slow pointer-events-auto">
               🏸
             </div>
           </div>
-        )}
-
+        )} */}
         {/* Layout Wrapper */}
         <Provider store={store}>
 
-          <div
-            className={`transition-opacity duration-500 ${loading
-              ? "opacity-50 pointer-events-none blur-md select-none"
-              : "opacity-100"
-              }`}
+          <MainComponent loading={loading}>
+            {children}
+          </MainComponent>
+          
+          {/* Theme Toggle Button */}
+          {/* <button
+            onClick={toggleTheme}
+            className="absolute top-4 right-4 p-2 bg-gray-200 rounded-full z-50 shadow-md hover:bg-gray-300 transition-all sm:top-6 sm:right-6 sm:p-3"
           >
-          <ToastContainer position="top-right" autoClose={3000} />
-
-            {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              className="absolute top-4 right-4 p-2 bg-gray-200 rounded-full z-50 shadow-md hover:bg-gray-300 transition-all sm:top-6 sm:right-6 sm:p-3"
-            >
-              {theme === "dark" ? "🌙" : "☀️"}
-            </button>
-
-            <Layout layOutProps={layOutProps}>
-              <main className="pt-1">{children}</main>
-            </Layout>
-          </div>
+            {theme === "dark" ? "🌙" : "☀️"}
+          </button> */}
         </Provider>
       </body>
     </html>
   );
 }
+
+
+

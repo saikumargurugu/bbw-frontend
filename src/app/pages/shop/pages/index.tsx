@@ -38,7 +38,7 @@ const ShopPage: React.FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const filtered = products.length>0&&products.filter((product) => {
+    const filtered = products.results && products.results.length>0&&products.results.filter((product) => {
       const inCategory =
         selectedCategories.length === 0 ||
         selectedCategories.includes(product.category?.name);
@@ -48,7 +48,6 @@ const ShopPage: React.FC = () => {
         (product.category?.subcategories || []).some((sub) =>
           selectedSubcategories.includes(sub.name)
         );
-
       const inBrand =
         selectedBrands.length === 0 ||
         selectedBrands.includes(product.brand?.name);
@@ -64,7 +63,6 @@ const ShopPage: React.FC = () => {
       // Add product to cart logic
     }
   };
-
   const handleFilterChange = (
     categories: string[],
     subcategories: string[],

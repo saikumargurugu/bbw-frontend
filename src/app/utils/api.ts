@@ -34,21 +34,60 @@ apiClient.interceptors.request.use(
     }
 );
 
+// Token refresh function
+async function refreshAccessToken() {
+    const refresh = localStorage.getItem("refresh");
+    if (!refresh) return null;
+
+    try {
+        const response = await axios.post(
+            `${backendBaseUrl}/token/refresh/`,
+            { refresh },
+            { headers: { "Content-Type": "application/json" } }
+        );
+        const { access } = response.data;
+        if (access) {
+            localStorage.setItem("token", access);
+            return access;
+        }
+    } catch (err) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("refresh");
+        localStorage.removeItem("isLoggedIn");
+        return null;
+    }
+}
+
 // Add a response interceptor to handle errors
 apiClient.interceptors.response.use(
     <T>(response: AxiosResponse<T>) => response,
-    (error: any) => {
+    async (error: any) => {
+        const originalRequest = error.config;
+
+        if (
+            error.response &&
+            error.response.status === 401 &&
+            !originalRequest._retry
+        ) {
+            originalRequest._retry = true;
+            const newAccessToken = await refreshAccessToken();
+            if (newAccessToken) {
+                originalRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
+                return apiClient(originalRequest);
+            } else {
+                toast.error("Session expired. Please log in again.");
+                if (typeof window !== "undefined") {
+                    Router.push("/");
+                }
+                return Promise.reject(error);
+            }
+        }
+
         if (error.response) {
             const { status, data } = error.response;
             console.log("Response error:", status, data);
 
             switch (status) {
-                case 401:
-                    toast.error(`Unauthorized! Please log in again. ${error.message}`);
-                    if (typeof window !== "undefined") {
-                        Router.push("/");
-                    }
-                    break;
                 case 403:
                     toast.error(`Forbidden! You don't have access to this resource. ${error.message}`);
                     break;

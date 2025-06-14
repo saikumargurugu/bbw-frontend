@@ -12,8 +12,49 @@ interface ApiState {
 }
 
 const initialState: ApiState = {
-  models: {}, // Initialize as an empty object for storing data
-  status: {}, // Initialize as an empty object for tracking API call statuses
+  models: {
+    layoutRoutes: {
+      navLinks: [],
+      fotterText: "",
+    },
+    products: [], 
+    brands: [], 
+    categories: [], 
+    authUser: {}, 
+    users: {}, 
+  }, 
+  status: {
+    layoutRoutes: {
+      loading: false,
+      success: false,
+      error: false,
+  }, 
+    products: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    brands: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    categories: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    authUser: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+    users: {
+      loading: false,
+      success: false,
+      error: false,
+    },
+}
 };
 
 const apiSlice = createSlice({
@@ -42,7 +83,7 @@ const apiSlice = createSlice({
     },
     apiCallFailed(state, action: PayloadAction<{ model: string; error: string }>) {
       const { model } = action.payload;
-      state.models[model] = []; // Clear the model data on error
+      state.models[model] = initialState.models[model]||{}; // Clear the model data on error
       state.status[model] = { loading: false, success: false, error: true };
     },
   },
