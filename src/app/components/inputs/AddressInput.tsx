@@ -24,6 +24,7 @@ const AddressInput: React.FC<AddressInputProps> = ({ onChange }) => {
     postalCode: "",
   });
   const [searchQuery, setSearchQuery] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [suggestions, setSuggestions] = useState<any[]>([]);
 
   const handleAutocomplete = async (query: string) => {
@@ -51,6 +52,7 @@ const AddressInput: React.FC<AddressInputProps> = ({ onChange }) => {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSuggestionSelect = (feature: any) => {
     const newAddress = {
       street: feature.address.road || "",

@@ -9,10 +9,15 @@ interface CustomDatePickerProps {
   value: Date | null;
   onChange: (event: { target: { name: string; value: Date | null } }) => void;
   placeholder?: string;
+  minDate?: Date; 
+  maxDate?: Date; 
   disabled?: boolean;
   helperText?: string;
+  textFieldProps?: object;
+
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TailwindInput = forwardRef<HTMLInputElement, any>(
   ({ value, onClick, onChange, placeholder, disabled }, ref) => (
     <input

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Carousel from '@/app/components/Carousel';
-import { Button, Typography, Box } from '@mui/material';
+import { Button, Box } from '@mui/material';
 
 const courtsTypes = ['Indoor Court'];
 const courts = ['Court 1', 'Court 2', 'Court 3', 'Court 4', 'Court 5', 'Court 6', 'Court 7', 'Court 8', 'Court 9'];

@@ -2,8 +2,7 @@
 
 import React from 'react';
 import Carousel from '@/app/components/Carousel';
-import { Button, TextField, Typography, Grid, Box, Paper } from '@mui/material';
-import Image from 'next/image';
+import { Button, TextField, Typography, Box, Paper } from '@mui/material';
 
 const HeroData = [
   { image: '/images/contact/contact-hero.jpg', caption: 'Get in Touch with Us' },

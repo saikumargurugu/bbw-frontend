@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import Loader from './Loader';
 import InlineLoader from './childLoader';
 
 export type Slide = {

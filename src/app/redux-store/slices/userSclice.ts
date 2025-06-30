@@ -30,6 +30,7 @@ const userSlice = createSlice({
 });
 
 interface APIState {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null;
@@ -49,6 +50,7 @@ const apiSlice = createSlice({
       state.status = "loading";
       state.error = null;
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     apiCallSucceeded(state, action: PayloadAction<any>) {
       state.status = "succeeded";
       state.data = action.payload;

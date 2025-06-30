@@ -7,6 +7,7 @@ interface ApiCallState {
 }
 
 interface ApiState {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   models: Record<string, any>; // Store data dynamically for different models
   status: { [key: string]: ApiCallState }; // Track the status of each API call separately
 }
@@ -72,6 +73,7 @@ const apiSlice = createSlice({
       // Set the loading state for the model
       state.status[model] = { loading: true, success: false, error: null };
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     apiCallSucceeded(state, action: PayloadAction<{ model: string; data: any }>) {
       const { model, data } = action.payload;
 
