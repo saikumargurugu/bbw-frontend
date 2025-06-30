@@ -50,7 +50,7 @@ export default function ClubPage() {
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           Our club is dedicated to creating a friendly and supportive environment for badminton enthusiasts of all levels.
-          Whether you're a beginner or an advanced player, you'll find the perfect place to grow your skills and enjoy the sport with others.
+          Whether you&apos;re a beginner or an advanced player, you&apos;ll find the perfect place to grow your skills and enjoy the sport with others.
         </p>
       </section>
 
@@ -88,7 +88,7 @@ export default function ClubPage() {
       {/* Contact Section */}
       <section className="bg-cyan-700 text-white text-center py-16">
         <h4 className="text-3xl font-bold mb-6">Get in Touch</h4>
-        <p className="text-lg mb-6">Have questions? We're here to help. Reach out to us today!</p>
+        <p className="text-lg mb-6">Have questions? We&apos;re here to help. Reach out to us today!</p>
         <button className="bg-white text-cyan-700 px-6 py-3 rounded-xl text-lg font-semibold hover:bg-gray-200 transition">
           Contact Us
         </button>

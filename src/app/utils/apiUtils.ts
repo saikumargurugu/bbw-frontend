@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppDispatch } from "../redux-store/store"; // Import the AppDispatch type
 import { apiCallStarted, apiCallSucceeded, apiCallFailed } from "../redux-store/slices/apiSclice"; // Import Redux actions
 import { apiCall } from "./api"; // Assuming `apiCall` is your generic API function

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Grid, Button, Typography } from "@mui/material";
+import { Grid, Button } from "@mui/material";
 import TextInput from "../components/inputs/TextInput";
 import FileInput from "../components/inputs/FileInput";
 import CustomDatePicker from "../components/inputs/DatePicker";
@@ -21,6 +21,7 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
     onError,
 }) => {
     const [formData, setFormData] = useState<{
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         [key: string]: any;
     }>({
         username: "",
@@ -110,16 +111,19 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
             if (key === "address" && typeof value === "object") {
                 // Flatten address object into individual fields
                 Object.entries(value).forEach(([addressKey, addressValue]) => {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formDataToSend.append(`address[${addressKey}]`, addressValue as any);
                 });
             } else if (value !== null) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 formDataToSend.append(key, value as any);
             }
         });
 
         try {
-            const response = await apiCall("/auth/signup/", "POST", formDataToSend);
+            const response = await apiCall("/auth/signup/", "POST", formDataToSend) as { message: string };
             onSuccess(response.message || "User registered successfully!");
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             onError(err || "Something went wrong!");
         } finally {
@@ -135,7 +139,6 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
                         label={field.label}
                         value={formData[field.name]}
                         onChange={handleDateChange}
-                        includeTime={false}
                         placeholder={`Enter your ${field.label.toLowerCase()}`}
                         helperText={`Please select your ${field.label.toLowerCase()}`}
                         minDate={new Date("1900-01-01")} // Minimum date

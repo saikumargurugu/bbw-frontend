@@ -1,6 +1,6 @@
 // components/HeroSection.tsx
 import React from "react";
-import { Button, Typography, Box } from "@mui/material";
+import { Button, Box } from "@mui/material";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {

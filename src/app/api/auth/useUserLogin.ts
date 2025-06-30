@@ -1,21 +1,14 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../lib/firebaseClient";
 import { useRouter } from "next/navigation";
-import { useDispatch, useSelector } from "react-redux";
-import type { AppDispatch, RootState } from "../../redux-store/store"; // Adjust the path to your store file
+import { useDispatch } from "react-redux";
+import type { AppDispatch } from "../../redux-store/store"; // Adjust the path to your store file
 import { postApi } from "@/app/utils/apiUtils";
 
 const useUserLogin = () => {
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
 
-  // Access the API status for the "authUser" model
-  const apiStatus = useSelector((state: RootState) => state.api.status||{authUser:{
-    loading: false,
-    success: false,
-    error: false
-  }});
-  const authUserObject = useSelector((state: RootState) => state.api.models.authUser || {});
 
   // Function to update local storage
   const updateLocalStorage = (authUserObject: any) => {
@@ -32,6 +25,7 @@ const useUserLogin = () => {
         // Wait for the API call to finish and use the response directly
         return dispatch(postApi("/auth/login/", "authUser", { idToken }));
       })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .then((res: any) => {
         // Use the actual API response here
         if (res && res.access && res.user) {

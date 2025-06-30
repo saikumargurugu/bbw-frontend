@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
 
 interface ProductImage {
   id: number;
@@ -107,10 +106,12 @@ export default function ProductDetailPage({ productId }: ProductDetailPageProps)
             {product.images.length > 1 && (
               <div className="flex gap-2 mt-4">
                 {product.images.map((img, idx) => (
-                  <img
+                  <Image
                     key={img.id}
                     src={img.image_url}
                     alt={product.name}
+                    width={64}
+                    height={64}
                     className={`w-16 h-16 object-cover rounded border cursor-pointer transition ${
                       idx === selectedImage
                         ? 'ring-2 ring-blue-500'

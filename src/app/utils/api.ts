@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Router from "next/router";
@@ -27,13 +27,13 @@ apiClient.interceptors.request.use(
 
 // Refresh token logic
 let isRefreshing = false;
-let failedQueue: any[] = [];
+let failedQueue: { resolve: (value?: string | PromiseLike<string> | undefined) => void; reject: (reason?: any) => void }[] = [];
 
 const processQueue = (error: any, token: string | null = null) => {
     failedQueue.forEach(prom => {
         if (error) {
             prom.reject(error);
-        } else {
+        } else if (token !== null) {
             prom.resolve(token);
         }
     });
@@ -49,15 +49,16 @@ async function refreshAccessToken() {
             { refresh },
             { headers: { "Content-Type": "application/json" } }
         );
-        const { access } = response.data;
+        const { access } = response.data as { access: string };
         if (access) {
             localStorage.setItem("token", access);
             return access;
         }
-    } catch (err) {
+    } catch (error) {
         localStorage.removeItem("token");
         localStorage.removeItem("refresh");
         localStorage.removeItem("isLoggedIn");
+        console.log("Error refreshing access token:", error);
         return null;
     }
 }
@@ -141,7 +142,7 @@ apiClient.interceptors.response.use(
 export const apiCall = async <T>(
     url: string,
     method: "GET" | "POST" | "PATCH" | "PUT" | "DELETE",
-    data?: any,
+    data?: object | [object]| null,
     config?: AxiosRequestConfig
 ): Promise<T> => {
     try {
@@ -154,9 +155,12 @@ export const apiCall = async <T>(
         if (response.status === 200 || response.status === 201) {
             return response.data;
         }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         throw error;
     }
+    // Add a fallback return statement to handle all code paths
+    return undefined as unknown as T;
 };
 
 export default apiClient;

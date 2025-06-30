@@ -31,6 +31,7 @@ const SignInForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
                 else {
                     onError("Failed to send password reset email. Please try again.");
                 }});
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } catch (err: any) {
                 console.error("Error sending password reset email:", err);
                 onError("Failed to send password reset email. Please try again.");
@@ -46,6 +47,7 @@ const SignInForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
                     }
                 }
          catch (err) {
+                console.error("Login error:", err);
                 onError("Login failed. Please check your credentials.");
             }
         }

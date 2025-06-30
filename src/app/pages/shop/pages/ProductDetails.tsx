@@ -8,6 +8,7 @@ import Image from "next/image";
 const ProductDetails: React.FC = () => {
   const router = useRouter();
   const { id } = router.query; // Get the product ID from the URL
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [product, setProduct] = useState<any>(null);
 
   useEffect(() => {
