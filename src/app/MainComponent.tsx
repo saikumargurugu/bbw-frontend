@@ -5,10 +5,11 @@ import Layout from "@/app/components/Layout";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "./redux-store/store";
+import { AppDispatch } from "./redux-store/store";
 import "react-toastify/dist/ReactToastify.css";
-import { fetchLayoutRoutes } from "./api/redux-store/actions/generalActions";
+import { fetchLayoutRoutes } from "./bbw_apis/redux-store/actions/generalActions";
 import Loader from "./components/Loader";
+import { RootState } from "./interface";
 
 
 
@@ -54,4 +55,3 @@ export default function MainComponent({ loading, children }: { loading: boolean;
       </>
     )
   }
-  

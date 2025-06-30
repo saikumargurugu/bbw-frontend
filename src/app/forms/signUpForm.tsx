@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Grid, Button } from "@mui/material";
 import TextInput from "../components/inputs/TextInput";
 import FileInput from "../components/inputs/FileInput";
 import CustomDatePicker from "../components/inputs/DatePicker";
@@ -72,14 +71,21 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         },
     ];
 
-    const buttonConfig = {
-        label: loading ? "Signing Up..." : "Sign Up", // Show loading text
-        type: "submit",
-        variant: "contained",
-        color: "primary",
-        fullWidth: true,
-        disabled: loading, // Disable button while loading
-    };
+    const buttonConfig: {
+            label: string;
+            type: "button" | "submit" | "reset";
+            variant: "contained";
+            color: "primary";
+            fullWidth: boolean;
+            disabled: boolean;
+        } = {
+            label: loading ? "Signing Up..." : "Sign Up", // Show loading text
+            type: "submit",
+            variant: "contained",
+            color: "primary",
+            fullWidth: true,
+            disabled: loading, // Disable button while loading
+        };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -88,7 +94,8 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
-            setFormData((prev) => ({ ...prev, profile_picture: e.target.files[0] }));
+            const file = e.target.files[0];
+            setFormData((prev) => ({ ...prev, profile_picture: file }));
         }
     };
 
@@ -177,25 +184,39 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
 
     return (
         <form onSubmit={handleSubmit}>
-            <Grid container direction="column" spacing={3}>
-
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "24px", // spacing={3} in MUI is 24px
+                }}
+            >
                 {formConfig.map((field, index) => (
-                    <Grid item key={index}>
+                    <div key={index} style={{ width: "100%" }}>
                         {renderField(field)}
-                    </Grid>
+                    </div>
                 ))}
-                <Grid item>
-                    <Button
+                <div style={{ width: "100%" }}>
+                    <button
                         type={buttonConfig.type}
-                        variant={buttonConfig.variant}
-                        color={buttonConfig.color}
-                        fullWidth={buttonConfig.fullWidth}
                         disabled={buttonConfig.disabled}
+                        style={{
+                            width: "100%",
+                            padding: "8px 16px",
+                            backgroundColor: buttonConfig.disabled ? "#90caf9" : "#1976d2",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: "4px",
+                            fontSize: "1rem",
+                            fontWeight: 500,
+                            cursor: buttonConfig.disabled ? "not-allowed" : "pointer",
+                            transition: "background 0.2s",
+                        }}
                     >
                         {buttonConfig.label}
-                    </Button>
-                </Grid>
-            </Grid>
+                    </button>
+                </div>
+            </div>
         </form>
     );
 };

@@ -20,14 +20,15 @@ export default function HeroSection() {
       >
         Welcome to Our Badminton Club
       </motion.h2>
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        sx={{ fontSize: "1.2rem" }}
-      >
-        Train. Compete. Connect. Elevate your game with us.
-      </motion.p>
+      <Box sx={{ fontSize: "1.2rem" }}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          Train. Compete. Connect. Elevate your game with us.
+        </motion.p>
+      </Box>
       <Button
         variant="contained"
         color="primary"

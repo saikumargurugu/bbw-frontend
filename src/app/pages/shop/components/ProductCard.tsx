@@ -19,6 +19,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, images = [],
   const slides: Slide[] = images.map((img) => ({
     id: img.id,
     url: img.image_url,
+    image: img.image_url, // Assuming 'image' can be the same as 'image_url'
+    caption: "", // Provide an empty string or a default caption
   }));
 
   return (
