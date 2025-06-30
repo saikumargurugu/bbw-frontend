@@ -9,6 +9,8 @@ import SignUp from '../pages/signUp';
 import ShopPage from '@/app/pages/shop/pages/index';
 import ProductDetailPage from '../pages/shop/products/details/page';
 
+
+///folder shop to [[..slug]]/page.tsx
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }:any) {
   const slugs = params.slug || [];
