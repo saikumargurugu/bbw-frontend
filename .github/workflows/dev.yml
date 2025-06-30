@@ -37,4 +37,4 @@ jobs:
           aws-region: ap-southeast-2
 
       - name: Deploy Static Site to S3 Bucket
-        run: aws s3 sync dist/ s3://dev-bbw-frontend --delete
+        run: aws s3 sync out/ s3://dev-bbw-frontend --delete
