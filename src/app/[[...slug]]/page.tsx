@@ -46,7 +46,15 @@ export default async function Page({ params }:any) {
   }
 }
 
-
+export async function generateStaticParams() {
+  // Return an array of all possible params for this route
+  // Example: [{ slug: ["about"] }, { slug: ["contact"] }]
+  return [
+    { slug: ["about"] },
+    { slug: ["contact"] },
+    // Add all other static paths you want to export
+  ];
+}
 
 // export default function Page({ params }:any) {
 //   const slugs = params.slug || [];
