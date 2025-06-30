@@ -68,6 +68,7 @@ export default async function Page({ params }: any) {
   }
 }
 
+
 export async function generateStaticParams() {
   return [
     { slug: [] }, // root "/"
