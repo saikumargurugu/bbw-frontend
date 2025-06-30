@@ -11,6 +11,7 @@ const useUserLogin = () => {
 
 
   // Function to update local storage
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const updateLocalStorage = (authUserObject: any) => {
     localStorage.setItem("isLoggedIn", JSON.stringify(true));
     localStorage.setItem("token", authUserObject.access);

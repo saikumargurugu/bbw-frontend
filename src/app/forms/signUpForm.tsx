@@ -131,6 +131,7 @@ const SignUpForm: React.FC<{ onSuccess: (message: string) => void; onError: (mes
         }
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const renderField = (field: any) => {
         switch (field.component) {
             case "CustomDatePicker":
