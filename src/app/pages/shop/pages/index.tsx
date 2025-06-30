@@ -4,8 +4,9 @@ import React, { useState, useEffect } from "react";
 import ProductList from "../components/ProductList";
 import FiltersSidebar from "../components/FilterSidebar";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/app/redux-store/store";
-import { fetchBrands, fetchCategories, fetchProducts } from "@/app/api/redux-store/actions/productActions";
+import { AppDispatch } from "@/app/redux-store/store";
+import { fetchBrands, fetchCategories, fetchProducts } from "@/app/bbw_apis/redux-store/actions/productActions";
+import { RootState } from "@/app/interface";
 
 const ShopPage: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -16,7 +17,7 @@ const ShopPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   // Access products, brands, categories from Redux store
-  const products = useSelector((state: RootState) => state.api.models.products || []);
+  const products = useSelector((state: RootState) => state.api.models.products || { results: [] as Array<{ id: number; category?: { name: string; subcategories?: Array<{ name: string }> }; brand?: { name: string } }> });
   const brands = useSelector((state: RootState) => state.api.models.brands || []);
   const categories = useSelector((state: RootState) => state.api.models.categories || []);
 
@@ -38,10 +39,10 @@ const ShopPage: React.FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const filtered = products.results && products.results.length>0&&products.results.filter((product) => {
+    const filtered = products.results && products.results.length > 0 && products.results.filter((product: { id: number; category?: { name: string; subcategories?: Array<{ name: string }> }; brand?: { name: string } }) => {
       const inCategory =
         selectedCategories.length === 0 ||
-        selectedCategories.includes(product.category?.name);
+        selectedCategories.includes(product.category?.name ?? "");
 
       const inSubcategory =
         selectedSubcategories.length === 0 ||
@@ -50,7 +51,7 @@ const ShopPage: React.FC = () => {
         );
       const inBrand =
         selectedBrands.length === 0 ||
-        selectedBrands.includes(product.brand?.name);
+        selectedBrands.includes(product.brand?.name ?? "");
 
       return inCategory && inSubcategory && inBrand;
     });
@@ -58,7 +59,8 @@ const ShopPage: React.FC = () => {
   }, [products, selectedCategories, selectedSubcategories, selectedBrands]);
 
   const handleAddToCart = (id: number) => {
-    const product = products.find((p) => p.id === id);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const product = products.find((p:any) => p.id === id);
     if (product) {
       // Add product to cart logic
     }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Grid, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import { TextField, Button, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import axios from "axios";
 
 interface AddressInputProps {
@@ -108,72 +108,67 @@ const AddressInput: React.FC<AddressInputProps> = ({ onChange }) => {
           </Button>
         </div>
       ) : (
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <TextField
-              label="Street"
-              name="street"
-              value={address.street}
-              onChange={handleManualChange}
-              fullWidth
-              variant="outlined"
-              size="small"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              label="City"
-              name="city"
-              value={address.city}
-              onChange={handleManualChange}
-              fullWidth
-              variant="outlined"
-              size="small"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              label="State"
-              name="state"
-              value={address.state}
-              onChange={handleManualChange}
-              fullWidth
-              variant="outlined"
-              size="small"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              label="Country"
-              name="country"
-              value={address.country}
-              onChange={handleManualChange}
-              fullWidth
-              variant="outlined"
-              size="small"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              label="Postal Code"
-              name="postalCode"
-              value={address.postalCode}
-              onChange={handleManualChange}
-              fullWidth
-              variant="outlined"
-              size="small"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Button
-              variant="text"
-              onClick={() => setUseManualInput(false)}
-              sx={{ marginTop: 1 }}
-            >
-              Use Address Search
-            </Button>
-          </Grid>
-        </Grid>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 16,
+            marginTop: 8,
+          }}
+        >
+          <TextField
+            label="Street"
+            name="street"
+            value={address.street}
+            onChange={handleManualChange}
+            fullWidth
+            variant="outlined"
+            size="small"
+          />
+          <TextField
+            label="City"
+            name="city"
+            value={address.city}
+            onChange={handleManualChange}
+            fullWidth
+            variant="outlined"
+            size="small"
+          />
+          <TextField
+            label="State"
+            name="state"
+            value={address.state}
+            onChange={handleManualChange}
+            fullWidth
+            variant="outlined"
+            size="small"
+          />
+          <TextField
+            label="Country"
+            name="country"
+            value={address.country}
+            onChange={handleManualChange}
+            fullWidth
+            variant="outlined"
+            size="small"
+          />
+          <TextField
+            label="Postal Code"
+            name="postalCode"
+            value={address.postalCode}
+            onChange={handleManualChange}
+            fullWidth
+            variant="outlined"
+            size="small"
+          />
+          <Button
+            variant="text"
+            onClick={() => setUseManualInput(false)}
+            sx={{ marginTop: 1 }}
+          >
+            Use Address Search
+          </Button>
+        </div>
       )}
     </div>
   );

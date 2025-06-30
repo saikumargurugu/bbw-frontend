@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Router from "next/router";
@@ -18,6 +18,7 @@ apiClient.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem("token");
         if (token) {
+            config.headers = config.headers || {};
             config.headers.Authorization = `Bearer ${token}`;
         }
         return config;
@@ -145,7 +146,8 @@ export const apiCall = async <T>(
     url: string,
     method: "GET" | "POST" | "PATCH" | "PUT" | "DELETE",
     data?: object | [object]| null,
-    config?: AxiosRequestConfig
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    config?: any
 ): Promise<T> => {
     try {
         const response = await apiClient.request<T>({
