@@ -46,6 +46,10 @@ import React from 'react';
 
 
 
-export default function Page() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Page({ params }:any) {
+  const slugs = params.slug || [];
+  console.log("Slugs:", slugs);
+  
   return <div>Welcome to the Badminton Club!</div>;
 }
