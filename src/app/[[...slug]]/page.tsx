@@ -9,16 +9,15 @@ import SignUp from '../pages/signUp';
 import ShopPage from '@/app/pages/shop/pages/index';
 import ProductDetailPage from '../pages/shop/products/details/page';
 
-export default async function Page({ params }: { params: { slug?: string[] } }) {
-    const resolvedParams = await params;
-    const slugs = resolvedParams.slug || [];
+export default function Page({ params }: { params: { slug?: string[] } }) {
+    const slugs = params.slug || [];
     // Handle /shop/products/1/details
     if (
         slugs[0] === 'shop' &&
         slugs[1] === 'products' &&
         slugs[3] === 'details'
     ) {
-    const productId = slugs[2];
+        const productId = slugs[2];
         return <ProductDetailPage productId={productId} />;
     }
 
