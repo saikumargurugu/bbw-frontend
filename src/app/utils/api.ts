@@ -27,8 +27,10 @@ apiClient.interceptors.request.use(
 
 // Refresh token logic
 let isRefreshing = false;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let failedQueue: { resolve: (value?: string | PromiseLike<string> | undefined) => void; reject: (reason?: any) => void }[] = [];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const processQueue = (error: any, token: string | null = null) => {
     failedQueue.forEach(prom => {
         if (error) {
