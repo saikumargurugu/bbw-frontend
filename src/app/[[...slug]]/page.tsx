@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import React from 'react';
 import Club from '@/app/pages/club';
 import Contact from '@/app/pages/contact';
 import Services from '@/app/pages/services';
@@ -9,11 +9,7 @@ import SignUp from '../pages/signUp';
 import ShopPage from '@/app/pages/shop/pages/index';
 import ProductDetailPage from '../pages/shop/products/details/page';
 
-interface PageProps {
-  params: { slug?: string[] };
-}
-
-const Page: FC<PageProps> = ({ params }) => {
+export default async function Page({ params }: { params: { slug?: string[] } }) {
   const slugs = params.slug || [];
   // Handle /shop/products/1/details
   if (
@@ -46,6 +42,4 @@ const Page: FC<PageProps> = ({ params }) => {
     default:
       return <div>404 Not Found</div>;
   }
-};
-
-export default Page;
+}
