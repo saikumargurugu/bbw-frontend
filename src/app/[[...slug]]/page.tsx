@@ -64,12 +64,3 @@ export async function generateStaticParams() {
 // //   return <div>Welcome to the Badminton Club!</div>;
 // // }
 // =======
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-<!-- export default function Page({ params }:any) {
-  const slugs = params.slug || [];
-  console.log("Slugs:", slugs);
-  
-  return <div>Welcome to the Badminton Club!</div>;
-} -->
-<!-- >>>>>>> main
- -->
