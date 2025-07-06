@@ -12,7 +12,7 @@ import Home from '@/app/pages/Home';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
-  const slugs =await params.slug || [];
+  const slugs = params.slug || [];
   console.log("Slugs:", slugs);
 
   // Handle root "/"
