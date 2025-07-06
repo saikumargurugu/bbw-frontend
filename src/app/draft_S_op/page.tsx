@@ -14,7 +14,7 @@ import Home from '@/app/pages/Home';
 ///folder shop to [[..slug]]/page.tsx
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
-  const slugs =await params.slug || [];
+  const slugs = params.slug || [];
   console.log("Slugs:", slugs);
 
   // Handle root "/"
@@ -33,9 +33,7 @@ export default async function Page({ params }: any) {
   }
 
   // Handle top-level routes
-  console.log("Slugs in switch:", slugs[0]);
   switch (slugs[0]) {
-    
     case '':
       return <Home />;
     case 'club':
@@ -47,20 +45,20 @@ export default async function Page({ params }: any) {
     case 'court-hire':
       return <CourtHirePage />;
     case 'shop':
-      console.log("Slugs------:", slugs[1]);
-      if(slugs[1]){
-        switch (slugs[1]) {
+      console.log("Slugs:", slugs[1]);
+      switch (slugs[1]) {
         case 'products':
           switch (slugs[2]) {
             case 'details':
+              console.log("Slugs:", slugs[1]);
               const productId = slugs[3];
               return <ProductDetailPage productId={productId} />;
             default:
               return <ShopPage />;
-            }
-          }
-        }
+      }
+      default:
         return <ShopPage />;
+    }
     case 'academy':
       return <AcademyPage />;
     case 'socials':

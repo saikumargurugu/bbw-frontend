@@ -22,7 +22,7 @@ const Cart: React.FC<CartProps> = ({ items, onRemoveFromCart }) => {
       {items.map((item) => (
         <div key={item.id} className="cart-item">
           <h3>{item.name}</h3>
-          <p>${item.price.toFixed(2)} x {item.quantity}</p>
+          <p>${item.price?.toFixed(2)} x {item.quantity}</p>
           <button onClick={() => onRemoveFromCart(item.id)}>Remove</button>
         </div>
       ))}

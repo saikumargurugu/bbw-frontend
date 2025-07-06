@@ -32,6 +32,8 @@ export default function Carousel({ slides, className }: CarouselProps) {
   };
 
   if (!slides.length) {
+    console.log('No slides available');
+    
     return (
       <div className="flex items-center justify-center">
         <InlineLoader show className="bg-black rounded-full" />

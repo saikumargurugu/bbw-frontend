@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { imagesStatic } from '../../components/ProductCard';
 
 interface ProductImage {
   id: number;
@@ -22,23 +23,7 @@ const mockProduct: Product = {
   id: 1,
   name: 'Yonex Nanoflare 700 Badminton Racket',
   price: 199.99,
-  images: [
-    {
-      id: 1,
-      image_url:
-        'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
-    },
-    {
-      id: 2,
-      image_url:
-        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-    },
-    {
-      id: 3,
-      image_url:
-        'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
-    },
-  ],
+  images:imagesStatic,
   description: `Experience the next level of speed and control with the Yonex Nanoflare 700. 
 - Lightweight and powerful
 - Enhanced maneuverability
@@ -72,14 +57,6 @@ export default function ProductDetailPage({ productId }: any) {
     if (!id) return;
     setProduct(mockProduct);
     setLoading(false);
-
-    // Real API example:
-    // fetch(`/api/public/shop/products/${id}/`)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setProduct(data);
-    //     setLoading(false);
-    //   });
   }, [id]);
 
   // Reset selected image when product changes
@@ -141,7 +118,7 @@ export default function ProductDetailPage({ productId }: any) {
           )}
           <div className="text-2xl font-semibold text-blue-600 mb-4">
             {product.price !== undefined
-              ? `$${product.price.toFixed(2)}`
+              ? `$${product?.price.toFixed(2)}`
               : 'Price not available'}
           </div>
           <div className="mb-4">
