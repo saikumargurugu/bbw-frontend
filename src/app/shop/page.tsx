@@ -10,6 +10,8 @@ import ShopPage from '@/app/pages/shop/pages/index';
 import ProductDetailPage from '../pages/shop/products/details/page';
 import Home from '@/app/pages/Home';
 
+
+///folder shop to [[..slug]]/page.tsx
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
   const slugs =await params.slug || [];
@@ -69,6 +71,7 @@ export default async function Page({ params }: any) {
       return <div>404 Not Found</div>;
   }
 }
+
 
 export async function generateStaticParams() {
   return [
