@@ -29,8 +29,8 @@ export default async function Page({ params }: any) {
     const productId = slugs[2];
     return <ProductDetailPage productId={productId} />;
   }
-
-  // Handle top-level routes
+  // terst remove this
+  // Handle top-level routes 
   console.log("Slugs in switch:", slugs[0]);
   switch (slugs[0]) {
     
