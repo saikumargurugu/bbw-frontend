@@ -89,12 +89,3 @@ export async function generateStaticParams() {
     { slug: ["shop", "brands", "2"] },
   ];
 }
-
-// <<<<<<< working
-// // export default function Page({ params }:any) {
-// //   const slugs = params.slug || [];
-// //   console.log("Slugs:", slugs);
-  
-// //   return <div>Welcome to the Badminton Club!</div>;
-// // }
-// =======
