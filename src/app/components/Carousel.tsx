@@ -30,7 +30,7 @@ export default function Carousel({ slides, className }: CarouselProps) {
   if (!slides.length) return <div className="h-screen">Loading...</div>;
 
   return (
-    <div className={`relative overflow-hidden ${className || 'w-full h-screen'}`}>
+    <div className={`relative overflow-hidden ${className || 'w-full h-[50vh]'}`}>
       {slides.map((slide, index) => (
         <div
           key={index}
