@@ -1,7 +1,7 @@
 'use client';
-
 import React from 'react';
 import Carousel from '@/app/components/Carousel';
+import { useRouter } from "next/navigation";
 
 const facilities = [
   {
@@ -38,6 +38,7 @@ const HeroData = [
 ];
 
 export default function ClubPage() {
+  const router = useRouter();
   return (
     <div>
       {/* Hero Section */}
@@ -89,7 +90,10 @@ export default function ClubPage() {
       <section className="bg-cyan-700 text-white text-center py-16">
         <h4 className="text-3xl font-bold mb-6">Get in Touch</h4>
         <p className="text-lg mb-6">Have questions? We&apos;re here to help. Reach out to us today!</p>
-        <button className="bg-white text-cyan-700 px-6 py-3 rounded-xl text-lg font-semibold hover:bg-gray-200 transition">
+        <button
+          className="bg-white text-cyan-700 px-6 py-3 rounded-xl text-lg font-semibold hover:bg-gray-200 transition"
+          onClick={() => router.push("/contact")}
+        >
           Contact Us
         </button>
       </section>

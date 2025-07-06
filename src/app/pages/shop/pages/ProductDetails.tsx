@@ -29,7 +29,7 @@ const ProductDetails: React.FC = () => {
     <div>
       <Image src={product.image} alt={product.name} width={500} height={500} />
       <p>{product.description}</p>
-      <p>Price: ${product.price.toFixed(2)}</p>
+      <p>Price: ${product.price?.toFixed(2)}</p>
       <button>Add to Cart</button>
     </div>
   );
