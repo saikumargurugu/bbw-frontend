@@ -12,7 +12,18 @@ import { toast } from "react-toastify"; // Import toast for notifications
  */
 const appendQueryParams = (url: string, params?: Record<string, any>): string => {
   if (!params) return url;
-  const queryString = new URLSearchParams(params).toString();
+  const encodedParams: Record<string, any> = {};
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+      // Always encode string values (including JSON strings)
+      console.log(`Encoding key: ${key}, value: ${JSON.stringify(params[key])}`);
+      encodedParams[key] =
+        typeof params[key] === "string"
+          ? encodeURIComponent(params[key])
+          : params[key];
+    }
+  }
+  const queryString = new URLSearchParams(encodedParams).toString();
   return `${url}?${queryString}`;
 };
 

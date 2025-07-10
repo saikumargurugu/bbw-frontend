@@ -2,8 +2,9 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Router from "next/router";
+import { getApiBaseUrl } from "../pages/shop/services/shopService";
 
-const backendBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000/api";
+const backendBaseUrl = getApiBaseUrl(); 
 
 const apiClient = axios.create({
     baseURL: backendBaseUrl,
