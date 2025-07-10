@@ -82,7 +82,8 @@ const ShopPage: React.FC = () => {
       </div>
     );
   }
-
+  console.log(JSON.stringify(filteredProducts), "Filtered Products");
+  
   return (
     <div className="flex">
       <FiltersSidebar
@@ -90,10 +91,22 @@ const ShopPage: React.FC = () => {
         brands={brands}
         onFilterChange={handleFilterChange}
       />
-      <div className="flex-1 p-4">
-        <h1>Shop</h1>
+      <div className="flex-1 p-2 md:p-4">
+        <h1 className="text-xl md:text-2xl font-bold mb-4">Shop</h1>
         {filteredProducts && filteredProducts.length > 0 ? (
-          <ProductList products={filteredProducts} onAddToCart={handleAddToCart} />
+          <ProductList
+            products={filteredProducts}
+            onAddToCart={handleAddToCart}
+            gridClassName="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4"
+            page={products.page || 1}
+            setPage={(page: number) => {
+              // You may want to dispatch an action or update state here
+              // Example: dispatch(fetchProducts(dispatch, { page }))
+              fetchProducts(dispatch, { page });
+
+            }}
+            count={products.count || filteredProducts.length}
+          />
         ) : (
           <div>No products found.</div>
         )}
