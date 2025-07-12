@@ -101,7 +101,7 @@ export default function FiltersSidebar({ categories, brands, onFilterChange }: F
         <div className="mb-6">
           <h3 className="font-semibold mb-2">Brands</h3>
           <ul>
-            {brands.map((brand) => (
+            {brands.length&&brands?.map((brand) => (
               <li key={brand.id} className="flex items-center mb-2">
                 <input
                   type="checkbox"
@@ -114,7 +114,7 @@ export default function FiltersSidebar({ categories, brands, onFilterChange }: F
             ))}
           </ul>
         </div>
-        {categories.map((category) => (
+        {categories.length>0&&categories.map((category) => (
           <div key={category.id} className="mb-6">
             <div className="flex items-center mb-2">
               <input
