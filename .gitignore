@@ -19,6 +19,7 @@
 
 # production
 /build
+/public/BB UPDATED
 
 # misc
 .DS_Store

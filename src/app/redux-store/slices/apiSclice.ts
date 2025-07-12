@@ -15,8 +15,45 @@ interface ApiState {
 const initialState: ApiState = {
   models: {
     layoutRoutes: {
-      navLinks: [],
-      fotterText: "",
+      navLinks: [
+        {
+            "label": "Home",
+            "href": "/"
+        },
+        {
+            "label": "Club",
+            "href": "/club"
+        },
+        {
+            "label": "Services",
+            "href": "/services"
+        },
+        {
+            "label": "Academy",
+            "href": "/academy"
+        },
+        {
+            "label": "Court Hire",
+            "href": "/court-hire"
+        },
+        {
+            "label": "Socials",
+            "href": "/socials"
+        },
+        {
+            "label": "Contact",
+            "href": "/contact"
+        },
+        // {
+        //     "label": "Shop",
+        //     "href": "/shop"
+        // },
+        // {
+        //     "label": "Sign In",
+        //     "href": "/sign-up"
+        // }
+    ],
+      fotterText: "Brisbane Badminton. All rights reserved.",
     },
     products: [], 
     brands: [], 
@@ -85,7 +122,7 @@ const apiSlice = createSlice({
     },
     apiCallFailed(state, action: PayloadAction<{ model: string; error: string }>) {
       const { model } = action.payload;
-      state.models[model] = initialState.models[model]||{}; // Clear the model data on error
+      state.models[model] = initialState.models[model] || {};
       state.status[model] = { loading: false, success: false, error: true };
     },
   },

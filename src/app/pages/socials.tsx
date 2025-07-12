@@ -2,33 +2,48 @@
 
 import React from 'react';
 import Carousel from '@/app/components/Carousel';
-import Image from 'next/image';
-import { Button } from '@mui/material';
+import CardCarousel from '@/app/components/CardCarousel';
 
 const events = [
   {
     title: 'Badminton Night',
-    date: 'Every Friday, 6 PM',
+    date: 'Every Day',
     description:
       'Join us for a casual night of badminton! Meet new people, play friendly matches, and enjoy snacks and drinks.',
-    image: '/images/socials/badminton-night.jpg',
-    link: '/events/badminton-night',
+    image: 'https://images.unsplash.com/photo-1717659487323-7783a99bcf61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    link: '/contact',
+  },
+  {
+    title: 'Adult Socials',
+    date: 'Every Day',
+    image: 'https://images.unsplash.com/photo-1659081463572-4c5903a309e6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description:
+      'A charity event to raise funds for local youth badminton programs. Compete and contribute to a good cause!',
+    link: '/contact',
+  },
+  {
+    title: 'Kids Socials',
+    date: 'Monday, Wednesday, Friday, Saturday',
+    description:
+      'A day for the entire family! Come for a friendly tournament, activities for all ages, and delicious food and beverages.',
+    image: 'https://images.unsplash.com/photo-1718452739586-5b467f1f109b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    link: '/contact',
+  },
+  {
+    title: 'Family Fun Day',
+    date: 'Sunday',
+    description:
+      'A day of fun for the whole family! Enjoy badminton games, food stalls, and activities for kids.',
+    image: 'https://images.unsplash.com/photo-1718452739586-5b467f1f109b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    link: '/contact',
   },
   {
     title: 'Charity Tournament',
-    date: 'August 21, 2025',
+    date: '',
     description:
       'A charity event to raise funds for local youth badminton programs. Compete and contribute to a good cause!',
-    image: '/images/socials/charity-tournament.jpg',
-    link: '/events/charity-tournament',
-  },
-  {
-    title: 'Community Fun Day',
-    date: 'September 5, 2025',
-    description:
-      'A day for the entire family! Come for a friendly tournament, activities for all ages, and delicious food and beverages.',
-    image: '/images/socials/community-fun-day.jpg',
-    link: '/events/community-fun-day',
+    image: 'https://images.unsplash.com/photo-1717659487323-7783a99bcf61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    link: '/contact',
   },
 ];
 
@@ -46,31 +61,7 @@ export default function SocialsPage() {
   return (
     <div>
       <Carousel slides={HeroData} />
-
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 grid gap-6 md:grid-cols-3">
-        {events.map((event, idx) => (
-          <div
-            key={idx}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105"
-          >
-            <Image
-              src={event.image}
-              alt={event.title}
-              width={500}
-              height={300}
-              className="object-cover h-48 w-full rounded-t-xl"
-            />
-            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 dark:text-cyan-300 mt-4 mb-2">
-              {event.title}
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">{event.date}</p>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">{event.description}</p>
-            <Button variant="contained" color="primary" className="mt-4 w-full" href={event.link}>
-              Learn More
-            </Button>
-          </div>
-        ))}
-      </section>
+      <CardCarousel events={events} />
     </div>
   );
 }

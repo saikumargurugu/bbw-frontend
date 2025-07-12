@@ -9,8 +9,8 @@ const facilities = [
     description: 'Play in our state-of-the-art indoor courts, designed for the best badminton experience.',
   },
   {
-    title: 'Fitness Center',
-    description: 'Our modern fitness center helps players improve their agility, strength, and endurance.',
+    title: 'Club Members',
+    description: 'Join our vibrant community of badminton enthusiasts and make new friends. Club memeberships are open for all skill levels. Just @99 per year. Contact us to join.',
   },
   {
     title: 'Pro Shop',
@@ -87,7 +87,9 @@ export default function ClubPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-cyan-700 text-white text-center py-16">
+      <section
+      style={{ background: "oklch(0.39 0.13 24.4)" }}
+      className="text-white text-center py-16">
         <h4 className="text-3xl font-bold mb-6">Get in Touch</h4>
         <p className="text-lg mb-6">Have questions? We&apos;re here to help. Reach out to us today!</p>
         <button

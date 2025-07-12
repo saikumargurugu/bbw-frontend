@@ -10,6 +10,9 @@ const config: Config = {
             animation: {
                 'spin-slow': 'spin 2s linear infinite',
             },
+            colors: {
+                bgThemeDark: 'oklch(0.39 0.13 24.4)',
+            },
         },
     },
     // darkMode: 'class', // Enable dark mode
