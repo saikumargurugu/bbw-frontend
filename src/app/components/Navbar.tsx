@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Drawer,
@@ -16,6 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
+import LogoBlack from "./Logo/LogoBlack";
 
 export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,11 +45,14 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   );
 
   return (
-    <AppBar position="sticky" className="bg-gradient-to-r from-cyan-700 to-blue-500 shadow-md">
+    <AppBar
+      position="sticky"
+      color="transparent"
+      elevation={4}
+      sx={{ backgroundColor: "#dc2626 !important" }} // Tailwind's red-600 hex
+    >
       <Toolbar className="flex justify-between px-2">
-        <Typography variant="h6" className="font-bold text-white">
-          🏸 Badminton Association
-        </Typography>
+        <LogoBlack variant={isMobile ? "min" : "full"} />
 
         {!isMobile ? (
           <div className="flex space-x-2">

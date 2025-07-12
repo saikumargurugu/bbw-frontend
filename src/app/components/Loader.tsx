@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import badmintonLoader from "@/public/lottie-loader_transparent.json";
+import badmintonLoader from "@/public/NewRedLoader.json";
 
 interface LoaderProps {
   show?: boolean;
