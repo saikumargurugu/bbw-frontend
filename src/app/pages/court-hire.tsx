@@ -58,7 +58,9 @@ export default function CourtHirePage() {
       {/* Booking Button (Only visible if showBooking is false) */}
       {!showBooking && (
         <Box className="text-center py-8">
-          <Button variant="contained" color="primary" size="large" onClick={() => setShowBooking(true)}>
+          <Button variant="contained" color="primary" size="large" 
+                onClick={() => window.open("https://badmintonbrisbane.yepbooking.com.au/", "_blank")}
+            >
             Book Now
           </Button>
         </Box>

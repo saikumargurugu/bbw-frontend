@@ -14,22 +14,35 @@ const programs = [
 
 
 const coaches = [
-    {
-      name: 'Rajesh Sharma',
-      title: 'Head Coach',
-      image: '/images/academy/coach1.jpg',
-    },
-    {
-      name: 'Sneha Patel',
-      title: 'Fitness Trainer',
-      image: '/images/academy/coach2.jpg',
-    },
-    {
-      name: 'Anil Kumar',
-      title: 'Junior Coach',
-      image: '/images/academy/coach3.jpg',
-    },
-  ];
+  {
+    name: 'Pavan ',
+    title: 'Head Coach',
+    image: '/images/academy/coach1.jpg',
+  },
+  {
+    name: 'Avinash Srinivas',
+    title: 'Advanced Trainer',
+    image: '/images/academy/coach2.jpg',
+    acheivements: [
+      '2024 City of Brisbane OMD Champion',
+      '2023 & 2024 Qld State Championship',
+      'OMD Silver Medalist',
+      '2024 BWF Events Participated',
+      'Sathio Group Australian Open Super 500',
+      'Guwahati Masters Super 100',
+      'Odisha Masters Super 100',
+      'Sydney International Challenge',
+      'Bendigo International Challenge',
+      'Kampala International & Future Series',
+    ]
+  },
+  {
+    name: 'Aurthur Lee',
+    title: 'Junior Coach',
+    image: '/images/academy/coach3.jpg',
+    acheivements: ['Ex- QLD Junior Representative', '2021 City of Brisbane Champion AMS Champion', '2022 QLD Open AMS Champion'],
+  },
+];
 
 const HeroData = [
   { image: '/images/academy/academy-hero.jpg', caption: 'Badminton Academy' },
@@ -71,13 +84,13 @@ export default function AcademyPage() {
         <h3 className="text-3xl font-semibold text-cyan-700 dark:text-cyan-300 mb-8 text-center">Meet Our Coaches</h3>
         <div className="grid md:grid-cols-3 gap-8">
           {coaches.map((coach, idx) => (
-              <Card key={idx} className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105">
+            <Card key={idx} className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105">
               <CardContent className="flex flex-col items-center">
                 <Avatar
                   src={coach.image}
                   alt={coach.name}
                   sx={{ width: 110, height: 110, marginBottom: '1rem' }}
-                  />
+                />
                 <Typography variant="h5" className="font-bold text-cyan-700">{coach.name}</Typography>
                 <Typography variant="body1" className="mt-2 text-gray-600 dark:text-gray-300">{coach.title}</Typography>
               </CardContent>
@@ -86,8 +99,10 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-cyan-700 text-white text-center py-16">
+      {/* info section */}
+      <section
+        style={{ background: "oklch(0.39 0.13 24.4)" }}
+        className="text-white text-center py-16">
         <h4 className="text-4xl font-bold mb-6">Ready to Join the Academy?</h4>
         <p className="text-xl mb-6">Registrations are open. Limited spots available!</p>
         <Button variant="contained" className="text-lg bg-white text-cyan-700 hover:bg-gray-200 px-6 py-3 rounded-xl">
