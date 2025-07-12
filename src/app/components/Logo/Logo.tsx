@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Logo({ variant = "full" }: { variant?: "min" | "full" }) {
   return (
       <Image
-        src={variant === "min" ? "/logos/logoMin.svg" : "/logos/logoFull.svg"}
+        src={variant === "min" ? "/logos/LogoMin.svg" : "/logos/LogoFull.svg"}
         alt="Brisbane Badmintion"
         width={32} // Adjust width as needed
         height={32} // Adjust height as needed
