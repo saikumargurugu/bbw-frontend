@@ -5,11 +5,13 @@ import React, { useEffect, useState } from 'react';
 export type Slide = {
   image: string;
   caption: string;
+  description?: string;
+  buttons?: { label: string; url: string; newTab?: boolean }[];
 };
 
 export interface CarouselProps {
   slides: Slide[];
-  className?: string; // Optional className prop for custom styling
+  className?: string;
 }
 
 export default function Carousel({ slides, className }: CarouselProps) {
@@ -34,8 +36,7 @@ export default function Carousel({ slides, className }: CarouselProps) {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? 'opacity-100' : 'opacity-0'
-            }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
         >
           <Image
             src={getImageSrc(slide.image)}
@@ -44,8 +45,26 @@ export default function Carousel({ slides, className }: CarouselProps) {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-center p-4 text-lg sm:text-3xl font-semibold backdrop-blur-sm">
-            <span className="animate-fade-in">{slide.caption}</span>
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 text-white text-center p-4">
+            <span className="text-lg sm:text-3xl font-semibold mb-2">{slide.caption}</span>
+            {slide.description && (
+              <span className="text-base sm:text-xl font-normal mb-4">{slide.description}</span>
+            )}
+            {slide.buttons && (
+              <div className="flex flex-wrap gap-3 justify-center mt-2">
+                {slide.buttons.map((btn, idx) => (
+                  <a
+                    key={idx}
+                    href={btn.url}
+                    target={btn.newTab ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                    className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold text-sm transition"
+                  >
+                    {btn.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       ))}

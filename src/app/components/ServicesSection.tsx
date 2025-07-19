@@ -1,51 +1,70 @@
 import React from "react";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-interface ServiceConfig {
-  url: string;
-  name: string;
-  newTab: boolean;
-}
-
-interface Service {
+interface ServiceType {
   title: string;
   description: string;
-  config: ServiceConfig;
+  config: {
+    url: string;
+    name: string;
+    newTab: boolean;
+  };
+  image?: string;
 }
 
-export default function ServicesSection({ services }: { services: Service[] }) {
-  const router = useRouter();
+const serviceVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
 
+export default function ServicesSection({ services }: { services: ServiceType[] }) {
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 grid gap-6 md:grid-cols-3">
+    <div className="w-full px-[8%] py-12 space-y-16 bg-gradient-to-br from-cyan-50 via-white to-red-50">
       {services.map((service, idx) => (
-        <div
-          key={idx}
-          className="relative bg-white  rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105 cursor-pointer"
+        <motion.div
+          key={service.title}
+          className={`flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-16 rounded-3xl shadow-lg bg-white/80 backdrop-blur-md p-6 md:p-12 ${
+            idx % 2 === 1 ? "md:flex-row-reverse" : ""
+          }`}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={serviceVariants}
         >
-          <h3 className="text-xl sm:text-2xl font-bold text-cyan-700  mb-2">
-            {service.title}
-          </h3>
-          <p className="text-gray-600 ">{service.description}</p>
-          <a
-            href={service.config.url}
-            target={service.config.newTab ? "_blank" : "_self"}
-            rel={service.config.newTab ? "noopener noreferrer" : undefined}
-            className="absolute bottom-4 right-4 px-3 py-1 text-sm bg-cyan-700 text-white rounded-lg shadow hover:bg-cyan-800 transition"
-            onClick={e => {
-              e.stopPropagation();
-              if (service.config.newTab) {
-                window.open(service.config.url, "_blank");
-              } else {
-                e.preventDefault();
-                router.push(service.config.url);
-              }
-            }}
+          <motion.div
+            className="w-full md:w-1/2 flex justify-center items-center"
+            initial={{ scale: 0.95, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
           >
-            {service.config.name}
-          </a>
-        </div>
+            <Image
+              src={
+                service.image ||
+                `/images/image${(idx % 6) + 1}.jpg`
+              }
+              alt={service.title}
+              width={700}
+              height={400}
+              className="rounded-2xl object-cover w-full h-64 md:h-96 shadow-xl"
+            />
+          </motion.div>
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-cyan-700 mb-4">{service.title}</h2>
+            <p className="text-lg md:text-xl text-gray-700 mb-6">{service.description}</p>
+            <a
+              href={service.config.url}
+              target={service.config.newTab ? "_blank" : "_self"}
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-red-600 text-white px-3 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm self-end mt-2"
+              style={{ alignSelf: "flex-end" }}
+            >
+              {service.config.name}
+            </a>
+          </div>
+        </motion.div>
       ))}
-    </section>
+    </div>
   );
 }

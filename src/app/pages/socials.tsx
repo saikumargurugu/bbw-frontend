@@ -3,6 +3,7 @@
 import React from 'react';
 import Carousel from '@/app/components/Carousel';
 import CardCarousel from '@/app/components/CardCarousel';
+import { HeroData } from './Home';
 
 const events = [
   {
@@ -47,15 +48,6 @@ const events = [
   },
 ];
 
-const HeroData = [
-  { image: '/images/socials/socials-hero.jpg', caption: 'Join Our Social Events' },
-  { image: '/images/image1.jpg', caption: 'Master the Smash' },
-  { image: '/images/image2.jpg', caption: 'Agility in Motion' },
-  { image: '/images/image3.jpg', caption: 'Precision and Power' },
-  { image: '/images/image4.jpg', caption: 'Team Spirit' },
-  { image: '/images/image5.jpg', caption: 'Train Hard, Play Hard' },
-  { image: '/images/image6.jpg', caption: 'Join the Community' },
-];
 
 export default function SocialsPage() {
   return (

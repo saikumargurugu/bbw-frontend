@@ -4,6 +4,7 @@ import React from 'react';
 import { Button, Typography, Paper } from '@mui/material';
 import Image from 'next/image';
 import Carousel from '@/app/components/Carousel';
+import { HeroData } from './Home';
 
 const services = [
 	{
@@ -29,11 +30,6 @@ const services = [
 	},
 ];
 
-const HeroData = [
-	{ image: '/images/services/services-hero.jpg', caption: 'Our Premium Services' },
-	{ image: '/images/image1.jpg', caption: 'Master the Smash' },
-	{ image: '/images/image2.jpg', caption: 'Agility in Motion' },
-];
 
 export default function ServicesPage() {
 	return (
