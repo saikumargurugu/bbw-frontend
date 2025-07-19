@@ -3,6 +3,7 @@
 import React from 'react';
 import Carousel from '@/app/components/Carousel';
 import { Avatar, Button, Card, CardContent, Typography } from '@mui/material';
+import { HeroData } from './Home';
 
 const programs = [
   { title: 'Beginner Batches (Age 7+)', description: 'Perfect for young players starting their badminton journey.' },
@@ -44,11 +45,7 @@ const coaches = [
   },
 ];
 
-const HeroData = [
-  { image: '/images/academy/academy-hero.jpg', caption: 'Badminton Academy' },
-  { image: '/images/image1.jpg', caption: 'Train Hard, Play Hard' },
-  { image: '/images/image2.jpg', caption: 'Agility in Motion' },
-];
+
 
 export default function AcademyPage() {
   return (

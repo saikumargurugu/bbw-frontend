@@ -6,6 +6,7 @@ import { Button, IconButton } from '@mui/material';
 import { useRouter } from "next/navigation";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { motion } from "framer-motion";
 
 interface EventType {
   title: string;
@@ -151,8 +152,11 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
           }}
         >
           {events.map((event, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeInOut" }}
               className={`
                 flex-shrink-0 bg-white rounded-2xl shadow-md p-4 sm:p-8 m-2 hover:shadow-xl transition-all duration-500
                 ${isMobile
@@ -193,7 +197,7 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
               >
                 Learn More
               </Button>
-            </div>
+            </motion.div>
           ))}
         </div>
 

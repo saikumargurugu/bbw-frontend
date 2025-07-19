@@ -33,9 +33,9 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
             key={idx}
             component="div"
             onClick={handleDrawerToggle}
-            className="my-1 rounded-md hover:bg-blue-100  transition-colors px-2"
+            className="my-1 rounded-md hover:bg-blue-100  text-white"> px-2"
           >
-            <Link href={link.href} className="text-md text-red-600 ">
+            <Link href={link.href} className="text-md text-white ">
               {link.label}
             </Link>
           </ListItem>
@@ -58,7 +58,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
           <div className="flex space-x-2">
             {navLinks.map((link, idx) => (
               <Button key={idx} color="inherit">
-                <Link href={link.href} className="hover:text-yellow-300 transition-colors">
+                <Link href={link.href} className="hover:text-yellow-300 text-white">
                   {link.label}
                 </Link>
               </Button>
