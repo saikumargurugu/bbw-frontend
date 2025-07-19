@@ -22,23 +22,22 @@ const facilities = [
 
 const events = [
 	{
-		title: 'Annual Club Tournament',
-		date: 'July 15, 2025',
-		description: 'Compete in our prestigious annual club tournament and showcase your skills. Open to all members, with exciting prizes and a fun, competitive atmosphere.',
-	},
+		title: 'Academy Tournament',
+		date: 'End of Every Trimester',
+		description: 'Join our academy tournament to test your skills against fellow players. Open to all academy members, this event is a great opportunity to showcase your progress and compete in a friendly environment. Prizes for winners!',	},
 	{
 		title: 'Club Socials',
-		date: 'Every First Friday of the Month',
+		date: 'Every Day',
 		description: 'A casual meet-up for members to socialize, play badminton, and have fun. Enjoy refreshments, friendly matches, and networking opportunities in a relaxed setting.',
 	},
 ];
 
 
 
-const fadeUp = {
-	hidden: { opacity: 0, y: 40 },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-};
+// const fadeUp = {
+// 	hidden: { opacity: 0, y: 40 },
+// 	visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+// };
 
 export default function ClubPage() {
 	const router = useRouter();
@@ -53,7 +52,7 @@ export default function ClubPage() {
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: true, amount: 0.3 }}
-				variants={fadeUp}
+				// variants={fadeUp}
 			>
 				<h2 className="text-3xl sm:text-4xl font-bold text-cyan-700 mb-6">
 					About the Club
@@ -73,7 +72,7 @@ export default function ClubPage() {
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true, amount: 0.3 }}
-						variants={fadeUp}
+						// variants={fadeUp}
 					>
 						<h3 className="text-xl sm:text-2xl font-bold text-cyan-700 mb-2 text-center">
 							{facility.title}
@@ -92,7 +91,7 @@ export default function ClubPage() {
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true, amount: 0.3 }}
-						variants={fadeUp}
+						// variants={fadeUp}
 					>
 						<h3 className="text-xl font-bold text-cyan-700 mb-2">
 							{event.title}
@@ -110,7 +109,7 @@ export default function ClubPage() {
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: true, amount: 0.3 }}
-				variants={fadeUp}
+				// variants={fadeUp}
 			>
 				<h4 className="text-3xl font-bold mb-6">Get in Touch</h4>
 				<p className="text-lg mb-6">Have questions? We&apos;re here to help. Reach out to us today!</p>

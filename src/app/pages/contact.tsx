@@ -29,7 +29,16 @@ export default function ContactUsPage() {
             Contact Us
           </Typography>
           <Typography variant="h6" className="font-bold text-red-600 mb-4">Our Address</Typography>
-          <Typography className="text-lg text-gray-700">{contactData.address}</Typography>
+          <Typography className="text-lg text-gray-700">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=39+Quilton+Pl,+Crestmead+QLD+4132,+Australia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-cyan-700 hover:text-red-600 transition"
+            >
+              {contactData.address}
+            </a>
+          </Typography>
           <Typography className="mt-6 text-lg text-gray-700">
             <span className="font-bold text-cyan-700">Call us:</span> {contactData.phone}
           </Typography>

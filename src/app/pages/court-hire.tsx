@@ -54,14 +54,17 @@ export default function CourtHirePage() {
         </p>
       </section>
 
-      {/* Booking Button (Only visible if showBooking is false) */}
       {!showBooking && (
         <Box className="text-center py-8">
-          <Button variant="contained" color="primary" size="large"
-            onClick={() => window.open("https://badmintonbrisbane.yepbooking.com.au/", "_blank")}
+          <a
+            href="https://badmintonbrisbane.yepbooking.com.au/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center bg-red-600 text-white px-4 py-3 rounded-md font-semibold hover:bg-red-700 transition text-lg self-end mt-2"
+            style={{ alignSelf: "flex-end" }}
           >
             Book Now
-          </Button>
+          </a>
         </Box>
       )}
       {showBooking && (
@@ -99,17 +102,13 @@ export default function CourtHirePage() {
           </div>
           <Box className="text-center py-8">
             <a
-              href="#"
-              target="_self"
+              href="https://badmintonbrisbane.yepbooking.com.au/"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-red-600 text-white px-4 py-3 rounded-md font-semibold hover:bg-red-700 transition text-lg self-end mt-2"
               style={{ alignSelf: "flex-end" }}
-              onClick={(e) => {
-                e.preventDefault();
-                alert(`Booking Confirmed for ${selectedSlots.size} slots`);
-              }}
             >
-              Confirm Booking
+              Book Now
             </a>
           </Box>
         </section>
