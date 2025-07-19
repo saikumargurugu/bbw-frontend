@@ -18,7 +18,7 @@ Our facility features high-quality flooring, lighting, and equipment for an opti
 	},
 	{
 		title: 'QBA Membership',
-		image: 'https://images.unsplash.com/photo-1617696618050-b0fef0c666af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		image: 'https://images.unsplash.com/photo-1723633236252-eb7badabb34c?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 		description: `QBA Membership is Queensland Badminton Association membership which allows you to play competition at the Queensland level and provides insurance during these competitions.
 Book our world-class courts at your convenience.
 Our facility features high-quality flooring, lighting, and equipment for an optimal playing experience. Courts are available for singles, doubles, and group bookings. Reserve online and enjoy hassle-free access for practice or matches.`,
@@ -120,7 +120,7 @@ export const HeroData = [
 	{
 		image: '/images/image6.jpg',
 		caption: 'QBA Club Membership',
-		description: 'Become a QBA member to play at the Queensland level and get insurance during competitions.',
+		description: 'Become a QBA member to play at the Queensland level this covers insurance during competitions.',
 		buttons: [
 			{ label: 'Join QBA', url: 'https://badmintonbrisbane.yepbooking.com.au/', newTab: true }
 		]

@@ -26,16 +26,16 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   };  
   // Sidebar content for mobile view
   const drawer = (
-    <Box className="w-60 p-2 bg-white  h-full" role="presentation">
+    <Box className="w-60 p-2 bg-red-600 h-full text-white" role="presentation">
       <List>
         {navLinks.map((link: navBarTypes, idx: number) => (
           <ListItem
             key={idx}
             component="div"
             onClick={handleDrawerToggle}
-            className="my-1 rounded-md hover:bg-blue-100  text-white"> px-2"
+            className="my-1 rounded-md hover:bg-red-700"
           >
-            <Link href={link.href} className="text-md text-white ">
+            <Link href={link.href} className="text-md text-white w-full block px-2 py-2">
               {link.label}
             </Link>
           </ListItem>

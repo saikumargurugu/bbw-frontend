@@ -24,7 +24,7 @@ const Loader: React.FC<LoaderProps> = ({
       setVisible(true);
       timer = setTimeout(() => {
         if (!show) setVisible(false);
-      }, 500);
+      }, 700);
     } else {
       timer = setTimeout(() => setVisible(false), 500); // was 2000
     }

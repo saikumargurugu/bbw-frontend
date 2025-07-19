@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 interface ServiceType {
   title: string;
   description: string;
-  config: {
+  config?: {
     url: string;
     name: string;
     newTab: boolean;
@@ -13,10 +13,14 @@ interface ServiceType {
   image?: string;
 }
 
-const serviceVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-};
+// const serviceVariants = {
+//   hidden: { opacity: 0, y: 40 },
+//   visible: { 
+//     opacity: 1, 
+//     y: 0, 
+//     transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] } // Use cubic-bezier easing
+//   },
+// };
 
 export default function ServicesSection({ services }: { services: ServiceType[] }) {
   return (
@@ -30,7 +34,7 @@ export default function ServicesSection({ services }: { services: ServiceType[] 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          variants={serviceVariants}
+          // variants={serviceVariants}
         >
           <motion.div
             className="w-full md:w-1/2 flex justify-center items-center"
@@ -53,15 +57,17 @@ export default function ServicesSection({ services }: { services: ServiceType[] 
           <div className="w-full md:w-1/2 flex flex-col justify-center">
             <h2 className="text-2xl md:text-4xl font-bold text-cyan-700 mb-4">{service.title}</h2>
             <p className="text-lg md:text-xl text-gray-700 mb-6">{service.description}</p>
-            <a
-              href={service.config.url}
-              target={service.config.newTab ? "_blank" : "_self"}
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-red-600 text-white px-3 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm self-end mt-2"
-              style={{ alignSelf: "flex-end" }}
-            >
-              {service.config.name}
-            </a>
+            {service.config && (
+              <a
+                href={service.config.url}
+                target={service.config.newTab ? "_blank" : "_self"}
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-red-600 text-white px-3 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm self-end mt-2"
+                style={{ alignSelf: "flex-end" }}
+              >
+                {service.config.name}
+              </a>
+            )}
           </div>
         </motion.div>
       ))}
