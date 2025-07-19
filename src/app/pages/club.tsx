@@ -46,10 +46,10 @@ export default function ClubPage() {
 
       {/* About Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-cyan-700 dark:text-cyan-300 mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-cyan-700  mb-6">
           About the Club
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-lg text-gray-600  leading-relaxed">
           Our club is dedicated to creating a friendly and supportive environment for badminton enthusiasts of all levels.
           Whether you&apos;re a beginner or an advanced player, you&apos;ll find the perfect place to grow your skills and enjoy the sport with others.
         </p>
@@ -60,12 +60,12 @@ export default function ClubPage() {
         {facilities.map((facility, idx) => (
           <div
             key={idx}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105"
+            className="bg-white  rounded-2xl shadow-md p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 dark:text-cyan-300 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700  mb-2">
               {facility.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300">{facility.description}</p>
+            <p className="text-gray-600 ">{facility.description}</p>
           </div>
         ))}
       </section>
@@ -75,13 +75,13 @@ export default function ClubPage() {
         {events.map((event, idx) => (
           <div
             key={idx}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105"
+            className="bg-white  rounded-2xl shadow-md p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105"
           >
-            <h3 className="text-xl font-bold text-cyan-700 dark:text-cyan-300 mb-2">
+            <h3 className="text-xl font-bold text-cyan-700  mb-2">
               {event.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300">{event.date}</p>
-            <p className="text-gray-600 dark:text-gray-300">{event.description}</p>
+            <p className="text-gray-600 ">{event.date}</p>
+            <p className="text-gray-600 ">{event.description}</p>
           </div>
         ))}
       </section>

@@ -36,8 +36,8 @@ export default function CourtHirePage() {
 
       {/* Court Hire Information */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center">
-        <h2 className="text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-8">Court Hire Information</h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+        <h2 className="text-4xl font-extrabold text-cyan-700  mb-8">Court Hire Information</h2>
+        <p className="text-lg text-gray-600 leading-relaxed">
           Reserve one of our world-class badminton courts today and take your game to the next level!
         </p>
       </section>
@@ -47,10 +47,10 @@ export default function CourtHirePage() {
         {courtsTypes.map((court, idx) => (
           <div
             key={idx}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105"
+            className="bg-white  rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 dark:text-cyan-300">{court}</h3>
-            <p className="text-gray-600 dark:text-gray-300">Book now and enjoy top-tier facilities.</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 ">{court}</h3>
+            <p className="text-gray-600 ">Book now and enjoy top-tier facilities.</p>
           </div>
         ))}
       </section>
@@ -67,7 +67,7 @@ export default function CourtHirePage() {
       )}
       {showBooking && (
         <section className="max-w-6xl mx-auto px-4 py-16">
-          <h2 className="text-3xl font-bold text-cyan-700 dark:text-cyan-300 mb-6 text-center">Select Your Booking Slots</h2>
+          <h2 className="text-3xl font-bold text-cyan-700  mb-6 text-center">Select Your Booking Slots</h2>
           <div className="overflow-x-auto">
             <table className="table-auto border-collapse border border-gray-500 w-full">
               <thead>

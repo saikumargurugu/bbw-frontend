@@ -154,7 +154,7 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
             <div
               key={idx}
               className={`
-                flex-shrink-0 bg-white dark:bg-gray-800 rounded-2xl shadow-md p-4 sm:p-8 m-2 hover:shadow-xl transition-all duration-500
+                flex-shrink-0 bg-white rounded-2xl shadow-md p-4 sm:p-8 m-2 hover:shadow-xl transition-all duration-500
                 ${isMobile
                   ? "w-full min-w-full max-w-full snap-center"
                   : idx === centerIdx
@@ -176,19 +176,19 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
                 className={`object-cover w-full rounded-t-xl ${isMobile ? "h-56" : "h-72 sm:h-80"}`}
                 style={{ objectFit: isMobile ? "cover" : "contain" }}
               />
-              <h3 className={`font-bold text-cyan-700 dark:text-cyan-300 mt-3 mb-1 sm:mt-4 sm:mb-2 ${isMobile ? "text-lg" : "text-base sm:text-lg"}`}>
+              <h3 className="font-bold text-cyan-700 mt-3 mb-1 sm:mt-4 sm:mb-2 text-lg">
                 {event.title}
               </h3>
-              <p className={`text-gray-600 dark:text-gray-300 ${isMobile ? "text-lg" : "text-base"}`}>
+              <p className="text-gray-600 text-lg">
                 {event.date}
               </p>
-              <p className={`text-gray-600 dark:text-gray-300 mt-1 sm:mt-2 ${isMobile ? "text-lg" : "text-base"}`}>
+              <p className="text-gray-600 mt-1 sm:mt-2 text-lg">
                 {event.description}
               </p>
               <Button
                 variant="contained"
                 color="primary"
-                className={`mt-3 sm:mt-4 w-full ${isMobile ? "text-lg" : "text-base"}`}
+                className="mt-3 sm:mt-4 w-full text-lg"
                 onClick={() => router.push(event.link)}
               >
                 Learn More
