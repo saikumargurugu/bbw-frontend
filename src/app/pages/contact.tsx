@@ -41,8 +41,8 @@ export default function ContactUsPage() {
 
       {/* Contact Form Section */}
       <section className="max-w-6xl mx-auto px-6 sm:px-12 py-24 grid md:grid-cols-1">
-        <Paper className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-12 hover:shadow-xl transition-transform duration-300 hover:scale-105">
-          <Typography className="text-7xl sm:text-8xl font-extrabold tracking-tight text-cyan-700 dark:text-cyan-300 mb-14 text-center">
+        <Paper className="bg-white rounded-2xl shadow-lg p-12 hover:shadow-xl transition-transform duration-300 hover:scale-105">
+          <Typography className="text-7xl sm:text-8xl font-extrabold tracking-tight text-cyan-700  mb-14 text-center">
             Get in Touch
           </Typography>
 
@@ -95,13 +95,13 @@ export default function ContactUsPage() {
 
       {/* Our Location Section */}
       <section className="max-w-6xl mx-auto px-6 sm:px-12 py-24 grid gap-10 md:grid-cols-2">
-        <Paper className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 hover:shadow-xl transition-transform duration-300 hover:scale-105">
+        <Paper className="bg-white  rounded-2xl shadow-md p-8 hover:shadow-xl transition-transform duration-300 hover:scale-105">
           <Typography variant="h6" className="font-bold text-cyan-700 mb-4">Our Address</Typography>
-          <Typography className="text-gray-600 dark:text-gray-300">{contactData.address}</Typography>
-          <Typography className="mt-4 text-gray-600 dark:text-gray-300">Call us: {contactData.phone}</Typography>
-          <Typography className="mt-4 text-gray-600 dark:text-gray-300">Email: {contactData.email}</Typography>
+          <Typography className="text-gray-600 ">{contactData.address}</Typography>
+          <Typography className="mt-4 text-gray-600 ">Call us: {contactData.phone}</Typography>
+          <Typography className="mt-4 text-gray-600 ">Email: {contactData.email}</Typography>
         </Paper>
-        <Paper className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 hover:shadow-xl transition-transform duration-300 hover:scale-105">
+        <Paper className="bg-white  rounded-2xl shadow-md p-8 hover:shadow-xl transition-transform duration-300 hover:scale-105">
           <Typography variant="h6" className="font-bold text-cyan-700 mb-4">Our Location Map</Typography>
           <iframe
             width="100%"

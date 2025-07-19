@@ -15,7 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
-import LogoBlack from "./Logo/LogoBlack";
+import LogoWhite from "./Logo/LogoWhite";
 
 export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,16 +26,16 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   };  
   // Sidebar content for mobile view
   const drawer = (
-    <Box className="w-60 p-2 bg-white dark:bg-gray-900 h-full" role="presentation">
+    <Box className="w-60 p-2 bg-white  h-full" role="presentation">
       <List>
         {navLinks.map((link: navBarTypes, idx: number) => (
           <ListItem
             key={idx}
             component="div"
             onClick={handleDrawerToggle}
-            className="my-1 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition-colors px-2"
+            className="my-1 rounded-md hover:bg-blue-100  transition-colors px-2"
           >
-            <Link href={link.href} className="text-md text-gray-800 dark:text-gray-200">
+            <Link href={link.href} className="text-md text-red-600 ">
               {link.label}
             </Link>
           </ListItem>
@@ -52,7 +52,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
       sx={{ backgroundColor: "#dc2626 !important" }} // Tailwind's red-600 hex
     >
       <Toolbar className="flex justify-between px-2">
-        <LogoBlack variant={isMobile ? "min" : "full"} />
+        <LogoWhite variant={isMobile ? "min" : "full"} />
 
         {!isMobile ? (
           <div className="flex space-x-2">

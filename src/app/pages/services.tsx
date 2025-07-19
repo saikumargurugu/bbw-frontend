@@ -37,19 +37,19 @@ const HeroData = [
 
 export default function ServicesPage() {
 	return (
-		<div className="text-gray-900 dark:text-gray-100">
+		<div className="text-gray-900 ">
 			{/* Hero Section */}
 			<Carousel slides={HeroData} />
 
 			{/* Services Section */}
 			<section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-				<h2 className="text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-8 text-center">
+				<h2 className="text-4xl font-extrabold text-cyan-700 ">
 					Our <span className="text-cyan-500">Services</span>
 				</h2>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					{services.map((service, idx) => (
 						<div key={idx} className="w-full">
-							<Paper className="p-6 shadow-md rounded-2xl bg-white dark:bg-gray-800 hover:shadow-lg transition-transform duration-300 hover:scale-105">
+							<Paper className="p-6 shadow-md rounded-2xl bg-white  hover:shadow-lg transition-transform duration-300 hover:scale-105">
 								<Image
 									src={service.image}
 									alt={service.name}
@@ -65,7 +65,7 @@ export default function ServicesPage() {
 								</Typography>
 								<Typography
 									variant="body1"
-									className="mt-2 text-lg text-gray-600 dark:text-gray-300"
+									className="mt-2 text-lg text-gray-600 "
 								>
 									{service.description}
 								</Typography>

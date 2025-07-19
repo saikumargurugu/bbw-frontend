@@ -21,12 +21,12 @@ export default function ServicesSection({ services }: { services: Service[] }) {
       {services.map((service, idx) => (
         <div
           key={idx}
-          className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105 cursor-pointer"
+          className="relative bg-white  rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105 cursor-pointer"
         >
-          <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 dark:text-cyan-300 mb-2">
+          <h3 className="text-xl sm:text-2xl font-bold text-cyan-700  mb-2">
             {service.title}
           </h3>
-          <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
+          <p className="text-gray-600 ">{service.description}</p>
           <a
             href={service.config.url}
             target={service.config.newTab ? "_blank" : "_self"}

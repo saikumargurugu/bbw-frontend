@@ -57,8 +57,8 @@ export default function AcademyPage() {
 
       {/* About Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center">
-        <h2 className="text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-8">About the Academy</h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+        <h2 className="text-4xl font-extrabold text-cyan-700  mb-8">About the Academy</h2>
+        <p className="text-lg text-gray-600  leading-relaxed">
           Our academy is dedicated to building champions from a young age. We focus on technical skills,
           physical conditioning, and mental toughness, all while fostering a love for the game.
         </p>
@@ -69,22 +69,22 @@ export default function AcademyPage() {
         {programs.map((program, idx) => (
           <div
             key={idx}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105"
+            className="bg-white  rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 dark:text-cyan-300 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700  mb-2">
               {program.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300">{program.description}</p>
+            <p className="text-gray-600 ">{program.description}</p>
           </div>
         ))}
       </section>
 
       {/* Coaches Section */}
       <section className="max-w-6xl mx-auto px-4 py-16">
-        <h3 className="text-3xl font-semibold text-cyan-700 dark:text-cyan-300 mb-8 text-center">Meet Our Coaches</h3>
+        <h3 className="text-3xl font-semibold text-cyan-700  mb-8 text-center">Meet Our Coaches</h3>
         <div className="grid md:grid-cols-3 gap-8">
           {coaches.map((coach, idx) => (
-            <Card key={idx} className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105">
+            <Card key={idx} className="bg-white  shadow-md rounded-xl p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105">
               <CardContent className="flex flex-col items-center">
                 <Avatar
                   src={coach.image}
@@ -92,7 +92,7 @@ export default function AcademyPage() {
                   sx={{ width: 110, height: 110, marginBottom: '1rem' }}
                 />
                 <Typography variant="h5" className="font-bold text-cyan-700">{coach.name}</Typography>
-                <Typography variant="body1" className="mt-2 text-gray-600 dark:text-gray-300">{coach.title}</Typography>
+                <Typography variant="body1" className="mt-2 text-gray-600 ">{coach.title}</Typography>
               </CardContent>
             </Card>
           ))}
