@@ -3,7 +3,9 @@
 import React from 'react';
 import Carousel from '@/app/components/Carousel';
 import { Typography, Paper } from '@mui/material';
+import Image from 'next/image';
 import { HeroData } from './Home';
+import data from './dataBrisbaneBadminton.json';
 
 export default function ContactUsPage() {
   const contactData = {
@@ -20,11 +22,21 @@ export default function ContactUsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-white to-red-100">
-      <Carousel slides={HeroData} />
-
       {/* Vibrant Contact Info Section */}
+      <div className="py-12">
+        <h2 className="text-3xl font-bold text-cyan-700 mt-12 m-6 text-center">
+          Our Contact Information
+        </h2>
+      </div>
       <section className="max-w-6xl mx-auto px-6 sm:px-12 py-24 grid gap-10 md:grid-cols-2">
         <Paper className="bg-white/90 rounded-2xl shadow-2xl p-10 hover:shadow-cyan-200 transition-transform duration-300 hover:scale-105 flex flex-col justify-center items-start">
+          <Image
+            src={data.ContactUs.images[0]}
+            alt={contactData.address}
+            width={600}
+            height={400}
+            className="rounded-2xl shadow-lg object-cover mb-2.5"
+          />
           <Typography className="text-5xl sm:text-6xl font-extrabold tracking-tight text-cyan-700 mb-8">
             Contact Us
           </Typography>

@@ -1,32 +1,44 @@
 // components/Footer.tsx
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Box, Typography, Divider } from "@mui/material";
+import data from "../pages/dataBrisbaneBadminton.json"; // Adjust path if needed
 
 export default function Footer({ fotterText }: { fotterText: string }) {
+  const socials =
+    data.footer?.socials || [
+      { name: "Instagram", url: "https://instagram.com/" },
+      { name: "Facebook", url: "https://facebook.com/" },
+    ];
+
   return (
     <Box
       sx={{
         backgroundColor: "#dc2626 !important",
         color: "white",
         textAlign: { xs: "center", md: "left" },
-        padding: "32px 0 0 0",
+        padding: "32px",
         width: "100%",
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
+        // flexDirection: { xs: "row", md: "row" },
         justifyContent: "space-between",
-        alignItems: { xs: "flex-start", md: "flex-start" },
+        // alignItems: "flex-start",
         flexWrap: "wrap",
         rowGap: 2,
       }}
     >
-      {/* Contact & Address */}
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-center w-full mb-4 md:mb-0 gap-8">
+      {/* Contact & Socials */}
       <Box
         sx={{
           mx: { xs: 0, md: 4 },
           mb: { xs: 2, md: 0 },
           textAlign: { xs: "center", md: "left" },
-          width: { xs: "100%", md: "33%" },
+          width: { xs: "100%", md: "40%" },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: { xs: "center", md: "flex-start" },
         }}
       >
         <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
@@ -59,8 +71,99 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             admin@badmintonbrisbane.com.au
           </a>
         </Typography>
+        {/* Socials */}
+        <Box sx={{ mt: 3, display: "flex", gap: 2, alignItems: "center" }}>
+          {socials.map((social: any, idx: number) => (
+            <a
+              key={idx}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "white",
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                fontWeight: 600,
+                fontSize: 18,
+                marginRight: 16,
+              }}
+            >
+              <Image
+                src={
+                  social.name.toLowerCase().includes("instagram")
+                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                    : social.name.toLowerCase().includes("facebook")
+                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                    : ""
+                }
+                alt={social.name}
+                width={24}
+                height={24}
+                style={{ filter: "invert(1)", marginRight: 6 }}
+                unoptimized
+              />
+              {social.name}
+            </a>
+          ))}
+        </Box>
       </Box>
 
+
+
+      <Box
+        sx={{
+          mx: { xs: 0, md: 4 },
+          mb: { xs: 2, md: 0 },
+          textAlign: { xs: "center", md: "left" },
+          width: { xs: "100%", md: "40%" },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: { xs: "center", md: "flex-start" },
+        }}
+      >
+        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+          Follow Us on Social Media
+        </Typography>
+        {/* Socials */}
+        <Box sx={{ mt: 3, display: "flex", gap: 2, alignItems: "center" }}>
+          {socials.map((social: any, idx: number) => (
+            <a
+              key={idx}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "white",
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                fontWeight: 600,
+                fontSize: 18,
+                marginRight: 16,
+              }}
+            >
+              <Image
+                src={
+                  social.name.toLowerCase().includes("instagram")
+                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                    : social.name.toLowerCase().includes("facebook")
+                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                    : ""
+                }
+                alt={social.name}
+                width={24}
+                height={24}
+                style={{ filter: "invert(1)", marginRight: 6 }}
+                unoptimized
+              />
+              {social.name}
+            </a>
+          ))}
+        </Box>
+      </Box>
       {/* Quick Links */}
       <Box
         sx={{
@@ -73,40 +176,40 @@ export default function Footer({ fotterText }: { fotterText: string }) {
         <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
           Quick Links
         </Typography>
-          <Link
-            href="/academy"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            Academy
-          </Link>
-          <br />
-          <Link
-            href="/services"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            Services
-          </Link>
-          <br />
-          <Link
-            href="/club"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            Club
-          </Link>
-          <br />
-          <Link
-            href="/court-hire"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            Court Hire
-          </Link>
-          <br />
-          <Link
-            href="/contact"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            Contact
-          </Link>
+        <Link
+          href="/academy"
+          style={{ color: "white", textDecoration: "underline" }}
+        >
+          Academy
+        </Link>
+        <br />
+        <Link
+          href="/services"
+          style={{ color: "white", textDecoration: "underline" }}
+        >
+          Services
+        </Link>
+        <br />
+        <Link
+          href="/club"
+          style={{ color: "white", textDecoration: "underline" }}
+        >
+          Club
+        </Link>
+        <br />
+        <Link
+          href="/court-hire"
+          style={{ color: "white", textDecoration: "underline" }}
+        >
+          Court Hire
+        </Link>
+        <br />
+        <Link
+          href="/contact"
+          style={{ color: "white", textDecoration: "underline" }}
+        >
+          Contact
+        </Link>
       </Box>
 
       {/* About/Hours */}
@@ -133,6 +236,9 @@ export default function Footer({ fotterText }: { fotterText: string }) {
           {fotterText}
         </Typography>
       </Box>
+      </div>
+
+      {/* Logo */}
     </Box>
   );
 }

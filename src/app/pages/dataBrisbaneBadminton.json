@@ -40,5 +40,42 @@
       "buttonText": "Book a Court",
       "buttonUrl": "/court-hire"
     }
+  },
+  "footer": {
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "url": "/privacy-policy"
+      },
+      {
+        "text": "Terms of Service",
+        "url": "/terms-of-service"
+      },
+      {
+        "text": "Contact Us",
+        "url": "/contact"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=61565851985037"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/brisbanebadminton/"
+      }
+    ]
+  },
+  "Socials": {
+    "images":[
+      "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/inviteSocials.jpeg"
+    ]
+  },
+  "ContactUs": {
+    "email": "info@brisbanebadminton.com",
+    "images": [
+      "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
+    ]
   }
 }

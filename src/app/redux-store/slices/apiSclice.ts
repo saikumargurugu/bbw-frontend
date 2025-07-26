@@ -44,16 +44,16 @@ const initialState: ApiState = {
             "label": "Contact",
             "href": "/contact"
         },
-        // {
-        //     "label": "Shop",
-        //     "href": "/shop"
-        // },
+        {
+            "label": "Pro Shop",
+            "href": "/pro_shop"
+        },
         // {
         //     "label": "Sign In",
         //     "href": "/sign-up"
         // }
     ],
-      fotterText: "Brisbane Badminton. All rights reserved.",
+      fotterText: "© Badminton Brisbane. All rights reserved.",
     },
     products: [], 
     brands: [], 

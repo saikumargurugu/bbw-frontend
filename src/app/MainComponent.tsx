@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "@/app/components/Layout";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "./redux-store/store";
+import {  useSelector } from "react-redux";
+// import { AppDispatch } from "./redux-store/store";
 import "react-toastify/dist/ReactToastify.css";
-import { fetchLayoutRoutes } from "./bbw_apis/redux-store/actions/generalActions";
+// import { fetchLayoutRoutes } from "./bbw_apis/redux-store/actions/generalActions";
 import Loader from "./components/Loader";
 import { RootState } from "./interface";
 
@@ -16,21 +16,21 @@ export default function MainComponent({ loading, children }: { loading: boolean;
     const layOutProps = useSelector((state: RootState) => state.api.models.layoutRoutes || {});
     const layOutLoadingStatus = useSelector((state: RootState) => state.api.status.layoutRoutes || {});
 
-    const dispatch = useDispatch<AppDispatch>();
-    useEffect(() => {
-        const fetchData = async () => {
-            // setLoading(true);
-            try {
-                await fetchLayoutRoutes(dispatch);
-            } catch (error) {
-                // Optionally, show an error message here
-                console.error("Failed to fetch shop data:", error);
-            } finally {
-                // setLoading(false);
-            }
-        };
-        fetchData();
-    }, [dispatch]);
+    // const dispatch = useDispatch<AppDispatch>();
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         // setLoading(true);
+    //         try {
+    //             await fetchLayoutRoutes(dispatch);
+    //         } catch (error) {
+    //             // Optionally, show an error message here
+    //             console.error("Failed to fetch shop data:", error);
+    //         } finally {
+    //             // setLoading(false);
+    //         }
+    //     };
+    //     fetchData();
+    // }, [dispatch]);
 
 
     return (
@@ -49,7 +49,7 @@ export default function MainComponent({ loading, children }: { loading: boolean;
                             <main className="pt-1">{children}</main>
                         </Layout>
                     ) : (
-                        <div className="text-center text-red-600 mt-10">Navigation data unavailable.</div>
+                        <div className="text-center text-red-600 mt-10"> data unavailable.</div>
                     )
                 }
             </div>
