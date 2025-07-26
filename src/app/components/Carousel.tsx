@@ -20,7 +20,7 @@ export default function Carousel({ slides, className }: CarouselProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [slides?.length]);
 
@@ -32,7 +32,7 @@ export default function Carousel({ slides, className }: CarouselProps) {
   if (!slides.length) return <div className="h-screen">Loading...</div>;
 
   return (
-    <div className={`relative overflow-hidden ${className || 'w-full h-[50vh]'}`}>
+    <div className={`relative overflow-hidden ${className || 'w-full h-[70vh]'}`}>
       {slides.map((slide, index) => (
         <div
           key={index}

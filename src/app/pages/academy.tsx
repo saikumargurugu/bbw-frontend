@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { HeroData } from './Home';
 
 const programs = [
-  { title: 'Beginner Batches (Age 7+)', description: 'Perfect for young players starting their badminton journey. Focus on basic skills, rules, and fun drills.' },
+  { title: 'Beginner Batches (Age 6+)', description: 'Perfect for young players starting their badminton journey. Focus on basic skills, rules, and fun drills.' },
   { title: 'Intermediate Coaching', description: 'Refining skills and game strategies for intermediate players. Includes match play and tactical sessions.' },
   { title: 'Advanced Player Training', description: 'Intensive training designed for competitive athletes. Personalized feedback and advanced techniques.' },
   { title: 'Aglity and speed', description: 'Improve speed, strength, and endurance for peak performance. Includes footwork, and techniques.' },

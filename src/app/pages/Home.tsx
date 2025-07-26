@@ -77,7 +77,7 @@ Our junior academy focuses on skill development, teamwork, and sportsmanship. Pr
 
 export const HeroData = [
 	{
-		image: '/images/image1.jpg',
+		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME1.JPG',
 		caption: 'Court Hire',
 		description: 'Book our world-class courts for singles, doubles, or group play. Enjoy premium facilities and easy online booking.',
 		buttons: [
@@ -86,15 +86,15 @@ export const HeroData = [
 		]
 	},
 	{
-		image: '/images/image2.jpg',
+		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG',
 		caption: 'Academy',
 		description: 'Join our academy for professional coaching, skill development, and fun training sessions for all ages.',
 		buttons: [
-			{ label: 'Join Academy', url: '/academy/', newTab: false }
+			{ label: 'Join Academy', url: 'https://docs.google.com/forms/d/e/1FAIpQLSeE21sDIcjUb0RkqrXcJtgaykrkwLdTKow4JcftbWGvd9hRgw/viewform', newTab: false }
 		]
 	},
 	{
-		image: '/images/image3.jpg',
+		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME3.JPG',
 		caption: 'Club Socials',
 		description: 'Meet, play, and socialize with other club members. Friendly games, refreshments, and networking every month.',
 		buttons: [
@@ -102,7 +102,7 @@ export const HeroData = [
 		]
 	},
 	{
-		image: '/images/image4.jpg',
+		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME4.JPG',
 		caption: '1 - on 1 Training',
 		description: 'Personalized coaching sessions to help you reach your badminton goals. Flexible scheduling available.',
 		buttons: [
@@ -110,7 +110,7 @@ export const HeroData = [
 		]
 	},
 	{
-		image: '/images/image5.jpg',
+		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME1.JPG',
 		caption: 'Competition Training',
 		description: 'Prepare for tournaments with advanced drills and strategy sessions led by experienced coaches.',
 		buttons: [
@@ -118,7 +118,7 @@ export const HeroData = [
 		]
 	},
 	{
-		image: '/images/image6.jpg',
+		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG',
 		caption: 'QBA Club Membership',
 		description: 'Become a QBA member to play at the Queensland level this covers insurance during competitions.',
 		buttons: [
