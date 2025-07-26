@@ -7,6 +7,19 @@ import ServicesSection from '@/app/components/ServicesSection';
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
+
+
+// {
+// 		title: '1-on-1 Training',
+// 		image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
+// 		description: `Personal coaching sessions tailored to your skill level.
+// Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.`,
+// 		config: {
+// 			url: '/academy/',
+// 			name: 'Academy',
+// 			newTab: false,
+// 		},
+// 	},
 const services = [
 	{
 		title: 'Restringing Service',
@@ -17,13 +30,13 @@ const services = [
 	},
 	{
 		title: '1-on-1 Training',
-		description:
-			'Personalized coaching sessions tailored to your skill level and goals. Improve technique, strategy, and fitness with certified coaches. Flexible scheduling available.',
-			image : 'https://images.unsplash.com/photo-1732955365690-84d4cfe88436?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+				description: `Personal coaching sessions tailored to your skill level.
+Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.`,
+			image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
 	},
 	{
 		title: 'QBA Membership',
-		image: 'https://images.unsplash.com/photo-1617696618050-b0fef0c666af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg',
 		description: `QBA Membership is Queensland Badminton Association membership which allows you to play competition at the Queensland level and provides insurance during these competitions.
 Book our world-class courts at your convenience.
 Our facility features high-quality flooring, lighting, and equipment for an optimal playing experience. Courts are available for singles, doubles, and group bookings. Reserve online and enjoy hassle-free access for practice or matches.`,
