@@ -15,7 +15,9 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
-import LogoWhite from "./Logo/LogoWhite";
+import Logo from "./Logo/Logo";
+import LogWhite from "./Logo/LogoWhite";
+import LogoBlack from "./Logo/LogoBlack";
 
 export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -52,7 +54,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
       sx={{ backgroundColor: "#dc2626 !important" }} // Tailwind's red-600 hex
     >
       <Toolbar className="flex justify-between px-2">
-        <LogoWhite variant={isMobile ? "min" : "full"} />
+        <LogoBlack variant={isMobile ? "min" : "full"} />
 
         {!isMobile ? (
           <div className="flex space-x-2">

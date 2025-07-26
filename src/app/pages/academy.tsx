@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { HeroData } from './Home';
 
 const programs = [
-  { title: 'Beginner Batches (Age 7+)', description: 'Perfect for young players starting their badminton journey. Focus on basic skills, rules, and fun drills.' },
+  { title: 'Beginner Batches (Age 6+)', description: 'Perfect for young players starting their badminton journey. Focus on basic skills, rules, and fun drills.' },
   { title: 'Intermediate Coaching', description: 'Refining skills and game strategies for intermediate players. Includes match play and tactical sessions.' },
   { title: 'Advanced Player Training', description: 'Intensive training designed for competitive athletes. Personalized feedback and advanced techniques.' },
   { title: 'Aglity and speed', description: 'Improve speed, strength, and endurance for peak performance. Includes footwork, and techniques.' },
@@ -18,8 +18,8 @@ const programs = [
 const coaches = [
   {
     name: 'Pavan',
-    title: 'Head Coach',
-    image: '/images/academy/coach1.jpg',
+    // title: 'Head Coach',
+    image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/PAVAN.JPG',
     acheivements: [
       'National Level Coach',
       '10+ Years Coaching Experience',
@@ -28,8 +28,8 @@ const coaches = [
   },
   {
     name: 'Avinash Srinivas',
-    title: 'Advanced Trainer',
-    image: '/images/academy/coach2.jpg',
+    // title: 'Advanced Trainer',
+    image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/SRINIVAS.JPG',
     acheivements: [
       '2024 City of Brisbane OMD Champion',
       '2023 & 2024 Qld State Championship',
@@ -45,8 +45,8 @@ const coaches = [
   },
   {
     name: 'Aurthur Lee',
-    title: 'Junior Coach',
-    image: '/images/academy/coach3.jpg',
+    // title: 'Junior Coach',
+    image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/AURTHER.JPG',
     acheivements: [
       'Ex- QLD Junior Representative',
       '2021 City of Brisbane Champion AMS Champion',
@@ -54,11 +54,6 @@ const coaches = [
     ],
   },
 ];
-
-// const fadeUp = {
-//   hidden: { opacity: 0, y: 40 },
-//   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-// };
 
 export default function AcademyPage() {
   return (

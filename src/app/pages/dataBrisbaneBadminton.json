@@ -1,0 +1,44 @@
+{
+  "home": {
+    "heroSlides": [
+      {
+        "image": "/images/hero/hero1.jpg",
+        "caption": "Welcome to Brisbane Badminton",
+        "description": "Queensland’s Premier Badminton Destination"
+      },
+      {
+        "image": "/images/hero/hero2.jpg",
+        "caption": "World-Class Courts",
+        "description": "Play on the highest quality courts in the state"
+      },
+      {
+        "image": "/images/hero/hero3.jpg",
+        "caption": "Join Our Academy",
+        "description": "Coaching for all ages and skill levels"
+      }
+    ],
+    "about": {
+      "title": "About Us",
+      "description": "Brisbane Badminton is dedicated to providing the best badminton experience in Queensland. Our club welcomes players of all ages and skill levels, offering world-class facilities, professional coaching, and a vibrant community."
+    },
+    "features": [
+      {
+        "title": "Premium Courts",
+        "description": "Enjoy playing on courts with soft cushion flooring, professional lighting, and the highest ceiling in Queensland."
+      },
+      {
+        "title": "Expert Coaching",
+        "description": "Our certified coaches help you improve your game, whether you’re a beginner or a competitive player."
+      },
+      {
+        "title": "Community Events",
+        "description": "Participate in tournaments, socials, and events for all ages and abilities."
+      }
+    ],
+    "cta": {
+      "title": "Ready to Play?",
+      "buttonText": "Book a Court",
+      "buttonUrl": "/court-hire"
+    }
+  }
+}
