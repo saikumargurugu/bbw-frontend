@@ -191,8 +191,12 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
               </p>
               <Button
                 variant="contained"
-                color="primary"
-                className="mt-3 sm:mt-4 w-full text-lg"
+                className="mt-3 sm:mt-4 w-full text-lg bg-red-800"
+                sx={{
+                  backgroundColor: "red",
+                  color: "#fff",
+                  '&:hover': { backgroundColor: "#b91c1c" }
+                }}
                 onClick={() => router.push(event.link)}
               >
                 Learn More

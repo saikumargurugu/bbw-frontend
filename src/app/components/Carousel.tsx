@@ -45,26 +45,38 @@ export default function Carousel({ slides, className }: CarouselProps) {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 text-white text-center p-4">
-            <span className="text-lg sm:text-3xl font-semibold mb-2">{slide.caption}</span>
-            {slide.description && (
-              <span className="text-base sm:text-xl font-normal mb-4">{slide.description}</span>
-            )}
-            {slide.buttons && (
-              <div className="flex flex-wrap gap-3 justify-center mt-2">
-                {slide.buttons.map((btn, idx) => (
-                  <a
-                    key={idx}
-                    href={btn.url}
-                    target={btn.newTab ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                    className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold text-sm transition"
-                  >
-                    {btn.label}
-                  </a>
-                ))}
-              </div>
-            )}
+          {/* Overlay with caption and buttons */}
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 text-white text-center p-4"
+          >
+            <div
+              className="w-full absolute left-0 right-0"
+              style={{
+                top: "35%", // Move overlay a little bit down from the top
+                bottom: "auto",
+                transform: "translateY(0)",
+              }}
+            >
+              <span className="text-lg sm:text-3xl font-semibold mb-2">{slide.caption}</span>
+              {slide.description && (
+                <span className="text-base sm:text-xl font-normal mb-4 block">{slide.description}</span>
+              )}
+              {slide.buttons && (
+                <div className="flex flex-wrap gap-3 justify-center mt-2">
+                  {slide.buttons.map((btn, idx) => (
+                    <a
+                      key={idx}
+                      href={btn.url}
+                      target={btn.newTab ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
+                      className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold text-sm transition"
+                    >
+                      {btn.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       ))}

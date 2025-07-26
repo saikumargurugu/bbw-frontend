@@ -9,6 +9,7 @@ import SignUp from '../pages/signUp';
 import ShopPage from '@/app/pages/shop/pages/index';
 import ProductDetailPage from '../pages/shop/products/details/page';
 import Home from '@/app/pages/Home';
+import ProShopLoading from '../pages/shop/ProShopLoading';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
@@ -44,6 +45,8 @@ export default async function Page({ params }: any) {
       return <Services />;
     case 'court-hire':
       return <CourtHirePage />;
+    case 'pro_shop':
+      return <ProShopLoading />;
     case 'shop':
       console.log("Slugs------:", slugs[1]);
       if(slugs[1]){
