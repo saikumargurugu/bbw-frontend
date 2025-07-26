@@ -132,7 +132,7 @@ export default function AcademyPage() {
                   sx={{ width: 110, height: 110, marginBottom: '1rem' }}
                 />
                 <Typography variant="h5" className="font-bold text-cyan-700">{coach.name}</Typography>
-                <Typography variant="body1" className="mt-2 text-gray-600">{coach.title}</Typography>
+                {/* <Typography variant="body1" className="mt-2 text-gray-600">{coach.title}</Typography> */}
                 {/* {coach.acheivements && (
                   <ul className="mt-4 text-gray-700 text-left text-sm list-disc list-inside">
                     {coach.acheivements.map((ach, i) => (
