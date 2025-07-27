@@ -92,21 +92,22 @@
         "name": "Instagram",
         "url": "https://www.instagram.com/brisbanebadminton/"
       }
-    ]
+    ],
+    "openingHours": {
+    "weekdays": "Mon-Fri: 9:00am 10:00pm",
+    "weekends": "Sat-Sun: 8:00am 10:00pm",
+    "holidays": "Public Holidays: Open"
   },
-  "ContactUs": {
+   "ContactUs": {
     "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
     "phone": "+61 433 300 506",
     "email": "admin@badmintonbrisbane.com.au",
     "images": [
       "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
     ]
+  }
   },
-  "openingHours": {
-    "weekdays": "Mon-Fri: 9:00am 10:00pm",
-    "weekends": "Sat-Sun: 8:00am 10:00pm",
-    "holidays": "Public Holidays: Open"
-  },
+ 
   "Socials": {
     "images": [
       "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/inviteSocials.jpeg"
