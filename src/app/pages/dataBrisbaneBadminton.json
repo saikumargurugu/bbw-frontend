@@ -107,7 +107,14 @@
     ]
   }
   },
- 
+  "ContactUs": {
+    "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
+    "phone": "+61 433 300 506",
+    "email": "admin@badmintonbrisbane.com.au",
+    "images": [
+      "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
+    ]
+  },
   "Socials": {
     "images": [
       "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/inviteSocials.jpeg"
