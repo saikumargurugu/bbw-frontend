@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import Carousel from '@/app/components/Carousel';
 import ServicesSection from '@/app/components/ServicesSection';
-
+import data from './dataBrisbaneBadminton.json';
 const services = [
 	{
 		title: 'Court Hire',
@@ -73,62 +72,11 @@ Our junior academy focuses on skill development, teamwork, and sportsmanship. Pr
 	},
 ];
 
-export const HeroData = [
-	{
-		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg',
-		caption: 'Court Hire',
-		description: 'Book our world-class courts for singles, doubles, or group play. Enjoy premium facilities and easy online booking.',
-		buttons: [
-			{ label: 'Hire Now', url: 'https://badmintonbrisbane.yepbooking.com.au/', newTab: true },
-			{ label: 'Learn More', url: '/services/', newTab: false }
-		]
-	},
-	{
-		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG',
-		caption: 'Academy',
-		description: 'Join our academy for professional coaching, skill development, and fun training sessions for all ages.',
-		buttons: [
-			{ label: 'Join Academy', url: '/academy/', newTab: false }
-		]
-	},
-	{
-		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME3.JPG',
-		caption: 'Club Socials',
-		description: 'Meet, play, and socialize with other club members. Friendly games, refreshments, and networking every month.',
-		buttons: [
-			{ label: 'See Events', url: '/club/', newTab: false }
-		]
-	},
-	{
-		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
-		caption: '1 - on 1 Training',
-		description: 'Personalized coaching sessions to help you reach your badminton goals. Flexible scheduling available.',
-		buttons: [
-			{ label: 'Book Session', url: '/academy/', newTab: false }
-		]
-	},
-	{
-		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME1.JPG',
-		caption: 'Competition Training',
-		description: 'Prepare for tournaments with advanced drills and strategy sessions led by experienced coaches.',
-		buttons: [
-			{ label: 'Competition Info', url: '/academy/', newTab: false }
-		]
-	},
-	{
-		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG',
-		caption: 'QBA Club Membership',
-		description: 'Become a QBA member to play at the Queensland level this covers insurance during competitions.',
-		buttons: [
-			{ label: 'Join QBA', url: 'https://badmintonbrisbane.yepbooking.com.au/', newTab: true }
-		]
-	},
-];
-
+export const HeroData = data.home.heroSlides[0]
 export default function Home() {
 	return (
 		<div>
-			<Carousel slides={HeroData} />
+			{/* <Carousel slides={HeroData} /> */}
 			<ServicesSection services={services} />
 		</div>
 	);

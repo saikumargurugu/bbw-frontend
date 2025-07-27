@@ -50,11 +50,15 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
     <AppBar
       position="sticky"
       color="transparent"
-      elevation={4}
-      sx={{ backgroundColor: "#dc2626 !important" }} // Tailwind's red-600 hex
+      elevation={0}
+      sx={{
+        backgroundColor: "rgba(0,0,0,0.25) !important", // semi-transparent black
+        boxShadow: "none",
+        backdropFilter: "blur(4px)", // optional: adds a blur effect for better readability
+      }}
     >
       <Toolbar className="flex justify-between px-2">
-        <LogoBlack variant={isMobile ? "min" : "full"} />
+        <LogWhite variant={isMobile ? "min" : "full"} />
 
         {!isMobile ? (
           <div className="flex space-x-2">

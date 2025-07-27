@@ -6,42 +6,36 @@ import { Provider } from "react-redux";
 import store from "./redux-store/store";
 import "react-toastify/dist/ReactToastify.css";
 import MainComponent from "./MainComponent";
-
+import Banner from "./components/Banner";
+import data from "./pages/dataBrisbaneBadminton.json";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
 }: {  
   children: React.ReactNode;
 }) {
-
-  // const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
 
-  // useEffect(() => {
-    // Get saved theme from localStorage, if available
-    // const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-    // if (savedTheme) {
-    //   setTheme(savedTheme);
-    //   if (savedTheme === "dark") {
-    //     document.documentElement.classList.add("dark");
-    //   } else {
-    //     document.documentElement.classList.remove("dark");
-    //   }
-    // } else {
-    //   setTheme("dark");
-    //   document.documentElement.classList.add("dark");
-    // }
-  // }, []);
+  // List of routes where Banner should NOT be shown
+  const hideBannerRoutes = [
+    "/login",
+    "/register",
+    "/pro_shop",
+  ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500); // Simulated delay for UI smoothness
+    const timer = setTimeout(() => setLoading(false), 1000); // Simulated delay for UI smoothness
     return () => clearTimeout(timer);
   }, []);
+
+  const showBanner = !hideBannerRoutes.includes(pathname);
 
   return (
     <html lang="en">
       <head>
-        <title>Badminton Association</title>
+        <title>Badminton Brisbane</title>
       </head>
       <body className="relative flex flex-col min-h-screen">
         {/* Loading Spinner */}
@@ -56,6 +50,7 @@ export default function RootLayout({
         <Provider store={store}>
 
           <MainComponent loading={loading}>
+            {showBanner && <Banner banner={data.home.heroSlides[0]} />}
             {children}
           </MainComponent>
           

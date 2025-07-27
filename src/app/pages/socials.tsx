@@ -2,10 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Carousel from '@/app/components/Carousel';
-import CardCarousel from '@/app/components/CardCarousel';
-import { HeroData } from './Home';
 import data from './dataBrisbaneBadminton.json';
+import CardCarousel from '../components/CardCarousel';
 
 const events = [
 	{
@@ -60,17 +58,16 @@ const whatsappInviteUrl = 'https://chat.whatsapp.com/your-group-invite-link'; //
 export default function SocialsPage() {
 	return (
 		<div>
-			<Carousel slides={HeroData} />
 			{/* WhatsApp Group QR Card */}
-			<div className="max-w-md mx-auto mt-10 bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-				<h2 className="text-2xl font-bold text-green-700 mb-4">
+			<div className="max-w-md mx-auto mt-10 bg-bgThemeDark rounded-2xl shadow-lg p-8 flex flex-col items-center border border-white/10">
+				<h2 className="text-2xl font-bold text-green-400 mb-4">
 					Join Our WhatsApp Group
 				</h2>
-				<p className="text-gray-700 mb-4 text-center">
+				<p className="text-gray-200 mb-4 text-center">
 					Scan the QR code below to join our club WhatsApp group for updates,
 					events, and community chat!
 				</p>
-				<div className="bg-white p-4 rounded-xl border border-gray-200 mb-4">
+				<div className="bg-black p-4 rounded-xl border border-white/10 mb-4">
 					<Image
 						src={data.Socials.images[0]}
 						alt="QR Code"
@@ -89,7 +86,6 @@ export default function SocialsPage() {
 				</a>
 			</div>
 			<CardCarousel events={events} />
-
 		</div>
 	);
 }

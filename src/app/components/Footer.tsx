@@ -6,11 +6,19 @@ import { Box, Typography, Divider } from "@mui/material";
 import data from "../pages/dataBrisbaneBadminton.json"; // Adjust path if needed
 
 export default function Footer({ fotterText }: { fotterText: string }) {
-  const socials =
-    data.footer?.socials || [
-      { name: "Instagram", url: "https://instagram.com/" },
-      { name: "Facebook", url: "https://facebook.com/" },
-    ];
+  // Get all footer data from JSON
+  const footerData = data.footer || {};
+  const socials = footerData.socials || [];
+  const links = footerData.links || [];
+  const openingHours = footerData.openingHours || {
+    weekdays: "Mon-Fri: 8:00am – 10:00pm",
+    weekends: "Sat-Sun: 8:00am – 10:00pm",
+    holidays: "Public Holidays: Open",
+  };
+  const contact = footerData.ContactUs || {};
+  const address = contact.address || "";
+  const phone = contact.phone || "+";
+  const email = contact.email || "admin@badmintonbrisbane.com.au";
 
   return (
     <Box
@@ -21,224 +29,174 @@ export default function Footer({ fotterText }: { fotterText: string }) {
         padding: "32px",
         width: "100%",
         display: "flex",
-        // flexDirection: { xs: "row", md: "row" },
         justifyContent: "space-between",
-        // alignItems: "flex-start",
         flexWrap: "wrap",
         rowGap: 2,
       }}
     >
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center w-full mb-4 md:mb-0 gap-8">
-      {/* Contact & Socials */}
-      <Box
-        sx={{
-          mx: { xs: 0, md: 4 },
-          mb: { xs: 2, md: 0 },
-          textAlign: { xs: "center", md: "left" },
-          width: { xs: "100%", md: "40%" },
-          display: "flex",
-          flexDirection: "column",
-          alignItems: { xs: "center", md: "flex-start" },
-        }}
-      >
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-          Contact Us
-        </Typography>
-        <Typography variant="body2">
-          Address:{" "}
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=39+Quilton+Pl,+Crestmead+QLD+4132,+Australia"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            39 Quilton Pl, Crestmead QLD 4132, Australia
-          </a>
-          <br />
-          Phone:{" "}
-          <a
-            href="tel:+61433300506"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            +61 433 300 506
-          </a>
-          <br />
-          Email:{" "}
-          <a
-            href="mailto:admin@badmintonbrisbane.com.au"
-            style={{ color: "white", textDecoration: "underline" }}
-          >
-            admin@badmintonbrisbane.com.au
-          </a>
-        </Typography>
-        {/* Socials */}
-        <Box sx={{ mt: 3, display: "flex", gap: 2, alignItems: "center" }}>
-          {socials.map((social: any, idx: number) => (
+        {/* Contact & Socials */}
+        <Box
+          sx={{
+            mx: { xs: 0, md: 4 },
+            mb: { xs: 2, md: 0 },
+            textAlign: { xs: "center", md: "left" },
+            width: { xs: "100%", md: "40%" },
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", md: "flex-start" },
+          }}
+        >
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+            Contact Us
+          </Typography>
+          <Typography variant="body2">
+            Address:{" "}
             <a
-              key={idx}
-              href={social.url}
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                color: "white",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-                fontWeight: 600,
-                fontSize: 18,
-                marginRight: 16,
-              }}
+              style={{ color: "white", textDecoration: "underline" }}
             >
-              <Image
-                src={
-                  social.name.toLowerCase().includes("instagram")
-                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-                    : social.name.toLowerCase().includes("facebook")
-                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
-                    : ""
-                }
-                alt={social.name}
-                width={24}
-                height={24}
-                style={{ filter: "invert(1)", marginRight: 6 }}
-                unoptimized
-              />
-              {social.name}
+              {address}
             </a>
-          ))}
-        </Box>
-      </Box>
-
-
-
-      <Box
-        sx={{
-          mx: { xs: 0, md: 4 },
-          mb: { xs: 2, md: 0 },
-          textAlign: { xs: "center", md: "left" },
-          width: { xs: "100%", md: "40%" },
-          display: "flex",
-          flexDirection: "column",
-          alignItems: { xs: "center", md: "flex-start" },
-        }}
-      >
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-          Follow Us on Social Media
-        </Typography>
-        {/* Socials */}
-        <Box sx={{ mt: 3, display: "flex", gap: 2, alignItems: "center" }}>
-          {socials.map((social: any, idx: number) => (
+            <br />
+            Phone:{" "}
             <a
-              key={idx}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: "white",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-                fontWeight: 600,
-                fontSize: 18,
-                marginRight: 16,
-              }}
+              href={`tel:${phone}`}
+              style={{ color: "white", textDecoration: "underline" }}
             >
-              <Image
-                src={
-                  social.name.toLowerCase().includes("instagram")
-                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-                    : social.name.toLowerCase().includes("facebook")
-                    ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
-                    : ""
-                }
-                alt={social.name}
-                width={24}
-                height={24}
-                style={{ filter: "invert(1)", marginRight: 6 }}
-                unoptimized
-              />
-              {social.name}
+              {phone}
             </a>
-          ))}
-        </Box>
-      </Box>
-      {/* Quick Links */}
-      <Box
-        sx={{
-          mx: { xs: 0, md: 4 },
-          mb: { xs: 2, md: 0 },
-          textAlign: { xs: "center", md: "left" },
-          width: { xs: "100%", md: "20%" },
-        }}
-      >
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-          Quick Links
-        </Typography>
-        <Link
-          href="/academy"
-          style={{ color: "white", textDecoration: "underline" }}
-        >
-          Academy
-        </Link>
-        <br />
-        <Link
-          href="/services"
-          style={{ color: "white", textDecoration: "underline" }}
-        >
-          Services
-        </Link>
-        <br />
-        <Link
-          href="/club"
-          style={{ color: "white", textDecoration: "underline" }}
-        >
-          Club
-        </Link>
-        <br />
-        <Link
-          href="/court-hire"
-          style={{ color: "white", textDecoration: "underline" }}
-        >
-          Court Hire
-        </Link>
-        <br />
-        <Link
-          href="/contact"
-          style={{ color: "white", textDecoration: "underline" }}
-        >
-          Contact
-        </Link>
-      </Box>
+            <br />
+            Email:{" "}
+            <a
+              href={`mailto:${email}`}
+              style={{ color: "white", textDecoration: "underline" }}
+            >
+              {email}
+            </a>
+          </Typography>
+          {/* Socials */}
 
-      {/* About/Hours */}
-      <Box
-        sx={{
-          mx: { xs: 0, md: 4 },
-          mb: { xs: 2, md: 0 },
-          textAlign: { xs: "center", md: "left" },
-          width: { xs: "100%", md: "33%" },
-        }}
-      >
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-          Opening Hours
-        </Typography>
-        <Typography variant="body2">
-          Mon-Fri: 9:00am – 10:00pm
-          <br />
-          Sat-Sun: 8:00am – 10:00pm
-          <br />
-          Public Holidays: Open
-        </Typography>
-        <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.2)" }} />
-        <Typography variant="body2" sx={{ fontStyle: "italic" }}>
-          {fotterText}
-        </Typography>
-      </Box>
+        </Box>
+{/* socials */}
+          <Box sx={{ mt: 3, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+            Follow Us On
+          </Typography>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            {/* Social Links */}
+            {socials.map((social: any, idx: number) => (
+              <a
+                key={idx}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontWeight: 600,
+                  fontSize: 18,
+                  marginRight: 16,
+                }}
+              >
+                <Image
+                  src={
+                    social.name.toLowerCase().includes("instagram")
+                      ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                      : social.name.toLowerCase().includes("facebook")
+                      ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                      : ""
+                  }
+                  alt={social.name}
+                  width={24}
+                  height={24}
+                  style={{ filter: "invert(1)", marginRight: 6 }}
+                  unoptimized
+                />
+                {social.name}
+              </a>
+            ))}
+          </div>
+        </Box>
+        {/* Quick Links */}
+        <Box
+          sx={{
+            mx: { xs: 0, md: 4 },
+            mb: { xs: 2, md: 0 },
+            textAlign: { xs: "center", md: "left" },
+            width: { xs: "100%", md: "20%" },
+          }}
+        >
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+            Quick Links
+          </Typography>
+          {links.length > 0 ? (
+            links.map((link: any, idx: number) => (
+              <React.Fragment key={idx}>
+                <Link
+                  href={link.url}
+                  style={{ color: "white", textDecoration: "underline" }}
+                >
+                  {link.text}
+                </Link>
+                <br />
+              </React.Fragment>
+            ))
+          ) : (
+            <>
+              <Link href="/academy" style={{ color: "white", textDecoration: "underline" }}>
+                Academy
+              </Link>
+              <br />
+              <Link href="/services" style={{ color: "white", textDecoration: "underline" }}>
+                Services
+              </Link>
+              <br />
+              <Link href="/club" style={{ color: "white", textDecoration: "underline" }}>
+                Club
+              </Link>
+              <br />
+              <Link href="/court-hire" style={{ color: "white", textDecoration: "underline" }}>
+                Court Hire
+              </Link>
+              <br />
+              <Link href="/contact" style={{ color: "white", textDecoration: "underline" }}>
+                Contact
+              </Link>
+            </>
+          )}
+        </Box>
+
+        {/* About/Hours */}
+        <Box
+          sx={{
+            mx: { xs: 0, md: 4 },
+            mb: { xs: 2, md: 0 },
+            textAlign: { xs: "center", md: "left" },
+            width: { xs: "100%", md: "33%" },
+          }}
+        >
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+            Opening Hours
+          </Typography>
+          <Typography variant="body2">
+            {openingHours.weekdays}
+            <br />
+            {openingHours.weekends}
+            <br />
+            {openingHours.holidays}
+          </Typography>
+          <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.2)" }} />
+          <Typography variant="body2" sx={{ fontStyle: "italic" }}>
+            {fotterText}
+          </Typography>
+        </Box>
       </div>
-
-      {/* Logo */}
     </Box>
   );
 }

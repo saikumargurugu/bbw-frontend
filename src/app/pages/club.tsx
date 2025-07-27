@@ -1,9 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import Carousel from '@/app/components/Carousel';
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { HeroData } from './Home';
+import ServicesSection from '../components/ServicesSection';
 
 // --- Club Page Data JSON ---
 const clubPageData = {
@@ -73,10 +72,7 @@ export default function ClubPage() {
   const [openTerms, setOpenTerms] = useState(false);
 
   return (
-    <div className="bg-gradient-to-br from-cyan-50 via-white to-red-50 min-h-screen">
-      {/* Hero Section */}
-      <Carousel slides={HeroData} />
-
+    <div className="bg-bgThemeDark min-h-screen">
       {/* About Section */}
       <motion.section
         className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center"
@@ -84,34 +80,33 @@ export default function ClubPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-cyan-700 mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-cyan-200 mb-6">
           {clubPageData.about.title}
         </h2>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-lg text-gray-200 leading-relaxed">
           {clubPageData.about.description}
         </p>
       </motion.section>
 
       {/* QBA Membership & Court Hire Section */}
       <motion.section
-        className="max-w-4xl mx-auto px-4 sm:px-6 py-12 text-center"
+        className="max-w-4xl mx-auto px-4 sm:px-6 py-12 text-center bg-white/10 rounded-3xl mb-8 border border-white/10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        style={{ background: "rgba(255,255,255,0.85)", borderRadius: "1.5rem", marginBottom: "2rem" }}
       >
-        <h3 className="text-2xl sm:text-3xl font-bold text-red-700 mb-4">{clubPageData.qba.title}</h3>
-        <p className="text-lg text-gray-700 mb-4" dangerouslySetInnerHTML={{ __html: clubPageData.qba.description }} />
-        <h4 className="text-xl font-bold text-cyan-700 mb-2">{clubPageData.qba.courtTitle}</h4>
-        <p className="text-lg text-gray-700 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.courtDescription }} />
-        <ul className="text-lg text-gray-700 mb-4 list-disc list-inside text-left max-w-xl mx-auto">
+        <h3 className="text-2xl sm:text-3xl font-bold text-red-400 mb-4">{clubPageData.qba.title}</h3>
+        <p className="text-lg text-gray-100 mb-4" dangerouslySetInnerHTML={{ __html: clubPageData.qba.description }} />
+        <h4 className="text-xl font-bold text-cyan-200 mb-2">{clubPageData.qba.courtTitle}</h4>
+        <p className="text-lg text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.courtDescription }} />
+        <ul className="text-lg text-gray-100 mb-4 list-disc list-inside text-left max-w-xl mx-auto">
           {clubPageData.qba.courtList.map((item, idx) => (
             <li key={idx}><strong>{item}</strong></li>
           ))}
         </ul>
-        <p className="text-lg text-gray-700 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.bookingNote }} />
+        <p className="text-lg text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.bookingNote }} />
         <button
-          className="mt-4 text-sm text-cyan-700 underline hover:text-red-700 transition"
+          className="mt-4 text-sm text-cyan-200 underline hover:text-red-400 transition"
           onClick={() => setOpenTerms(true)}
         >
           Terms and Conditions apply
@@ -121,16 +116,16 @@ export default function ClubPage() {
       {/* Terms & Conditions Modal */}
       {openTerms && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-xl max-w-lg w-full p-6 shadow-2xl relative">
+          <div className="bg-bgThemeDark rounded-xl max-w-lg w-full p-6 shadow-2xl relative border border-white/10">
             <button
-              className="absolute top-2 right-3 text-2xl text-gray-400 hover:text-red-600"
+              className="absolute top-2 right-3 text-2xl text-gray-400 hover:text-red-400"
               onClick={() => setOpenTerms(false)}
               aria-label="Close"
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold text-cyan-700 mb-4">{clubPageData.terms.title}</h2>
-            <div className="text-gray-700 text-sm max-h-[60vh] overflow-y-auto space-y-3 text-left">
+            <h2 className="text-2xl font-bold text-cyan-200 mb-4">{clubPageData.terms.title}</h2>
+            <div className="text-gray-100 text-sm max-h-[60vh] overflow-y-auto space-y-3 text-left">
               <ul className="list-disc list-inside space-y-2">
                 {clubPageData.terms.items.map((item, idx) => (
                   <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
@@ -146,15 +141,15 @@ export default function ClubPage() {
         {clubPageData.facilities.map((facility, idx) => (
           <motion.div
             key={idx}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-cyan-200 transition-transform duration-300 hover:scale-105 flex flex-col items-center"
+            className="bg-white/10 rounded-2xl shadow-lg p-8 hover:shadow-cyan-200 transition-transform duration-300 hover:scale-105 flex flex-col items-center border border-white/10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 mb-2 text-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-cyan-200 mb-2 text-center">
               {facility.title}
             </h3>
-            <p className="text-gray-600 text-center">{facility.description}</p>
+            <p className="text-gray-100 text-center">{facility.description}</p>
           </motion.div>
         ))}
       </section>
@@ -164,23 +159,26 @@ export default function ClubPage() {
         {clubPageData.events.map((event, idx) => (
           <motion.div
             key={idx}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-red-200 transition-transform duration-300 hover:scale-105 flex flex-col"
+            className="bg-white/10 rounded-2xl shadow-lg p-8 hover:shadow-red-200 transition-transform duration-300 hover:scale-105 flex flex-col border border-white/10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h3 className="text-xl font-bold text-cyan-700 mb-2">
+            <h3 className="text-xl font-bold text-cyan-200 mb-2">
               {event.title}
             </h3>
-            <p className="text-gray-600 font-semibold">{event.date}</p>
-            <p className="text-gray-600 mt-2">{event.description}</p>
+            <p className="text-gray-300 font-semibold">{event.date}</p>
+            <p className="text-gray-100 mt-2">{event.description}</p>
           </motion.div>
         ))}
       </section>
 
+      {/* Example: Services Section with dark background */}
+      <ServicesSection services={[]} background="bg-bgThemeDark" />
+
       {/* Contact Section */}
       <motion.section
-        style={{ background: "oklch(0.39 0.13 24.4)" }}
+        style={{ background: "oklch(0.18 0 0)" }}
         className="text-white text-center py-16"
         initial="hidden"
         whileInView="visible"

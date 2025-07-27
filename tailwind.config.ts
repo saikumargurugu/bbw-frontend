@@ -11,7 +11,9 @@ const config: Config = {
                 'spin-slow': 'spin 2s linear infinite',
             },
             colors: {
-                bgThemeDark: 'oklch(0.39 0.13 24.4)',
+                bgThemeDark: 'oklch(0.18 0 0)', // smooth deep black
+                // You can also add a slightly lighter black for smoothness:
+                bgThemeSoft: 'oklch(0.22 0 0)', // soft black
             },
         },
     },
