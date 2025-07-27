@@ -24,7 +24,7 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
     if (typeof window !== "undefined") {
       return window.innerWidth < 640;
     }
-    return false; // or true, depending on your default
+    return false;
   });
 
   // Detect mobile view
@@ -65,7 +65,6 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
     return () => {
       container.removeEventListener('scroll', handleScroll);
     };
-    // eslint-disable-next-line
   }, []);
 
   // Scroll to a specific card index
@@ -95,48 +94,29 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
     scrollToIndex(newIdx);
     setTimeout(() => setCenterIdx(newIdx), 400);
   };
-  console.log(isMobile, "isMobile1");
-  
 
   if (isMobile === null) return null; // Prevents flicker and SSR mismatch
 
   return (
-    <div className="relative max-w-6xl mx-auto px-0 sm:px-6 py-8 sm:py-16">
+    <div className="relative max-w-7xl mx-auto px-0 sm:px-6 py-8 sm:py-16">
       <div className="flex items-center">
         {/* Left Arrow */}
-        {isMobile ? (
-          <IconButton
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 shadow-none"
-            onClick={() => scroll('left')}
-            style={{
-              display: events.length > 1 ? 'flex' : 'none',
-              width: 36,
-              height: 36,
-              minWidth: 0,
-              minHeight: 0,
-              zIndex: 20,
-              pointerEvents: "auto",
-            }}
-            size="small"
-          >
-            <ArrowBackIosNewIcon fontSize="small" />
-          </IconButton>
-        ) : (
-          <IconButton
-            className="z-10 bg-white/80 hover:bg-white shadow-md mx-1"
-            onClick={() => scroll('left')}
-            style={{
-              display: events.length > 3 ? 'flex' : 'none',
-              width: 36,
-              height: 36,
-              minWidth: 0,
-              minHeight: 0,
-            }}
-            size="small"
-          >
-            <ArrowBackIosNewIcon fontSize="small" />
-          </IconButton>
-        )}
+        <IconButton
+          className={`z-10 ${isMobile ? "absolute left-2 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 shadow-none" : "bg-white/80 hover:bg-white shadow-md mx-1"}`}
+          onClick={() => scroll('left')}
+          style={{
+            display: isMobile ? (events.length > 1 ? 'flex' : 'none') : (events.length > 3 ? 'flex' : 'none'),
+            width: 36,
+            height: 36,
+            minWidth: 0,
+            minHeight: 0,
+            zIndex: 20,
+            pointerEvents: "auto",
+          }}
+          size="small"
+        >
+          <ArrowBackIosNewIcon fontSize="small" />
+        </IconButton>
 
         {/* Events Scrollable Row */}
         <div
@@ -158,7 +138,7 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeInOut" }}
               className={`
-                flex-shrink-0 bg-white rounded-2xl shadow-md p-4 sm:p-8 m-2 hover:shadow-xl transition-all duration-500
+                flex-shrink-0 bg-bgThemeDark border border-white/10 rounded-2xl shadow-md p-4 sm:p-8 m-2 hover:shadow-xl transition-all duration-500
                 ${isMobile
                   ? "w-full min-w-full max-w-full snap-center"
                   : idx === centerIdx
@@ -178,22 +158,20 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
                 width={500}
                 height={isMobile ? 220 : 340}
                 className={`object-cover w-full rounded-t-xl ${isMobile ? "h-56" : "h-72 sm:h-80"}`}
-                style={{ objectFit: isMobile ? "cover" : "contain" }}
+                style={{ objectFit: "cover" }}
               />
-              <h3 className="font-bold text-cyan-700 mt-3 mb-1 sm:mt-4 sm:mb-2 text-lg">
+              <h3 className="font-bold text-cyan-200 mt-3 mb-1 sm:mt-4 sm:mb-2 text-xl">
                 {event.title}
               </h3>
-              <p className="text-gray-600 text-lg">
-                {event.date}
-              </p>
-              <p className="text-gray-600 mt-1 sm:mt-2 text-lg">
+              <p className="text-red-400 text-base font-semibold mb-1">{event.date}</p>
+              <p className="text-gray-100 mt-1 sm:mt-2 text-base">
                 {event.description}
               </p>
               <Button
                 variant="contained"
-                className="mt-3 sm:mt-4 w-full text-lg bg-red-800"
+                className="mt-4 w-full text-lg bg-red-600 hover:bg-red-700 rounded-lg font-semibold shadow-none"
                 sx={{
-                  backgroundColor: "red",
+                  backgroundColor: "#dc2626",
                   color: "#fff",
                   '&:hover': { backgroundColor: "#b91c1c" }
                 }}
@@ -206,39 +184,22 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
         </div>
 
         {/* Right Arrow */}
-        {isMobile ? (
-          <IconButton
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 shadow-none"
-            onClick={() => scroll('right')}
-            style={{
-              display: events.length > 1 ? 'flex' : 'none',
-              width: 36,
-              height: 36,
-              minWidth: 0,
-              minHeight: 0,
-              zIndex: 20,
-              pointerEvents: "auto",
-            }}
-            size="small"
-          >
-            <ArrowForwardIosIcon fontSize="small" />
-          </IconButton>
-        ) : (
-          <IconButton
-            className="z-10 bg-white/80 hover:bg-white shadow-md mx-1"
-            onClick={() => scroll('right')}
-            style={{
-              display: events.length > 3 ? 'flex' : 'none',
-              width: 36,
-              height: 36,
-              minWidth: 0,
-              minHeight: 0,
-            }}
-            size="small"
-          >
-            <ArrowForwardIosIcon fontSize="small" />
-          </IconButton>
-        )}
+        <IconButton
+          className={`z-10 ${isMobile ? "absolute right-2 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 shadow-none" : "bg-white/80 hover:bg-white shadow-md mx-1"}`}
+          onClick={() => scroll('right')}
+          style={{
+            display: isMobile ? (events.length > 1 ? 'flex' : 'none') : (events.length > 3 ? 'flex' : 'none'),
+            width: 36,
+            height: 36,
+            minWidth: 0,
+            minHeight: 0,
+            zIndex: 20,
+            pointerEvents: "auto",
+          }}
+          size="small"
+        >
+          <ArrowForwardIosIcon fontSize="small" />
+        </IconButton>
       </div>
 
       <style jsx global>{`

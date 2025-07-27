@@ -13,64 +13,63 @@ interface ServiceType {
   image?: string;
 }
 
-// const serviceVariants = {
-//   hidden: { opacity: 0, y: 40 },
-//   visible: { 
-//     opacity: 1, 
-//     y: 0, 
-//     transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] } // Use cubic-bezier easing
-//   },
-// };
+interface ServicesSectionProps {
+  services: ServiceType[];
+  background?: string; // Accepts Tailwind class or CSS color
+}
 
-export default function ServicesSection({ services }: { services: ServiceType[] }) {
+export default function ServicesSection({
+  services,
+    background = "bg-bgThemeDark",
+}: ServicesSectionProps) {
   return (
-    <div className="w-full px-[8%] py-12 space-y-16 bg-gradient-to-br from-cyan-50 via-white to-red-50">
-      {services.map((service, idx) => (
-        <motion.div
-          key={service.title}
-          className={`flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-16 rounded-3xl shadow-lg bg-white/80 backdrop-blur-md p-6 md:p-12 ${
-            idx % 2 === 1 ? "md:flex-row-reverse" : ""
-          }`}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          // variants={serviceVariants}
-        >
+    <div className={`w-full ${background} py-0 mt-12`}>
+      <div className="flex flex-col w-full">
+        {services.map((service, idx) => (
           <motion.div
-            className="w-full md:w-1/2 flex justify-center items-center"
-            initial={{ scale: 0.95, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
+            key={service.title}
+            className={`
+              w-full flex flex-col md:flex-row items-stretch m-0 p-0
+              ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}
+            `}
+            style={{
+              minHeight: "400px",
+              borderRadius: 0,
+              margin: 0,
+              padding: 0,
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
-            <Image
-              src={
-                service.image ||
-                `/images/image${(idx % 6) + 1}.jpg`
-              }
-              alt={service.title}
-              width={700}
-              height={400}
-              className="rounded-2xl object-cover w-full h-64 md:h-96 shadow-xl"
-            />
+            {/* Image Side */}
+            <div className="relative w-full md:w-1/2 h-80 md:h-[520px]">
+              <Image
+                src={service.image || `/images/image${(idx % 6) + 1}.jpg`}
+                alt={service.title}
+                fill
+                className="object-cover w-full h-full"
+                style={{ borderRadius: 0 }}
+              />
+            </div>
+            {/* Text Side */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center bg-white/10 backdrop-blur-md border border-white/10 p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-cyan-200 mb-2 drop-shadow">{service.title}</h2>
+              <p className="text-base md:text-lg text-gray-200 mb-4 drop-shadow">{service.description}</p>
+              {service.config && (
+                <a
+                  href={service.config.url}
+                  target={service.config.newTab ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-red-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm"
+                >
+                  {service.config.name}
+                </a>
+              )}
+            </div>
           </motion.div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <h2 className="text-2xl md:text-4xl font-bold text-cyan-700 mb-4">{service.title}</h2>
-            <p className="text-lg md:text-xl text-gray-700 mb-6">{service.description}</p>
-            {service.config && (
-              <a
-                href={service.config.url}
-                target={service.config.newTab ? "_blank" : "_self"}
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-red-600 text-white px-3 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm self-end mt-2"
-                style={{ alignSelf: "flex-end" }}
-              >
-                {service.config.name}
-              </a>
-            )}
-          </div>
-        </motion.div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

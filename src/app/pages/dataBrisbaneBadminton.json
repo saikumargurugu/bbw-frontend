@@ -2,19 +2,53 @@
   "home": {
     "heroSlides": [
       {
-        "image": "/images/hero/hero1.jpg",
-        "caption": "Welcome to Brisbane Badminton",
-        "description": "Queensland’s Premier Badminton Destination"
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg",
+        "caption": "Court Hire",
+        "description": "Book our world-class courts for singles, doubles, or group play. Enjoy premium facilities and easy online booking.",
+        "buttons": [
+          { "label": "Hire Now", "url": "https://badmintonbrisbane.yepbooking.com.au/", "newTab": true },
+          { "label": "Learn More", "url": "/services/", "newTab": false }
+        ]
       },
       {
-        "image": "/images/hero/hero2.jpg",
-        "caption": "World-Class Courts",
-        "description": "Play on the highest quality courts in the state"
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG",
+        "caption": "Academy",
+        "description": "Join our academy for professional coaching, skill development, and fun training sessions for all ages.",
+        "buttons": [
+          { "label": "Join Academy", "url": "/academy/", "newTab": false }
+        ]
       },
       {
-        "image": "/images/hero/hero3.jpg",
-        "caption": "Join Our Academy",
-        "description": "Coaching for all ages and skill levels"
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME3.JPG",
+        "caption": "Club Socials",
+        "description": "Meet, play, and socialize with other club members. Friendly games, refreshments, and networking every month.",
+        "buttons": [
+          { "label": "See Events", "url": "/club/", "newTab": false }
+        ]
+      },
+      {
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg",
+        "caption": "1 - on 1 Training",
+        "description": "Personalized coaching sessions to help you reach your badminton goals. Flexible scheduling available.",
+        "buttons": [
+          { "label": "Book Session", "url": "/academy/", "newTab": false }
+        ]
+      },
+      {
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME1.JPG",
+        "caption": "Competition Training",
+        "description": "Prepare for tournaments with advanced drills and strategy sessions led by experienced coaches.",
+        "buttons": [
+          { "label": "Competition Info", "url": "/academy/", "newTab": false }
+        ]
+      },
+      {
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG",
+        "caption": "QBA Club Membership",
+        "description": "Become a QBA member to play at the Queensland level this covers insurance during competitions.",
+        "buttons": [
+          { "label": "Join QBA", "url": "https://badmintonbrisbane.yepbooking.com.au/", "newTab": true }
+        ]
       }
     ],
     "about": {
@@ -43,18 +77,11 @@
   },
   "footer": {
     "links": [
-      {
-        "text": "Privacy Policy",
-        "url": "/privacy-policy"
-      },
-      {
-        "text": "Terms of Service",
-        "url": "/terms-of-service"
-      },
-      {
-        "text": "Contact Us",
-        "url": "/contact"
-      }
+      { "text": "Academy", "url": "/academy" },
+      { "text": "Services", "url": "/services" },
+      { "text": "Club", "url": "/club" },
+      { "text": "Court Hire", "url": "/court-hire" },
+      { "text": "Contact", "url": "/contact" }
     ],
     "socials": [
       {
@@ -67,15 +94,173 @@
       }
     ]
   },
-  "Socials": {
-    "images":[
-      "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/inviteSocials.jpeg"
-    ]
-  },
   "ContactUs": {
-    "email": "info@brisbanebadminton.com",
+    "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
+    "phone": "+61 433 300 506",
+    "email": "admin@badmintonbrisbane.com.au",
     "images": [
       "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
     ]
-  }
+  },
+  "openingHours": {
+    "weekdays": "Mon-Fri: 9:00am 10:00pm",
+    "weekends": "Sat-Sun: 8:00am 10:00pm",
+    "holidays": "Public Holidays: Open"
+  },
+  "Socials": {
+    "images": [
+      "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/inviteSocials.jpeg"
+    ]
+  },
+  "acadamy": {
+    "programs": [
+      { "title": "Beginner Batches (Age 6+)", "description": "Perfect for young players starting their badminton journey. Focus on basic skills, rules, and fun drills." },
+      { "title": "Intermediate Coaching", "description": "Refining skills and game strategies for intermediate players. Includes match play and tactical sessions." },
+      { "title": "Advanced Player Training", "description": "Intensive training designed for competitive athletes. Personalized feedback and advanced techniques." },
+      { "title": "Aglity and speed", "description": "Improve speed, strength, and endurance for peak performance. Includes footwork, and techniques." },
+      { "title": "Tournament Prep", "description": "Specialized coaching for players preparing for tournaments. Mental preparation, strategy, and match simulation." }
+    ],
+    "coaches": [
+      {
+        "name": "Pavan Ravindranath",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Pavan.jpeg",
+        "acheivements": [
+          "National Level Coach",
+          "10+ Years Coaching Experience",
+          "Mentor to State & National Champions"
+        ]
+      },
+      {
+        "name": "Avinash Srinivas",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Srinivas.jpeg",
+        "acheivements": [
+          "2024 City of Brisbane OMD Champion",
+          "2023 & 2024 Qld State Championship",
+          "OMD Silver Medalist",
+          "2024 BWF Events Participated",
+          "Sathio Group Australian Open Super 500",
+          "Guwahati Masters Super 100",
+          "Odisha Masters Super 100",
+          "Sydney International Challenge",
+          "Bendigo International Challenge",
+          "Kampala International & Future Series"
+        ]
+      },
+      {
+        "name": "Arthur Lee",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/AuthrLee.jpeg",
+        "acheivements": [
+          "Ex- QLD Junior Representative",
+          "2021 City of Brisbane Champion AMS Champion",
+          "2022 QLD Open AMS Champion"
+        ]
+      },
+      {
+        "name": "Ankith Mohan",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Ankit.jpeg",
+        "acheivements": []
+      }
+    ]
+  },
+  "courtHire": {
+    "heroSlides": "HeroData",
+    "info": {
+      "title": "Court Hire Information",
+      "description": "Book our Brisbane highest ceiling badminton courts today and take your game to the next level!",
+      "features": [
+        "High-quality indoor courts with professional flooring and lighting.",
+        "Courts are <span class='font-bold text-red-600'>badminton shoes only</span> for safety and surface protection.",
+        "Hire court to play with friends or organizing your socials.",
+        "Courts can be booked <span class='font-bold text-cyan-400'>online</span> and <span class='font-bold text-cyan-400'>offline</span> at the center.",
+        "If you don't have badminton shoes, you can buy a pair at our pro shop located at the badminton center.",
+        "Available for singles, doubles, and group bookings.",
+        "Free parking and easy access from major roads.",
+        "Refreshments and equipment available at our pro shop.",
+        "Special rates for club members and regular players."
+      ],
+      "notes": [
+        "Whether you're practicing, playing a friendly match, or hosting a tournament, our courts provide the perfect environment for all skill levels.",
+        "For group bookings, events, or regular sessions, please contact our team for custom packages and support."
+      ],
+      "bookingUrl": "https://badmintonbrisbane.yepbooking.com.au/"
+    },
+    "courts": [
+      "Court 1",
+      "Court 2",
+      "Court 3",
+      "Court 4",
+      "Court 5",
+      "Court 6",
+      "Court 7",
+      "Court 8",
+      "Court 9"
+    ],
+    "timeSlots": [
+      "7:00",
+      "8:00",
+      "9:00",
+      "10:00",
+      "11:00",
+      "12:00",
+      "13:00",
+      "14:00",
+      "15:00",
+      "16:00",
+      "17:00",
+      "18:00",
+      "19:00",
+      "20:00",
+      "21:00",
+      "22:00"
+    ],
+    "terms": [
+      "All players must use only <b>BADMINTON SHOES</b> or <b>Non marking shoes</b> at Brisbane Badminton.",
+      "People wearing shoes with black sole/bottom (including partially black) will not be allowed to play on our courts (no refunds of court booking).",
+      "People wearing any other shoes which can make any colored marks (including white marks) on the mats will not be allowed to play on our courts.",
+      "If you are unsure about your shoes, they are most likely Marking Shoes.",
+      "Any breach of this rule will incur management fee start from $150 (Must pay before leaving the Center).",
+      "<b>Court Arrangements:</b> Please note that courts for your booking may be adjusted for better utilisation of the facility. You'll be notified through the booking system if there are any changes. Kindly check your booking again on the day. If you do not wish to be moved, please notify us through the comment section upon making your bookings.",
+      "All customers are obligated to step off the court at the end of your booking hours; Any extended time of using the court may be charged.",
+      "<b>Please read our Booking Rules including Cancellation Policy.</b>",
+      "<b>Please read our Terms and Conditions.</b>",
+      "<b>No Outside coaches</b> are allowed to do any sort of coaching in Brisbane Badminton premises."
+    ]
+  },
+  "socials": [
+    {
+      "title": "Badminton Night",
+      "date": "Every Day",
+      "description": "Join us for a casual night of badminton! Meet new people, play friendly matches, and enjoy snacks and drinks.",
+      "image": "https://images.unsplash.com/photo-1717659487323-7783a99bcf61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "link": "/contact"
+    },
+    {
+      "title": "Adult Socials",
+      "date": "Every Day",
+      "image": "https://images.unsplash.com/photo-1659081463572-4c5903a309e6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "A charity event to raise funds for local youth badminton programs. Compete and contribute to a good cause!",
+      "link": "/contact"
+    },
+    {
+      "title": "Kids Socials",
+      "date": "Monday, Wednesday, Friday, Saturday",
+      "description": "A day for the entire family! Come for a friendly tournament, activities for all ages, and delicious food and beverages.",
+      "image": "https://images.unsplash.com/photo-1718452739586-5b467f1f109b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "link": "/contact"
+    },
+    {
+      "title": "Family Fun Day",
+      "date": "Sunday",
+      "description": "A day of fun for the whole family! Enjoy badminton games, food stalls, and activities for kids.",
+      "image": "https://images.unsplash.com/photo-1718452739586-5b467f1f109b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "link": "/contact"
+    },
+    {
+      "title": "Charity Tournament",
+      "date": "",
+      "description": "A charity event to raise funds for local youth badminton programs. Compete and contribute to a good cause!",
+      "image": "https://images.unsplash.com/photo-1717659487323-7783a99bcf61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "link": "/contact"
+    }
+  ]
 }
