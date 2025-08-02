@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import data from './dataBrisbaneBadminton.json';
+// import Image from 'next/image';
+// import data from './dataBrisbaneBadminton.json';
 import CardCarousel from '../components/CardCarousel';
+import { QRCodeSVG } from 'qrcode.react';
 
 const events = [
 	{
@@ -53,7 +54,7 @@ const events = [
 	},
 ];
 
-const whatsappInviteUrl = 'https://chat.whatsapp.com/your-group-invite-link'; // Replace with your actual invite link
+const whatsappInviteUrl = 'https://chat.whatsapp.com/FGZOTERLPJAAQQcLj4S5bd?mode=ac_t'; // Replace with your actual invite link
 
 export default function SocialsPage() {
 	return (
@@ -67,15 +68,13 @@ export default function SocialsPage() {
 					Scan the QR code below to join our club WhatsApp group for updates,
 					events, and community chat!
 				</p>
-				<div className="bg-black p-4 rounded-xl border border-white/10 mb-4">
-					<Image
-						src={data.Socials.images[0]}
-						alt="QR Code"
-						width={150}
-						height={150}
-						className="rounded"
-					/>
-				</div>
+			   <QRCodeSVG
+				   value={whatsappInviteUrl}
+				   size={150}
+				   fgColor="#fff"
+				   bgColor="#000"
+				   className="mb-4"
+			   />
 				<a
 					href={whatsappInviteUrl}
 					target="_blank"

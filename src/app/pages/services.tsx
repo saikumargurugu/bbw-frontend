@@ -14,8 +14,8 @@ const services = [
 
 	},
 	{
-		title: '1-on-1 Training',
-				description: `Personal coaching sessions tailored to your skill level.
+		title: 'Personal Training',
+		description: `Personal coaching sessions tailored to your skill level.
 Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.`,
 			image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
 	},

@@ -12,7 +12,7 @@ import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
-}: {  
+}: {
   children: React.ReactNode;
 }) {
   const [loading, setLoading] = useState(true);
@@ -24,6 +24,9 @@ export default function RootLayout({
     "/register",
     "/pro_shop",
   ];
+
+  let banner = null;
+  if (pathname === "/club") banner = data.club.heroSlides[0];
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000); // Simulated delay for UI smoothness
@@ -50,7 +53,7 @@ export default function RootLayout({
         <Provider store={store}>
 
           <MainComponent loading={loading}>
-            {showBanner && <Banner banner={data.home.heroSlides[0]} />}
+            {showBanner && <Banner banner={banner || data.home.heroSlides[0]} />}
             {children}
           </MainComponent>
           

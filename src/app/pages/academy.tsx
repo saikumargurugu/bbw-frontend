@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { Avatar, CardContent, Typography } from '@mui/material';
+import TabsView from '../components/TabsView';
 import Link from 'next/link';
 import { motion } from "framer-motion";
 import data from './dataBrisbaneBadminton.json';
 
-const programs = data.acadamy.programs || [];
-
+// const programs = data.acadamy.programs1 || [];
 const coaches = data.acadamy.coaches || [];
+const tabsView = data.acadamy.tabsView ? data.acadamy.tabsView : [];
 
 export default function AcademyPage() {
   return (
@@ -31,16 +32,25 @@ export default function AcademyPage() {
         <p className="text-lg text-gray-200 leading-relaxed">
           Join us for regular training, and tournament preparation in a supportive and motivating environment.
         </p>
+
       </motion.section>
 
+      {/* Dynamic Tabs Table View Section */}
+      {tabsView.length > 0 && (
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          <TabsView tabs={tabsView} />
+        </div>
+      )}
+
       {/* Programs Section */}
-      <motion.section
-        className="max-w-6xl mx-auto px-4 sm:px-6 py-16 grid gap-8 md:grid-cols-3"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {programs.map((program, idx) => (
+      {/* {programs.length > 0 && (
+        <motion.section
+          className="max-w-6xl mx-auto px-4 sm:px-6 py-16 grid gap-8 md:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+        {programs.map((program: { title: string; description: string }, idx: number) => (
           <motion.div
             key={idx}
             className="bg-white/10 rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform duration-300 hover:scale-105"
@@ -55,7 +65,7 @@ export default function AcademyPage() {
           </motion.div>
         ))}
       </motion.section>
-
+)} */}
       {/* Coaches Section */}
       <motion.section
         className="max-w-6xl mx-auto px-4 py-16"
