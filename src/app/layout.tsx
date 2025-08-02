@@ -25,6 +25,14 @@ export default function RootLayout({
     "/pro_shop",
   ];
 
+// Register service worker for image caching
+if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').catch(err => {
+      console.warn('Service worker registration failed:', err);
+    });
+  });
+}
   let banner = null;
   if (pathname === "/club") banner = data.club.heroSlides[0];
 
