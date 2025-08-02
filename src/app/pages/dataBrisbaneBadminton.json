@@ -6,8 +6,16 @@
         "caption": "Court Hire",
         "description": "Book our world-class courts for singles, doubles, or group play. Enjoy premium facilities and easy online booking.",
         "buttons": [
-          { "label": "Hire Now", "url": "https://badmintonbrisbane.yepbooking.com.au/", "newTab": true },
-          { "label": "Learn More", "url": "/services/", "newTab": false }
+          {
+            "label": "Book Now",
+            "url": "https://badmintonbrisbane.yepbooking.com.au/",
+            "newTab": true
+          },
+          {
+            "label": "Learn More",
+            "url": "/services/",
+            "newTab": false
+          }
         ]
       },
       {
@@ -15,15 +23,23 @@
         "caption": "Academy",
         "description": "Join our academy for professional coaching, skill development, and fun training sessions for all ages.",
         "buttons": [
-          { "label": "Join Academy", "url": "/academy/", "newTab": false }
+          {
+            "label": "Join Academy",
+            "url": "/academy/",
+            "newTab": false
+          }
         ]
       },
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME3.JPG",
-        "caption": "Club Socials",
+        "caption": "Social",
         "description": "Meet, play, and socialize with other club members. Friendly games, refreshments, and networking every month.",
         "buttons": [
-          { "label": "See Events", "url": "/club/", "newTab": false }
+          {
+            "label": "See Events",
+            "url": "/club/",
+            "newTab": false
+          }
         ]
       },
       {
@@ -31,7 +47,11 @@
         "caption": "1 - on 1 Training",
         "description": "Personalized coaching sessions to help you reach your badminton goals. Flexible scheduling available.",
         "buttons": [
-          { "label": "Book Session", "url": "/academy/", "newTab": false }
+          {
+            "label": "Book Session",
+            "url": "/academy/",
+            "newTab": false
+          }
         ]
       },
       {
@@ -39,7 +59,11 @@
         "caption": "Competition Training",
         "description": "Prepare for tournaments with advanced drills and strategy sessions led by experienced coaches.",
         "buttons": [
-          { "label": "Competition Info", "url": "/academy/", "newTab": false }
+          {
+            "label": "Competition Info",
+            "url": "/academy/",
+            "newTab": false
+          }
         ]
       },
       {
@@ -47,7 +71,11 @@
         "caption": "QBA Club Membership",
         "description": "Become a QBA member to play at the Queensland level this covers insurance during competitions.",
         "buttons": [
-          { "label": "Join QBA", "url": "https://badmintonbrisbane.yepbooking.com.au/", "newTab": true }
+          {
+            "label": "Join QBA",
+            "url": "https://badmintonbrisbane.yepbooking.com.au/",
+            "newTab": true
+          }
         ]
       }
     ],
@@ -73,15 +101,92 @@
       "title": "Ready to Play?",
       "buttonText": "Book a Court",
       "buttonUrl": "/court-hire"
-    }
+    },
+    "services": [
+      {
+        "title": "Court Hire",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS3.jpg",
+        "description": "Book our world-class courts at your convenience.\nOur facility features high-quality flooring, lighting, and equipment for an optimal playing experience. Courts are available for singles, doubles, and group bookings. Reserve online and enjoy hassle-free access for practice or matches.(Non Marking Shoes Only)",
+        "config": {
+          "url": "https://badmintonbrisbane.yepbooking.com.au/",
+          "name": "Book Now",
+          "newTab": true
+        }
+      },
+      {
+        "title": "QBA Membership",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
+        "description": "South Brisbane Badminton Inc. is proud to be affiliated with the Queensland Badminton Association (QBA). Becoming a QBA member not only supports the growth of badminton in Queensland but also allows you to compete in official state-level tournaments and includes insurance coverage during these competitions.",
+        "config": {
+          "url": "https://badmintonbrisbane.yepbooking.com.au/",
+          "name": "Contact Us to Join Now",
+          "newTab": true
+        }
+      },
+      {
+        "title": "Restringing",
+        "image": "https://images.unsplash.com/photo-1722003184213-b5dfa47e2476?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Top-quality restringing service with fast turnaround.\nWe use premium strings and professional techniques to ensure your racket performs at its best. Our experts can advise on string tension and type for your playing style. Drop off your racket and pick it up ready for your next match!",
+        "config": {
+          "url": "/services/",
+          "name": "Restringing",
+          "newTab": false
+        }
+      },
+      {
+        "title": "Personal Training",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg",
+        "description": "Personal coaching sessions tailored to your skill level.\nOur certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.",
+        "config": {
+          "url": "/academy/",
+          "name": "Academy",
+          "newTab": false
+        }
+      },
+      {
+        "title": "Social",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
+        "description": "Meet, play and socialize with other club members.\nOur socials are open to all skill levels and ages. Enjoy friendly games, refreshments, and networking opportunities. Special events and tournaments are held regularly to foster community and fun.",
+        "config": {
+          "url": "/club/",
+          "name": "Social",
+          "newTab": false
+        }
+      },
+      {
+        "title": "Academy",
+        "image": "https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/489956476_122149506584528399_5493119559582749710_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=68ep-g_6TsEQ7kNvwFn-Dsu&_nc_oc=AdnhvaV-JXsbOvT_t5d6k_bD4VwVTmSxxe7l2UrXSAsNryJ7kGFcO2HMg-YEgAd9MLE&_nc_zt=23&_nc_ht=scontent-syd2-1.xx&_nc_gid=dtjDd2Uni7bJ0wHhquxvlw&oh=00_AfTWOYj98hY463S4-sie-sCEpkwlUx6MuZPyAUb9yWSmjQ&oe=68931B84",
+        "description": "Train young champions with certified coaches.\nOur academy focuses on skill development, teamwork, and sportsmanship. Programs are designed for different age groups and abilities. Kids learn through fun drills, games, and competitions in a safe environment.",
+        "config": {
+          "url": "/academy/",
+          "name": "Academy",
+          "newTab": false
+        }
+      }
+    ]
   },
   "footer": {
     "links": [
-      { "text": "Academy", "url": "/academy" },
-      { "text": "Services", "url": "/services" },
-      { "text": "Club", "url": "/club" },
-      { "text": "Court Hire", "url": "/court-hire" },
-      { "text": "Contact", "url": "/contact" }
+      {
+        "text": "Academy",
+        "url": "/academy"
+      },
+      {
+        "text": "Services",
+        "url": "/services"
+      },
+      {
+        "text": "Club",
+        "url": "/club"
+      },
+      {
+        "text": "Court Hire",
+        "url": "/court-hire"
+      },
+      {
+        "text": "Contact",
+        "url": "/contact"
+      }
     ],
     "socials": [
       {
@@ -94,18 +199,18 @@
       }
     ],
     "openingHours": {
-    "weekdays": "Mon-Fri: 9:00am 10:00pm",
-    "weekends": "Sat-Sun: 8:00am 10:00pm",
-    "holidays": "Public Holidays: Open"
-  },
-   "ContactUs": {
-    "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
-    "phone": "+61 433 300 506",
-    "email": "admin@badmintonbrisbane.com.au",
-    "images": [
-      "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
-    ]
-  }
+      "weekdays": "Mon-Fri: 8:00am 11:00pm",
+      "weekends": "Sat-Sun: 6:00am 11:00pm",
+      "holidays": "Public Holidays: Open"
+    },
+    "ContactUs": {
+      "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
+      "phone": "+61 433 300 506",
+      "email": "admin@badmintonbrisbane.com.au",
+      "images": [
+        "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
+      ]
+    }
   },
   "ContactUs": {
     "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
@@ -121,12 +226,27 @@
     ]
   },
   "acadamy": {
-    "programs": [
-      { "title": "Beginner Batches (Age 6+)", "description": "Perfect for young players starting their badminton journey. Focus on basic skills, rules, and fun drills." },
-      { "title": "Intermediate Coaching", "description": "Refining skills and game strategies for intermediate players. Includes match play and tactical sessions." },
-      { "title": "Advanced Player Training", "description": "Intensive training designed for competitive athletes. Personalized feedback and advanced techniques." },
-      { "title": "Aglity and speed", "description": "Improve speed, strength, and endurance for peak performance. Includes footwork, and techniques." },
-      { "title": "Tournament Prep", "description": "Specialized coaching for players preparing for tournaments. Mental preparation, strategy, and match simulation." }
+    "programs12": [
+      {
+        "title": "Beginner Batches (Age 6+)",
+        "description": "Perfect for young players starting their badminton journey. Focus on basic skills, rules, and fun drills."
+      },
+      {
+        "title": "Intermediate Coaching",
+        "description": "Refining skills and game strategies for intermediate players. Includes match play and tactical sessions."
+      },
+      {
+        "title": "Advanced Player Training",
+        "description": "Intensive training designed for competitive athletes. Personalized feedback and advanced techniques."
+      },
+      {
+        "title": "Aglity and speed",
+        "description": "Improve speed, strength, and endurance for peak performance. Includes footwork, and techniques."
+      },
+      {
+        "title": "Tournament Prep",
+        "description": "Specialized coaching for players preparing for tournaments. Mental preparation, strategy, and match simulation."
+      }
     ],
     "coaches": [
       {
@@ -167,6 +287,85 @@
         "name": "Ankith Mohan",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Ankit.jpeg",
         "acheivements": []
+      }
+    ],
+    "tabsView": [
+      {
+        "label": "Academy",
+        "render": "academy",
+        "info": {
+          "dates": "14/07/2025 - 21/09/2025",
+          "classFormat": "4-6 students/session/Coach",
+          "termFee": "$375 = Any 1 day/week, 2 hours/lesson, 10 lesson/term",
+          "trainingPlan": [
+            "Week 1 - Week 4: Basic skills, special fitness, physical fitness, game rules, game play",
+            "Week 5: Pre-Assessement & Speed Test (Agility activity)",
+            "Week 6 - Week 7: Training Development & Player Assessment",
+            "Week 8 - Week 9: Game knowledge & Match development, Competition preparation",
+            "Week 10: Internal Academy Competition 20/09 Saturday & 21/09 Sunday"
+          ],
+          "kidsTimetable": [
+            "Monday 5pm-7pm (Beginner - Intermediate)",
+            "Tuesday 5pm-7pm (Beginner)",
+            "Wednesday 5pm-7pm (Intermediate - Advance)",
+            "Thursday 5pm-7pm (Advance Group)",
+            "Thursday 5pm-7pm (Beginner - Intermediate)",
+            "Friday 5pm-7pm (Beginner - Intermediate)",
+            "Saturday 10am-12pm (Intermediate)",
+            "Saturday 2pm-4pm (Beginner)",
+            "Sunday 10am-12pm (Beginner - Intermediate)",
+            "Sunday 2pm-4pm (Beginner)"
+          ],
+          "kidsFees": "Term Training Fee: $375/term/student/lesson/week | Casual/Trial lesson Fee: $50/session (2 Hrs.)/student",
+          "adultTimetable": [
+            "Monday to Friday: 5.00pm - 7.00pm, 7:00pm - 9:00pm",
+            "Saturday: 10am - 12pm, 2pm - 4pm",
+            "Sunday: 10am - 12pm, 2pm - 4pm"
+          ],
+          "adultFees": "Term Training Fee: $375/term/student/lesson/week | Casual/Trial lesson Fee: $50/session (2 Hrs.)/student",
+          "discounts": [
+            "1 lesson/week/term/student: $375 (10 lessons)",
+            "2 lessons/week/term/student: $375 + $200 = $575 (20 lessons)",
+            "3 lessons/week/term/student: $375 + $200 + $150 = $725 (30 lessons)",
+            "4 lessons/week/term/student: $375 + $200 + $150 + $125 = $850 (40 lessons)",
+            "5 lessons/week/term/student: $375 + $200 + $150 + $125 + $100 = $950 (50 lessons)"
+          ],
+          "payment": {
+            "name": "Brisbane Badminton Pty Ltd",
+            "bsb": "064-159",
+            "account": "1050-3509",
+            "reference": "student name",
+            "email": "admin@badmintonbrisbane.com.au"
+          },
+          "whatsapp": "https://chat.whatsapp.com/B6rSNoWoQikIrWSNiOhnWu",
+          "contact": {
+            "address": "39 Quilton Place, Crestmead, QLD, 4132",
+            "phone": "0452 007 848 (Pavan), 0433 300 506 (Krishna)",
+            "email": "admin@badmintonbrisbane.com.au"
+          },
+          "notices": [
+            "Term fee $375 is only applicable for the students enrolling 10 weeks program (within their enrolled day) which is non-refundable or redeemable to any other forms of service",
+            "Students enrolling other than Term Training is considered as CASUAL enrollment with $50/lesson/student",
+            "All the makeup lesson must be completed within the enrolled term",
+            "A make-up lesson must be scheduled within the enrolled term and must be requested within AT LEAST 24 hours of notice.",
+            "A student is allowed to schedule up to 3 make-up lessons over term training.",
+            "Brisbane Badminton may request a medical certificate if a student is sick on a training day and requests a make-up lesson within LESS THAN 24 hours of notice.",
+            "Student should bring their own Badminton Racquet, Sport Shoe (no black sole), Water/Drink bottle.",
+            "Training arrangements are made accordingly if any events are hosted in the facility.",
+            "Further notices will be informed and discussed in the WhatsApp group/E-mail or DM Parent/Student."
+          ]
+        }
+      },
+      {
+        "label": "Personal training",
+        "render": "personalTraining",
+        "info": {
+          "title": "Personal Training",
+          "description": "Get personalized coaching to improve your skills and performance. Our expert coaches will work with you one-on-one to develop a training plan tailored to your needs.",
+          "contact": {
+            "email": "admin@badmintonbrisbane.com.au"
+          }
+        }
       }
     ]
   },
@@ -232,6 +431,85 @@
       "<b>Please read our Booking Rules including Cancellation Policy.</b>",
       "<b>Please read our Terms and Conditions.</b>",
       "<b>No Outside coaches</b> are allowed to do any sort of coaching in Brisbane Badminton premises."
+    ]
+  },
+  "club": {
+    "heroSlides": [
+      {
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_LC.png",
+        "caption": "Join Our Club",
+        "description": "",
+        "buttons": [
+          {
+            "label": "Join Now",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSdWs7zumvUU2oMHOuO-CdM6vh4x01_JKIr0KyFjb218WvJYtQ/viewform?usp=send_form",
+            "newTab": true
+          }
+        ]
+      }
+    ],
+    "about": {
+      "title": "About the Club",
+      "description": "Our club is dedicated to creating a friendly and supportive environment for badminton enthusiasts of all levels.\n    Whether you're a beginner or an advanced player, you'll find the perfect place to grow your skills and enjoy the sport with others."
+    },
+    "qba": {
+      "title": "QBA Membership",
+      "description": "<strong>South Brisbane Badminton Inc.</strong> is proud to be affiliated with the <strong>Queensland Badminton Association (QBA)</strong>.\n    Becoming a QBA member not only supports the growth of badminton in Queensland but also allows you to compete in official state-level tournaments and includes insurance coverage during these competitions.",
+      "courtTitle": "Book Our Premium Courts",
+      "courtDescription": "Play on our <strong>badminton courts</strong>, featuring the <span class=\"text-red-700 font-bold\">highest ceiling in Queensland</span>, <span class=\"text-cyan-700 font-bold\">soft cushion flooring</span>, and the <span class=\"text-yellow-500 font-bold\">brightest lights</span> for unmatched comfort, performance, and safety. With <strong>top-tier flooring, professional lighting, and quality equipment</strong>, our facility offers the perfect environment for both casual play and serious training.",
+      "courtList": [
+        "Singles & Doubles Matches",
+        "Group Bookings",
+        "Casual Practice & Competitive Play"
+      ],
+      "bookingNote": "Reserve your court online for a <strong>smooth, hassle-free experience</strong>. Whether you're training, competing, or just having fun—South Brisbane Badminton Inc. is the place to be."
+    },
+    "terms": {
+      "title": "Terms and Conditions",
+      "items": [
+        "All players must use only <b>BADMINTON SHOES</b> or <b>Non marking shoes</b> at Brisbane Badminton.",
+        "People wearing shoes with black sole/bottom (including partially black) will not be allowed to play on our courts (no refunds of court booking).",
+        "People wearing any other shoes which can make any colored marks (including white marks) on the mats will not be allowed to play on our courts.",
+        "If you are unsure about your shoes, they are most likely Marking Shoes.",
+        "Any breach of this rule will incur management fee start from $150 (Must pay before leaving the Center).",
+        "<b>Court Arrangements:</b> Please note that courts for your booking may be adjusted for better utilisation of the facility. You'll be notified through the booking system if there are any changes. Kindly check your booking again on the day. If you do not wish to be moved, please notify us through the comment section upon making your bookings.",
+        "All customers are obligated to step off the court at the end of your booking hours; Any extended time of using the court may be charged.",
+        "<b>Please read our Booking Rules including Cancellation Policy.</b>",
+        "<b>Please read our Terms and Conditions.</b>",
+        "<b>No Outside coaches</b> are allowed to do any sort of coaching in Brisbane Badminton premises."
+      ]
+    },
+    "facilities": [
+      {
+        "title": "Indoor Courts",
+        "description": "Play in our state-of-the-art indoor courts, designed for the best badminton experience."
+      },
+      {
+        "title": "QBA Club Members",
+        "description": "Join our vibrant community of badminton enthusiasts and make new friends. Club memberships are open for all skill levels. Just $99 per year. Contact us to join and enjoy exclusive member benefits, priority court bookings, and access to club tournaments and socials."
+      },
+      {
+        "title": "Pro Shop",
+        "description": "Get all your badminton gear and accessories from our well-stocked pro shop. We offer rackets, shoes, shuttlecocks, apparel, and expert advice for players of all levels."
+      }
+    ],
+    "benefits": [
+      "Ability to participate in all sanctioned tournaments and regional affiliated club activities",
+      "Insurance coverage for injuries occurring at QBA sanctioned tournaments and affiliated clubs",
+      "Priority access to special opportunities involving international tournaments, coaching seminars and social events hosted by the QBA",
+      "Opportunity to represent Queensland in national competitions at junior and senior levels"
+    ],
+    "events": [
+      {
+        "title": "Academy Tournament",
+        "date": "End of Every Trimester",
+        "description": "Join our academy tournament to test your skills against fellow players. Open to all academy members, this event is a great opportunity to showcase your progress and compete in a friendly environment. Prizes for winners!"
+      },
+      {
+        "title": "Social",
+        "date": "Every Day",
+        "description": "A casual meet-up for members to socialize, play badminton, and have fun. Enjoy refreshments, friendly matches, and networking opportunities in a relaxed setting."
+      }
     ]
   },
   "socials": [

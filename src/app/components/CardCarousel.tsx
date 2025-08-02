@@ -115,7 +115,7 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
           }}
           size="small"
         >
-          <ArrowBackIosNewIcon fontSize="small" />
+          <ArrowBackIosNewIcon fontSize="small" sx={{ color: '#fff' }} />
         </IconButton>
 
         {/* Events Scrollable Row */}
@@ -198,7 +198,7 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
           }}
           size="small"
         >
-          <ArrowForwardIosIcon fontSize="small" />
+          <ArrowForwardIosIcon fontSize="small" sx={{ color: '#fff' }} />
         </IconButton>
       </div>
 

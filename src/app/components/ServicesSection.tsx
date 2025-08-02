@@ -23,13 +23,13 @@ export default function ServicesSection({
     background = "bg-bgThemeDark",
 }: ServicesSectionProps) {
   return (
-    <div className={`w-full ${background} py-0 mt-12`}>
-      <div className="flex flex-col w-full">
+    <div className={`w-full ${background} py-0 mt-12 transition-all duration-700 ease-in-out scroll-smooth`}>
+      <div className="flex flex-col w-full transition-all duration-700 ease-in-out">
         {services.map((service, idx) => (
           <motion.div
             key={service.title}
             className={`
-              w-full flex flex-col md:flex-row items-stretch m-0 p-0
+              w-full flex flex-col md:flex-row items-stretch m-0 p-0 transition-all duration-700 ease-in-out
               ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}
             `}
             style={{
@@ -37,9 +37,11 @@ export default function ServicesSection({
               borderRadius: 0,
               margin: 0,
               padding: 0,
+              scrollBehavior: "smooth"
             }}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
             {/* Image Side */}
@@ -57,14 +59,17 @@ export default function ServicesSection({
               <h2 className="text-2xl md:text-3xl font-bold text-cyan-200 mb-2 drop-shadow">{service.title}</h2>
               <p className="text-base md:text-lg text-gray-200 mb-4 drop-shadow">{service.description}</p>
               {service.config && (
-                <a
-                  href={service.config.url}
-                  target={service.config.newTab ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-red-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm"
-                >
-                  {service.config.name}
-                </a>
+                <div className="flex flex-row justify-start">
+                  <a
+                    href={service.config.url}
+                    target={service.config.newTab ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                    className="bg-red-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm"
+                    style={{ minWidth: 0, width: "auto", display: "inline-block" }}
+                  >
+                    {service.config.name}
+                  </a>
+                </div>
               )}
             </div>
           </motion.div>
