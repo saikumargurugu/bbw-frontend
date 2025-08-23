@@ -4,7 +4,7 @@
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg",
         "caption": "Court Hire",
-        "description": "Book our world-class courts for singles, doubles, or group play. Enjoy premium facilities and easy online booking.",
+        "description": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members, 7 days a week.",
         "buttons": [
           {
             "label": "Book Now",
@@ -21,7 +21,7 @@
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG",
         "caption": "Academy",
-        "description": "Join our academy for professional coaching, skill development, and fun training sessions for all ages.",
+  "description": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members, ranging from complete beginners to national-level competitors.",
         "buttons": [
           {
             "label": "Join Academy",
@@ -33,7 +33,7 @@
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME3.JPG",
         "caption": "Social",
-        "description": "Meet, play, and socialize with other club members. Friendly games, refreshments, and networking every month.",
+  "description": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
         "buttons": [
           {
             "label": "See Events",
@@ -45,7 +45,7 @@
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg",
         "caption": "1 - on 1 Training",
-        "description": "Personalized coaching sessions to help you reach your badminton goals. Flexible scheduling available.",
+  "description": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness.",
         "buttons": [
           {
             "label": "Book Session",
@@ -57,7 +57,7 @@
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME1.JPG",
         "caption": "Competition Training",
-        "description": "Prepare for tournaments with advanced drills and strategy sessions led by experienced coaches.",
+  "description": "Prepare for tournaments with advanced drills and strategy sessions led by experienced coaches.",
         "buttons": [
           {
             "label": "Competition Info",
@@ -69,7 +69,7 @@
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/HOME2.JPG",
         "caption": "QBA Club Membership",
-        "description": "Become a QBA member to play at the Queensland level this covers insurance during competitions.",
+  "description": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 150 active club members.",
         "buttons": [
           {
             "label": "Join QBA",
@@ -80,21 +80,21 @@
       }
     ],
     "about": {
-      "title": "About Us",
-      "description": "Brisbane Badminton is dedicated to providing the best badminton experience in Queensland. Our club welcomes players of all ages and skill levels, offering world-class facilities, professional coaching, and a vibrant community."
+  "title": "About Us",
+  "description": "Our state-of-the-art facility is certified to host Badminton World Federation (BWF) international tournaments. It is home to over 200 active members and trainees and is a Queensland Badminton Association (QBA) state tournament venue. We are a host for community, linguistic, and social group events and serve as the official training base for elite athletes in the Queensland Junior State Team."
     },
     "features": [
       {
         "title": "Premium Courts",
-        "description": "Enjoy playing on courts with soft cushion flooring, professional lighting, and the highest ceiling in Queensland."
+        "description": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members for all 7 days a week throughout the year."
       },
       {
         "title": "Expert Coaching",
-        "description": "Our certified coaches help you improve your game, whether you’re a beginner or a competitive player."
+        "description": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members, ranging from complete beginners to national-level competitors."
       },
       {
         "title": "Community Events",
-        "description": "Participate in tournaments, socials, and events for all ages and abilities."
+        "description": "We regularly host community, linguistic, and social group events, fostering an inclusive and vibrant badminton community for all."
       }
     ],
     "cta": {
@@ -106,7 +106,7 @@
       {
         "title": "Court Hire",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS3.jpg",
-        "description": "Book our world-class courts at your convenience.\nOur facility features high-quality flooring, lighting, and equipment for an optimal playing experience. Courts are available for singles, doubles, and group bookings. Reserve online and enjoy hassle-free access for practice or matches.(Non Marking Shoes Only)",
+        "description": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members for all 7 days a week throughout the year.",
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
           "name": "Book Now",
@@ -116,7 +116,7 @@
       {
         "title": "QBA Membership",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
-        "description": "South Brisbane Badminton Inc. is proud to be affiliated with the Queensland Badminton Association (QBA). Becoming a QBA member not only supports the growth of badminton in Queensland but also allows you to compete in official state-level tournaments and includes insurance coverage during these competitions.",
+  "description": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 150 active club members.",
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
           "name": "Contact Us to Join Now",
@@ -126,7 +126,7 @@
       {
         "title": "Restringing",
         "image": "https://images.unsplash.com/photo-1722003184213-b5dfa47e2476?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "description": "Top-quality restringing service with fast turnaround.\nWe use premium strings and professional techniques to ensure your racket performs at its best. Our experts can advise on string tension and type for your playing style. Drop off your racket and pick it up ready for your next match!",
+  "description": "Top-quality restringing service with fast turnaround. We use premium strings and professional techniques to ensure your racket performs at its best. Our experts can advise on string tension and type for your playing style. Drop off your racket and pick it up ready for your next match!",
         "config": {
           "url": "/services/",
           "name": "Restringing",
@@ -136,7 +136,7 @@
       {
         "title": "Personal Training",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg",
-        "description": "Personal coaching sessions tailored to your skill level.\nOur certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.",
+  "description": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.",
         "config": {
           "url": "/academy/",
           "name": "Academy",
@@ -146,7 +146,7 @@
       {
         "title": "Social",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
-        "description": "Meet, play and socialize with other club members.\nOur socials are open to all skill levels and ages. Enjoy friendly games, refreshments, and networking opportunities. Special events and tournaments are held regularly to foster community and fun.",
+  "description": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
         "config": {
           "url": "/club/",
           "name": "Social",
@@ -155,8 +155,8 @@
       },
       {
         "title": "Academy",
-        "image": "https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/489956476_122149506584528399_5493119559582749710_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=68ep-g_6TsEQ7kNvwFn-Dsu&_nc_oc=AdnhvaV-JXsbOvT_t5d6k_bD4VwVTmSxxe7l2UrXSAsNryJ7kGFcO2HMg-YEgAd9MLE&_nc_zt=23&_nc_ht=scontent-syd2-1.xx&_nc_gid=dtjDd2Uni7bJ0wHhquxvlw&oh=00_AfTWOYj98hY463S4-sie-sCEpkwlUx6MuZPyAUb9yWSmjQ&oe=68931B84",
-        "description": "Train young champions with certified coaches.\nOur academy focuses on skill development, teamwork, and sportsmanship. Programs are designed for different age groups and abilities. Kids learn through fun drills, games, and competitions in a safe environment.",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/fbwall.jpg",
+  "description": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members, ranging from complete beginners to national-level competitors.",
         "config": {
           "url": "/academy/",
           "name": "Academy",
