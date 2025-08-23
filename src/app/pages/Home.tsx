@@ -25,7 +25,10 @@ export default function Home() {
 						to { opacity: 1; transform: translateY(0); }
 					}
 				`}</style>
-				<div className="w-full px-6 mx-auto" style={{ maxWidth: '75%' }}>
+						<div
+							className="w-full px-2 sm:px-6 mx-auto"
+							style={{ maxWidth: typeof window !== 'undefined' && window.innerWidth < 768 ? '100%' : '75%' }}
+						>
 					<h2 className="text-3xl font-bold mb-4 text-white text-center">About Us</h2>
 					{/* Collapsible text wrapper for mobile */}
 								<div className="relative">
