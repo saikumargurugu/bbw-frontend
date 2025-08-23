@@ -13,6 +13,8 @@ export default function Pagination({ totalPages }: PaginationProps) {
   const currentPage = Number(searchParams.get('page')) || 1;
 
   const changePage = (page: number) => {
+    console.log("Changing page to:", page);
+    
     const params = new URLSearchParams(searchParams.toString());
     params.set('page', String(page));
     router.push(`?${params.toString()}`);

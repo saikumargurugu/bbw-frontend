@@ -62,7 +62,7 @@ const ProductList: React.FC<ProductListProps> = ({
           />
         ))}
       </div>
-      {totalPages > 1 && !search && (
+      {/* {totalPages > 1 && !search && (
         <div className="flex justify-center my-4 gap-2">
           <button
             className="px-3 py-1 rounded bg-black text-white hover:bg-gray-800 transition"
@@ -95,7 +95,7 @@ const ProductList: React.FC<ProductListProps> = ({
             Next
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

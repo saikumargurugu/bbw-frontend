@@ -17,9 +17,12 @@ import Link from "next/link";
 import { navBarTypes } from "../types";
 import Logo from "./Logo/Logo";
 import LogWhite from "./Logo/LogoWhite";
-import LogoBlack from "./Logo/LogoBlack";
+// import LogoBlack from "./Logo/LogoBlack";
 
 const EASING = "cubic-bezier(0.22, 0.01, 0.36, 1)";
+
+const navItemClass =
+  "hover:text-yellow-300 text-white px-2 py-1 text-base font-medium transition-colors duration-200";
 
 export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -87,7 +90,6 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         sx={{
           backgroundColor: "rgba(20,20,20,0.15) !important",
           boxShadow: "none",
-          // backdropFilter: "blur(8px)", // Uncomment for blur effect
           transition: `background-color 0.6s ${EASING}, backdrop-filter 0.6s ${EASING}`,
           width: '100%',
           top: 0,
@@ -122,18 +124,17 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
                 <div className="flex items-center space-x-2">
                   {navLinks.map((link, idx) => (
                     <React.Fragment key={idx}>
-                      <Button
-                        color="inherit"
-                        sx={{
-                          textTransform: "none",
+                      <Link
+                        href={link.href}
+                        className={navItemClass}
+                        style={{
                           transition: `opacity 0.8s ${EASING}, transform 0.8s ${EASING}`,
                           transitionDelay: `${idx * 30}ms`,
+                          willChange: "transform, opacity",
                         }}
                       >
-                        <Link href={link.href} className="hover:text-yellow-300 text-white">
-                          {link.label}
-                        </Link>
-                      </Button>
+                        {link.label}
+                      </Link>
                       {idx < navLinks.length - 1 && (
                         <span className="mx-1 text-white/60 select-none">|</span>
                       )}
@@ -184,7 +185,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
                 <React.Fragment key={idx}>
                   <Link
                     href={link.href}
-                    className="hover:text-yellow-300 text-white px-2 py-1"
+                    className={navItemClass}
                     style={{
                       transition: `opacity 0.9s ${EASING}, transform 0.9s ${EASING}`,
                       transitionDelay: `${idx * 25}ms`,
