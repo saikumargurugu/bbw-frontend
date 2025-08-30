@@ -476,7 +476,14 @@
     ],
     "about": {
       "title": "About the Club",
-      "description": "Brisbane Badminton is home to South Brisbane Badminton Inc., a fully incorporated, not-for-profit badminton club. The club is officially registered with Badminton Australia and the Queensland Badminton Association (QBA), and has over 150 active members. It runs competitions, represents players at state and national levels, and fosters the growth of badminton within Brisbane’s southside community."
+      "description": "Brisbane Badminton is home to South Brisbane Badminton Inc., a fully incorporated, not-for-profit badminton club. The club is officially registered with Badminton Australia and the Queensland Badminton Association (QBA), and has over 150 active members. It runs competitions, represents players at state and national levels, and fosters the growth of badminton within Brisbane’s southside community.",
+      "buttons":[
+        {
+          "label": "Join Now",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSdWs7zumvUU2oMHOuO-CdM6vh4x01_JKIr0KyFjb218WvJYtQ/viewform?usp=send_form",
+          "newTab": true
+        }
+      ]
     },
     "qba": {
       "title": "QBA Membership",
