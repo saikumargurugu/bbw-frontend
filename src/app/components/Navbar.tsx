@@ -15,7 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
-import Logo from "./Logo/Logo";
+import Logo from "./Logo/LogoWhite";
 import { sportyButton } from "../styles/sportyTheme";
 
 const EASING = "cubic-bezier(0.22, 0.01, 0.36, 1)";
@@ -77,7 +77,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         elevation={0}
         sx={{
           background: 'transparent',
-          boxShadow: "0 2px 12px 0 rgba(0,0,0,0.10)",
+          boxShadow: "0 4px 20px 0 rgba(0,0,0,0.25)",
           transition: `background-color 0.6s ${EASING}, backdrop-filter 0.6s ${EASING}`,
           width: '100%',
           top: 0,
@@ -87,7 +87,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         <div className="sticky top-0 z-[1200] w-full">
           <Toolbar className="flex justify-between px-2 relative">
             <div className="flex w-full items-center justify-between">
-              <div>
+              <div onClick={() => window.location.href = '/'}>
                 <Logo variant={isMobile ? "min" : "full"} />
               </div>
               <div className="flex items-center gap-4">

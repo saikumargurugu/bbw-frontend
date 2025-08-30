@@ -38,13 +38,13 @@ export default function AcademyPage() {
                   key={idx}
                   className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6 py-6 md:px-10 md:py-8 w-full mx-auto text-center"
                   style={{
-                    ...sportySectionTheme.font.description.style,
+                    // Removed spread operator for sportySectionTheme.font.description.style
                     boxShadow: '0 8px 40px 0 #000a, 0 1.5px 0 #c53030',
-                    fontFamily: sportySectionTheme.font.description.style.fontFamily,
-                    letterSpacing: sportySectionTheme.font.description.style.letterSpacing,
-                    lineHeight: sportySectionTheme.font.description.style.lineHeight,
-                    fontWeight: 500,
-                    fontSize: '0.5rem', // Further reduced font size for program descriptions
+                    fontFamily: 'Montserrat, Arial, sans-serif',
+                    letterSpacing: '0.06em',
+                    lineHeight: 1.6,
+                    fontWeight: 'normal', // Ensure font weight is removed
+                    fontSize: '0.1rem', // Apply reduced font size explicitly
                   }}
                 >
                   <span className={sportySectionTheme.font.description.className + ' text-center'}>
