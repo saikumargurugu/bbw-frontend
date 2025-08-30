@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button, IconButton } from '@mui/material';
+import { sportySectionTheme } from '../styles/sportyTheme';
 import { useRouter } from "next/navigation";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -137,19 +138,20 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
               initial={{ opacity: 0, scale: 0.96, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeInOut" }}
-              className={`
-                flex-shrink-0 bg-bgThemeDark border border-white/10 rounded-2xl shadow-md p-4 sm:p-8 m-2 hover:shadow-xl transition-all duration-500
-                ${isMobile
+              className={
+                `${sportySectionTheme.card.className} flex-shrink-0 m-2 hover:shadow-2xl transition-all duration-500 ` +
+                (isMobile
                   ? "w-full min-w-full max-w-full snap-center"
                   : idx === centerIdx
                     ? "scale-105 sm:scale-110 z-20 min-w-[85vw] sm:min-w-[370px] sm:max-w-[400px] max-w-[95vw]"
                     : "scale-95 sm:scale-90 opacity-70 z-10 min-w-[70vw] sm:min-w-[300px] sm:max-w-[320px] max-w-[85vw]"
-                }
-              `}
+                )
+              }
               style={{
+                ...(sportySectionTheme.card.style || {}),
                 boxShadow: idx === centerIdx && !isMobile
-                  ? "0 8px 32px 0 rgba(0, 200, 255, 0.25)"
-                  : undefined,
+                  ? "0 8px 32px 0 #c53030cc"
+                  : sportySectionTheme.card.style?.boxShadow,
               }}
             >
               <Image
@@ -160,21 +162,17 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
                 className={`object-cover w-full rounded-t-xl ${isMobile ? "h-56" : "h-72 sm:h-80"}`}
                 style={{ objectFit: "cover" }}
               />
-              <h3 className="font-bold text-cyan-200 mt-3 mb-1 sm:mt-4 sm:mb-2 text-xl">
+              <h3 className="font-extrabold text-white mt-3 mb-1 sm:mt-4 sm:mb-2 text-2xl uppercase tracking-wider" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>
                 {event.title}
               </h3>
-              <p className="text-red-400 text-base font-semibold mb-1">{event.date}</p>
-              <p className="text-gray-100 mt-1 sm:mt-2 text-base">
+              <p className="text-white/80 text-base font-semibold mb-1" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>{event.date}</p>
+              <p className="text-white mt-1 sm:mt-2 text-base font-medium" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
                 {event.description}
               </p>
               <Button
                 variant="contained"
-                className="mt-4 w-full text-lg bg-red-600 hover:bg-red-700 rounded-lg font-semibold shadow-none"
-                sx={{
-                  backgroundColor: "#dc2626",
-                  color: "#fff",
-                  '&:hover': { backgroundColor: "#b91c1c" }
-                }}
+                className={sportySectionTheme.sharpButton.className + ' mt-4 w-full'}
+                style={sportySectionTheme.sharpButton.style}
                 onClick={() => router.push(event.link)}
               >
                 Learn More

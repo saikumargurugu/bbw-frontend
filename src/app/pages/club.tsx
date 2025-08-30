@@ -2,6 +2,7 @@
 import React  from 'react';
 // import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { sportySectionTheme } from '@/app/styles/sportyTheme';
 // import ServicesSection from '../components/ServicesSection';
 import data from './dataBrisbaneBadminton.json';
 
@@ -16,27 +17,54 @@ export default function ClubPage() {
     <div className="bg-bgThemeDark min-h-screen">
       {/* About Section */}
       <motion.section
-        className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center"
+        className={sportySectionTheme.section.className + ' !text-center'}
+        style={sportySectionTheme.section.style}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-cyan-200 mb-6">
-          {clubPageData.about.title}
-        </h2>
-        <p className="text-lg text-gray-200 leading-relaxed">
-          {clubPageData.about.description}
-        </p>
-        {clubPageData.benefits && clubPageData.benefits.length > 0 && (
-          <div className="mt-8">
-            <h3 className="text-2xl font-bold text-red-400 mb-4">Club Member Benefits</h3>
-            <ul className="list-disc list-inside text-left max-w-2xl mx-auto text-lg text-gray-100">
-              {clubPageData.benefits.map((benefit: string, idx: number) => (
-                <li key={idx}>{benefit}</li>
-              ))}
-            </ul>
+        {/* Angled red accent background for sporty look */}
+        <div className={sportySectionTheme.accent.className} style={sportySectionTheme.accent.style} />
+        <div className="w-full px-2 sm:px-8 mx-auto flex justify-center z-10" style={{ maxWidth: '900px' }}>
+          <div className={sportySectionTheme.card.className} style={sportySectionTheme.card.style}>
+            <h2
+              className={sportySectionTheme.font.title.className + ' mb-6'}
+              style={{ ...sportySectionTheme.font.title.style, textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
+            >
+              {clubPageData.about.title}
+            </h2> 
+            <div
+              className="relative w-full flex justify-center"
+            >
+              <div
+                className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6 py-8 md:px-10 md:py-10 max-w-2xl mx-auto text-center"
+                style={{
+                  ...sportySectionTheme.font.description.style,
+                  boxShadow: '0 8px 40px 0 #000a, 0 1.5px 0 #c53030',
+                  fontFamily: sportySectionTheme.font.description.style.fontFamily,
+                  letterSpacing: sportySectionTheme.font.description.style.letterSpacing,
+                  lineHeight: sportySectionTheme.font.description.style.lineHeight,
+                  fontWeight: 500,
+                  fontSize: '1.15rem',
+                }}
+              >
+                <span className={sportySectionTheme.font.description.className + ' text-center'}>
+                  {clubPageData.about.description}
+                </span>
+              </div>
+            </div>
+            {clubPageData.benefits && clubPageData.benefits.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-2xl font-bold text-red-400 mb-4">Club Member Benefits</h3>
+                <ul className="list-disc list-inside text-left max-w-2xl mx-auto text-lg text-gray-100">
+                  {clubPageData.benefits.map((benefit: string, idx: number) => (
+                    <li key={idx}>{benefit}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </motion.section>
 
       {/* QBA Membership & Court Hire Section */}

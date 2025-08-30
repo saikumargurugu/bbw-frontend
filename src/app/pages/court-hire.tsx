@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
+
+import { sportySectionTheme } from '../styles/sportyTheme';
 import data from './dataBrisbaneBadminton.json';
 
 const courtHireData = data.courtHire;
@@ -24,22 +26,22 @@ export default function CourtHirePage() {
   };
 
   return (
-    <div className="bg-bgThemeDark min-h-screen text-gray-100">
+  <div className={sportySectionTheme.section.className + " min-h-screen"} style={sportySectionTheme.section.style}>
       {/* Hero Section */}
       {/* Court Hire Information */}
       <section className="w-full py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-4xl font-extrabold text-cyan-200 mb-8">{courtHireData.info.title}</h2>
-          <p className="text-lg text-gray-200 leading-relaxed mb-6">
+          <h2 className="text-4xl font-extrabold text-white mb-8 tracking-widest" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif', letterSpacing:'0.12em'}}>{courtHireData.info.title}</h2>
+          <p className="text-lg text-white/90 leading-relaxed mb-6 font-medium" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
             {courtHireData.info.description}
           </p>
-          <ul className="text-lg text-gray-100 mb-6 list-disc list-inside text-left max-w-2xl mx-auto">
+          <ul className="text-lg text-white/80 mb-6 list-disc list-inside text-left max-w-2xl mx-auto font-medium" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
             {courtHireData.info.features.map((feature, idx) => (
               <li key={idx} dangerouslySetInnerHTML={{ __html: feature }} />
             ))}
           </ul>
           {courtHireData.info.notes.map((note, idx) => (
-            <p key={idx} className="text-lg text-gray-400 mb-6">{note}</p>
+            <p key={idx} className="text-lg text-white/60 mb-6 font-medium" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>{note}</p>
           ))}
 
           <div className="mt-6">
@@ -55,9 +57,8 @@ export default function CourtHirePage() {
               href={courtHireData.info.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-700 transition text-lg self-end mt-2"
-              style={{ alignSelf: "center" }}
-            >
+              className={sportySectionTheme.sharpButton.className}
+              style={{...sportySectionTheme.sharpButton.style, alignSelf: 'center'}}>
               Book Now
             </a>
           </Box>
@@ -69,29 +70,31 @@ export default function CourtHirePage() {
         <section className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-cyan-200 mb-6 text-center">Select Your Booking Slots</h2>
           <div className="overflow-x-auto">
-            <table className="table-auto border-collapse border border-gray-700 w-full bg-white/5">
+            <table className="table-auto border-collapse border-2 border-red-700 w-full bg-black/80 rounded-xl overflow-hidden shadow-xl">
               <thead>
-                <tr className="bg-cyan-900 text-white">
-                  <th className="p-4 border">Court / Time</th>
+                <tr className="bg-gradient-to-br from-red-700 to-red-500 text-white uppercase tracking-widest" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif', letterSpacing:'0.10em'}}>
+                  <th className="p-4 border-r-2 border-red-700">Court / Time</th>
                   {courtHireData.timeSlots.map((time) => (
-                    <th key={time} className="p-3 border">{time}</th>
+                    <th key={time} className="p-3 border-r-2 border-red-700">{time}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {courtHireData.courts.map((court) => (
-                  <tr key={court} className="border">
-                    <td className="p-3 border font-bold">{court}</td>
+                  <tr key={court} className="border-b-2 border-red-700">
+                    <td className="p-3 border-r-2 border-red-700 font-bold text-white/90" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>{court}</td>
                     {courtHireData.timeSlots.map((time) => {
                       const slotKey = `${court}-${time}`;
+                      const isSelected = selectedSlots.has(slotKey);
                       return (
                         <td
                           key={slotKey}
-                          className={`p-3 border cursor-pointer transition-colors duration-200 ${
-                            selectedSlots.has(slotKey)
-                              ? 'bg-yellow-400 text-black'
-                              : 'bg-cyan-900 hover:bg-cyan-700'
+                          className={`p-3 border-r-2 border-red-700 cursor-pointer transition-colors duration-200 text-center font-semibold ${
+                            isSelected
+                              ? 'bg-gradient-to-br from-yellow-400 to-yellow-200 text-black scale-105 shadow-lg'
+                              : 'bg-gray-900 hover:bg-red-900/40 text-white/80'
                           }`}
+                          style={{fontFamily:'Montserrat, Arial, sans-serif'}}
                           onClick={() => toggleSlot(slotKey)}
                         ></td>
                       );
@@ -106,9 +109,8 @@ export default function CourtHirePage() {
               href={courtHireData.info.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-700 transition text-lg self-end mt-2"
-              style={{ alignSelf: "center" }}
-            >
+              className={sportySectionTheme.sharpButton.className}
+              style={{...sportySectionTheme.sharpButton.style, alignSelf: 'center'}}>
               Book Now
             </a>
           </Box>
