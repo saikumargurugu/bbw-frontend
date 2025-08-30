@@ -47,7 +47,9 @@ export default function AcademyPage() {
                     fontSize: '0.1rem', // Apply reduced font size explicitly
                   }}
                 >
-                  <span className={sportySectionTheme.font.description.className + ' text-center'}>
+                  <span className={sportySectionTheme.font.description.className + ' text-center'}
+                      style={{ fontSize: '0.9rem' }} // Forcing the font size here
+                  >
                     <strong>{program.title}:</strong> {program.description}
                   </span>
                 </div>
