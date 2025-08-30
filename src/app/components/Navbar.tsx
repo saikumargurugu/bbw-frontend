@@ -16,7 +16,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
 import Logo from "./Logo/LogoWhite";
-import { sportyButton } from "../styles/sportyTheme";
 
 const EASING = "cubic-bezier(0.22, 0.01, 0.36, 1)";
 
