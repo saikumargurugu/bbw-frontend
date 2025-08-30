@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { sportySectionTheme } from "../styles/sportyTheme";
 
 interface BannerButton {
   label: string;
@@ -18,6 +19,12 @@ export default function Banner({ banner }: { banner: BannerObject }) {
   const { image, caption, description, buttons } = banner;
   return (
     <div className="relative w-full" style={{ height: "75vh", marginTop: 0, borderRadius: 0 }}>
+      {/* Bottom shadow for visual depth */}
+      <div className="absolute left-0 right-0 bottom-0 h-8 z-30 pointer-events-none" style={{
+        boxShadow: '0 12px 32px 0 #000a',
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
+      }} />
       <Image
         src={image}
         alt={caption}
@@ -41,13 +48,13 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         {buttons && buttons.length > 0 && (
           <div className="flex gap-4 flex-wrap mb-10">
             {buttons.map((btn, idx) => (
-          <a
-            key={idx}
-            href={btn.url}
-                        className="bg-red-600 hover:bg-red-700 text-white px-7 py-3 rounded-md font-bold uppercase tracking-wider shadow-lg text-base md:text-lg border-2 border-red-700  transition-all duration-200"
+              <a
+                key={idx}
+                href={btn.url}
+                className={sportySectionTheme.sharpButton.className}
+                style={sportySectionTheme.sharpButton.style}
                 target={btn.newTab ? "_blank" : "_self"}
                 rel="noopener noreferrer"
-                style={{ fontFamily: 'Oswald, Montserrat, Arial, sans-serif', letterSpacing: '0.08em' }}
               >
                 {btn.label}
               </a>

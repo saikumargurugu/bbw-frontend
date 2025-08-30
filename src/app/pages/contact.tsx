@@ -2,9 +2,10 @@
 
 import React from 'react';
 import Carousel from '@/app/components/Carousel';
-import { Typography, Paper } from '@mui/material';
+import { Typography } from '@mui/material';
 import Image from 'next/image';
 import data from './dataBrisbaneBadminton.json';
+import { sportySectionTheme } from '../styles/sportyTheme';
 
 interface ContactCardProps {
   address: string;
@@ -26,7 +27,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
   image,
 }) => (
   <div
-    className="bg-black border border-white/10 rounded-2xl shadow-xl p-10 flex flex-col justify-center items-start hover:shadow-cyan-400/40 transition-transform duration-300 hover:scale-105"
+    className={sportySectionTheme.card.className + ' hover:shadow-cyan-400/40 transition-transform duration-300 hover:scale-105'}
+    style={sportySectionTheme.card.style}
   >
     <Image
       src={image}
@@ -35,12 +37,12 @@ const ContactCard: React.FC<ContactCardProps> = ({
       height={400}
       className="rounded-2xl shadow-lg object-cover mb-4 border border-white/10"
     />
-    <Typography className="text-3xl sm:text-4xl font-extrabold tracking-tight text-cyan-200 mb-6">
+    <Typography className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-6 drop-shadow-xl font-sans uppercase" style={{letterSpacing:'0.04em', fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>
       Contact Brisbane Badminton
     </Typography>
     <div className="mb-4">
-      <Typography variant="h6" className="font-bold text-red-400 mb-2">Venue Address</Typography>
-      <Typography className="text-lg text-gray-100">
+  <Typography variant="h6" className="font-bold text-red-400 mb-2 uppercase tracking-wide" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Venue Address</Typography>
+  <Typography className="text-lg text-white" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
         <a
           href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
           target="_blank"
@@ -52,16 +54,16 @@ const ContactCard: React.FC<ContactCardProps> = ({
       </Typography>
     </div>
     <div className="mb-4">
-      <Typography variant="h6" className="font-bold text-red-400 mb-2">Phone</Typography>
-      <Typography className="text-lg text-gray-100">
+  <Typography variant="h6" className="font-bold text-red-400 mb-2 uppercase tracking-wide" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Phone</Typography>
+  <Typography className="text-lg text-white" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
         <a href={`tel:${phone}`} className="underline text-cyan-200 hover:text-red-400 transition">
           {phone}
         </a>
       </Typography>
     </div>
     <div>
-      <Typography variant="h6" className="font-bold text-red-400 mb-2">Email</Typography>
-      <Typography className="text-lg text-gray-100">
+  <Typography variant="h6" className="font-bold text-red-400 mb-2 uppercase tracking-wide" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Email</Typography>
+  <Typography className="text-lg text-white" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
         <a href={`mailto:${email}`} className="underline text-cyan-200 hover:text-red-400 transition">
           {email}
         </a>
@@ -72,12 +74,13 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
 const MapCard: React.FC<MapCardProps> = ({ mapSrc }) => (
   <div
-    className="bg-black border border-white/10 rounded-2xl shadow-xl p-10 flex flex-col justify-center items-center hover:shadow-red-400/40 transition-transform duration-300 hover:scale-105"
+    className={sportySectionTheme.card.className + ' hover:shadow-red-400/40 transition-transform duration-300 hover:scale-105'}
+    style={sportySectionTheme.card.style}
   >
-    <Typography variant="h6" className="font-bold mb-4 text-red-400">
+    <Typography variant="h6" className="font-bold mb-4 text-red-400 uppercase tracking-wide" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>
       Find Us on Google Maps
     </Typography>
-    <div className="w-full rounded-2xl overflow-hidden border border-cyan-900/30 shadow-lg">
+  <div className="w-full rounded-2xl overflow-hidden border border-cyan-900/30 shadow-lg">
       <iframe
         width="100%"
         height="350"
@@ -109,13 +112,13 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-bgThemeDark">
+    <div className={sportySectionTheme.section.className + ' min-h-screen'} style={sportySectionTheme.section.style}>
       {/* Contact Info Section */}
       <div className="py-12">
-        <h2 className="text-3xl font-bold text-cyan-200 mt-12 m-6 text-center">
+        <h2 className="text-3xl font-extrabold text-white mt-12 m-6 text-center drop-shadow-xl font-sans uppercase" style={{letterSpacing:'0.04em', fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>
           Get in Touch with Brisbane Badminton
         </h2>
-        <p className="text-lg text-gray-300 text-center max-w-2xl mx-auto">
+        <p className="text-lg text-white/80 text-center max-w-2xl mx-auto font-medium" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
           Reach out to us for court bookings, coaching, events, or any club-related queries. We look forward to hearing from you!
         </p>
       </div>

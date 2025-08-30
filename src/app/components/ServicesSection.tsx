@@ -1,16 +1,18 @@
 import React from "react";
 import Image from "next/image";
+import { sportySectionTheme } from "../styles/sportyTheme";
 // Font styles from Banner/Home for sporty look
 const bannerTitleClass = "text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase";
 const bannerTitleStyle = { letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' };
 const bannerDescClass = "text-white mb-6 max-w-2xl text-lg md:text-xl drop-shadow font-medium font-sans";
 const bannerDescStyle = { fontFamily: 'Montserrat, Arial, sans-serif', letterSpacing: '0.06em', lineHeight: 1.6 };
-const bannerBtnClass = "bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-md font-bold uppercase tracking-wider shadow-lg text-base md:text-lg border-2 border-red-700 transition-all duration-200";
-const bannerBtnStyle = { fontFamily: 'Oswald, Montserrat, Arial, sans-serif', letterSpacing: '0.08em' };
+// const bannerBtnClass = "bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-md font-bold uppercase tracking-wider shadow-lg text-base md:text-lg border-2 border-red-700 transition-all duration-200";
+// const bannerBtnStyle = { fontFamily: 'Oswald, Montserrat, Arial, sans-serif', letterSpacing: '0.08em' };
 
 interface ServiceType {
   title: string;
   description: string;
+  keyFeatures?: string[]; // Added keyFeatures property
   config?: {
     url: string;
     name: string;
@@ -69,14 +71,21 @@ export default function ServicesSection({
               >
                 {service.description}
               </p>
+              {service.keyFeatures && (
+                <ul className="list-disc pl-5 text-white mb-4">
+                  {service.keyFeatures.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              )}
               {service.config && (
                 <div className="flex flex-row justify-start">
                   <a
                     href={service.config.url}
                     target={service.config.newTab ? "_blank" : "_self"}
                     rel="noopener noreferrer"
-                    className={bannerBtnClass}
-                    style={{ ...bannerBtnStyle, minWidth: 0, width: "auto", display: "inline-block" }}
+                    className={sportySectionTheme.sharpButton.className}
+                    style={{ ...sportySectionTheme.sharpButton.style, minWidth: 0, width: "auto", display: "inline-block" }}
                   >
                     {service.config.name}
                   </a>

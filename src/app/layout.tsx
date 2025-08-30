@@ -35,6 +35,7 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
 }
   let banner = null;
   if (pathname === "/club") banner = data.club.heroSlides[0];
+  if (pathname === "/academy") banner = data.acadamy.heroSlides[0];
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000); // Simulated delay for UI smoothness

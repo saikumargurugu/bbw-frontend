@@ -25,7 +25,7 @@ export default function ClubPage() {
       >
         {/* Angled red accent background for sporty look */}
         <div className={sportySectionTheme.accent.className} style={sportySectionTheme.accent.style} />
-        <div className="w-full px-2 sm:px-8 mx-auto flex justify-center z-10" style={{ maxWidth: '900px' }}>
+        <div className="w-full px-2 sm:px-8 mx-auto flex justify-center z-10" >
           <div className={sportySectionTheme.card.className} style={sportySectionTheme.card.style}>
             <h2
               className={sportySectionTheme.font.title.className + ' mb-6'}
@@ -37,7 +37,7 @@ export default function ClubPage() {
               className="relative w-full flex justify-center"
             >
               <div
-                className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6 py-8 md:px-10 md:py-10 max-w-2xl mx-auto text-center"
+                className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6 py-8 md:px-10 md:py-10 mx-auto text-center"
                 style={{
                   ...sportySectionTheme.font.description.style,
                   boxShadow: '0 8px 40px 0 #000a, 0 1.5px 0 #c53030',
@@ -46,6 +46,7 @@ export default function ClubPage() {
                   lineHeight: sportySectionTheme.font.description.style.lineHeight,
                   fontWeight: 500,
                   fontSize: '1.15rem',
+                  width: '90%'
                 }}
               >
                 <span className={sportySectionTheme.font.description.className + ' text-center'}>

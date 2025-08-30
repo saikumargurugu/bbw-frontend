@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Box, Typography, Divider } from "@mui/material";
 import data from "../pages/dataBrisbaneBadminton.json"; // Adjust path if needed
+import { sportySectionTheme } from "../styles/sportyTheme";
 
 export default function Footer({ fotterText }: { fotterText: string }) {
   // Get all footer data from JSON
@@ -22,8 +23,9 @@ export default function Footer({ fotterText }: { fotterText: string }) {
 
   return (
     <Box
+      className={"w-full " + sportySectionTheme.section.className}
       sx={{
-        backgroundColor: "#dc2626 !important",
+        background: sportySectionTheme.section.style.background,
         color: "white",
         textAlign: { xs: "center", md: "left" },
         padding: "32px",
