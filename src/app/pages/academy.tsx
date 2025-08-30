@@ -3,11 +3,12 @@
 import React from 'react';
 import { Avatar, CardContent, Typography } from '@mui/material';
 import TabsView from '../components/TabsView';
+import { sportySectionTheme } from '@/app/styles/sportyTheme';
 import Link from 'next/link';
 import { motion } from "framer-motion";
 import data from './dataBrisbaneBadminton.json';
 
-// const programs = data.acadamy.programs1 || [];
+const programs = data.acadamy.programs || [];
 const coaches = data.acadamy.coaches || [];
 const tabsView = data.acadamy.tabsView ? data.acadamy.tabsView : [];
 
@@ -16,23 +17,44 @@ export default function AcademyPage() {
     <div className="bg-bgThemeDark min-h-screen">
       {/* About Section */}
       <motion.section
-        className="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center"
+        className={sportySectionTheme.section.className + ' !text-center'}
+        style={sportySectionTheme.section.style}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="text-4xl font-extrabold text-cyan-200 mb-8">About the Academy</h2>
-        <p className="text-lg text-gray-200 leading-relaxed mb-4">
-          Our academy is dedicated to building champions from a young age. We focus on technical skills,
-          physical conditioning, and mental toughness, all while fostering a love for the game.
-        </p>
-        <p className="text-lg text-gray-200 leading-relaxed mb-4">
-          We offer a range of programs for all ages and skill levels, from beginners to advanced competitors. Our expert coaches provide personalized attention and guidance to help every player reach their full potential.
-        </p>
-        <p className="text-lg text-gray-200 leading-relaxed">
-          Join us for regular training, and tournament preparation in a supportive and motivating environment.
-        </p>
-
+        <div className={sportySectionTheme.accent.className} style={sportySectionTheme.accent.style} />
+        <div className="w-full px-2 sm:px-8 mx-auto flex justify-center z-10" >
+          <div className={sportySectionTheme.card.className} style={{ ...sportySectionTheme.card.style, width: '90%' }}>
+            <h2
+              className={sportySectionTheme.font.title.className + ' mb-8'}
+              style={{ ...sportySectionTheme.font.title.style, textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
+            >
+              About the Academy
+            </h2>
+            <div className="relative w-full flex flex-col gap-4 justify-center">
+              {programs.map((program, idx) => (
+                <div
+                  key={idx}
+                  className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6 py-6 md:px-10 md:py-8 w-full mx-auto text-center"
+                  style={{
+                    ...sportySectionTheme.font.description.style,
+                    boxShadow: '0 8px 40px 0 #000a, 0 1.5px 0 #c53030',
+                    fontFamily: sportySectionTheme.font.description.style.fontFamily,
+                    letterSpacing: sportySectionTheme.font.description.style.letterSpacing,
+                    lineHeight: sportySectionTheme.font.description.style.lineHeight,
+                    fontWeight: 500,
+                    fontSize: '0.5rem', // Further reduced font size for program descriptions
+                  }}
+                >
+                  <span className={sportySectionTheme.font.description.className + ' text-center'}>
+                    <strong>{program.title}:</strong> {program.description}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </motion.section>
 
       {/* Dynamic Tabs Table View Section */}
@@ -74,8 +96,11 @@ export default function AcademyPage() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <h3 className="text-3xl font-semibold text-cyan-200 mb-8 text-center">Meet Our Coaches</h3>
+        <p className="text-lg text-gray-300 mb-6 text-center leading-relaxed">
+          {coaches.description}
+        </p>
         <div className="grid md:grid-cols-3 gap-8">
-          {coaches.map((coach, idx) => (
+          {coaches.coaches.map((coach, idx) => (
             <motion.div
               key={idx}
               className="bg-white/10 shadow-md rounded-xl p-6 hover:shadow-lg transition-transform duration-300 hover:scale-105"
@@ -115,8 +140,8 @@ export default function AcademyPage() {
         <h4 className="text-4xl font-bold mb-6 text-red-500">Ready to Join the Academy?</h4>
         <Link
           href="/academy/register"
-          className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-700 transition text-lg"
-          style={{ alignSelf: "center" }}
+          className={sportySectionTheme.sharpButton.className + ' inline-flex items-center'}
+          style={{ ...sportySectionTheme.sharpButton.style, alignSelf: "center" }}
         >
           Register Now
         </Link>

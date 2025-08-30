@@ -1,10 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { sportySectionTheme } from "../styles/sportyTheme";
+// Font styles from Banner/Home for sporty look
+const bannerTitleClass = "text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase";
+const bannerTitleStyle = { letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' };
+const bannerDescClass = "text-white mb-6 max-w-2xl text-lg md:text-xl drop-shadow font-medium font-sans";
+const bannerDescStyle = { fontFamily: 'Montserrat, Arial, sans-serif', letterSpacing: '0.06em', lineHeight: 1.6 };
+// const bannerBtnClass = "bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-md font-bold uppercase tracking-wider shadow-lg text-base md:text-lg border-2 border-red-700 transition-all duration-200";
+// const bannerBtnStyle = { fontFamily: 'Oswald, Montserrat, Arial, sans-serif', letterSpacing: '0.08em' };
 
 interface ServiceType {
   title: string;
   description: string;
+  keyFeatures?: string[]; // Added keyFeatures property
   config?: {
     url: string;
     name: string;
@@ -23,15 +31,14 @@ export default function ServicesSection({
     background = "bg-bgThemeDark",
 }: ServicesSectionProps) {
   return (
-    <div className={`w-full ${background} py-0 mt-12 transition-all duration-700 ease-in-out scroll-smooth`}>
-      <div className="flex flex-col w-full transition-all duration-700 ease-in-out">
+    <div className={`w-full ${background} py-0 mt-12 scroll-smooth`}>
+      <div className="flex flex-col w-full">
         {services.map((service, idx) => (
-          <motion.div
+          <div
             key={service.title}
-            className={`
-              w-full flex flex-col md:flex-row items-stretch m-0 p-0 transition-all duration-700 ease-in-out
-              ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}
-            `}
+            className={
+              `w-full flex flex-col md:flex-row items-stretch m-0 p-0 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`
+            }
             style={{
               minHeight: "400px",
               borderRadius: 0,
@@ -39,10 +46,6 @@ export default function ServicesSection({
               padding: 0,
               scrollBehavior: "smooth"
             }}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
           >
             {/* Image Side */}
             <div className="relative w-full md:w-1/2 h-80 md:h-[520px]">
@@ -56,23 +59,40 @@ export default function ServicesSection({
             </div>
             {/* Text Side */}
             <div className="w-full md:w-1/2 flex flex-col justify-center bg-white/10 backdrop-blur-md border border-white/10 p-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-cyan-200 mb-2 drop-shadow">{service.title}</h2>
-              <p className="text-base md:text-lg text-gray-200 mb-4 drop-shadow">{service.description}</p>
+              <h2
+                className={bannerTitleClass + ' mb-2'}
+                style={bannerTitleStyle}
+              >
+                {service.title}
+              </h2>
+              <p
+                className={bannerDescClass + ' mb-4'}
+                style={bannerDescStyle}
+              >
+                {service.description}
+              </p>
+              {service.keyFeatures && (
+                <ul className="list-disc pl-5 text-white mb-4">
+                  {service.keyFeatures.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              )}
               {service.config && (
                 <div className="flex flex-row justify-start">
                   <a
                     href={service.config.url}
                     target={service.config.newTab ? "_blank" : "_self"}
                     rel="noopener noreferrer"
-                    className="bg-red-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition text-sm"
-                    style={{ minWidth: 0, width: "auto", display: "inline-block" }}
+                    className={sportySectionTheme.sharpButton.className}
+                    style={{ ...sportySectionTheme.sharpButton.style, minWidth: 0, width: "auto", display: "inline-block" }}
                   >
                     {service.config.name}
                   </a>
                 </div>
               )}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

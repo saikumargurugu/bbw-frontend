@@ -1,97 +1,77 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import ServicesSection from '@/app/components/ServicesSection';
 import data from './dataBrisbaneBadminton.json';
-
+import { sportySectionTheme } from '@/app/styles/sportyTheme';
+// Font styles copied directly from Banner.tsx for sporty look
+const bannerTitleClass = "text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase";
+const bannerTitleStyle = { letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' };
+const bannerDescClass = "text-white mb-6 max-w-2xl text-lg md:text-2xl drop-shadow font-medium font-sans";
+const bannerDescStyle = { fontFamily: 'Montserrat, Arial, sans-serif', letterSpacing: '0.06em', lineHeight: 1.6 };
 
 const services = data.home.services;
-export const HeroData = data.home.heroSlides[0]
+export const HeroData = data.home.heroSlides[0];
+const about = data.home.about;
+const whyChoose = data.whyChoose;
 export default function Home() {
-	const [aboutOpen, setAboutOpen] = useState(false);
-	// Use a media query to detect mobile
-	const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-
 	return (
 		<div>
-			{/* About Us Section */}
-			<section
-				className="w-full my-8 px-0 py-12 bg-black flex flex-col items-center animate-fadeIn"
-				style={{ animation: 'fadeIn 1.2s ease' }}
-			>
-				<style>{`
-					@keyframes fadeIn {
-						from { opacity: 0; transform: translateY(40px); }
-						to { opacity: 1; transform: translateY(0); }
-					}
-				`}</style>
-						<div
-							className="w-full px-2 sm:px-6 mx-auto"
-							style={{ maxWidth: typeof window !== 'undefined' && window.innerWidth < 768 ? '100%' : '75%' }}
+						{/* About Us and Why Choose Us Section */}
+						<section
+							className={sportySectionTheme.section.className + ' my-5'}
+							style={sportySectionTheme.section.style}
 						>
-					<h2 className="text-3xl font-bold mb-4 text-white text-center">About Us</h2>
-					{/* Collapsible text wrapper for mobile */}
-								<div className="relative">
-									{/* Collapsed: show only first paragraph. Expanded: show all. */}
-									{isMobile && !aboutOpen ? (
-										<>
-											<p className="text-gray-200 mb-4 text-lg text-center">
-												Our state-of-the-art facility is certified to host Badminton World Federation (BWF) international tournaments. 
-												Home to over 200 active members and trainees, we are a proud Queensland Badminton Association (QBA) state tournament venue and the official training base for elite athletes in the Queensland Junior State Team.
-											</p>
-											   <div className="mt-6 flex justify-center">
-												   <button
-													   className="bg-gray-800 text-white px-4 py-1 rounded shadow"
-													   onClick={() => setAboutOpen(true)}
-												   >
-													   Read More
-												   </button>
-											   </div>
-										</>
-									) : (
-										<>
-											<p className="text-gray-200 mb-4 text-lg text-center">
-												Our state-of-the-art facility is certified to host Badminton World Federation (BWF) international tournaments. 
-												Home to over 200 active members and trainees, we are a proud Queensland Badminton Association (QBA) state tournament venue and the official training base for elite athletes in the Queensland Junior State Team.
-											</p>
-											<p className="text-gray-300 mb-4 text-center">
-												We regularly host community, linguistic, and social group events, fostering an inclusive and vibrant badminton community for all.
-											</p>
-											<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-												<div>
-													<h3 className="text-xl font-semibold text-white mb-2">Academy</h3>
-													<p className="text-gray-200">
-														Our academy operates as both a community sports provider and an elite junior athlete development centre, with over 150 active members ranging from complete beginners to national-level competitors.
-													</p>
-												</div>
-												<div>
-													<h3 className="text-xl font-semibold text-white mb-2">Club</h3>
-													<p className="text-gray-200">
-														South Brisbane Badminton Inc. is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the QBA, with over 150 active club members.
-													</p>
-												</div>
-												<div>
-													<h3 className="text-xl font-semibold text-white mb-2">Daily Badminton Social</h3>
-													<p className="text-gray-200">
-														We host regular social play sessions, fostering community engagement and active participation for all age groups.
-													</p>
-												</div>
-											</div>
-											{isMobile && (
-												   <div className="mt-6 flex justify-center">
-													   <button
-														   className="bg-gray-800 text-white px-4 py-1 rounded shadow text-sm"
-														   onClick={() => setAboutOpen(false)}
-													   >
-														   Show Less
-													   </button>
-												   </div>
-											)}
-										</>
-									)}
+							{/* Angled red accent background for sporty look */}
+							<div className={sportySectionTheme.accent.className} style={sportySectionTheme.accent.style} />
+							<div
+								className="w-full px-2 sm:px-8 mx-auto flex flex-col justify-center z-10"
+								style={{ maxWidth: '100%' }}
+							>
+								{/* About Us */}
+								<div
+									className={sportySectionTheme.card.className.replace('font-extrabold', 'font-normal')}
+									style={{ ...sportySectionTheme.card.style, fontWeight: 'normal', textAlign: 'justify', marginBottom: '2rem' }}
+								>
+									<h2
+										className={bannerTitleClass.replace('font-extrabold', 'font-normal') + ' text-shadow-lg mb-6 text-center'}
+										style={{ ...bannerTitleStyle, fontWeight: 'normal', textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
+									>
+										{about.title}
+									</h2>
+									<p
+										className={bannerDescClass.replace('font-medium', 'font-normal') + ' text-center text-sm md:text-base'}
+										style={{ ...bannerDescStyle, textAlign: 'center', width: '100%', maxWidth: 'none' }}
+									>
+										{about.description}
+									</p>
 								</div>
-				</div>
-			</section>
+
+								{/* Why Choose Us */}
+								<div
+									className={sportySectionTheme.card.className.replace('font-extrabold', 'font-normal')}
+									style={{ ...sportySectionTheme.card.style, fontWeight: 'normal', textAlign: 'justify' }}
+								>
+									<h2
+										className={bannerTitleClass.replace('font-extrabold', 'font-normal') + ' text-shadow-lg mb-6 text-center'}
+										style={{ ...bannerTitleStyle, fontWeight: 'normal', textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
+									>
+										{whyChoose.title}
+									</h2>
+									<ul className="list-disc pl-5 text-white">
+										{whyChoose.points.map((point, index) => (
+											<li key={index}>{point}</li>
+										))}
+									</ul>
+									<div className="mt-6 text-white">
+										<p><strong>Opening Hours:</strong> {whyChoose.openingHours}</p>
+										<p><strong>Address:</strong> {whyChoose.address}</p>
+										<p><strong>Bookings:</strong> <a href={whyChoose.bookingsUrl} className="text-cyan-400 underline">{whyChoose.bookingsUrl}</a></p>
+										<p><strong>Email:</strong> <a href={`mailto:${whyChoose.email}`} className="text-cyan-400 underline">{whyChoose.email}</a></p>
+									</div>
+								</div>
+							</div>
+						</section>
 			<ServicesSection services={services} />
 		</div>
 	);

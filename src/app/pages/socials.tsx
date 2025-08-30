@@ -5,6 +5,7 @@ import React from 'react';
 // import data from './dataBrisbaneBadminton.json';
 import CardCarousel from '../components/CardCarousel';
 import { QRCodeSVG } from 'qrcode.react';
+import { sportySectionTheme } from '../styles/sportyTheme';
 
 const events = [
 	{
@@ -58,33 +59,33 @@ const whatsappInviteUrl = 'https://chat.whatsapp.com/FGZOTERLPJAAQQcLj4S5bd?mode
 
 export default function SocialsPage() {
 	return (
-		<div>
-			{/* WhatsApp Group QR Card */}
-			<div className="max-w-md mx-auto mt-10 bg-bgThemeDark rounded-2xl shadow-lg p-8 flex flex-col items-center border border-white/10">
-				<h2 className="text-2xl font-bold text-green-400 mb-4">
-					Join Our WhatsApp Group
-				</h2>
-				<p className="text-gray-200 mb-4 text-center">
-					Scan the QR code below to join our club WhatsApp group for updates,
-					events, and community chat!
-				</p>
-			   <QRCodeSVG
-				   value={whatsappInviteUrl}
-				   size={150}
-				   fgColor="#fff"
-				   bgColor="#000"
-				   className="mb-4"
-			   />
-				<a
-					href={whatsappInviteUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-					className="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded transition"
-				>
-					Join WhatsApp Group
-				</a>
-			</div>
-			<CardCarousel events={events} />
-		</div>
-	);
+	 <div className={sportySectionTheme.section.className + ' min-h-screen'} style={sportySectionTheme.section.style}>
+		 {/* WhatsApp Group QR Card */}
+		 <div className={sportySectionTheme.card.className + ' max-w-md mx-auto mt-10'} style={sportySectionTheme.card.style}>
+			 <h2 className="text-2xl font-bold text-green-400 mb-4" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Join Our WhatsApp Group</h2>
+			 <p className="text-white/90 mb-4 text-center" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
+				 Scan the QR code below to join our club WhatsApp group for updates, events, and community chat!
+			 </p>
+			 <QRCodeSVG
+				 value={whatsappInviteUrl}
+				 size={150}
+				 fgColor="#fff"
+				 bgColor="#000"
+				 className="mb-4"
+			 />
+			 <a
+				 href={whatsappInviteUrl}
+				 target="_blank"
+				 rel="noopener noreferrer"
+				 className={sportySectionTheme.sharpButton.className + ' mt-2'}
+				 style={sportySectionTheme.sharpButton.style}
+			 >
+				 Join WhatsApp Group
+			 </a>
+		 </div>
+		 <div className="w-full max-w-5xl mx-auto mt-16">
+			 <CardCarousel events={events} />
+		 </div>
+	 </div>
+ );
 }
