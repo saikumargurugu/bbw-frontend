@@ -37,6 +37,10 @@ const initialState: ApiState = {
             "href": "/court-hire"
         },
         {
+            "label": "About Us",
+            "href": "/about"
+        },
+        {
             "label": "Socials",
             "href": "/socials"
         },

@@ -10,6 +10,7 @@ import ShopPage from '@/app/pages/shop/pages/index';
 import ProductDetailPage from '../pages/shop/products/details/page';
 import Home from '@/app/pages/Home';
 import ProShopLoading from '../pages/shop/ProShopLoading';
+import AboutUsPage from '../pages/aboutUs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
@@ -45,6 +46,8 @@ export default async function Page({ params }: any) {
       return <Services />;
     case 'court-hire':
       return <CourtHirePage />;
+    case 'about':
+      return <AboutUsPage />;
     case 'pro_shop':
       return <ProShopLoading />;
     case 'shop':
