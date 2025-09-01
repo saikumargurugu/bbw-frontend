@@ -3,7 +3,6 @@
 import React from 'react';
 import { Avatar, CardContent, Typography } from '@mui/material';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
-import Link from 'next/link';
 import { motion } from "framer-motion";
 import data from './dataBrisbaneBadminton.json';
 
