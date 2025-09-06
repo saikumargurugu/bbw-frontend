@@ -40,9 +40,7 @@ export default function AboutUsPage() {
             >
               {aboutHero.description}
             </p>
-          </div>
-        </div>
-      </motion.section>
+  
 
       {/* Points Section */}
       {aboutPoints.length > 0 && (
@@ -53,17 +51,19 @@ export default function AboutUsPage() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <h3 className="text-3xl font-semibold text-cyan-200 mb-8 text-center">Why Choose Brisbane Badminton?</h3>
-          <ul className="list-disc pl-5 text-gray-300">
+          <ul className="pl-5 text-gray-300 text-left">
             {aboutPoints.map((point, idx) => (
               <li
                 key={idx}
-                className="mb-2"
+                className="mb-2 list-none"
                 dangerouslySetInnerHTML={{ __html: point }}
               ></li>
             ))}
           </ul>
         </motion.section>
       )}
+        </div>
+        </div>
 
       {/* Sections */}
       {filteredSections.map((section: { title: string; content: string }, idx: number) => (
@@ -81,6 +81,7 @@ export default function AboutUsPage() {
           ></div>
         </motion.section>
       ))}
+      </motion.section>
 
       {/* Team Section */}
       <motion.section

@@ -6,11 +6,11 @@ import TabsView from '../components/TabsView';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
 import Link from 'next/link';
 import { motion } from "framer-motion";
-import data from './dataBrisbaneBadminton.json';
+import data from './academyContent.json';
 
-const programs = data.acadamy.programs || [];
-const coaches = data.acadamy.coaches || [];
-const tabsView = data.acadamy.tabsView ? data.acadamy.tabsView : [];
+const programs = data.academy.programs || [];
+const coaches = data.academy.coaches || [];
+const tabsView = data.academy.tabsView ? data.academy.tabsView : [];
 
 export default function AcademyPage() {
   return (
@@ -57,6 +57,7 @@ export default function AcademyPage() {
             </div>
           </div>
         </div>
+        
       </motion.section>
 
       {/* Dynamic Tabs Table View Section */}

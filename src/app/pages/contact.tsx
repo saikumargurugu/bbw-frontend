@@ -6,6 +6,7 @@ import { Typography } from '@mui/material';
 import Image from 'next/image';
 import data from './dataBrisbaneBadminton.json';
 import { sportySectionTheme } from '../styles/sportyTheme';
+import FAQ from '@/app/components/FAQ';
 
 interface ContactCardProps {
   address: string;
@@ -111,6 +112,8 @@ export default function ContactUsPage() {
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.8216875057965!2d153.06956077585127!3d-27.691905526211332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9147f2bb4d041d%3A0x290bdd13220b6c9b!2sBrisbane%20Badminton!5e0!3m2!1sen!2sau!4v1752287359564!5m2!1sen!2sau"
   };
 
+  const faqItems = data.FAQ.mainEntity;
+
   return (
     <div className={sportySectionTheme.section.className + ' min-h-screen'} style={sportySectionTheme.section.style}>
       {/* Contact Info Section */}
@@ -131,6 +134,11 @@ export default function ContactUsPage() {
           theme="dark"
         />
         <MapCard mapSrc={contactData.mapSrc} theme="dark" />
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16" style={{ width: '80%' }}>
+        <FAQ data={faqItems} />
       </section>
     </div>
   );

@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { sportySectionTheme } from "../styles/sportyTheme";
+import { motion } from "framer-motion";
+import data from '../pages/academyContent.json';
 
 export type AcademyTermInfoProps = {
   dates?: string;
@@ -28,12 +31,12 @@ export type AcademyTermInfoProps = {
 };
 
 export default function AcademyTermInfo({
-  dates,
-  classFormat,
-  termFee,
-  trainingPlan,
+  // dates,
+  // classFormat,
+  // termFee,
+  // trainingPlan,
   whatsapp,
-  notices,
+  // notices,
 }: AcademyTermInfoProps) {
   return (
     <div className="text-white space-y-8">
@@ -57,7 +60,29 @@ export default function AcademyTermInfo({
             Book Now
           </a>
         </div>
-        {dates && (
+              {/* Academy Content Section */}
+      <motion.section
+        className={sportySectionTheme.section.className + ' text-center'}
+        style={{ ...sportySectionTheme.section.style, padding: '60px 20px' }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="max-w-6xl mx-auto">
+          {data.academy.academyContent.map((content, idx) => (
+            <div key={idx} className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl p-6 mb-8">
+              <h3 className={sportySectionTheme.font.title.className} style={{ color: '#e10600' }}>{content.title}</h3>
+              <ul className="mt-4 text-left list-disc list-inside">
+                {content.points.map((point, pointIdx) => (
+                  <li key={pointIdx}>{point}</li>
+                ))}
+              </ul>
+              <p className="mt-4 italic">{content.description}</p>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+        {/* {dates && (
           <div>
             <span className="text-red-500 font-bold uppercase tracking-wide">
               Dates:
@@ -92,7 +117,7 @@ export default function AcademyTermInfo({
               ))}
             </ul>
           </div>
-        )}
+        )} */}
         {whatsapp && (
           <div className="mt-6">
             <strong className="text-green-400 uppercase tracking-wide">
@@ -109,7 +134,7 @@ export default function AcademyTermInfo({
             </a>
           </div>
         )}
-        {notices && notices.length > 0 && (
+        {/* {notices && notices.length > 0 && (
           <div className="bg-gray-900/90 rounded-xl mt-6 p-4">
             <strong className="text-lg uppercase tracking-wide text-white">
               ⚠️ Important Notices:
@@ -120,7 +145,7 @@ export default function AcademyTermInfo({
               ))}
             </ul>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

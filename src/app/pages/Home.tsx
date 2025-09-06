@@ -45,29 +45,17 @@ export default function Home() {
 									>
 										{about.description}
 									</p>
-								</div>
-
-								{/* Why Choose Us */}
-								<div
-									className={sportySectionTheme.card.className.replace('font-extrabold', 'font-normal')}
-									style={{ ...sportySectionTheme.card.style, fontWeight: 'normal', textAlign: 'justify' }}
-								>
-									<h2
-										className={bannerTitleClass.replace('font-extrabold', 'font-normal') + ' text-shadow-lg mb-6 text-center'}
-										style={{ ...bannerTitleStyle, fontWeight: 'normal', textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
-									>
-										{whyChoose.title}
-									</h2>
-									<ul className="list-disc pl-5 text-white">
-										{whyChoose.points.map((point, index) => (
-											<li key={index}>{point}</li>
+									<div className="flex flex-wrap justify-center gap-4 mt-6">
+										{about.buttons.map((button, index) => (
+											<button
+												key={index}
+												className={sportySectionTheme.sharpButton.className}
+												style={sportySectionTheme.sharpButton.style}
+												onClick={() => window.open(button.url, '_blank')}
+											>
+												{button.label}
+											</button>
 										))}
-									</ul>
-									<div className="mt-6 text-white">
-										<p><strong>Opening Hours:</strong> {whyChoose.openingHours}</p>
-										<p><strong>Address:</strong> {whyChoose.address}</p>
-										<p><strong>Bookings:</strong> <a href={whyChoose.bookingsUrl} className="text-cyan-400 underline">{whyChoose.bookingsUrl}</a></p>
-										<p><strong>Email:</strong> <a href={`mailto:${whyChoose.email}`} className="text-cyan-400 underline">{whyChoose.email}</a></p>
 									</div>
 								</div>
 							</div>

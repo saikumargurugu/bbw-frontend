@@ -4,6 +4,7 @@ import React from 'react';
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import ServicesSection from '@/app/components/ServicesSection';
+import { sportySectionTheme } from '@/app/styles/sportyTheme';
 
 const services = [
 	{
@@ -53,7 +54,8 @@ export default function ServicesPage() {
         <h4 className="text-3xl font-bold mb-6 text-red-500">Get in Touch</h4>
         <p className="text-lg mb-6">Have questions? We&apos;re here to help. Reach out to us today!</p>
         <button
-          className="bg-white text-cyan-700 px-6 py-3 rounded-xl text-lg font-semibold hover:bg-gray-200 transition"
+          className={sportySectionTheme.sharpButton.className + ' px-6 py-3'}
+          style={{ ...sportySectionTheme.sharpButton.style, padding: '0.75rem 1.5rem' }}
           onClick={() => router.push("/contact")}
         >
           Contact Us
