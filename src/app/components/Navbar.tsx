@@ -20,7 +20,7 @@ import Logo from "./Logo/LogoWhite";
 const EASING = "cubic-bezier(0.22, 0.01, 0.36, 1)";
 
 const navItemClass =
-  "hover:text-yellow-300 text-white px-2 py-1 text-base font-medium transition-colors duration-200";
+  "hover:text-yellow-300 text-white px-2 py-1 text-base font-bold capitalize transition-colors duration-200";
 
 export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -61,6 +61,11 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
               }}
             >
               {link.label}
+                          <style jsx>{`
+                            a {
+                              font-weight: bold;
+                            }
+                          `}</style>
             </Link>
           </ListItem>
         ))}
@@ -76,7 +81,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         elevation={0}
         sx={{
           background: 'transparent',
-          boxShadow: "0 4px 20px 0 rgba(0,0,0,0.25)",
+          boxShadow: "0 4px 20px 0 rgba(0,0,0,0.5)",
           transition: `background-color 0.6s ${EASING}, backdrop-filter 0.6s ${EASING}`,
           width: '100%',
           top: 0,
@@ -96,7 +101,8 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
                       <React.Fragment key={idx}>
                         <Link
                           href={link.href}
-                          className={navItemClass}
+                          className={navItemClass + ' font-bold uppercase'}
+                          style={{ fontFamily: 'Oswald, Montserrat, Arial, sans-serif' }}
                         >
                           {link.label}
                         </Link>

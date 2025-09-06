@@ -1,6 +1,7 @@
 // components/ServiceCard.tsx
 import React from "react";
-import { Card, CardContent, Typography, Button } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
+import { sportySectionTheme } from "@/app/styles/sportyTheme";
 
 export default function ServiceCard({ title, description }: { title: string; description: string }) {
   return (
@@ -10,9 +11,12 @@ export default function ServiceCard({ title, description }: { title: string; des
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
-        <Button variant="contained" color="primary" sx={{ marginTop: 2 }}>
+        <button
+          className={sportySectionTheme.sharpButton.className}
+          style={sportySectionTheme.sharpButton.style}
+        >
           Learn More
-        </Button>
+        </button>
       </CardContent>
     </Card>
   );

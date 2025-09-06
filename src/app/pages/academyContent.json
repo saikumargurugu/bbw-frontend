@@ -1,0 +1,166 @@
+{
+  
+  "academy": {
+    "heroContent":[
+    {
+        "title": "🏸 Activity Provider",
+        "description": "We are a proud PlayOn Registered Activity Provider, delivering safe, structured, and inclusive sporting programs. Brisbane Badminton is also a Blue Card Verified organisation, ensuring child safety and community trust. We are affiliated with the Queensland Badminton Association and aligned with Badminton Australia standards.",
+        "points": []
+    }
+    ],
+    "academyContent": [
+    {
+      "title": "🎯 Group Training",
+      "description": "Perfect if you enjoy learning together and growing as a group.",
+      "points": [
+        "🏸 Kids Academy: Fun, engaging sessions that build strong fundamentals.",
+        "💪 Adult Group Training: Skill-based classes to help you improve fast.",
+        "🤝 Social & Team Play: Train in a friendly group environment and enjoy the game."
+      ]
+    },
+    {
+      "title": "🎯 Personal Training",
+      "description": "Ideal for players seeking individual attention and a competitive edge.",
+      "points": [
+        "🎓 One-on-One Coaching: Fully customised training for your goals.",
+        "🏅 Elite Development: Preparing athletes for state & national competition.",
+        "⚡ Sparring Training: Train and play directly with our coaches for match experience.",
+        "🔍 Skill Analysis: Targeted feedback and correction for faster improvement."
+      ]
+    }
+  ],
+    "programs": [
+      {
+        "title": "Kids’ Group Training",
+        "description": "Structured junior programs (Mini Smashers 6–10, Junior Squad 11–15, Teen Squad 15+)."
+      },
+      {
+        "title": "Adult Group Training",
+        "description": "Beginner and intermediate classes designed to build skills, fitness, and game understanding in a social setting."
+      },
+      {
+        "title": "Private Coaching",
+        "description": "One-on-one training tailored to individual goals, available in flexible packages.- Advanced Training & Development: High-performance group sessions preparing athletes for state, national, and international competition"
+      },
+      {
+        "title": "Sparring Sessions",
+        "description": "Invite-only matchplay for advanced players seeking competitive experience."
+      },
+      {
+        "title": "Tournament Prep",
+        "description": "Specialized coaching for players preparing for tournaments. Mental preparation, strategy, and match simulation."
+      }
+    ],
+    "coaches": {
+      "description": "All coaches are qualified, accredited, and active players, bringing both technical expertise and on-court experience to every session.",
+      "coaches": [
+        {
+          "name": "Pavan Ravindranath",
+          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Pavan.jpeg"
+        },
+        {
+          "name": "Avinash Srinivas",
+          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Srinivas.jpeg"
+        },
+        {
+          "name": "Arthur Lee",
+          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/ArthurLee.jpeg"
+        },
+        {
+          "name": "Ankith Mohan",
+          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Ankit.jpeg",
+          "acheivements": []
+        },
+        {
+          "name": "Jacqueline Zhang",
+          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/JacquelineZhang.jpeg",
+          "acheivements": []
+        },
+        {
+          "name": "Chinmay Dhawale",
+          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/ChinmayDhawale.jpeg",
+          "acheivements": []
+        }
+      ]
+    },
+    "tabsView": [
+      {
+        "label": "Academy",
+        "render": "academy",
+        "info": {
+          "dates": "14/07/2025 - 21/09/2025",
+          "classFormat": "4-6 students/session/Coach",
+          "termFee": "$375 = Any 1 day/week, 2 hours/lesson, 10 lesson/term",
+          "trainingPlan": [
+            "Week 1 - Week 4: Basic skills, special fitness, physical fitness, game rules, game play",
+            "Week 5: Pre-Assessement & Speed Test (Agility activity)",
+            "Week 6 - Week 7: Training Development & Player Assessment",
+            "Week 8 - Week 9: Game knowledge & Match development, Competition preparation",
+            "Week 10: Internal Academy Competition 20/09 Saturday & 21/09 Sunday"
+          ],
+          "kidsTimetable": [
+            "Monday 5pm-7pm (Beginner - Intermediate)",
+            "Tuesday 5pm-7pm (Beginner)",
+            "Wednesday 5pm-7pm (Intermediate - Advance)",
+            "Thursday 5pm-7pm (Advance Group)",
+            "Thursday 5pm-7pm (Beginner - Intermediate)",
+            "Friday 5pm-7pm (Beginner - Intermediate)",
+            "Saturday 10am-12pm (Intermediate)",
+            "Saturday 2pm-4pm (Beginner)",
+            "Sunday 10am-12pm (Beginner - Intermediate)",
+            "Sunday 2pm-4pm (Beginner)"
+          ],
+          "kidsFees": "Term Training Fee: $375/term/student/lesson/week | Casual/Trial lesson Fee: $50/session (2 Hrs.)/student",
+          "adultTimetable": [
+            "Monday to Friday: 5.00pm - 7.00pm, 7:00pm - 9:00pm",
+            "Saturday: 10am - 12pm, 2pm - 4pm",
+            "Sunday: 10am - 12pm, 2pm - 4pm"
+          ],
+          "adultFees": "Term Training Fee: $375/term/student/lesson/week | Casual/Trial lesson Fee: $50/session (2 Hrs.)/student",
+          "discounts": [
+            "1 lesson/week/term/student: $375 (10 lessons)",
+            "2 lessons/week/term/student: $375 + $200 = $575 (20 lessons)",
+            "3 lessons/week/term/student: $375 + $200 + $150 = $725 (30 lessons)",
+            "4 lessons/week/term/student: $375 + $200 + $150 + $125 = $850 (40 lessons)",
+            "5 lessons/week/term/student: $375 + $200 + $150 + $125 + $100 = $950 (50 lessons)"
+          ],
+          "payment": {
+            "name": "Brisbane Badminton Pty Ltd",
+            "bsb": "064-159",
+            "account": "1050-3509",
+            "reference": "student name",
+            "email": "admin@badmintonbrisbane.com.au"
+          },
+          "whatsapp": "https://chat.whatsapp.com/B6rSNoWoQikIrWSNiOhnWu",
+          "contact": {
+            "address": "39 Quilton Place, Crestmead, QLD, 4132",
+            "phone": "0452 007 848 (Pavan), 0433 300 506 (Krishna)",
+            "email": "admin@badmintonbrisbane.com.au"
+          },
+          "notices": [
+            "Term fee $375 is only applicable for the students enrolling 10 weeks program (within their enrolled day) which is non-refundable or redeemable to any other forms of service",
+            "Students enrolling other than Term Training is considered as CASUAL enrollment with $50/lesson/student",
+            "All the makeup lesson must be completed within the enrolled term",
+            "A make-up lesson must be scheduled within the enrolled term and must be requested within AT LEAST 24 hours of notice.",
+            "A student is allowed to schedule up to 3 make-up lessons over term training.",
+            "Brisbane Badminton may request a medical certificate if a student is sick on a training day and requests a make-up lesson within LESS THAN 24 hours of notice.",
+            "Student should bring their own Badminton Racquet, Sport Shoe (no black sole), Water/Drink bottle.",
+            "Training arrangements are made accordingly if any events are hosted in the facility.",
+            "Further notices will be informed and discussed in the WhatsApp group/E-mail or DM Parent/Student."
+          ]
+        }
+      },
+      {
+        "label": "Personal training",
+        "render": "personalTraining",
+        "info": {
+          "title": "Personal Training",
+          "description": "Get personalized coaching to improve your skills and performance. Our expert coaches will work with you one-on-one to develop a training plan tailored to your needs.",
+          "contact": {
+            "email": "admin@badmintonbrisbane.com.au"
+          }
+        }
+      }
+    ]
+  }
+}

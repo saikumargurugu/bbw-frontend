@@ -42,22 +42,20 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         >
           {caption}
         </h2>
-        <p className="text-white mb-6 max-w-2xl text-lg md:text-2xl drop-shadow font-medium font-sans">
+        <p className="text-white mb-6 max-w-2xl text-lg md:text-2xl drop-shadow font-medium font-sans px-4">
           {description}
         </p>
         {buttons && buttons.length > 0 && (
-          <div className="flex gap-4 flex-wrap mb-10">
+          <div className="flex gap-4 flex-wrap mb-10 px-4">
             {buttons.map((btn, idx) => (
-              <a
-                key={idx}
-                href={btn.url}
-                className={sportySectionTheme.sharpButton.className}
-                style={sportySectionTheme.sharpButton.style}
-                target={btn.newTab ? "_blank" : "_self"}
-                rel="noopener noreferrer"
-              >
-                {btn.label}
-              </a>
+                <button
+                  key={idx}
+                  onClick={() => window.open(btn.url, btn.newTab ? '_blank' : '_self')}
+                  className={sportySectionTheme.sharpButton.className + ' px-6 py-3'}
+                  style={{ ...sportySectionTheme.sharpButton.style, padding: '0.75rem 1.5rem' }}
+                >
+                  {btn.label}
+                </button>
             ))}
           </div>
         )}

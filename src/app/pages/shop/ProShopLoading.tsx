@@ -8,8 +8,9 @@ export default function ProShopLoading() {
       <h2 className="text-3xl font-extrabold text-white mb-2 drop-shadow-xl font-sans uppercase" style={{letterSpacing:'0.04em', fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Pro Shop Coming Soon!</h2>
       <p className="text-white/80 text-lg text-center max-w-md font-medium" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
         Our online Pro Shop is getting ready! <br />
-        Please check back soon for the best badminton gear, rackets, shoes, accessories and everything badminton related.
-      </p>
+Our onsite Pro Shop provides everything players need: - Professional rackets (beginner to
+advanced) - Feather and nylon shuttles - Shoes, grips, and apparel - Accessories and bags Expert
+advice is available to help you select the right equipment for your game      </p>
     </div>
   );
 }

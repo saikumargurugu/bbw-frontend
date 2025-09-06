@@ -35,24 +35,24 @@ export const sportySectionTheme = {
       style: { fontFamily: 'Montserrat, Arial, sans-serif', letterSpacing: '0.06em', lineHeight: 1.6 }
     },
     button: {
-      className: 'bg-red-600 hover:bg-red-600 text-white px-3 py-1 sm:px-7 sm:py-3 rounded-md font-bold uppercase tracking-wider shadow-lg text-xs sm:text-base md:text-lg border-2 border-red-700 transition-all duration-200',
+      className: 'bg-red-600 hover:bg-red-600 text-white px-4 py-2 sm:px-7 sm:py-3 rounded-md font-bold uppercase tracking-wider shadow-lg text-xs sm:text-base md:text-lg border-2 border-red-700 transition-all duration-200',
       style: { 
         fontFamily: 'Oswald, Montserrat, Arial, sans-serif', 
         letterSpacing: '0.08em',
-        padding: '0.25em 0.5em' // Added spacing for mobile view
+        padding: '0.5em 1em' // Increased padding for better spacing on mobile
       }
     }
   },
   sharpButton: {
-    className: 'bg-gradient-to-br from-red-600 to-red-500 hover:from-red-800 hover:to-red-600 text-white px-4 py-2 sm:px-10 sm:py-3 font-extrabold uppercase tracking-widest shadow-xl text-sm sm:text-lg md:text-xl transition-all duration-200 outline-none focus:ring-4 focus:ring-red-400 active:scale-98',
+    className: 'bg-gradient-to-br from-red-600 to-red-500 hover:bg-gradient-to-red hover:from-red-600 hover:to-black text-white px-6 py-3 sm:px-10 sm:py-3 font-extrabold uppercase tracking-widest shadow-xl text-sm sm:text-lg md:text-xl transition-all duration-1000 outline-none focus:ring-4 focus:ring-red-400 active:scale-98',
     style: {
       fontFamily: 'Oswald, Montserrat, Arial, sans-serif',
       letterSpacing: '0.14em',
-      borderRadius: '0',
-  clipPath: 'polygon(32px 0, 100% 0, calc(100% - 32px) 100%, 0 100%)',
-      boxShadow: '0 6px 32px 0 #c53030cc, 0 1.5px 0 #c53030',
-      textShadow: '0 2px 8px #000a',
-      border: 'none',
+      padding: '0.75rem 1.5rem',
+      backgroundSize: '200% auto',
+      transition: 'all 1s ease-in-out',
+      backgroundPosition: 'left center',
+      clipPath: 'polygon(32px 0, 100% 0, calc(100% - 32px) 100%, 0 100%)'
     }
   }
 };

@@ -10,47 +10,45 @@ import { sportySectionTheme } from '../styles/sportyTheme';
 const events = [
 	{
 		title: 'Badminton Night',
-		date: 'Every Day',
+		date: ' ',
 		description:
 			'Join us for a casual night of badminton! Meet new people, play friendly matches, and enjoy snacks and drinks.',
 		image:
-			'https://images.unsplash.com/photo-1717659487323-7783a99bcf61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/KRISHNA.JPG',
 		link: '/contact',
 	},
 	{
 		title: 'Adult Socials',
 		date: 'Every Day',
 		image:
-			'https://images.unsplash.com/photo-1659081463572-4c5903a309e6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/SOCIAL.jpg',
 		description:
-			'A charity event to raise funds for local youth badminton programs. Compete and contribute to a good cause!',
+			'Enjoy a fun evening of badminton with fellow enthusiasts. All skill levels welcome, from beginners to advanced players. Great way to socialize and improve your game!',
 		link: '/contact',
 	},
 	{
 		title: 'Kids Socials',
-		date: 'Monday, Wednesday, Friday, Saturday',
+		date: ' ',
 		description:
 			'A day for the entire family! Come for a friendly tournament, activities for all ages, and delicious food and beverages.',
 		image:
-			'https://images.unsplash.com/photo-1718452739586-5b467f1f109b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/SOCIAL2.jpg',
 		link: '/contact',
 	},
 	{
-		title: 'Family Fun Day',
+		title: 'AVI - ART',
 		date: 'Sunday',
-		description:
-			'A day of fun for the whole family! Enjoy badminton games, food stalls, and activities for kids.',
+		description:'Graded socials for Advanced players. Players above C Grade are welcome to join.',
 		image:
-			'https://images.unsplash.com/photo-1718452739586-5b467f1f109b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/SOCIALS.PNG',
 		link: '/contact',
 	},
 	{
-		title: 'Charity Tournament',
+		title: 'Club Socials',
 		date: '',
-		description:
-			'A charity event to raise funds for local youth badminton programs. Compete and contribute to a good cause!',
+		description:"Club Socials are a great way to meet fellow members and enjoy some friendly competition.",
 		image:
-			'https://images.unsplash.com/photo-1717659487323-7783a99bcf61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/fbwall.jpg',
 		link: '/contact',
 	},
 ];

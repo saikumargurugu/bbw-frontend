@@ -45,8 +45,16 @@
     ],
     "about": {
       "title": "About Us",
-      "description": "Brisbane Badminton is Queensland’s first purpose-built badminton facility, offering state-of-the-art amenities and international-standard courts. We are certified to host BWF international tournaments and QBA state tournaments. Our community includes more than 200 active members and trainees. We are the training base for the Queensland Junior State Team and a hub for cultural, community, and social sporting events. We believe in making badminton accessible, safe, and enjoyable for all players — from casual participants to professional athletes."
+      "description": "Brisbane Badminton is Queensland’s first purpose-built badminton facility, offering state-of-the-art amenities and international-standard courts. We are certified to host BWF international tournaments and QBA state tournaments.",
+      "buttons": [
+        {
+          "label": "Learn More",
+          "url": "/about",
+          "newTab": true
+          }
+        ]
     },
+    
     "features": [
         {
         "description": "Queensland’s first dedicated badminton venue"
@@ -91,7 +99,7 @@
         "title": "Court Hire",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS3.jpg",
         "description": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members for all 7 days a week throughout the year.",
-        "keyFeatures":[
+        "keyFeatures_disabled":[
           "Standard Court Hire Rates",
           "- Off-Peak: $15/hour (cheapest in Queensland)",
           "- Peak Hours: Standard rate, but members save $5/hour",
@@ -120,7 +128,8 @@
       {
         "title": "Restringing",
         "image": "https://images.unsplash.com/photo-1722003184213-b5dfa47e2476?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "description": "Top-quality restringing service with fast turnaround. We use premium strings and professional techniques to ensure your racket performs at its best. Our experts can advise on string tension and type for your playing style. Drop off your racket and pick it up ready for your next match!",
+  "descriptionOLD": "Top-quality restringing service with fast turnaround. We use premium strings and professional techniques to ensure your racket performs at its best. Our experts can advise on string tension and type for your playing style. Drop off your racket and pick it up ready for your next match!",
+  "description": "Fast, professional restringing service for all racket types",
         "config": {
           "url": "/services/",
           "name": "Restringing",
@@ -130,7 +139,7 @@
       {
         "title": "Personal Training",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg",
-  "description": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.",
+  "description": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness.",
         "config": {
           "url": "/academy/",
           "name": "Academy",
@@ -150,7 +159,7 @@
       {
         "title": "Academy",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/fbwall.jpg",
-  "description": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members, ranging from complete beginners to national-level competitors.",
+  "description": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members.",
         "config": {
           "url": "/academy/",
           "name": "Academy",
@@ -195,7 +204,7 @@
     "openingHours": {
       "weekdays": "Mon-Fri: 8:00am 11:00pm",
       "weekends": "Sat-Sun: 6:00am 11:00pm",
-      "holidays": "Public Holidays: Open"
+      "holidays": "Public Holidays: 6am–9pm"
     },
     "ContactUs": {
       "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
@@ -217,183 +226,6 @@
   "Socials": {
     "images": [
       "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/inviteSocials.jpeg"
-    ]
-  },
-  "acadamy": {
-        "heroSlides": [
-      {
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg",
-        "caption": "Academy",
-        "description": "The Brisbane Badminton Academy is one of Queensland’s leading training programs, catering to players of all ages and levels — from complete beginners to elite athletes.",
-        "buttons": [
-          {
-            "label": "Book Now",
-            "url": "https://badmintonbrisbane.yepbooking.com.au/",
-            "newTab": true
-          },
-          {
-            "label": "Learn More",
-            "url": "/services/",
-            "newTab": false
-          }
-        ]
-      }
-    ],
-    "programs": [
-      {
-        "title": "Kids’ Group Training",
-        "description": "Structured junior programs (Mini Smashers 6–10, Junior Squad 11–15, Teen Squad 15+). Focused on fun, fundamentals, and long-term skill development."
-      },
-      {
-        "title": "Adult Group Training",
-        "description": "Beginner and intermediate classes designed to build skills, fitness, and game understanding in a social setting."
-      },
-      {
-        "title": "Private Coaching",
-        "description": "One-on-one training tailored to individual goals, available in flexible packages.- Advanced Training & Development: High-performance group sessions preparing athletes for state, national, and international competition"
-      },
-      {
-        "title": "Sparring Sessions",
-        "description": "Invite-only matchplay for advanced players seeking competitive experience."
-      },
-      {
-        "title": "Tournament Prep",
-        "description": "Specialized coaching for players preparing for tournaments. Mental preparation, strategy, and match simulation."
-      }
-    ],
-    "coaches": {
-        "description": "All coaches are qualified, accredited, and active players, bringing both technical expertise and on-court experience to every session.",
-      "coaches":[
-        {
-        "name": "Pavan Ravindranath",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Pavan.jpeg",
-        "acheivements": [
-          "National Level Coach",
-          "10+ Years Coaching Experience",
-          "Mentor to State & National Champions"
-        ]
-      },
-      {
-        "name": "Avinash Srinivas",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Srinivas.jpeg",
-        "acheivements": [
-          "2024 City of Brisbane OMD Champion",
-          "2023 & 2024 Qld State Championship",
-          "OMD Silver Medalist",
-          "2024 BWF Events Participated",
-          "Sathio Group Australian Open Super 500",
-          "Guwahati Masters Super 100",
-          "Odisha Masters Super 100",
-          "Sydney International Challenge",
-          "Bendigo International Challenge",
-          "Kampala International & Future Series"
-        ]
-      },
-      {
-        "name": "Arthur Lee",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/AuthrLee.jpeg",
-        "acheivements": [
-          "Ex- QLD Junior Representative",
-          "2021 City of Brisbane Champion AMS Champion",
-          "2022 QLD Open AMS Champion"
-        ]
-      },
-      {
-        "name": "Ankith Mohan",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Ankit.jpeg",
-        "acheivements": []
-      },
-      {
-        "name": "Jacqueline Zhang",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/JacquelineZhang.jpeg",
-        "acheivements": []
-      },
-      {
-        "name": "Chinmay Dhawale",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/ChinmayDhawale.jpeg",
-        "acheivements": []
-      }
-    
-    ]
-      },
-    "tabsView": [
-      {
-        "label": "Academy",
-        "render": "academy",
-        "info": {
-          "dates": "14/07/2025 - 21/09/2025",
-          "classFormat": "4-6 students/session/Coach",
-          "termFee": "$375 = Any 1 day/week, 2 hours/lesson, 10 lesson/term",
-          "trainingPlan": [
-            "Week 1 - Week 4: Basic skills, special fitness, physical fitness, game rules, game play",
-            "Week 5: Pre-Assessement & Speed Test (Agility activity)",
-            "Week 6 - Week 7: Training Development & Player Assessment",
-            "Week 8 - Week 9: Game knowledge & Match development, Competition preparation",
-            "Week 10: Internal Academy Competition 20/09 Saturday & 21/09 Sunday"
-          ],
-          "kidsTimetable": [
-            "Monday 5pm-7pm (Beginner - Intermediate)",
-            "Tuesday 5pm-7pm (Beginner)",
-            "Wednesday 5pm-7pm (Intermediate - Advance)",
-            "Thursday 5pm-7pm (Advance Group)",
-            "Thursday 5pm-7pm (Beginner - Intermediate)",
-            "Friday 5pm-7pm (Beginner - Intermediate)",
-            "Saturday 10am-12pm (Intermediate)",
-            "Saturday 2pm-4pm (Beginner)",
-            "Sunday 10am-12pm (Beginner - Intermediate)",
-            "Sunday 2pm-4pm (Beginner)"
-          ],
-          "kidsFees": "Term Training Fee: $375/term/student/lesson/week | Casual/Trial lesson Fee: $50/session (2 Hrs.)/student",
-          "adultTimetable": [
-            "Monday to Friday: 5.00pm - 7.00pm, 7:00pm - 9:00pm",
-            "Saturday: 10am - 12pm, 2pm - 4pm",
-            "Sunday: 10am - 12pm, 2pm - 4pm"
-          ],
-          "adultFees": "Term Training Fee: $375/term/student/lesson/week | Casual/Trial lesson Fee: $50/session (2 Hrs.)/student",
-          "discounts": [
-            "1 lesson/week/term/student: $375 (10 lessons)",
-            "2 lessons/week/term/student: $375 + $200 = $575 (20 lessons)",
-            "3 lessons/week/term/student: $375 + $200 + $150 = $725 (30 lessons)",
-            "4 lessons/week/term/student: $375 + $200 + $150 + $125 = $850 (40 lessons)",
-            "5 lessons/week/term/student: $375 + $200 + $150 + $125 + $100 = $950 (50 lessons)"
-          ],
-          "payment": {
-            "name": "Brisbane Badminton Pty Ltd",
-            "bsb": "064-159",
-            "account": "1050-3509",
-            "reference": "student name",
-            "email": "admin@badmintonbrisbane.com.au"
-          },
-          "whatsapp": "https://chat.whatsapp.com/B6rSNoWoQikIrWSNiOhnWu",
-          "contact": {
-            "address": "39 Quilton Place, Crestmead, QLD, 4132",
-            "phone": "0452 007 848 (Pavan), 0433 300 506 (Krishna)",
-            "email": "admin@badmintonbrisbane.com.au"
-          },
-          "notices": [
-            "Term fee $375 is only applicable for the students enrolling 10 weeks program (within their enrolled day) which is non-refundable or redeemable to any other forms of service",
-            "Students enrolling other than Term Training is considered as CASUAL enrollment with $50/lesson/student",
-            "All the makeup lesson must be completed within the enrolled term",
-            "A make-up lesson must be scheduled within the enrolled term and must be requested within AT LEAST 24 hours of notice.",
-            "A student is allowed to schedule up to 3 make-up lessons over term training.",
-            "Brisbane Badminton may request a medical certificate if a student is sick on a training day and requests a make-up lesson within LESS THAN 24 hours of notice.",
-            "Student should bring their own Badminton Racquet, Sport Shoe (no black sole), Water/Drink bottle.",
-            "Training arrangements are made accordingly if any events are hosted in the facility.",
-            "Further notices will be informed and discussed in the WhatsApp group/E-mail or DM Parent/Student."
-          ]
-        }
-      },
-      {
-        "label": "Personal training",
-        "render": "personalTraining",
-        "info": {
-          "title": "Personal Training",
-          "description": "Get personalized coaching to improve your skills and performance. Our expert coaches will work with you one-on-one to develop a training plan tailored to your needs.",
-          "contact": {
-            "email": "admin@badmintonbrisbane.com.au"
-          }
-        }
-      }
     ]
   },
   "courtHire": {
@@ -458,6 +290,27 @@
       "<b>Please read our Booking Rules including Cancellation Policy.</b>",
       "<b>Please read our Terms and Conditions.</b>",
       "<b>No Outside coaches</b> are allowed to do any sort of coaching in Brisbane Badminton premises."
+    ]
+  },
+  "academy": {
+    "heroSlides": [
+      {
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg",
+        "caption": "Academy – Train Smarter. Play Better.",
+        "description": "designed for every player, from beginners to elite athletes. Our programs are run by certified coaches with years of experience, helping you improve your skills, fitness, and confidence on court.",
+        "buttons": [
+          {
+            "label": "Book Now",
+            "url": "https://badmintonbrisbane.yepbooking.com.au/",
+            "newTab": true
+          },
+          {
+            "label": "Learn More",
+            "url": "/services/",
+            "newTab": false
+          }
+        ]
+      }
     ]
   },
   "club": {
@@ -730,7 +583,7 @@
       },
       {
         "title": "Opening Hours:",
-        "content": "Mon–Fri 10am–11pm\n • Sat 6am–11pm\n • Sun 6am–9pm"
+        "content": "• Mon–Fri 10am–11pm\n • Sat 6am–11pm\n • Sun 6am–9pm"
       },
       {
         "title": "Contact Us",
