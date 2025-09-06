@@ -117,6 +117,25 @@ export default function CourtHirePage() {
         </section>
       )}
 
+      {/* Pricing Section */}
+      {Array.isArray(data.courtHire.info.Pricing) && data.courtHire.info.Pricing.map((section: { title: string; details: { label: string; price?: string }[] }, idx: number) => (
+        <section key={idx} className="max-w-4xl mx-auto px-4 py-8">
+          <h3
+            className="text-2xl font-bold text-red-500 mb-4 text-center"
+            style={{ ...sportySectionTheme.font.title.style, textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
+          >
+            {section.title}
+          </h3>
+          <ul className="list-disc pl-5 text-gray-300 text-left" style={sportySectionTheme.font.description.style}>
+            {section.details.map((detail: { label: string; price?: string }, detailIdx: number) => (
+              <li key={detailIdx} className="mb-2">
+                <span className="font-semibold" style={sportySectionTheme.font.title.style}>{detail.label}:</span> {detail.price}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
       {/* Terms & Conditions Modal */}
       {openTerms && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
