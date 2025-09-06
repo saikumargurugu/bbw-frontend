@@ -1,8 +1,9 @@
 {
   
   "academy": {
-    "heroContent":[
-    {
+    "hero": "Welcome to the Brisbane Badminton Coaching Academy — designed for every player, from beginners to elite athletes. Our programs are run by certified coaches with years of experience, helping you improve your skills, fitness, and confidence on court.",
+    "heroContent": [
+      {
         "title": "🏸 Activity Provider",
         "description": "We are a proud PlayOn Registered Activity Provider, delivering safe, structured, and inclusive sporting programs. Brisbane Badminton is also a Blue Card Verified organisation, ensuring child safety and community trust. We are affiliated with the Queensland Badminton Association and aligned with Badminton Australia standards.",
         "points": []
@@ -13,9 +14,10 @@
       "title": "🎯 Group Training",
       "description": "Perfect if you enjoy learning together and growing as a group.",
       "points": [
-        "🏸 Kids Academy: Fun, engaging sessions that build strong fundamentals.",
-        "💪 Adult Group Training: Skill-based classes to help you improve fast.",
-        "🤝 Social & Team Play: Train in a friendly group environment and enjoy the game."
+        "🏸 Kids Academy: Fun, engaging sessions that build strong fundamentals for young players.",
+        "💪 Adult Group Training: Skill-based classes to help you improve fast, no matter your level.",
+        "🤝 Social & Team Play Development: Train in a friendly group environment while enjoying the social side of badminton.",
+        "👉 Perfect if you enjoy learning together and growing as a group."
       ]
     },
     {
@@ -23,9 +25,10 @@
       "description": "Ideal for players seeking individual attention and a competitive edge.",
       "points": [
         "🎓 One-on-One Coaching: Fully customised training for your goals.",
-        "🏅 Elite Development: Preparing athletes for state & national competition.",
-        "⚡ Sparring Training: Train and play directly with our coaches for match experience.",
-        "🔍 Skill Analysis: Targeted feedback and correction for faster improvement."
+        "🏅 Elite Development: Preparing athletes for state, national & International competition.",
+        "⚡ Sparring Training: Train and play directly with our coaches for real match experience.",
+        "🔍 Skill Analysis: Detailed feedback and drills to help you improve faster.",
+        "👉 Ideal for players who want individual attention and a competitive edge."
       ]
     }
   ],
@@ -40,7 +43,11 @@
       },
       {
         "title": "Private Coaching",
-        "description": "One-on-one training tailored to individual goals, available in flexible packages.- Advanced Training & Development: High-performance group sessions preparing athletes for state, national, and international competition"
+        "description": "One-on-one training tailored to individual goals, available in flexible packages."
+      },
+      {
+        "title": "Advanced Training & Development",
+        "description": "High-performance group sessions preparing athletes for state, national, and international competition."
       },
       {
         "title": "Sparring Sessions",
