@@ -32,11 +32,14 @@ export default function AcademyPage() {
             >
               About the Academy
             </h2>
-            <div className="relative w-full flex flex-col gap-4 justify-center">
+            <p className='font-bold my-1.5 py-1.5'>
+              {data.academy.hero}
+            </p>
+            <div className="relative w-full flex flex-col gap-4 justify-center mt-1.5">
               {programs.map((program, idx) => (
                 <div
                   key={idx}
-                  className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6 py-6 md:px-10 md:py-8 w-full mx-auto text-center"
+                  className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6  md:px-10 md:py-8 w-full mx-auto text-center"
                   style={{
                     // Removed spread operator for sportySectionTheme.font.description.style
                     boxShadow: '0 8px 40px 0 #000a, 0 1.5px 0 #c53030',
