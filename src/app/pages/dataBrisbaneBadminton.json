@@ -191,6 +191,10 @@
   },
   "footer": {
     "links": [
+       {
+        "text": "FAQ",
+        "url": "/contact/#FAQ"
+      },
       {
         "text": "Academy",
         "url": "/academy"

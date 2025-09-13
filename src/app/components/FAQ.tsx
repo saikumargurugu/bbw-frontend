@@ -61,7 +61,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
   };
 
   return (
-    <div className="w-full mb-4">
+    <div className="w-full mb-4" id="#FAQ">
       <input
         type="text"
         value={query}
