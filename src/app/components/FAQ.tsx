@@ -20,7 +20,7 @@ const Collapsible: React.FC<{ question: string; answer: string; isOpen: boolean;
       onClick={onToggle}
       className="cursor-pointer px-4 py-2 flex items-center justify-start  hover:bg-gray-800 w-full"
       style={{
-        fontFamily: 'Montserrat, Arial, sans-serif',
+        fontFamily: sportySectionTheme.font.title.style.fontFamily,
         fontWeight: 'bold',
         fontSize: '1rem',
         color: '#f5f5f5',
@@ -41,9 +41,9 @@ const Collapsible: React.FC<{ question: string; answer: string; isOpen: boolean;
         style={{
           ...sportySectionTheme.font.description.style,
           color: '#f5f5f5',
-          textAlign: 'left', // Align text to the left
-          width: '100%', // Ensure the answer takes the full width
-          fontSize: '0.875rem', // Smaller font size for the answer
+          textAlign: 'left',
+          width: '100%',
+          fontSize: '0.875rem',
         }}
       >
         {answer}
@@ -69,7 +69,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
         placeholder="Search FAQs..."
         className="w-full px-4 py-2 border border-gray-300 rounded-md  focus:outline-none focus:ring-2 focus:ring-red-500 bg-gray-800 text-white"
         style={{
-          fontFamily: 'Montserrat, Arial, sans-serif',
+          fontFamily: sportySectionTheme.font.description.style.fontFamily,
           fontSize: '1rem',
         }}
       />

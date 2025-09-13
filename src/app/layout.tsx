@@ -9,6 +9,7 @@ import MainComponent from "./MainComponent";
 import Banner from "./components/Banner";
 import data from "./pages/dataBrisbaneBadminton.json";
 import { usePathname } from "next/navigation";
+import '@fontsource/roboto'
 
 export default function RootLayout({
   children,

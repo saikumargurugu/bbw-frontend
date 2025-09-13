@@ -11,7 +11,6 @@ export const fetchProducts = async (
     page: page.page || 1,
     filters: JSON.stringify(filters),
   };
-  console.log(page, filters, "fetchProducts params");
   
   const response = dispatch(getApi("public/shop/products/", "products", params));
   return response;

@@ -45,7 +45,6 @@ const ProductList: React.FC<ProductListProps> = ({
     : products;
 
   const totalPages = Math.ceil(count / pageSize);
-  console.log("Total Pages:", totalPages, "Count:", count, "Page Size:", pageSize);
   
   return (
     <div>

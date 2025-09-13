@@ -38,20 +38,9 @@ export default function ClubPage() {
             >
               <div
                 className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6 py-8 md:px-10 md:py-10 mx-auto text-center"
-                style={{
-                  ...sportySectionTheme.font.description.style,
-                  boxShadow: '0 8px 40px 0 #000a, 0 1.5px 0 #c53030',
-                  fontFamily: sportySectionTheme.font.description.style.fontFamily,
-                  letterSpacing: sportySectionTheme.font.description.style.letterSpacing,
-                  lineHeight: sportySectionTheme.font.description.style.lineHeight,
-                  fontWeight: 500,
-                  fontSize: '1.15rem',
-                  width: '90%'
-                }}
+                style={sportySectionTheme.font.description.style}
               >
-                <span className={sportySectionTheme.font.description.className + ' text-center'}>
-                  {clubPageData.about.description}
-                </span>
+                {clubPageData.about.description}
               </div>
             </div>
             {clubPageData.benefits && clubPageData.benefits.length > 0 && (

@@ -50,7 +50,7 @@
         {
           "label": "Learn More",
           "url": "/about",
-          "newTab": true
+          "newTab": false
         }
       ]
     },
@@ -98,16 +98,12 @@
       {
         "title": "Court Hire",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS3.jpg",
-        "description": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members for all 7 days a week throughout the year.",
-        "keyFeatures_disabled": [
-          "Standard Court Hire Rates",
-          "- Off-Peak: $15/hour (cheapest in Queensland)",
-          "- Peak Hours: Standard rate, but members save $5/hour",
-          "Membership Benefits (only $69/year)",
-          "- $5 discount on all peak-hour bookings",
-          "- Priority court booking access",
-          "- Eligibility for tournaments and competitions",
-          "- Exclusive member events and offers"
+        "description_disabled": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members for all 7 days a week throughout the year.",
+        "keyFeatures": [
+          "Open 7 days a weeks",
+          "9 fully lit",
+          "Membership Benefits",
+          "QLD Highest ceiling"
         ],
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
@@ -118,7 +114,12 @@
       {
         "title": "QBA Membership",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
-        "description": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 150 active club members.",
+        "description_disalbled": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 150 active club members.",
+        "keyFeatures": [
+          "Fully incorporated not-for-profit association.",
+          "Officially registered under Badminton Australia and the Queensland Badminton Association (QBA).",
+          "Over 150 active club members."
+        ],
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
           "name": "Contact Us to Join Now",
@@ -129,7 +130,12 @@
         "title": "Restringing",
         "image": "https://images.unsplash.com/photo-1722003184213-b5dfa47e2476?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "descriptionOLD": "Top-quality restringing service with fast turnaround. We use premium strings and professional techniques to ensure your racket performs at its best. Our experts can advise on string tension and type for your playing style. Drop off your racket and pick it up ready for your next match!",
-        "description": "Fast, professional restringing service for all racket types",
+        "description_disabled": "Fast, professional restringing service for all racket types",
+        "keyFeatures": [
+          "Fast turnaround",
+          "Premium strings",
+          "Expert advice on string tension and type"
+        ],
         "config": {
           "url": "/services/",
           "name": "Restringing",
@@ -139,7 +145,12 @@
       {
         "title": "Personal Training",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg",
-        "description": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness.",
+        "description_disabled": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness.",
+        "keyFeatures":[
+          "Tailored coaching sessions",
+          "Focus on technique and strategy",
+          "Certified coaches"
+        ],
         "config": {
           "url": "/academy/",
           "name": "Academy",
@@ -149,7 +160,12 @@
       {
         "title": "Social",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
-        "description": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
+        "description_disabled": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
+        "keyFeatures": [
+          "Regular social play sessions",
+          "Community engagement",
+          "Active participation for all age groups"
+        ],
         "config": {
           "url": "/club/",
           "name": "Social",
@@ -159,10 +175,15 @@
       {
         "title": "Academy",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/fbwall.jpg",
-        "description": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members.",
+        "description_disabled": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members.",
+        "keyFeatures": [
+          "Community sports provider",
+          "Elite junior athlete development",
+          "Over 150 active members"
+        ],
         "config": {
           "url": "/academy/",
-          "name": "Academy",
+          "name": "Learn more",
           "newTab": false
         }
       }

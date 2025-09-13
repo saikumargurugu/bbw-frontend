@@ -62,7 +62,6 @@ async function refreshAccessToken() {
         localStorage.removeItem("token");
         localStorage.removeItem("refresh");
         localStorage.removeItem("isLoggedIn");
-        console.log("Error refreshing access token:", error);
         return null;
     }
 }

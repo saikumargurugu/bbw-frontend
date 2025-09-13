@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Box, Typography, Divider } from "@mui/material";
 import data from "../pages/dataBrisbaneBadminton.json"; // Adjust path if needed
 import { sportySectionTheme } from "../styles/sportyTheme";
+import LogWhite from "./Logo/LogoWhite";
 
 export default function Footer({ fotterText }: { fotterText: string }) {
   // Get all footer data from JSON
@@ -37,6 +38,10 @@ export default function Footer({ fotterText }: { fotterText: string }) {
       }}
     >
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center w-full mb-4 md:mb-0 gap-8">
+        {/* big logo should look bigger */}
+        <Box sx={{ width: { xs: "100%", md: "40%" }, mb: { xs: 2, md: 0 } }}>
+          <LogWhite variant="full" height={100} width={250} />
+        </Box>
         {/* Contact & Socials */}
         <Box
           sx={{
@@ -49,10 +54,17 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             alignItems: { xs: "center", md: "flex-start" },
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 700, mb: 1 }}
+            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
+          >
             Contact Us
           </Typography>
-          <Typography variant="body2">
+          <Typography
+            variant="body2"
+            style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily }}
+          >
             Address:{" "}
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
@@ -134,7 +146,11 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             width: { xs: "100%", md: "20%" },
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 700, mb: 1 }}
+            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
+          >
             Quick Links
           </Typography>
           {links.length > 0 ? (
@@ -183,10 +199,17 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             width: { xs: "100%", md: "33%" },
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 700, mb: 1 }}
+            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
+          >
             Opening Hours
           </Typography>
-          <Typography variant="body2">
+          <Typography
+            variant="body2"
+            style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily }}
+          >
             {openingHours.weekdays}
             <br />
             {openingHours.weekends}
@@ -194,7 +217,11 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             {openingHours.holidays}
           </Typography>
           <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.2)" }} />
-          <Typography variant="body2" sx={{ fontStyle: "italic" }}>
+          <Typography
+            variant="body2"
+            sx={{ fontStyle: "italic" }}
+            style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily }}
+          >
             {fotterText}
           </Typography>
         </Box>

@@ -38,38 +38,27 @@ const ContactCard: React.FC<ContactCardProps> = ({
       height={400}
       className="rounded-2xl shadow-lg object-cover mb-4 border border-white/10"
     />
-    <Typography className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-6 drop-shadow-xl font-sans uppercase" style={{letterSpacing:'0.04em', fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>
-      Contact Brisbane Badminton
+    <Typography
+      variant="h6"
+      className="text-lg font-bold text-white mb-2"
+      style={sportySectionTheme.font.title.style}
+    >
+      {address}
     </Typography>
-    <div className="mb-4">
-  <Typography variant="h6" className="font-bold text-red-400 mb-2 uppercase tracking-wide" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Venue Address</Typography>
-  <Typography className="text-lg text-white" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
-        <a
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline text-cyan-200 hover:text-red-400 transition"
-        >
-          {address}
-        </a>
-      </Typography>
-    </div>
-    <div className="mb-4">
-  <Typography variant="h6" className="font-bold text-red-400 mb-2 uppercase tracking-wide" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Phone</Typography>
-  <Typography className="text-lg text-white" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
-        <a href={`tel:${phone}`} className="underline text-cyan-200 hover:text-red-400 transition">
-          {phone}
-        </a>
-      </Typography>
-    </div>
-    <div>
-  <Typography variant="h6" className="font-bold text-red-400 mb-2 uppercase tracking-wide" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Email</Typography>
-  <Typography className="text-lg text-white" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
-        <a href={`mailto:${email}`} className="underline text-cyan-200 hover:text-red-400 transition">
-          {email}
-        </a>
-      </Typography>
-    </div>
+    <Typography
+      variant="body2"
+      className="text-sm text-gray-300 mb-1"
+      style={sportySectionTheme.font.description.style}
+    >
+      {phone}
+    </Typography>
+    <Typography
+      variant="body2"
+      className="text-sm text-gray-300"
+      style={sportySectionTheme.font.description.style}
+    >
+      {email}
+    </Typography>
   </div>
 );
 

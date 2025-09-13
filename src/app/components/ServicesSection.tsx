@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 import { sportySectionTheme } from "../styles/sportyTheme";
+import ServiceSidebarModal from "./ServiceSidebarModal";
+import restringingData from '../pages/restringing.json';
+
 // Font styles from Banner/Home for sporty look
 const bannerTitleClass = "text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase";
 const bannerTitleStyle = { letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' };
@@ -11,11 +15,13 @@ const bannerDescStyle = { fontFamily: 'Montserrat, Arial, sans-serif', letterSpa
 
 interface ServiceType {
   title: string;
-  description: string;
+  description?: string;
   keyFeatures?: string[]; // Added keyFeatures property
   config?: {
     url: string;
     name: string;
+    type?: string;
+    dataSource?: string;
     newTab: boolean;
   };
   image?: string;
@@ -28,8 +34,19 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({
   services,
-    background = "bg-bgThemeDark",
+  background = "bg-bgThemeDark",
 }: ServicesSectionProps) {
+  const router = useRouter();
+  const [openServiceIdx, setOpenServiceIdx] = useState<number | null>(null);
+  const [openServiceDetails, setOpenServiceDetails] = useState<any>(null);
+
+  const getServiceDetails =(service:ServiceType)=>{
+    switch(service.config && service.config.dataSource){
+      case 'restringing':
+        setOpenServiceDetails(restringingData);
+    }
+  }
+
   return (
     <div className={`w-full ${background} py-0 mt-12 scroll-smooth`}>
       <div className="flex flex-col w-full">
@@ -60,14 +77,14 @@ export default function ServicesSection({
             {/* Text Side */}
             <div className="w-full md:w-1/2 flex flex-col justify-center bg-white/10 backdrop-blur-md border border-white/10 p-8">
               <h2
-                className={bannerTitleClass + ' mb-2'}
-                style={bannerTitleStyle}
+                className={sportySectionTheme.font.title.className + ' mb-2'}
+                style={sportySectionTheme.font.title.style}
               >
                 {service.title}
               </h2>
               <p
-                className={bannerDescClass + ' mb-4'}
-                style={bannerDescStyle}
+                className={sportySectionTheme.font.description.className + ' mb-4'}
+                style={sportySectionTheme.font.description.style}
               >
                 {service.description}
               </p>
@@ -78,20 +95,53 @@ export default function ServicesSection({
                   ))}
                 </ul>
               )}
-              {service.config && (
-                <div className="flex flex-row justify-start">
+              <div className="flex flex-row gap-3 justify-start">
+                {service.config  && (
                   <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (service.config?.newTab) {
+                        window.open(service.config.url, '_blank');
+                      } else if (service.config?.type === 'sidebar') {
+                        setOpenServiceIdx(idx);
+                        getServiceDetails(service);
+                      } else if (service.config) {
+                        router.push(service.config.url);
+                      }
+                      else {
+                        router.push('/');
+                      }
+                    }}
                     href={service.config.url}
-                    target={service.config.newTab ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                    className={sportySectionTheme.sharpButton.className}
-                    style={{ ...sportySectionTheme.sharpButton.style, minWidth: 0, width: "auto", display: "inline-block" }}
+                    className={sportySectionTheme.font.button.className + ' ' + sportySectionTheme.sharpButton.className}
+                    style={{
+                      ...sportySectionTheme.font.button.style,
+                      ...sportySectionTheme.sharpButton.style,
+                      minWidth: 0,
+                      width: "auto",
+                      display: "inline-block",
+                      fontFamily: sportySectionTheme.font.button.style.fontFamily,
+                      letterSpacing: sportySectionTheme.font.button.style.letterSpacing
+                    }}
                   >
                     {service.config.name}
                   </a>
-                </div>
-              )}
+                )}
+             
+              </div>
             </div>
+            {/* Sidebar Modal using new component only if type is sidebar */}
+            {service.config && service.config.type === 'sidebar' && (
+              <ServiceSidebarModal
+                open={openServiceIdx === idx}
+                service={openServiceDetails}
+                onClose={() => {
+                  setOpenServiceDetails(null);
+                  setOpenServiceIdx(null);
+                }}
+                idx={idx}
+              />
+            )}
           </div>
         ))}
       </div>
