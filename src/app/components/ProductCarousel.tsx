@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import InlineLoader from './childLoader';
+import { sportySectionTheme } from '../styles/sportyTheme';
 
 export type Slide = {
   image: string;
@@ -32,7 +33,6 @@ export default function Carousel({ slides, className }: CarouselProps) {
   };
 
   if (!slides.length) {
-    console.log('No slides available');
     
     return (
       <div className="flex items-center justify-center">
@@ -56,7 +56,7 @@ export default function Carousel({ slides, className }: CarouselProps) {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 flex items-center justify-center text-white text-center p-4 text-lg sm:text-3xl font-semibold">
+          <div className="absolute inset-0 flex items-center justify-center text-white text-center p-4 text-lg sm:text-3xl font-semibold" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>
             <span>{slide.caption}</span>
           </div>
         </div>
@@ -66,6 +66,7 @@ export default function Carousel({ slides, className }: CarouselProps) {
       <button
         onClick={handlePrev}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
+        style={{ fontFamily: sportySectionTheme.font.button.style.fontFamily }}
       >
         &#9664;
       </button>
@@ -74,6 +75,7 @@ export default function Carousel({ slides, className }: CarouselProps) {
       <button
         onClick={handleNext}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
+        style={{ fontFamily: sportySectionTheme.font.button.style.fontFamily }}
       >
         &#9654;
       </button>

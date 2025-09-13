@@ -7,27 +7,44 @@ import ServicesSection from '@/app/components/ServicesSection';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
 
 const services = [
-	{
-		title: 'Restringing Service',
-		description:
-			'Get your racket restrung with high-quality strings to maintain optimum performance. Fast turnaround and expert advice on string tension and type for your playing style.',
-		image : 'https://images.unsplash.com/photo-1722003184213-b5dfa47e2476?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-
-	},
-	{
-		title: 'Personal Training',
-		description: `Personal coaching sessions tailored to your skill level.
+  {
+    title: 'Restringing Service',
+    description:
+      'Get your racket restrung with high-quality strings to maintain optimum performance. Fast turnaround and expert advice on string tension and type for your playing style.',
+    image : 'https://images.unsplash.com/photo-1722003184213-b5dfa47e2476?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    config: {
+      url: '/services/restringing',
+      name: 'See Details',
+      type: "sidebar",
+      dataSource: "restringing",
+      newTab: false
+    }
+  },
+  {
+    title: 'Personal Training',
+    description: `Personal coaching sessions tailored to your skill level.
 Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.`,
-			image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
-	},
-	{
-		title: 'QBA Membership',
-		image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg',
-		description: `QBA Membership is Queensland Badminton Association membership which allows you to play competition at the Queensland level and provides insurance during these competitions.
+    image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
+    config: {
+      url: '/academy/join',
+      name: 'Join Academy',
+      type: "sidebar",
+      newTab: false
+    }
+  },
+  {
+    title: 'QBA Membership',
+    image: 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg',
+    description: `QBA Membership is Queensland Badminton Association membership which allows you to play competition at the Queensland level and provides insurance during these competitions.
 Book our world-class courts at your convenience.
 Our facility features high-quality flooring, lighting, and equipment for an optimal playing experience. Courts are available for singles, doubles, and group bookings. Reserve online and enjoy hassle-free access for practice or matches.`,
-
-	},
+    config: {
+      url: '/membership/qba',
+      name: 'Book Court',
+      type: "sidebar",
+      newTab: true
+    }
+  },
 ];
 
 export default function ServicesPage() {

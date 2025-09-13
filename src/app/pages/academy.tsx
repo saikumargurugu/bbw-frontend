@@ -32,7 +32,10 @@ export default function AcademyPage() {
             >
               About the Academy
             </h2>
-            <p className='font-bold my-1.5 py-1.5'>
+            <p
+              className={sportySectionTheme.font.description.className + ' font-bold my-1.5 py-1.5'}
+              style={sportySectionTheme.font.description.style}
+            >
               {data.academy.hero}
             </p>
             <div className="relative w-full flex flex-col gap-4 justify-center mt-1.5">

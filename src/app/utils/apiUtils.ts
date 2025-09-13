@@ -16,7 +16,6 @@ const appendQueryParams = (url: string, params?: Record<string, any>): string =>
   for (const key in params) {
     if (params.hasOwnProperty(key)) {
       // Always encode string values (including JSON strings)
-      console.log(`Encoding key: ${key}, value: ${JSON.stringify(params[key])}`);
       encodedParams[key] =
         typeof params[key] === "string"
           ? encodeURIComponent(params[key])

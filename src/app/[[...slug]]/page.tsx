@@ -15,7 +15,6 @@ import AboutUsPage from '../pages/aboutUs';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
   const slugs = params.slug || [];
-  console.log("Slugs:", slugs);
 
   // Handle root "/"
   if (slugs.length === 0) {
@@ -32,8 +31,7 @@ export default async function Page({ params }: any) {
     return <ProductDetailPage productId={productId} />;
   }
   // terst remove this
-  // Handle top-level routes 
-  console.log("Slugs in switch:", slugs[0]);
+  // Handle top-level routes
   switch (slugs[0]) {
     
     case '':
@@ -51,7 +49,6 @@ export default async function Page({ params }: any) {
     case 'pro_shop':
       return <ProShopLoading />;
     case 'shop':
-      console.log("Slugs------:", slugs[1]);
       if(slugs[1]){
         switch (slugs[1]) {
         case 'products':

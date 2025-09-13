@@ -82,7 +82,6 @@ const ShopPage: React.FC = () => {
       </div>
     );
   }
-  console.log(JSON.stringify(filteredProducts), "Filtered Products");
   
   return (
     <div className="flex">

@@ -162,11 +162,13 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
                 className={`object-cover w-full rounded-t-xl ${isMobile ? "h-56" : "h-72 sm:h-80"}`}
                 style={{ objectFit: "cover" }}
               />
-              <h3 className="font-extrabold text-white mt-3 mb-1 sm:mt-4 sm:mb-2 text-2xl uppercase tracking-wider" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>
+              <h3 className="font-extrabold text-white mt-3 mb-1 sm:mt-4 sm:mb-2 text-2xl uppercase tracking-wider" style={{fontFamily: sportySectionTheme.font.title.style.fontFamily}}>
                 {event.title}
               </h3>
-              <p className="text-white/80 text-base font-semibold mb-1" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>{event.date}</p>
-              <p className="text-white mt-1 sm:mt-2 text-base font-medium" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
+              <p className="text-white/80 text-base font-semibold mb-1" style={{fontFamily: sportySectionTheme.font.description.style.fontFamily}}>
+                {event.date}
+              </p>
+              <p className="text-white mt-1 sm:mt-2 text-base font-medium" style={{fontFamily: sportySectionTheme.font.description.style.fontFamily}}>
                 {event.description}
               </p>
               <Button

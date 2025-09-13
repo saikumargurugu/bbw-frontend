@@ -1,0 +1,86 @@
+{
+  "title": "🏸 Brisbane Badminton Restringing",
+  "description": "Fresh strings can make a big difference to your game – enhancing power, control, repulsion, and durability. At Brisbane Badminton, we provide professional Yonex restringing using precision electronic machines to ensure consistent results every time.",
+  "sections": [
+    {
+      "title": "🔧 Why Choose Our Restringing Service?",
+      "points": [
+        "Genuine Yonex Strings – Only official Yonex strings stocked.",
+        "Accurate Tensioning – Every racket is strung on electronic stringing machines for reliability.",
+        "Choice for Every Player – Select your preferred string type and tension to match your style.",
+        "Fast Turnaround – Next-day service in most cases (express options available)."
+      ]
+    },
+    {
+      "title": "💰 Pricing & Yonex String Options",
+      "options": [
+        {
+          "price": 25,
+          "name": "Durable & All-Round Play",
+          "strings": [
+            "Yonex BG 65",
+            "Yonex BG 65 Ti",
+            "Yonex NBG 95",
+            "Yonex NBG 98"
+          ]
+        },
+        {
+          "price": 30,
+          "name": "Performance & Advanced Play",
+          "strings": [
+            "Yonex BG 66 Ultimax",
+            "Yonex BG 80",
+            "Yonex BG 80 Power",
+            "Yonex Exbolt 63 / 65 / 68",
+            "Yonex Aerobite",
+            "Yonex Aerobite Boost",
+            "Yonex Aerosonic"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "⚡ Additional Fees",
+      "fees": [
+        {
+          "service": "Express Service (within 4 hrs)",
+          "cost": 15
+        },
+        {
+          "service": "Express Service (within 24 hrs)",
+          "cost": 15
+        },
+        {
+          "service": "Bring Your Own String (BYO)",
+          "cost": 20
+        }
+      ]
+    },
+    {
+      "title": "🎯 Recommended Tensions",
+      "recommendations": [
+        {
+          "level": "Beginner / Social",
+          "tension": "20–23 lbs",
+          "description": "Comfort & durability."
+        },
+        {
+          "level": "Intermediate",
+          "tension": "23–26 lbs",
+          "description": "Balanced performance."
+        },
+        {
+          "level": "Advanced / Competitive",
+          "tension": "26–30+ lbs",
+          "description": "Maximum control and precision."
+        }
+      ],
+      "tip": "💡 Tip: Restring as many times per year as you play per week."
+    }
+  ],
+  "contactInfo": {
+    "dropOffLocation": "📍 Drop-Off Location: Brisbane Badminton Pro Shop – 39 Quilton Place, Crestmead",
+    "turnaround": "⏰ Turnaround: Next-day (express options available)",
+    "contact": "📞 Contact: admin@bamintonbrisbane.com.au"
+  }
+}

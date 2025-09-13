@@ -60,8 +60,8 @@ export default function SocialsPage() {
 	 <div className={sportySectionTheme.section.className + ' min-h-screen'} style={sportySectionTheme.section.style}>
 		 {/* WhatsApp Group QR Card */}
 		 <div className={sportySectionTheme.card.className + ' max-w-md mx-auto mt-10'} style={sportySectionTheme.card.style}>
-			 <h2 className="text-2xl font-bold text-green-400 mb-4" style={{fontFamily:'Oswald, Montserrat, Arial, sans-serif'}}>Join Our WhatsApp Group</h2>
-			 <p className="text-white/90 mb-4 text-center" style={{fontFamily:'Montserrat, Arial, sans-serif'}}>
+			 <h2 className="text-2xl font-bold text-green-400 mb-4" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>Join Our WhatsApp Group</h2>
+			 <p className="text-white/90 mb-4 text-center" style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily }}>
 				 Scan the QR code below to join our club WhatsApp group for updates, events, and community chat!
 			 </p>
 			 <QRCodeSVG

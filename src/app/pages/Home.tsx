@@ -4,6 +4,8 @@ import React from 'react';
 import ServicesSection from '@/app/components/ServicesSection';
 import data from './dataBrisbaneBadminton.json';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
+import { useRouter } from 'next/navigation';
+
 // Font styles copied directly from Banner.tsx for sporty look
 const bannerTitleClass = "text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase";
 const bannerTitleStyle = { letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' };
@@ -15,6 +17,8 @@ export const HeroData = data.home.heroSlides[0];
 const about = data.home.about;
 const whyChoose = data.whyChoose;
 export default function Home() {
+	const router = useRouter();
+
 	return (
 		<div>
 						{/* About Us and Why Choose Us Section */}
@@ -51,7 +55,13 @@ export default function Home() {
 												key={index}
 												className={sportySectionTheme.sharpButton.className}
 												style={sportySectionTheme.sharpButton.style}
-												onClick={() => window.open(button.url, '_blank')}
+												onClick={() => {
+													if (button.newTab) {
+														window.open(button.url, '_blank');
+													} else {
+														router.push(button.url);
+													}
+												}}
 											>
 												{button.label}
 											</button>

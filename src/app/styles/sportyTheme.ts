@@ -1,6 +1,9 @@
 // sportyTheme.ts
 // Theme object for the About Us section's sporty background and card style
 
+// Define a variable for the font family
+const sportyFontFamily = 'Roboto, sans-serif';
+
 export const sportySectionTheme = {
   section: {
     className:
@@ -28,16 +31,16 @@ export const sportySectionTheme = {
   font: {
     title: {
       className: 'text-xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase',
-      style: { letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' }
+      style: { letterSpacing: '0.04em', fontFamily: sportyFontFamily }
     },
     description: {
       className: 'text-white mb-4 max-w-xl text-sm sm:text-lg md:text-2xl drop-shadow font-medium font-sans',
-      style: { fontFamily: 'Montserrat, Arial, sans-serif', letterSpacing: '0.06em', lineHeight: 1.6 }
+      style: { fontFamily: sportyFontFamily, letterSpacing: '0.06em', lineHeight: 1.6 }
     },
     button: {
       className: 'bg-red-600 hover:bg-red-600 text-white px-4 py-2 sm:px-7 sm:py-3 rounded-md font-bold uppercase tracking-wider shadow-lg text-xs sm:text-base md:text-lg border-2 border-red-700 transition-all duration-200',
       style: { 
-        fontFamily: 'Oswald, Montserrat, Arial, sans-serif', 
+        fontFamily: sportyFontFamily, 
         letterSpacing: '0.08em',
         padding: '0.5em 1em' // Increased padding for better spacing on mobile
       }

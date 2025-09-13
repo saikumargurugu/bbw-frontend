@@ -26,7 +26,12 @@ export default function CourtHirePage() {
   };
 
   return (
-  <div className={sportySectionTheme.section.className + " min-h-screen"} style={sportySectionTheme.section.style}>
+    <div
+      className={
+        sportySectionTheme.section.className + " min-h-screen"
+      }
+      style={sportySectionTheme.section.style}
+    >
       {/* Hero Section */}
       {/* Court Hire Information */}
       <section className="w-full py-16">
@@ -129,7 +134,8 @@ export default function CourtHirePage() {
           <ul className="list-disc pl-5 text-gray-300 text-left" style={sportySectionTheme.font.description.style}>
             {section.details.map((detail: { label: string; price?: string }, detailIdx: number) => (
               <li key={detailIdx} className="mb-2">
-                <span className="font-semibold" style={sportySectionTheme.font.title.style}>{detail.label}:</span> {detail.price}
+                <span className="font-semibold" style={sportySectionTheme.font.title.style}>{detail.label}:</span>
+                <span style={sportySectionTheme.font.description.style}> {detail.price}</span>
               </li>
             ))}
           </ul>

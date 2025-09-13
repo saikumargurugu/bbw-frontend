@@ -16,11 +16,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
 import Logo from "./Logo/LogoWhite";
+import LogoBlack from "./Logo/LogoBlack";
+import { sportySectionTheme } from '../styles/sportyTheme';
 
 const EASING = "cubic-bezier(0.22, 0.01, 0.36, 1)";
 
+const darkNav = false; 
 const navItemClass =
-  "hover:text-yellow-300 text-white px-2 py-1 text-base font-bold capitalize transition-colors duration-200";
+  "" + (darkNav ? "text-white" : " text-black") + " px-2 py-1 text-base font-bold capitalize transition-colors duration-200" + ` font-family: ${sportySectionTheme.font.title.style.fontFamily};`;
 
 export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,7 +33,10 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
   };
 
   const drawer = (
-    <Box className="w-60 p-2 bg-black h-full text-white" role="presentation">
+    <Box
+      className={`w-60 p-2 h-full text-white${darkNav ? " bg-black" : ""}`}
+      role="presentation"
+    >
       <List className="flex flex-col gap-2">
         {navLinks.map((link: navBarTypes, idx: number) => (
           <ListItem
@@ -72,7 +78,6 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
       </List>
     </Box>
   );
-
   return (
     <>
       <AppBar
@@ -80,8 +85,8 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         color="transparent"
         elevation={0}
         sx={{
-          background: 'transparent',
-          boxShadow: "0 4px 20px 0 rgba(0,0,0,0.5)",
+          background: darkNav ? 'transparent' : 'rgba(255,255,255,1)',
+          boxShadow: darkNav ? "0 4px 20px 0 rgba(0,0,0,0.5)" : "0 4px 20px 0 rgba(255,255,255,1)",
           transition: `background-color 0.6s ${EASING}, backdrop-filter 0.6s ${EASING}`,
           width: '100%',
           top: 0,
@@ -89,10 +94,13 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         }}
       >
         <div className="sticky top-0 z-[1200] w-full">
-          <Toolbar className="flex justify-between px-2 relative">
+          <Toolbar
+            className="flex justify-between px-2 relative"
+            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
+          >
             <div className="flex w-full items-center justify-between">
               <div onClick={() => window.location.href = '/'}>
-                <Logo variant={isMobile ? "min" : "full"} />
+                {darkNav?<Logo variant={isMobile ? "min" : "full"} />:<LogoBlack variant={isMobile ? "min" : "full"} />}
               </div>
               <div className="flex items-center gap-4">
                 {!isMobile ? (
@@ -102,7 +110,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
                         <Link
                           href={link.href}
                           className={navItemClass + ' font-bold uppercase'}
-                          style={{ fontFamily: 'Oswald, Montserrat, Arial, sans-serif' }}
+                          style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
                         >
                           {link.label}
                         </Link>
@@ -117,9 +125,9 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
                     onClick={handleDrawerToggle}
                     edge="end"
                     color="inherit"
-                    className="hover:bg-gray-300 rounded-full transition-transform duration-300 transform hover:scale-110"
+                    className=" rounded-full transition-transform duration-300 transform hover:scale-110"
                   >
-                    <MenuIcon fontSize="large" />
+                    <MenuIcon fontSize="large" style={{ color: darkNav ? "white" : "black" }} />
                   </IconButton>
                 )}
               </div>

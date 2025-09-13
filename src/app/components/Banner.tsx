@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 import { sportySectionTheme } from "../styles/sportyTheme";
 
 interface BannerButton {
@@ -17,6 +18,8 @@ interface BannerObject {
 
 export default function Banner({ banner }: { banner: BannerObject }) {
   const { image, caption, description, buttons } = banner;
+  const router = useRouter();
+
   return (
     <div className="relative w-full" style={{ height: "75vh", marginTop: 0, borderRadius: 0 }}>
       {/* Bottom shadow for visual depth */}
@@ -48,14 +51,20 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         {buttons && buttons.length > 0 && (
           <div className="flex gap-4 flex-wrap mb-10 px-4">
             {buttons.map((btn, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => window.open(btn.url, btn.newTab ? '_blank' : '_self')}
-                  className={sportySectionTheme.sharpButton.className + ' px-6 py-3'}
-                  style={{ ...sportySectionTheme.sharpButton.style, padding: '0.75rem 1.5rem' }}
-                >
-                  {btn.label}
-                </button>
+              <button
+                key={idx}
+                onClick={() => {
+                  if (btn.newTab) {
+                    window.open(btn.url, '_blank');
+                  } else {
+                    router.push(btn.url);
+                  }
+                }}
+                className={sportySectionTheme.sharpButton.className + ' px-6 py-3'}
+                style={{ ...sportySectionTheme.sharpButton.style, padding: '0.75rem 1.5rem' }}
+              >
+                {btn.label}
+              </button>
             ))}
           </div>
         )}

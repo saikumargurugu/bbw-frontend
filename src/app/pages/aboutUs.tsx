@@ -74,9 +74,15 @@ export default function AboutUsPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h3 className="text-3xl font-semibold text-cyan-200 mb-8 text-center">{section.title}</h3>
+          <h3
+            className="text-3xl font-semibold text-cyan-200 mb-8 text-center"
+            style={sportySectionTheme.font.title.style}
+          >
+            {section.title}
+          </h3>
           <div
             className="text-lg text-gray-300 mb-6 text-center leading-relaxed"
+            style={sportySectionTheme.font.description.style}
             dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br>') }}
           ></div>
         </motion.section>
