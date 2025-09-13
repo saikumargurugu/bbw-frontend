@@ -32,9 +32,17 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         src={image}
         alt={caption}
         fill
-        className="object-cover w-full h-full"
+        className={`w-full h-full object-cover`}
         style={{ width: "100%", height: "100%" }}
         priority
+        onLoadingComplete={(img) => {
+          const isPortrait = img.naturalHeight > img.naturalWidth;
+          if (img && img.parentElement) {
+            img.parentElement.style.objectFit = isPortrait ? 'contain' : 'cover';
+            img.parentElement.style.background = isPortrait ? '#222' : '';
+            img.parentElement.style.objectPosition = isPortrait ? 'bottom right' : 'center';
+          }
+        }}
       />
       {/* Gradient overlay for a dynamic sports look */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
