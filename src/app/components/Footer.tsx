@@ -124,6 +124,8 @@ export default function Footer({ fotterText }: { fotterText: string }) {
                       ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
                       : social.name.toLowerCase().includes("facebook")
                       ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                      : social.name.toLowerCase().includes("whatsapp")
+                      ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
                       : ""
                   }
                   alt={social.name}

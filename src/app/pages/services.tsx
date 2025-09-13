@@ -11,7 +11,7 @@ const services = [
     title: 'Restringing Service',
     description:
       'Get your racket restrung with high-quality strings to maintain optimum performance. Fast turnaround and expert advice on string tension and type for your playing style.',
-    image : 'https://images.unsplash.com/photo-1722003184213-b5dfa47e2476?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/stringer.jpeg',
     config: {
       url: '/services/restringing',
       name: 'See Details',
@@ -26,9 +26,8 @@ const services = [
 Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.`,
     image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
     config: {
-      url: '/academy/join',
+      url: '/academy',
       name: 'Join Academy',
-      type: "sidebar",
       newTab: false
     }
   },
@@ -39,10 +38,9 @@ Our certified coaches focus on technique, strategy, and fitness. Whether you’r
 Book our world-class courts at your convenience.
 Our facility features high-quality flooring, lighting, and equipment for an optimal playing experience. Courts are available for singles, doubles, and group bookings. Reserve online and enjoy hassle-free access for practice or matches.`,
     config: {
-      url: '/membership/qba',
+      url: '/court-hire',
       name: 'Book Court',
-      type: "sidebar",
-      newTab: true
+      newTab: false
     }
   },
 ];

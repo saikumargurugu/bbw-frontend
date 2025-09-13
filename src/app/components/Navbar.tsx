@@ -15,9 +15,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { navBarTypes } from "../types";
-import Logo from "./Logo/LogoWhite";
+import LogoWhite from "./Logo/LogoWhite";
 import LogoBlack from "./Logo/LogoBlack";
 import { sportySectionTheme } from '../styles/sportyTheme';
+import Logo from "./Logo/Logo";
 
 const EASING = "cubic-bezier(0.22, 0.01, 0.36, 1)";
 
@@ -100,7 +101,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
           >
             <div className="flex w-full items-center justify-between">
               <div onClick={() => window.location.href = '/'}>
-                {darkNav?<Logo variant={isMobile ? "min" : "full"} />:<LogoBlack variant={isMobile ? "min" : "full"} />}
+                {darkNav?<Logo variant={isMobile ? "min" : "full"} />:<Logo variant={isMobile ? "min" : "full"} />}
               </div>
               <div className="flex items-center gap-4">
                 {!isMobile ? (

@@ -89,6 +89,15 @@ const MapCard: React.FC<MapCardProps> = ({ mapSrc }) => (
 );
 
 export default function ContactUsPage() {
+  // Scroll to FAQ if hash is present
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#FAQ') {
+      const faqSection = document.getElementById('FAQ');
+      if (faqSection) {
+        faqSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
   const contactData = {
     heroSlides: [
       { image: "/images/contact/contact-hero.jpg", caption: "Get in Touch with Us" },
@@ -126,7 +135,7 @@ export default function ContactUsPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16" style={{ width: '80%' }}>
+      <section id="FAQ" className="py-16" style={{ width: '80%' }}>
         <FAQ data={faqItems} />
       </section>
     </div>
