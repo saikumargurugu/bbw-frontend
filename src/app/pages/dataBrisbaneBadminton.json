@@ -45,10 +45,10 @@
     ],
     "about": {
       "title": "About Us",
-      "description": "Brisbane Badminton is Queensland’s first purpose-built badminton facility, offering state-of-the-art amenities and international-standard courts. We are certified to host BWF international tournaments and QBA state tournaments.",
+      "description": "Play. Train. Connect. BRISBANE's HOME OF BADMINTON.",
       "buttons": [
         {
-          "label": "Learn More",
+          "label": "Learn More About Us",
           "url": "/about",
           "newTab": false
         }

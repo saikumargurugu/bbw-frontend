@@ -70,7 +70,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "white", textDecoration: "underline" }}
+              style={{ color: "white", textDecoration: "none", WebkitTextDecorationLine: "none", MozTextDecorationLine: "none" }}
             >
               {address}
             </a>
@@ -78,7 +78,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             Phone:{" "}
             <a
               href={`tel:${phone}`}
-              style={{ color: "white", textDecoration: "underline" }}
+              style={{ color: "white", textDecoration: "none", WebkitTextDecorationLine: "none", MozTextDecorationLine: "none" }}
             >
               {phone}
             </a>
@@ -86,7 +86,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             Email:{" "}
             <a
               href={`mailto:${email}`}
-              style={{ color: "white", textDecoration: "underline" }}
+              style={{ color: "white", textDecoration: "none", WebkitTextDecorationLine: "none", MozTextDecorationLine: "none" }}
             >
               {email}
             </a>
@@ -160,7 +160,10 @@ export default function Footer({ fotterText }: { fotterText: string }) {
               <React.Fragment key={idx}>
                 <Link
                   href={link.url}
-                  style={{ color: "white", textDecoration: "underline" }}
+                  className="text-white hover:text-cyan-400 transition-colors duration-200 no-underline"
+                  style={{ textDecoration: 'none', WebkitTextDecorationLine: 'none', MozTextDecorationLine: 'none' }}
+                  target={link.newTab ? "_blank" : undefined}
+                  rel={link.newTab ? "noopener noreferrer" : undefined}
                 >
                   {link.text}
                 </Link>

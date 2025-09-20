@@ -5,6 +5,7 @@ import ServicesSection from '@/app/components/ServicesSection';
 import data from './dataBrisbaneBadminton.json';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
 import { useRouter } from 'next/navigation';
+import AboutTiles from '../components/AboutTiles';
 
 // Font styles copied directly from Banner.tsx for sporty look
 const bannerTitleClass = "text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase";
@@ -43,6 +44,7 @@ export default function Home() {
 									>
 										{about.title}
 									</h2>
+									<AboutTiles />
 									<p
 										className={bannerDescClass.replace('font-medium', 'font-normal') + ' text-center text-sm md:text-base'}
 										style={{ ...bannerDescStyle, textAlign: 'center', width: '100%', maxWidth: 'none' }}
