@@ -37,6 +37,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
     <Box
       className={`w-60 p-2 h-full text-white${darkNav ? " bg-black" : ""}`}
       role="presentation"
+      sx={{ background: 'rgba(0,0,0,0.3)' }}
     >
       <List className="flex flex-col gap-2">
         {navLinks.map((link: navBarTypes, idx: number) => (

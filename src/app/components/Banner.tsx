@@ -21,7 +21,16 @@ export default function Banner({ banner }: { banner: BannerObject }) {
   const router = useRouter();
 
   return (
-    <div className="relative w-full" style={{ height: "75vh", marginTop: 0, borderRadius: 0 }}>
+    <div
+      className="relative w-full"
+      style={{
+        aspectRatio: '16/9',
+        width: '100vw',
+        height: 'clamp(320px, 75vh, 900px)',
+        marginTop: 0,
+        borderRadius: 0,
+      }}
+    >
       {/* Bottom shadow for visual depth */}
       <div className="absolute left-0 right-0 bottom-0 h-8 z-30 pointer-events-none" style={{
         boxShadow: '0 12px 32px 0 #000a',
@@ -32,8 +41,8 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         src={image}
         alt={caption}
         fill
-        className={`w-full h-full object-cover`}
-        style={{ width: "100%", height: "100%" }}
+        className={`w-full h-full object-cover sm:rounded-none rounded-none`}
+        style={{ height: "100%", objectFit: 'cover', objectPosition: 'center' }}
         priority
         onLoadingComplete={(img) => {
           const isPortrait = img.naturalHeight > img.naturalWidth;
@@ -57,7 +66,7 @@ export default function Banner({ banner }: { banner: BannerObject }) {
           {description}
         </p>
         {buttons && buttons.length > 0 && (
-          <div className="flex gap-4 flex-wrap mb-10 px-4">
+          <div className="flex flex-row gap-4 mb-10 px-4" style={{flexWrap: 'nowrap'}}>
             {buttons.map((btn, idx) => (
               <button
                 key={idx}
