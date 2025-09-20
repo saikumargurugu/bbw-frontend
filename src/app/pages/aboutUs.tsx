@@ -5,6 +5,7 @@ import { Avatar, CardContent, Typography } from '@mui/material';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
 import { motion } from "framer-motion";
 import data from './dataBrisbaneBadminton.json';
+import AboutTiles from '../components/AboutTiles';
 
 const aboutHero: { title: string; description: string } = data.aboutUs?.hero || { title: '', description: '' };
 const aboutSections: { title: string; content: string }[] = data.aboutUs?.sections || [];
@@ -26,20 +27,23 @@ export default function AboutUsPage() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className={sportySectionTheme.accent.className} style={sportySectionTheme.accent.style} />
-        <div className="w-full px-2 sm:px-8 mx-auto flex justify-center z-10">
-          <div className={sportySectionTheme.card.className} style={{ ...sportySectionTheme.card.style, width: '90%' }}>
-            <h2
-              className={sportySectionTheme.font.title.className + ' mb-8'}
-              style={{ ...sportySectionTheme.font.title.style, textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
-            >
-              {aboutHero.title}
-            </h2>
-            <p
-              className={sportySectionTheme.font.description.className + ' text-center text-sm md:text-base'}
-              style={{ ...sportySectionTheme.font.description.style, textAlign: 'center', width: '100%', maxWidth: 'none' }}
-            >
-              {aboutHero.description}
-            </p>
+
+        {/* tiles section */}
+        {/* <AboutTiles /> */}
+
+        <div className={sportySectionTheme.card.className} style={{ ...sportySectionTheme.card.style, width: '90%' }}>
+          <h2
+            className={sportySectionTheme.font.title.className + ' mb-8'}
+            style={{ ...sportySectionTheme.font.title.style, textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
+          >
+            {aboutHero.title}
+          </h2>
+          <p
+            className={sportySectionTheme.font.description.className + ' text-center text-sm md:text-base'}
+            style={{ ...sportySectionTheme.font.description.style, textAlign: 'center', width: '100%', maxWidth: 'none' }}
+          >
+            {aboutHero.description}
+          </p>
   
 
       {/* Points Section */}
@@ -63,7 +67,7 @@ export default function AboutUsPage() {
         </motion.section>
       )}
         </div>
-        </div>
+        {/* </div> */}
 
       {/* Sections */}
       {filteredSections.map((section: { title: string; content: string }, idx: number) => (
@@ -130,7 +134,7 @@ export default function AboutUsPage() {
         <h4 className="text-4xl font-bold mb-6 text-red-500">Get in Touch</h4>
         <div className="mt-8 text-lg">
           <span>For more info, contact us at </span>
-          <a href="mailto:info@badmintonbrisbane.com.au" className="underline text-white font-bold">info@badmintonbrisbane.com.au</a>
+          <a href="mailto:admin@badmintonbrisbane.com.au" className="underline text-white font-bold">admin@badmintonbrisbane.com.au</a>
         </div>
       </motion.section>
     </div>
