@@ -38,7 +38,7 @@ export const sportySectionTheme = {
       style: { fontFamily: sportyFontFamily, letterSpacing: '0.06em', lineHeight: 1.6 }
     },
     button: {
-      className: 'bg-red-600 hover:bg-red-600 text-white px-4 py-2 sm:px-7 sm:py-3 rounded-md font-bold uppercase tracking-wider shadow-lg text-xs sm:text-base md:text-lg border-2 border-red-700 transition-all duration-200',
+      className: 'bg-red-600 hover:bg-red-600 text-white px-4 py-2 sm:px-7 sm:py-3 rounded-md font-bold uppercase tracking-wider shadow-lg text-xs sm:text-sm md:text-base border-2 border-red-700 transition-all duration-200',
       style: { 
         fontFamily: sportyFontFamily, 
         letterSpacing: '0.08em',
@@ -47,7 +47,7 @@ export const sportySectionTheme = {
     }
   },
   sharpButton: {
-    className: 'bg-gradient-to-br from-red-600 to-red-500 hover:bg-gradient-to-red hover:from-red-600 hover:to-black text-white px-6 py-3 sm:px-10 sm:py-3 font-extrabold uppercase tracking-widest shadow-xl text-sm sm:text-lg md:text-xl transition-all duration-1000 outline-none focus:ring-4 focus:ring-red-400 active:scale-98',
+    className: 'bg-gradient-to-br from-red-600 to-red-500 hover:bg-gradient-to-red hover:from-red-600 hover:to-black text-white px-6 py-3 sm:px-10 sm:py-3 font-extrabold uppercase tracking-widest shadow-xl text-xs sm:text-base md:text-lg transition-all duration-1000 outline-none focus:ring-4 focus:ring-red-400 active:scale-98',
     style: {
       fontFamily: 'Oswald, Montserrat, Arial, sans-serif',
       letterSpacing: '0.14em',
