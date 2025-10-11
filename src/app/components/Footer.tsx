@@ -19,7 +19,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
   };
   const contact = footerData.ContactUs || {};
   const address = contact.address || "";
-  const phone = contact.phone || "+";
+  // const phone = contact.phone || "+";
   const email = contact.email || "admin@badmintonbrisbane.com.au";
 
   return (
