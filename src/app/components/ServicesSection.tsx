@@ -25,6 +25,7 @@ interface ServiceType {
     newTab: boolean;
   };
   image?: string;
+  fitImage?: boolean;
 }
 
 interface ServicesSectionProps {
@@ -39,12 +40,13 @@ export default function ServicesSection({
   const router = useRouter();
   const [openServiceIdx, setOpenServiceIdx] = useState<number | null>(null);
   const [openServiceDetails, setOpenServiceDetails] = useState<any>(null);
+  const [imageAspect, setImageAspect] = useState<{[key: number]: 'portrait' | 'landscape'}>({});
 
   const getServiceDetails =(service:ServiceType)=>{
     switch(service.config && service.config.dataSource){
       case 'restringing':
         setOpenServiceDetails(restringingData);
-    }
+    } 
   }
 
   return (
@@ -70,8 +72,18 @@ export default function ServicesSection({
                 src={service.image || `/images/image${(idx % 6) + 1}.jpg`}
                 alt={service.title}
                 fill
-                className="object-cover w-full h-full"
-                style={{ borderRadius: 0 }}
+                className="w-full h-full"
+                style={{
+                  borderRadius: 0,
+                  objectFit: service.fitImage ? 'cover' : (imageAspect[idx] === 'portrait' ? 'contain' : 'cover'),
+                  objectPosition: 'center'
+                }}
+                onLoadingComplete={(img) => {
+                  setImageAspect((prev) => ({
+                    ...prev,
+                    [idx]: img.naturalHeight > img.naturalWidth ? 'portrait' : 'landscape'
+                  }));
+                }}
               />
             </div>
             {/* Text Side */}
