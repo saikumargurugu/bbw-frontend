@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
-const Collapsible: React.FC<{ question: string; answer: string; isOpen: boolean; onToggle: () => void }> = ({ question, answer, isOpen, onToggle }) => (
+const Collapsible: React.FC<{ question: string; answer: string; isOpen: boolean; link?: { url: string; name?: string; newTab?: boolean }; onToggle: () => void }> = ({ question, answer, isOpen, link, onToggle }) => {
+  const router = useRouter();
+  return (
   <div
     className={sportySectionTheme.card.className + ' border rounded-md overflow-hidden bg-gray-800'}
     style={{
@@ -37,7 +40,7 @@ const Collapsible: React.FC<{ question: string; answer: string; isOpen: boolean;
       className="overflow-hidden w-full"
     >
       <div
-        className={sportySectionTheme.font.description.className + ' px-4 py-2 text-left'}
+        className={sportySectionTheme.font.description.className + ' px-4 py-2 text-left flex items-center gap-2'}
         style={{
           ...sportySectionTheme.font.description.style,
           color: '#f5f5f5',
@@ -46,11 +49,33 @@ const Collapsible: React.FC<{ question: string; answer: string; isOpen: boolean;
           fontSize: '0.875rem',
         }}
       >
-        {answer}
+        <span style={{width: '100%', display: 'inline-block'}}>{answer}
+        {link && (
+          <a
+            href={link.url}
+            target={link.newTab ? '_blank' : '_self'}
+            rel={link.newTab ? 'noopener noreferrer' : undefined}
+            className="text-cyan-400 underline hover:text-cyan-600 ml-2"
+            onClick={e => {
+              if (!link.newTab) {
+                e.preventDefault();
+                // Use router for navigation
+                if (typeof window !== 'undefined') {
+                  if (router) router.push(link.url);
+                  else window.location.href = link.url;
+                }
+              }
+            }}
+          >
+            {link.name || 'Go'}
+          </a>
+        )}
+        </span> 
       </div>
     </motion.div>
   </div>
 );
+}
 
 const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
   const [query, setQuery] = useState('');
@@ -77,7 +102,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
   );
 };
 
-const FAQ: React.FC<{ data: { type: string; name: string; acceptedAnswer: { type: string; text: string } }[] }> = ({ data }) => {
+const FAQ: React.FC<{ data: { type: string; name: string; acceptedAnswer: { type: string; text: string }, link?: { url: string; name: string; newTab: boolean } }[] }> = ({ data }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -88,6 +113,10 @@ const FAQ: React.FC<{ data: { type: string; name: string; acceptedAnswer: { type
   const filteredData = data.filter((item) =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Import router from next/navigation
+  // Use ES import and conditionally call useRouter for client-side only
+  const router = useRouter();
 
   return (
     <div className={'mx-auto p-4'} style={{ width: '100%', maxHeight: '500px', overflowY: 'auto' }}>
@@ -102,6 +131,7 @@ const FAQ: React.FC<{ data: { type: string; name: string; acceptedAnswer: { type
           answer={item.acceptedAnswer.text}
           isOpen={openIndex === index}
           onToggle={() => toggleFAQ(index)}
+          link={item.link}
         />
       ))}
     </div>

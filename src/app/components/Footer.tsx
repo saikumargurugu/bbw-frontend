@@ -39,8 +39,16 @@ export default function Footer({ fotterText }: { fotterText: string }) {
     >
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center w-full mb-4 md:mb-0 gap-8">
         {/* big logo should look bigger */}
-        <Box sx={{ width: { xs: "100%", md: "40%" }, mb: { xs: 2, md: 0 } }}>
-          <LogWhite variant="full" height={100} width={250} />
+        <Box
+          sx={{
+            width: { xs: "100%", md: "40%" },
+            mb: { xs: 2, md: 0 },
+            display: "flex",
+            justifyContent: { xs: "center", md: "flex-start" },
+            alignItems: "center"
+          }}
+        >
+          <LogWhite variant="full" height={100} width={360} />
         </Box>
         {/* Contact & Socials */}
         <Box
@@ -56,14 +64,14 @@ export default function Footer({ fotterText }: { fotterText: string }) {
         >
           <Typography
             variant="h6"
-            sx={{ fontWeight: 700, mb: 1 }}
+            sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1rem', md: '1.5rem' } }}
             style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
           >
             Contact Us
           </Typography>
           <Typography
             variant="body2"
-            style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily }}
+            style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily, fontSize: '1.15rem' }}
           >
             Address:{" "}
             <a
@@ -74,14 +82,14 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             >
               {address}
             </a>
-            <br />
+            {/* <br />
             Phone:{" "}
             <a
               href={`tel:${phone}`}
               style={{ color: "white", textDecoration: "none", WebkitTextDecorationLine: "none", MozTextDecorationLine: "none" }}
             >
               {phone}
-            </a>
+            </a> */}
             <br />
             Email:{" "}
             <a
@@ -96,7 +104,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
         </Box>
 {/* socials */}
           <Box sx={{ mt: 3, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.3rem', md: '1.7rem' } }}>
             Follow Us On
           </Typography>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -114,7 +122,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
                   alignItems: "center",
                   gap: 6,
                   fontWeight: 600,
-                  fontSize: 18,
+                  fontSize: 22,
                   marginRight: 16,
                 }}
               >
@@ -150,7 +158,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
         >
           <Typography
             variant="h6"
-            sx={{ fontWeight: 700, mb: 1 }}
+            sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.3rem', md: '1.7rem' } }}
             style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
           >
             Quick Links
@@ -206,14 +214,14 @@ export default function Footer({ fotterText }: { fotterText: string }) {
         >
           <Typography
             variant="h6"
-            sx={{ fontWeight: 700, mb: 1 }}
+            sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.3rem', md: '1.7rem' } }}
             style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
           >
             Opening Hours
           </Typography>
           <Typography
             variant="body2"
-            style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily }}
+            style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily, fontSize: '1.15rem' }}
           >
             {openingHours.weekdays}
             <br />
@@ -224,7 +232,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
           <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.2)" }} />
           <Typography
             variant="body2"
-            sx={{ fontStyle: "italic" }}
+            sx={{ fontStyle: "italic", fontSize: { xs: '1.1rem', md: '1.3rem' } }}
             style={{ fontFamily: sportySectionTheme.font.description.style.fontFamily }}
           >
             {fotterText}

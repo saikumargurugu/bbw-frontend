@@ -12,8 +12,8 @@
             "newTab": true
           },
           {
-            "label": "Learn More",
-            "url": "/services/",
+            "label": "Academy",
+            "url": "/academy/",
             "newTab": false
           }
         ]
@@ -48,7 +48,7 @@
       "description": "Play. Train. Connect. BRISBANE's HOME OF BADMINTON.",
       "buttons": [
         {
-          "label": "Learn More About Us",
+          "label": "Know More",
           "url": "/about",
           "newTab": false
         }
@@ -103,7 +103,9 @@
           "Open 7 days a weeks",
           "9 fully lit",
           "Membership Benefits",
-          "QLD Highest ceiling"
+          "QLD Highest ceiling",
+          "Discounted rates for members",
+          "Easy online booking"
         ],
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
@@ -112,18 +114,57 @@
         }
       },
       {
-        "title": "QBA Membership",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
-        "description_disalbled": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 150 active club members.",
+        "title": "Academy",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
+        "description_disabled": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members.",
+        "fitImage": true,
         "keyFeatures": [
-          "Fully incorporated not-for-profit association.",
-          "Officially registered under Badminton Australia and the Queensland Badminton Association (QBA).",
-          "Over 150 active club members."
+          "Group Training",
+          "Personal Training",
+          "Elite junior athlete development",
+          "Over 150 active members",
+          "Skill development for all ages",
+          "DEVELOPMENT PACK",
+          "Flexible booking with the Coach",
+          "Personalized assessment (Postural, Movement)"
         ],
         "config": {
-          "url": "https://badmintonbrisbane.yepbooking.com.au/",
-          "name": "Contact Us to Join Now",
-          "newTab": true
+          "url": "/academy/",
+          "name": "Join Now",
+          "newTab": false
+        }
+      },
+      {
+        "title": "Personal Training",
+        "image": "https://storage.cloud.google.com/badminton_brisabane_gallery/web_gallery/Home/HomeAcademy.jpeg",
+        "description_disabled": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness.",
+        "keyFeatures": [
+          "Tailored coaching sessions",
+          "Focus on technique and strategy",
+          "Personal 1 on 1 Training",
+          "Discounted rates for packages",
+          "Certified coaches"
+        ],
+        "config": {
+          "url": "/academy/",
+          "name": "Academy",
+          "newTab": false
+        }
+      },
+      {
+        "title": "Social",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
+        "description_disabled": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
+        "fitImage": true,
+        "keyFeatures": [
+          "Regular social play sessions",
+          "Community engagement",
+          "Active participation for all age groups"
+        ],
+        "config": {
+          "url": "/club/",
+          "name": "Know More",
+          "newTab": false
         }
       },
       {
@@ -143,55 +184,25 @@
         }
       },
       {
-        "title": "Personal Training",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg",
-        "description_disabled": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness.",
-        "keyFeatures":[
-          "Tailored coaching sessions",
-          "Focus on technique and strategy",
-          "Certified coaches"
-        ],
-        "config": {
-          "url": "/academy/",
-          "name": "Academy",
-          "newTab": false
-        }
-      },
-      {
-        "title": "Social",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
-        "description_disabled": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
+        "title": "Club Registration",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
+        "description_disabled": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 150 active club members.",
         "keyFeatures": [
-          "Regular social play sessions",
-          "Community engagement",
-          "Active participation for all age groups"
+          "Fully incorporated not-for-profit association.",
+          "Officially registered under Badminton Australia and the Queensland Badminton Association (QBA).",
+          "Over 150 active club members."
         ],
         "config": {
-          "url": "/club/",
-          "name": "Social",
-          "newTab": false
-        }
-      },
-      {
-        "title": "Academy",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/fbwall.jpg",
-        "description_disabled": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members.",
-        "keyFeatures": [
-          "Community sports provider",
-          "Elite junior athlete development",
-          "Over 150 active members"
-        ],
-        "config": {
-          "url": "/academy/",
-          "name": "Learn more",
-          "newTab": false
+          "url": "https://badmintonbrisbane.yepbooking.com.au/",
+          "name": "Join Now",
+          "newTab": true
         }
       }
     ]
   },
   "footer": {
     "links": [
-       {
+      {
         "text": "FAQ",
         "url": "/contact/#FAQ"
       },
@@ -225,19 +236,19 @@
         "name": "Instagram",
         "url": "https://www.instagram.com/brisbanebadminton/"
       },
-       {
+      {
         "name": "WhatsApp",
         "url": "https://chat.whatsapp.com/B6rSNoWoQikIrWSNiOhnWu"
       }
     ],
     "openingHours": {
-      "weekdays": "Mon-Fri: 8:00am 11:00pm",
+      "weekdays": "Mon-Fri: 10:00am 11:00pm",
       "weekends": "Sat-Sun: 6:00am 11:00pm",
       "holidays": "Public Holidays: 6am–9pm"
     },
     "ContactUs": {
       "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
-      "phone": "+61 433 300 506",
+      "phones": "+61 433 300 506",
       "email": "admin@badmintonbrisbane.com.au",
       "images": [
         "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
@@ -246,7 +257,7 @@
   },
   "ContactUs": {
     "address": "39 Quilton Pl, Crestmead QLD 4132, Australia",
-    "phone": "+61 433 300 506",
+    "phones": "+61 433 300 506",
     "email": "admin@badmintonbrisbane.com.au",
     "images": [
       "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/Building.jpg"
@@ -296,11 +307,11 @@
           "details": [
             {
               "label": "Peak Hours",
-              "price":"$5 discount on all peak-hour bookings"
+              "price": "$5 discount on all peak-hour bookings"
             },
             {
               "label": "Priority booking",
-              "price":"Priority court booking access"
+              "price": "Priority court booking access"
             }
           ]
         }
@@ -518,6 +529,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "39 Quilton Place, Crestmead QLD — easy access for Brisbane’s southside and Logan."
+        },
+        "link": {
+          "url": "https://maps.app.goo.gl/H2NywYtcRMTj251w8",
+          "name": "Click here",
+          "newTab": true
         }
       },
       {
@@ -526,6 +542,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "Mon–Fri 10:00am–11:00pm, Sat 6:00am–11:00pm, Sun 6:00am–9:00pm."
+        },
+        "link": {
+          "url": "/contact",
+          "name": "Click here",
+          "newTab": false
         }
       },
       {
@@ -534,6 +555,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "No. Just turn up — we’ll match you on arrival by skill level."
+        },
+        "link": {
+          "url": "/socials",
+          "name": "Click here",
+          "newTab": false
         }
       },
       {
@@ -542,6 +568,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "Book online via our website any time. Walk-ins welcome when courts are free."
+        },
+        "link": {
+          "url": "/court-hire",
+          "name": "Click here",
+          "newTab": false
         }
       },
       {
@@ -550,6 +581,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "Yes — certified coaches for juniors, adults, and performance players (groups and privates)."
+        },
+        "link": {
+          "url": "/academy",
+          "name": "Click here",
+          "newTab": false
         }
       },
       {
@@ -574,6 +610,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "Yes — on-site Pro Shop plus racquet hire and shuttle sales."
+        },
+        "link": {
+          "url": "/pro_shop",
+          "name": "Click here",
+          "newTab": false
         }
       },
       {
@@ -582,6 +623,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "Yes — fast, professional restringing for all racquet types."
+        },
+        "link": {
+          "url": "/services",
+          "name": "Click here",
+          "newTab": false
         }
       },
       {
@@ -598,6 +644,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "Yes — beginner to advanced pathways through our Brisbane Badminton Academy."
+        },
+        "link": {
+          "url": "/academy",
+          "name": "Click here",
+          "newTab": false
         }
       },
       {
@@ -614,6 +665,11 @@
         "acceptedAnswer": {
           "type": "Answer",
           "text": "Absolutely — we host school programs, team-building, and private events."
+        },
+        "link": {
+          "url": "/court-hire",
+          "name": "Click here",
+          "newTab": false
         }
       }
     ]
