@@ -1,43 +1,56 @@
 import React from "react";
 import Image from "next/image";
 import { sportySectionTheme } from "../styles/sportyTheme";
+import bestSaverImg from "../../public/icons/bestSaver.png";
+import communityImg from "../../public/icons/community.png";
+import courtsImg from "../../public/icons/Courts.png";
+import onlineShopingImg from "../../public/icons/onlineShoping.png";
+import socialImg from "../../public/icons/social.png";
+import upskillImg from "../../public/icons/upskill.png";
 
 interface AboutTile {
   icon: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 const aboutTiles: AboutTile[] = [
   {
     icon: "🏸",
     title: "Tournament Ready Courts",
-    description: "9 BWF & OBA Certified Courts For Serious Play."
+    description: "9 BWF & OBA Certified Courts For Serious Play.",
+    image:  courtsImg.src
   },
   {
     icon: "🎓",
     title: "Expert Coaching",
-    description: "Kids, Adults, & elite players welcome."
+    description: "Kids, Adults, & elite players welcome.",
+    image:  upskillImg.src
   },
   {
     icon: "🌐",
     title: "Community Engagement",
-    description: "Join our vibrant community of badminton enthusiasts."
+    description: "Join our vibrant community of badminton enthusiasts.",
+    image:  communityImg.src
   },
   {
     icon: "🤝",
     title: "Community & Social Play",
-    description: "Weekly Sessions, No partner Needed, All Levels Welcome."
+    description: "Weekly Sessions, No partner Needed, All Levels Welcome.",
+    image:  socialImg.src
   },
   {
     icon: "🛒",
     title: "Pro Shop",
-    description: "Rackets, shoes, shuttles, and accessories available."
+    description: "Rackets, shoes, shuttles, and accessories available.",
+    image:  onlineShopingImg.src
   },
   {
     icon: "💰",
     title: "Best Value Court Hire",
-    description: "From only $15/hour off peak hours, Plus membership discounts."
+    description: "From only $15/hour off peak hours, Plus membership discounts.",
+    image:  bestSaverImg.src
   }
 ];
 
@@ -55,8 +68,17 @@ const AboutTiles: React.FC = () => (
           }}
         >
           <div className="text-5xl mb-3 flex items-center justify-center" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>
-            {tile.title === "Tournament Ready Courts" ? (
-              <Image src="/court.ico" alt="Badminton Court" width={48} height={48} style={{ display: 'inline-block' }} />
+            {tile.image ? (
+              <div className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+                <Image
+                  src={tile.image}
+                  alt={tile.title}
+                  width={120}
+                  height={120}
+                  style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                  className="rounded-xl"
+                />
+              </div>
             ) : (
               tile.icon
             )}
