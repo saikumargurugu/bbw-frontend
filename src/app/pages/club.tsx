@@ -48,7 +48,7 @@ export default function ClubPage() {
                 <h3 className="text-2xl font-bold text-red-400 mb-4">Club Member Benefits</h3>
                 <ul className="list-disc list-inside text-left max-w-2xl mx-auto text-lg text-gray-100">
                   {clubPageData.benefits.map((benefit: string, idx: number) => (
-                    <li key={idx}>{benefit}</li>
+                    <li key={idx} className="text-left pl-4">{benefit}</li>
                   ))}
                 </ul>
               </div>
@@ -79,7 +79,7 @@ export default function ClubPage() {
         <p className="text-lg text-gray-100 mb-4" dangerouslySetInnerHTML={{ __html: clubPageData.qba.description }} />
         <h4 className="text-xl font-bold text-cyan-200 mb-2">{clubPageData.qba.courtTitle}</h4>
         <p className="text-lg text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.courtDescription }} />
-        <ul className="text-lg text-gray-100 mb-4 list-disc list-inside text-left max-w-xl mx-auto">
+        <ul className="text-lg text-gray-100 mb-4 list-none text-left max-w-xl mx-auto">
           {clubPageData.qba.courtList.map((item, idx) => (
             <li key={idx}><strong>{item}</strong></li>
           ))}

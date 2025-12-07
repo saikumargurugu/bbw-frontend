@@ -116,13 +116,13 @@
       {
         "title": "Academy",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
-        "description_disabled": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 150 active members.",
+        "description_disabled": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 233 active members.",
         "fitImage": true,
         "keyFeatures": [
           "Group Training",
           "Personal Training",
           "Elite junior athlete development",
-          "Over 150 active members",
+          "Over 233 active members",
           "Skill development for all ages",
           "Development Pack",
           "Flexible booking with the Coach",
@@ -186,11 +186,11 @@
       {
         "title": "Club Registration",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
-        "description_disabled": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 150 active club members.",
+        "description_disabled": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 233 active club members.",
         "keyFeatures": [
           "Fully incorporated not-for-profit association.",
           "Officially registered under Badminton Australia and the Queensland Badminton Association (QBA).",
-          "Over 150 active club members."
+          "Over 233 active club members."
         ],
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
@@ -398,7 +398,7 @@
     ],
     "about": {
       "title": "About the Club",
-      "description": "Brisbane Badminton is home to South Brisbane Badminton Inc., a fully incorporated, not-for-profit badminton club. The club is officially registered with Badminton Australia and the Queensland Badminton Association (QBA), and has over 150 active members. It runs competitions, represents players at state and national levels, and fosters the growth of badminton within Brisbane’s southside community.",
+      "description": "Brisbane Badminton is home to South Brisbane Badminton Inc., a fully incorporated, not-for-profit badminton club. The club is officially registered with Badminton Australia and the Queensland Badminton Association (QBA), and has over 233 active members. It runs competitions, represents players at state and national levels, and fosters the growth of badminton within Brisbane’s southside community.",
       "buttons": [
         {
           "label": "Join Now",
@@ -411,13 +411,13 @@
       "title": "QBA Membership",
       "description": "<strong>South Brisbane Badminton Inc.</strong> is proud to be affiliated with the <strong>Queensland Badminton Association (QBA)</strong>.\n    Becoming a QBA member not only supports the growth of badminton in Queensland but also allows you to compete in official state-level tournaments and includes insurance coverage during these competitions.",
       "courtTitle": "Book Our Premium Courts",
-      "courtDescription": "Play on our <strong>badminton courts</strong>, featuring the <span class=\"text-red-700 font-bold\">highest ceiling in Queensland</span>, <span class=\"text-cyan-700 font-bold\">soft cushion flooring</span>, and the <span class=\"text-yellow-500 font-bold\">brightest lights</span> for unmatched comfort, performance, and safety. With <strong>top-tier flooring, professional lighting, and quality equipment</strong>, our facility offers the perfect environment for both casual play and serious training.",
+      "courtDescription": "Play on our badminton courts, featuring the highest ceiling in Queensland, soft cushion flooring, and the brightest lights for unmatched comfort, performance, and safety. With top-tier flooring, professional lighting, and quality equipment, our facility offers the perfect environment for both casual play and serious training.",
       "courtList": [
         "Singles & Doubles Matches",
         "Group Bookings",
         "Casual Practice & Competitive Play"
       ],
-      "bookingNote": "Reserve your court online for a <strong>smooth, hassle-free experience</strong>. Whether you're training, competing, or just having fun—South Brisbane Badminton Inc. is the place to be."
+      "bookingNote": "Reserve your court online for a smooth, hassle-free experience. Whether you're training, competing, or just having fun—South Brisbane Badminton Inc. is the place to be."
     },
     "terms": {
       "title": "Terms and Conditions",
