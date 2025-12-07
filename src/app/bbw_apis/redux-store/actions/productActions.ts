@@ -5,9 +5,9 @@ import { getApi } from "@/app/utils/apiUtils";
 export const fetchProducts = async (
   dispatch: AppDispatch,
   page: { page: number } = { page: 1 },
-  filters: Record<string, any> = {}
+  filters: Record<string, unknown> = {}
 ) => {
-  const params: Record<string, any> = {
+  const params: Record<string, unknown> = {
     page: page.page || 1,
     filters: JSON.stringify(filters),
   };
