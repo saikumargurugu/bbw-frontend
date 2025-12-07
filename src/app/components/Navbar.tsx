@@ -1,6 +1,7 @@
 "use client";
 
 import React, {useState} from "react";
+import { usePathname } from "next/navigation";
 import {
   AppBar,
   Toolbar,
@@ -27,6 +28,7 @@ const navItemClass =
   "" + (darkNav ? "text-white" : " text-black") + " px-2 py-1 text-base font-bold capitalize transition-colors duration-200" + ` font-family: ${sportySectionTheme.font.title.style.fontFamily};`;
 
 export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 960px)");
   const handleDrawerToggle = () => {
@@ -107,20 +109,27 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
               <div className="flex items-center gap-4">
                 {!isMobile ? (
                   <div className="flex items-center space-x-2">
-                    {navLinks.map((link, idx) => (
-                      <React.Fragment key={idx}>
-                        <Link
-                          href={link.href}
-                          className={navItemClass + ' font-bold uppercase'}
-                          style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
-                        >
-                          {link.label}
-                        </Link>
-                        {idx < navLinks.length - 1 && (
-                          <span className="mx-1 text-white/60 select-none">|</span>
-                        )}
-                      </React.Fragment>
-                    ))}
+                    {navLinks.map((link, idx) => {
+                      const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+                      return (
+                        <React.Fragment key={idx}>
+                          <Link
+                            href={link.href}
+                            className={
+                              navItemClass +
+                              ' font-bold uppercase' +
+                              (isActive ? ' bg-red-700 text-white rounded shadow-lg' : '')
+                            }
+                            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
+                          >
+                            {link.label}
+                          </Link>
+                          {idx < navLinks.length - 1 && (
+                            <span className="mx-1 text-white/60 select-none">|</span>
+                          )}
+                        </React.Fragment>
+                      );
+                    })}
                   </div>
                 ) : (
                   <IconButton
@@ -137,9 +146,6 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
           </Toolbar>
         </div>
       </AppBar>
-
-
-
 
       <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
         {drawer}
