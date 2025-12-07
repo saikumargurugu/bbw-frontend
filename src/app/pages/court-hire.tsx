@@ -9,6 +9,7 @@ import data from './dataBrisbaneBadminton.json';
 const courtHireData = data.courtHire;
 
 export default function CourtHirePage() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showBooking, setShowBooking] = useState(false);
   const [selectedSlots, setSelectedSlots] = useState(new Set<string>());
   const [openTerms, setOpenTerms] = useState(false);

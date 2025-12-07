@@ -1,10 +1,26 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: __dirname,
+  },
   /* config options here */
   // output: "export", 
   images: {
-    domains: ["www.shutterstock.com", "images.unsplash.com", "storage.googleapis.com"], // Add the external domain here
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.shutterstock.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+      },
+    ],
     unoptimized: true,
   },
 };

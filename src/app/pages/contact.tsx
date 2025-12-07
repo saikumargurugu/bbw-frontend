@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Carousel from '@/app/components/Carousel';
 import { Typography } from '@mui/material';
 import Image from 'next/image';
 import data from './dataBrisbaneBadminton.json';
