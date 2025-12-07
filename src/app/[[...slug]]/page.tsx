@@ -16,8 +16,8 @@ import AboutUsPage from '../pages/aboutUs';
 export default async function Page({ params }: any) {
       // const { slug: slugs } = await params;
 
-  const slugs = Array.isArray(params?.slug) ? params.slug : [];
-  console.log('Slugs:', params, slugs);
+  const resolvedParams = params && typeof params.then === 'function' ? await params : params;
+  const slugs = Array.isArray(resolvedParams?.slug) ? resolvedParams.slug : [];
   // Handle root "/"
   if (slugs.length === 0) {
     return <Home />;
@@ -88,6 +88,6 @@ export async function generateStaticParams() {
     { slug: ["sign-up"] },
     // Add dynamic paths as needed:
     { slug: ["shop", "products", "details"] },
-    { slug: ["shop", "brands", "2"] },
+    { slug: ["shop", "brands", ":id"] },
   ];
 }

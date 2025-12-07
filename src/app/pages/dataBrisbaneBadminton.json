@@ -3,11 +3,11 @@
     "heroSlides": [
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTSN2.jpeg",
-        "caption": "Court Hire",
-        "description": "Welcome to Brisbane Badminton — Brisbane’s premier purpose-built badminton centre.",
+        "caption": "",
+        "description": "Welcome to Brisbane Badminton — Brisbane’s premier purpose-built Badminton Centre.",
         "buttons": [
           {
-            "label": "Book Now",
+            "label": "Book A Court",
             "url": "https://badmintonbrisbane.yepbooking.com.au/",
             "newTab": true
           },
@@ -365,7 +365,7 @@
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg",
         "caption": "Academy – Train Smarter. Play Better.",
-        "description": "designed for every player, from beginners to elite athletes. Our programs are run by certified coaches with years of experience, helping you improve your skills, fitness, and confidence on court.",
+        "description": "designed for every player, from beginners to elite athletes. Our programs are run by certified coaches with years of experience, helping you improve your skills, fitness and confidence on court.",
         "buttons": [
           {
             "label": "Book Now",
