@@ -15,7 +15,7 @@ const events = [
 			'Join us for a casual night of badminton! Meet new people, play friendly matches, and enjoy snacks and drinks.',
 		image:
 			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/KRISHNA.JPG',
-		link: '/contact',
+		// link: '/contact',
 	},
 	{
 		title: 'Adult Socials',
@@ -24,7 +24,7 @@ const events = [
 			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/SOCIAL.jpg',
 		description:
 			'Enjoy a fun evening of badminton with fellow enthusiasts. All skill levels welcome, from beginners to advanced players. Great way to socialize and improve your game!',
-		link: '/contact',
+		// link: '/contact',
 	},
 	{
 		title: 'Kids Socials',
@@ -33,7 +33,7 @@ const events = [
 			'A day for the entire family! Come for a friendly tournament, activities for all ages, and delicious food and beverages.',
 		image:
 			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/SOCIAL2.jpg',
-		link: '/contact',
+		// link: '/contact',
 	},
 	{
 		title: 'AVI - ART',
@@ -41,7 +41,7 @@ const events = [
 		description:'Graded socials for Advanced players. Players above C Grade are welcome to join.',
 		image:
 			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/SOCIALS.PNG',
-		link: '/contact',
+		// link: '/contact',
 	},
 	{
 		title: 'Club Socials',
@@ -49,7 +49,7 @@ const events = [
 		description:"Club Socials are a great way to meet fellow members and enjoy some friendly competition.",
 		image:
 			'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/fbwall.jpg',
-		link: '/contact',
+		// link: '/contact',
 	},
 ];
 
