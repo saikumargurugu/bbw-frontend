@@ -14,8 +14,10 @@ import AboutUsPage from '../pages/aboutUs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
-  const slugs = params.slug || [];
+  // const slugs = params?.slug || [];
+    const { slug: slugs } = await params;
 
+  console.log('Slugs:', params, slugs);
   // Handle root "/"
   if (slugs.length === 0) {
     return <Home />;
