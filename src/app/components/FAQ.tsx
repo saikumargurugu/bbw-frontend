@@ -114,9 +114,6 @@ const FAQ: React.FC<{ data: { type: string; name: string; acceptedAnswer: { type
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Import router from next/navigation
-  // Use ES import and conditionally call useRouter for client-side only
-  const router = useRouter();
 
   return (
     <div className={'mx-auto p-4'} style={{ width: '100%', maxHeight: '500px', overflowY: 'auto' }}>
