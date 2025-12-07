@@ -5,13 +5,14 @@ import Services from '@/app/pages/services';
 import CourtHirePage from '@/app/pages/court-hire';
 import AcademyPage from '@/app/pages/academy';
 import SocialsPage from '@/app/pages/socials';
-import SignUp from '../pages/signUp';
+// import dynamic from 'next/dynamic';
 import ShopPage from '@/app/pages/shop/pages/index';
 import ProductDetailPage from '../pages/shop/products/details/page';
 import Home from '@/app/pages/Home';
 import ProShopLoading from '../pages/shop/ProShopLoading';
 import AboutUsPage from '../pages/aboutUs';
 
+// const SignUp = dynamic(() => import('../pages/signUp'), { ssr: false });
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Page({ params }: any) {
       // const { slug: slugs } = await params;
@@ -68,8 +69,8 @@ export default async function Page({ params }: any) {
       return <AcademyPage />;
     case 'socials':
       return <SocialsPage />;
-    case 'sign-up':
-      return <SignUp />;
+    // case 'sign-up':
+    //   return <SignUp />;
     default:
       return <div>404 Not Found</div>;
   }
@@ -85,7 +86,7 @@ export async function generateStaticParams() {
     { slug: ["shop"] },
     { slug: ["academy"] },
     { slug: ["socials"] },
-    { slug: ["sign-up"] },
+    // { slug: ["sign-up"] },
     // Add dynamic paths as needed:
     { slug: ["shop", "products", "details"] },
     { slug: ["shop", "brands", ":id"] },
