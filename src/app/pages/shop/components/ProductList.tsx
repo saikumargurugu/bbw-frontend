@@ -44,8 +44,10 @@ const ProductList: React.FC<ProductListProps> = ({
       )
     : products;
 
-  const totalPages = Math.ceil(count / pageSize);
-  
+  // ...existing code...
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [totalPages, setTotalPages] = useState(0);
+
   return (
     <div>
       <SearchBar value={search} onChange={setSearch} />

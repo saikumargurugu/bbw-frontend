@@ -46,9 +46,9 @@ export default function ClubPage() {
             {clubPageData.benefits && clubPageData.benefits.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-2xl font-bold text-red-400 mb-4">Club Member Benefits</h3>
-                <ul className="list-disc list-inside text-left max-w-2xl mx-auto text-lg text-gray-100">
+                <ul className="list-disc list-outside text-left max-w-2xl mx-auto text-lg text-gray-100">
                   {clubPageData.benefits.map((benefit: string, idx: number) => (
-                    <li key={idx}>{benefit}</li>
+                    <li key={idx} className="font-normal break-words whitespace-pre-line">{benefit}</li>
                   ))}
                 </ul>
               </div>
@@ -79,9 +79,9 @@ export default function ClubPage() {
         <p className="text-lg text-gray-100 mb-4" dangerouslySetInnerHTML={{ __html: clubPageData.qba.description }} />
         <h4 className="text-xl font-bold text-cyan-200 mb-2">{clubPageData.qba.courtTitle}</h4>
         <p className="text-lg text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.courtDescription }} />
-        <ul className="text-lg text-gray-100 mb-4 list-disc list-inside text-left max-w-xl mx-auto">
+        <ul className="text-lg text-gray-100 mb-4 text-left max-w-xl mx-auto">
           {clubPageData.qba.courtList.map((item, idx) => (
-            <li key={idx}><strong>{item}</strong></li>
+            <li key={idx} className="font-normal">{item}</li>
           ))}
         </ul>
         <p className="text-lg text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.bookingNote }} />

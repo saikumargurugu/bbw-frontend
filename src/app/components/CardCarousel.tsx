@@ -14,7 +14,7 @@ interface EventType {
   date: string;
   description: string;
   image: string;
-  link: string;
+  link?: string;
 }
 
 export default function CardCarousel({ events }: { events: EventType[] }) {
@@ -171,14 +171,16 @@ export default function CardCarousel({ events }: { events: EventType[] }) {
               <p className="text-white mt-1 sm:mt-2 text-base font-medium" style={{fontFamily: sportySectionTheme.font.description.style.fontFamily}}>
                 {event.description}
               </p>
-              <Button
-                variant="contained"
-                className={sportySectionTheme.sharpButton.className + ' mt-4 w-full'}
-                style={sportySectionTheme.sharpButton.style}
-                onClick={() => router.push(event.link)}
-              >
-                Learn More
-              </Button>
+              {event.link && event.link.trim() !== '' && (
+                <Button
+                  variant="contained"
+                  className={sportySectionTheme.sharpButton.className + ' mt-4 w-full'}
+                  style={sportySectionTheme.sharpButton.style}
+                  onClick={() => event.link && router.push(event.link)}
+                >
+                  Learn More
+                </Button>
+              )}
             </motion.div>
           ))}
         </div>

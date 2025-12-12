@@ -33,16 +33,16 @@ export default function AcademyPage() {
               About the Academy
             </h2>
             <p
-              className={sportySectionTheme.font.description.className + ' font-bold my-1.5 py-1.5'}
+              className={  'my-1.5 py-1.5'}
               style={sportySectionTheme.font.description.style}
             >
               {data.academy.hero}
             </p>
-            <div className="relative w-full flex flex-col gap-4 justify-center mt-1.5">
+            <div className="relative w-full flex flex-col gap-4 justify-start mt-1.5">
               {programs.map((program, idx) => (
                 <div
                   key={idx}
-                  className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6  md:px-10 md:py-8 w-full mx-auto text-center"
+                  className="bg-black/70 border-l-8 border-red-700 rounded-xl shadow-xl px-6  md:px-10 md:py-8 w-full mx-auto text-left"
                   style={{
                     // Removed spread operator for sportySectionTheme.font.description.style
                     boxShadow: '0 8px 40px 0 #000a, 0 1.5px 0 #c53030',
@@ -53,7 +53,7 @@ export default function AcademyPage() {
                     fontSize: '0.1rem', // Apply reduced font size explicitly
                   }}
                 >
-                  <span className={sportySectionTheme.font.description.className + ' text-center'}
+                  <span className={sportySectionTheme.font.description.className + ' text-left'}
                       style={{ fontSize: '0.9rem' }} // Forcing the font size here
                   >
                     <strong>{program.title}:</strong> {program.description}
@@ -68,7 +68,7 @@ export default function AcademyPage() {
 
       {/* Dynamic Tabs Table View Section */}
       {tabsView.length > 0 && (
-        <div className="max-w-6xl mx-auto px-4 py-16">
+  <div className="max-w-6xl mx-auto px-4 py-16 text-left">
           <TabsView tabs={tabsView} />
         </div>
       )}
@@ -99,16 +99,16 @@ export default function AcademyPage() {
 )} */}
       {/* Coaches Section */}
       <motion.section
-        className="max-w-6xl mx-auto px-4 py-16"
+        className="max-w-6xl mx-auto px-4 py-16 text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h3 className="text-3xl font-semibold text-cyan-200 mb-8 text-center">Meet Our Coaches</h3>
-        <p className="text-lg text-gray-300 mb-6 text-center leading-relaxed">
+  <h3 className="text-3xl font-semibold text-cyan-200 mb-8 text-left">Meet Our Coaches</h3>
+  <p className="text-lg text-gray-300 mb-6 text-left leading-relaxed">
           {coaches.description}
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid md:grid-cols-3 gap-8 text-left">
           {coaches.coaches.map((coach, idx) => (
             <motion.div
               key={idx}
@@ -141,12 +141,12 @@ export default function AcademyPage() {
       {/* Info Section */}
       <motion.section
         style={{ background: "oklch(0.18 0 0)" }}
-        className="text-white text-center py-16"
+        className="text-white text-left py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h4 className="text-4xl font-bold mb-6 text-red-500">Ready to Join the Academy?</h4>
+  <h4 className="text-4xl font-bold mb-6 text-red-500 text-left">Ready to Join the Academy?</h4>
         <Link
           href="/academy/register"
           className={sportySectionTheme.sharpButton.className + ' inline-flex items-center'}
@@ -154,7 +154,7 @@ export default function AcademyPage() {
         >
           Register Now
         </Link>
-        <div className="mt-8 text-lg">
+        <div className="mt-8 text-lg text-left">
           <span>For more info, contact us at </span>
           <a href="mailto:admin@badmintonbrisbane.com.au" className="underline text-white font-bold">admin@badmintonbrisbane.com.au</a>
         </div>
