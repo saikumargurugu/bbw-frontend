@@ -19,7 +19,7 @@ const aboutTiles: AboutTile[] = [
   {
     icon: "🏸",
     title: "Tournament Ready Courts",
-    description: "9 BWF & OBA Certified Courts For Serious Play.",
+    description: "9 BWF & QBA Certified Courts For Serious Play.",
     image:  courtsImg.src
   },
   {
@@ -84,7 +84,13 @@ const AboutTiles: React.FC = () => (
             )}
           </div>
           <div className="font-bold text-lg text-cyan-200 mb-2 text-center" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>{tile.title}</div>
-          <div className="text-gray-200 text-sm text-center" style={{ minHeight: '2.5em', fontFamily: sportySectionTheme.font.description.style.fontFamily }}>{tile.description}</div>
+          <div className="text-gray-200 text-sm text-left" style={{ minHeight: '2.5em', fontFamily: sportySectionTheme.font.description.style.fontFamily }}>
+            <ul className="list-disc list-outside pl-5 m-0">
+              {tile.description.split(/\n|•|\u2022/).map((line, i) =>
+                line.trim() ? <li key={i}>{line.trim()}</li> : null
+              )}
+            </ul>
+          </div>
         </div>
       ))}
     </div>

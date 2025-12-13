@@ -2,9 +2,9 @@
   "home": {
     "heroSlides": [
       {
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTSN2.jpeg",
-        "caption": "",
-        "description": "Welcome to Brisbane Badminton — Brisbane’s premier purpose-built Badminton Centre.",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/courtsLandscape.jpg",
+        "caption": "Brisbane Badminton Centre.",
+        "description": "Built for Badminton.",
         "buttons": [
           {
             "label": "Book A Court",
@@ -161,9 +161,12 @@
         "description_disabled": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
         "fitImage": true,
         "keyFeatures": [
-          "Regular social play sessions",
-          "Community engagement",
-          "Active participation for all age groups"
+          "Daily social sessions – 7 days a week",
+          "Welcoming community across all age groups",
+          "Reliable indoor venue – no weather cancellations",
+          "Easy walk-in access or organiser contact",
+          "Support from front desk when needed",
+          "On-site pro shop, refreshments & free parking"
         ],
         "config": {
           "url": "/club/",
@@ -190,7 +193,7 @@
       {
         "title": "Club Registration",
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
-        "description_disabled": "South Brisbane Badminton Inc. club is a fully incorporated not-for-profit association, officially registered under Badminton Australia and the Queensland Badminton Association (QBA) with over 233 active club members.",
+        "description_disabled": "Growing club of 200+ members across juniors and adultsStrong junior base with players from U9 to U19 regularly training and competing Active adult community – social, league and tournament players Full grade spread from D grade to Open & A grade, including state-level and national-pathway athletes Members travelling from Brisbane, Logan, Ipswich and the Gold Coast to train and compete Mix of local Australian and international backgrounds, reflecting Brisbane's multicultural badminton community Full grade spread from D grade to Open & A grade, including state-level and national-pathway athletes Members travelling from Brisbane, Logan, Ipswich and the Gold Coast to train and compete Mix of local Australian and international backgrounds, reflecting Brisbane's multicultural badminton community",
         "keyFeatures": [
           "Fully incorporated not-for-profit association.",
           "Officially registered under Badminton Australia and the Queensland Badminton Association (QBA).",
@@ -276,7 +279,7 @@
     "heroSlides": "HeroData",
     "info": {
       "title": "Court Hire Information",
-      "description": "Book our Brisbane highest ceiling badminton courts today and take your game to the next level!",
+      "description": "Play on Brisbane’s highest-ceiling indoor badminton courts in a clean, fully lit and professionally managed environment. \n Ideal for casual play, training, social groups and competition.",
       "features": [
         "High-quality indoor courts with professional flooring and lighting.",
         "Courts are <span class='font-bold text-red-600'>badminton shoes only</span> for safety and surface protection.",
