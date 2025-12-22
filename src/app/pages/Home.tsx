@@ -5,6 +5,7 @@ import ServicesSection from '@/app/components/ServicesSection';
 import data from './dataBrisbaneBadminton.json';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
 import { useRouter } from 'next/navigation';
+import GoogleReviewsEmbed from '../components/GoogleReviewsEmbed';
 import AboutTiles from '../components/tiles/AboutTiles';
 import Heading from '../components/Heading';
 import GetInvolvedTiles from '../components/tiles/GetInvolvedTiles';
@@ -78,6 +79,7 @@ export default function Home() {
 				</div>
 			</section>
 			<ServicesSection services={services} />
+			<GoogleReviewsEmbed />
 		</div>
 	);
 }
