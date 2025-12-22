@@ -55,10 +55,7 @@ export default function ServicesSection({
         {services.map((service, idx) => (
           <div
             key={service.title}
-            className={
-              `w-full flex flex-col md:flex-row items-stretch m-0 p-0 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`
-            }
-            style={{
+className={`w-full flex flex-col md:flex-row items-stretch m-0 p-0 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`}            style={{
               minHeight: "400px",
               borderRadius: 0,
               margin: 0,
@@ -87,27 +84,40 @@ export default function ServicesSection({
               />
             </div>
             {/* Text Side */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center bg-white/10 backdrop-blur-md border border-white/10 p-8">
-              <h2
-                className={sportySectionTheme.font.title.className + ' mb-2'}
-                style={sportySectionTheme.font.title.style}
-              >
-                {service.title}
-              </h2>
-              <p
-                className={sportySectionTheme.font.description.className + ' mb-4'}
-                style={sportySectionTheme.font.description.style}
-              >
-                {service.description}
-              </p>
-              {service.keyFeatures && (
+            <div className="w-full md:w-1/2 flex flex-col h-full bg-white/10 backdrop-blur-md border border-white/10 p-8 justify-between md:min-h-[520px] md:max-h-[520px]">
+              {/* Heading at top */}
+              <div>
+                <h2
+                  className={sportySectionTheme.font.title.className + ' mb-2'}
+                  style={{ ...sportySectionTheme.font.title.style, color: '#ef4444' }}
+                >
+                  {service.title}
+                </h2>
+              </div>
+              {/* Content in the middle, justified */}
+              <div className="flex-1 flex flex-col justify-center">
+                <p
+                  className={sportySectionTheme.font.description.className + ' mb-4'}
+                  style={{
+                    ...sportySectionTheme.font.description.style,
+                    fontSize: '0.99rem',
+                    textAlign: 'justify',
+                    width: '100%',
+                    maxWidth: 'none'
+                  }}
+                >
+                  {service.description}
+                </p>
+                {service.keyFeatures && (
                 <ul className="list-disc pl-5 text-white mb-4">
-                  {service.keyFeatures.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              )}
-              <div className="flex flex-row gap-3 justify-start">
+                    {service.keyFeatures.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              {/* Buttons at the bottom */}
+              <div className="flex flex-row gap-3 justify-start mt-4">
                 {service.config  && (
                   <a
                     onClick={(e) => {
@@ -139,21 +149,20 @@ export default function ServicesSection({
                     {service.config.name}
                   </a>
                 )}
-             
               </div>
+              {/* Sidebar Modal using new component only if type is sidebar */}
+              {service.config && service.config.type === 'sidebar' && (
+                <ServiceSidebarModal
+                  open={openServiceIdx === idx}
+                  service={openServiceDetails}
+                  onClose={() => {
+                    setOpenServiceDetails(null);
+                    setOpenServiceIdx(null);
+                  }}
+                  idx={idx}
+                />
+              )}
             </div>
-            {/* Sidebar Modal using new component only if type is sidebar */}
-            {service.config && service.config.type === 'sidebar' && (
-              <ServiceSidebarModal
-                open={openServiceIdx === idx}
-                service={openServiceDetails}
-                onClose={() => {
-                  setOpenServiceDetails(null);
-                  setOpenServiceIdx(null);
-                }}
-                idx={idx}
-              />
-            )}
           </div>
         ))}
       </div>

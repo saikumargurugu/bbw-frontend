@@ -3,8 +3,8 @@
     "heroSlides": [
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/MainPage.jpeg",
-        "caption": "Brisbane Badminton Centre.",
-        "description": "Built for Badminton.",
+        "caption": "Welcome to Brisbane Badminton Centre",
+        "description": "Brisbane's Home Of Badminton Excellence",
         "buttons": [
           {
             "label": "Book A Court",
@@ -78,7 +78,7 @@
       },
       {
         "title": "Premium Courts",
-        "description": "9 world-class courts with premium cushioned flooring, international-standard lighting, and extra-high ceilings designed for professional play."
+        "description": "Built For Tournament Play"
       },
       {
         "title": "Expert Coaching",
@@ -104,8 +104,7 @@
           "9 fully lit indoor courts with Queensland’s highest ceiling.",
           "Instant Online Booking",
           "Secure your court in seconds, anytime.",
-          "Member Pricing Advantage",
-          "Save $5 per hour during peak times.",
+          "Member Pricing Advantage save $5 per hour during peak times.",
           "Priority Court Access",
           "Members book first during high-demand hours.",
           "From $15/hr Off-Peak",
@@ -157,7 +156,7 @@
       },
       {
         "title": "Social",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Socials/socials.jpeg",
         "description_disabled": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
         "fitImage": true,
         "keyFeatures": [
@@ -169,9 +168,9 @@
           "On-site pro shop, refreshments & free parking"
         ],
         "config": {
-          "url": "/club/",
-          "name": "Know More",
-          "newTab": false
+          "url": "https://chat.whatsapp.com/FGZOTERLPJAAQQcLj4S5bd",
+          "name": "Join Group",
+          "newTab": true
         }
       },
       {
@@ -195,9 +194,9 @@
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
         "description_disabled": "Growing club of 200+ members across juniors and adultsStrong junior base with players from U9 to U19 regularly training and competing Active adult community – social, league and tournament players Full grade spread from D grade to Open & A grade, including state-level and national-pathway athletes Members travelling from Brisbane, Logan, Ipswich and the Gold Coast to train and compete Mix of local Australian and international backgrounds, reflecting Brisbane's multicultural badminton community Full grade spread from D grade to Open & A grade, including state-level and national-pathway athletes Members travelling from Brisbane, Logan, Ipswich and the Gold Coast to train and compete Mix of local Australian and international backgrounds, reflecting Brisbane's multicultural badminton community",
         "keyFeatures": [
-          "Fully incorporated not-for-profit association.",
+          "Fully incorporated not-for-profit.",
           "Officially registered under Badminton Australia and the Queensland Badminton Association (QBA).",
-          "Over 233 active club members."
+          "Over 233+ active club members."
         ],
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
@@ -371,8 +370,8 @@
     "heroSlides": [
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg",
-        "caption": "Academy – Train Smarter. Play Better.",
-        "description": "designed for every player, from beginners to elite athletes. Our programs are run by certified coaches with years of experience, helping you improve your skills, fitness and confidence on court.",
+        "caption": "Academy",
+        "description": "",
         "buttons": [
           {
             "label": "Book Now",
@@ -391,7 +390,7 @@
   "club": {
     "heroSlides": [
       {
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_LC.png",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/club.jpg",
         "caption": "Join Our Club",
         "description": "",
         "buttons": [
@@ -405,7 +404,7 @@
     ],
     "about": {
       "title": "About the Club",
-      "description": "Brisbane Badminton is home to South Brisbane Badminton Inc., a fully incorporated, not-for-profit badminton club. The club is officially registered with Badminton Australia and the Queensland Badminton Association (QBA), and has over 233 active members. It runs competitions, represents players at state and national levels, and fosters the growth of badminton within Brisbane’s southside community.",
+      "description": "Brisbane Badminton is home to South Brisbane Badminton Inc a fully incorporated, not-for-profit badminton club. The club is officially registered with Badminton Australia and the Queensland Badminton Association (QBA), and has over 273+ active members. South Brisbane Badminton runs competitions, represents players at state and national levels, and fosters the growth of badminton within Brisbane’s community.",
       "buttons": [
         {
           "label": "Join Now",
@@ -456,9 +455,8 @@
       }
     ],
     "benefits": [
-      "Ability to participate in all sanctioned tournaments and regional affiliated club activities",
-      "Insurance coverage for injuries occurring at QBA sanctioned tournaments and affiliated clubs",
-      "Priority access to special opportunities involving international tournaments, coaching seminars and social events hosted by the QBA",
+      "Ability to participate in all sanctioned tournaments and regional affiliated club activities, insurance coverage for injuries occurring at any sanctioned tournaments and affiliated clubs",
+      "Priority access to special opportunities involving international tournaments, coaching seminars and social events",
       "Opportunity to represent Queensland in national competitions at junior and senior levels"
     ],
     "events": [
@@ -684,24 +682,24 @@
   "aboutUs": {
     "hero": {
       "title": "About Brisbane Badminton",
-      "description": "Brisbane Badminton is Queensland’s first purpose-built badminton facility, offering state-of-the-art amenities and international-standard courts. We are certified to host BWF international tournaments and QBA state tournaments. Our community includes more than 200 active members and trainees. We are the training base for the Queensland Junior State Team and a hub for cultural, community, and social sporting events. \n\n\n We believe in making badminton accessible, safe, and enjoyable for all players — from casual participants to professional athletes."
+      "description": "Brisbane Badminton is Queensland’s first purpose-built badminton facility, offering state-of-the-art amenities and international-standard courts. We are certified to host all  tournaments. Our community includes more than 373+ active members. We are the best training base for the Queensland and a hub for cultural, community, and social sporting events. We believe in making badminton accessible, safe, and enjoyable for all players — from casual participants to professional athletes."
     },
     "sections": [
       {
-        "title": "Why Choose Brisbane Badminton?",
+        "title": "Why Choose Brisbane Badminton",
         "content": " ",
         "Points": [
           "- Queensland’s first dedicated badminton venue",
-          "- Tournament certified by the Badminton World Federation (BWF)",
+          "- Tournament certified Courts",
           "- Professional coaching academy for all ages",
           "- Daily social play sessions, no partner required",
           "- Affordable court hire with unbeatable member discounts",
-          "- Blue Card verified and PlayOn registered provider",
+          "- Blue Card verified Coaches, PlayOn registered provider",
           "- Onsite Pro Shop and professional restringing service"
         ]
       },
       {
-        "title": "Opening Hours:",
+        "title": "Opening Hours",
         "content": "• Mon–Fri 10am–11pm\n • Sat 6am–11pm\n • Sun 6am–9pm"
       },
       {
@@ -743,16 +741,6 @@
           "2021 City of Brisbane Champion AMS Champion",
           "2022 QLD Open AMS Champion"
         ]
-      },
-      {
-        "name": "Ankith Mohan",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Ankit.jpeg",
-        "acheivements": []
-      },
-      {
-        "name": "Jacqueline Zhang",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/JacquelineZhang.jpeg",
-        "acheivements": []
       },
       {
         "name": "Chinmay Dhawale",

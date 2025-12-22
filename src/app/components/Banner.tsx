@@ -26,7 +26,8 @@ export default function Banner({ banner }: { banner: BannerObject }) {
       style={{
         aspectRatio: '16/9',
         width: '100vw',
-        height: 'clamp(320px, 75vh, 900px)',
+        // height: 'clamp(320px, 75vh, 900px)',
+        height: '100vh',
         marginTop: '64px', // adjust if your navbar is a different height
         borderRadius: 0,
         paddingTop: 'env(safe-area-inset-top, 0px)',
@@ -50,16 +51,19 @@ export default function Banner({ banner }: { banner: BannerObject }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
       <div className="absolute inset-0 flex flex-col justify-end items-start p-6 z-20">
         <h2
-          className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-2 drop-shadow-xl font-sans uppercase"
           style={{ letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' }}
         >
           {caption}
         </h2>
-        <p className="text-white mb-6 max-w-2xl text-lg md:text-2xl drop-shadow font-medium font-sans px-4">
+        <p className="text-white mb-4 max-w-xl text-sm sm:text-base md:text-lg lg:text-xl drop-shadow font-normal font-sans px-2">
           {description}
         </p>
         {buttons && buttons.length > 0 && (
-          <div className="flex flex-row gap-4 mb-10 px-4" style={{flexWrap: 'nowrap'}}>
+          <div
+            className="flex flex-row gap-4 mb-10 justify-start pl-0 sm:pl-4"
+            style={{ flexWrap: 'nowrap' }}
+          >
             {buttons.map((btn, idx) => (
               <button
                 key={idx}

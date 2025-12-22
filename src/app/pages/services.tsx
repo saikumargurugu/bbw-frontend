@@ -24,7 +24,7 @@ const services = [
     title: 'Personal Training',
     description: `Personal coaching sessions tailored to your skill level.
 Our certified coaches focus on technique, strategy, and fitness. Whether you’re a beginner or advanced player, we help you reach your goals with customized drills and feedback. Flexible scheduling available for busy lifestyles.`,
-    image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/TRAINING2.jpg',
+    image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Academy/personaltraining.png',
     config: {
       url: '/academy',
       name: 'Join Academy',
@@ -55,7 +55,7 @@ export default function ServicesPage() {
         <h2 className="text-4xl font-extrabold text-cyan-200 mb-12 text-center">
           Our <span className="text-cyan-400">Services</span>
         </h2>
-        <ServicesSection services={services} background="bg-bgThemeDark" />
+        <ServicesSection services={services} />
       </section>
 
       {/* Contact Section */}
@@ -67,7 +67,17 @@ export default function ServicesPage() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <h4 className="text-3xl font-bold mb-6 text-red-500">Get in Touch</h4>
-        <p className="text-lg mb-6">Have questions? We&apos;re here to help. Reach out to us today!</p>
+        <p
+          className="mb-6"
+          style={{
+            ...sportySectionTheme.font.description?.style,
+            fontSize: '0.95rem',
+            lineHeight: 1.6,
+            fontFamily: sportySectionTheme.font.description?.style?.fontFamily
+          }}
+        >
+          Have questions? We&apos;re here to help. Reach out to us today!
+        </p>
         <button
           className={sportySectionTheme.sharpButton.className + ' px-6 py-3'}
           style={{ ...sportySectionTheme.sharpButton.style, padding: '0.75rem 1.5rem' }}

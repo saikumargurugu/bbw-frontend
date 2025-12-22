@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { sportySectionTheme } from "../styles/sportyTheme";
+import { sportySectionTheme } from "../../styles/sportyTheme";
 import bestSaverImg from "../../public/icons/bestSaver.png";
 import communityImg from "../../public/icons/community.png";
 import courtsImg from "../../public/icons/Courts.png";
@@ -8,14 +8,14 @@ import onlineShopingImg from "../../public/icons/onlineShoping.png";
 import socialImg from "../../public/icons/social.png";
 import upskillImg from "../../public/icons/upskill.png";
 
-interface AboutTile {
+interface OurService {
   icon: string;
   title: string;
   description: string;
   image?: string;
 }
 
-const aboutTiles: AboutTile[] = [
+const OurService: OurService[] = [
   {
     icon: "🏸",
     title: "Tournament Ready Courts",
@@ -54,10 +54,10 @@ const aboutTiles: AboutTile[] = [
   }
 ];
 
-const AboutTiles: React.FC = () => (
+const OurServices: React.FC = () => (
   <div className="w-full flex justify-center z-10 mb-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-2 justify-items-stretch">
-      {aboutTiles.map((tile, idx) => (
+      {OurService.map((tile, idx) => (
         <div
           key={idx}
           className="flex flex-col items-center rounded-xl shadow-md p-6 h-full min-h-[180px]"
@@ -97,4 +97,4 @@ const AboutTiles: React.FC = () => (
   </div>
 );
 
-export default AboutTiles;
+export default OurServices;

@@ -5,17 +5,17 @@ import { Avatar, CardContent, Typography } from '@mui/material';
 import { sportySectionTheme } from '@/app/styles/sportyTheme';
 import { motion } from "framer-motion";
 import data from './dataBrisbaneBadminton.json';
-import AboutTiles from '../components/AboutTiles';
 
 const aboutHero: { title: string; description: string } = data.aboutUs?.hero || { title: '', description: '' };
 const aboutSections: { title: string; content: string }[] = data.aboutUs?.sections || [];
 const team: { name: string; image: string; acheivements?: string[] }[] = data.aboutUs?.team || [];
-const aboutPoints: string[] = data.aboutUs?.sections.find(section => section.title === "Why Choose Brisbane Badminton?")?.Points || [];
+const aboutPoints: string[] = data.aboutUs?.sections.find(section => section.title === "Why Choose Brisbane Badminton")?.Points || [];
 
 // Filter out the "Why Choose Brisbane Badminton?" section to avoid duplication
 const filteredSections = aboutSections.filter(section => section.title !== "Why Choose Brisbane Badminton?");
 
 export default function AboutUsPage() {
+  console.log('About Us Page - aboutPoints:', aboutPoints);
   return (
     <div className="bg-bgThemeDark min-h-screen">
       {/* About Us Section */}
@@ -70,7 +70,7 @@ export default function AboutUsPage() {
         {/* </div> */}
 
       {/* Sections */}
-      {filteredSections.map((section: { title: string; content: string }, idx: number) => (
+      {/* {filteredSections.map((section: { title: string; content: string }, idx: number) => (
         <motion.section
           key={idx}
           className="max-w-6xl mx-auto px-4 py-16"
@@ -84,13 +84,15 @@ export default function AboutUsPage() {
           >
             {section.title}
           </h3>
-          <div
-            className="text-lg text-gray-300 mb-6 text-center leading-relaxed"
-            style={sportySectionTheme.font.description.style}
-            dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br>') }}
-          ></div>
+          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <div
+              className="text-lg text-gray-300 mb-6 text-center leading-relaxed"
+              style={{ ...sportySectionTheme.font.description.style, textAlign: 'left', maxWidth: 700, width: '100%', paddingLeft: 16, paddingRight: 16, margin: '0 auto' }}
+              dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br>') }}
+            ></div>
+          </div>
         </motion.section>
-      ))}
+      ))} */}
       </motion.section>
 
       {/* Team Section */}
@@ -101,7 +103,7 @@ export default function AboutUsPage() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <h3 className="text-3xl font-semibold text-cyan-200 mb-8 text-center">Meet Our Team</h3>
-        <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid md:grid-cols-4 gap-8">
           {team.map((member: { image: string; name: string; acheivements?: string[] }, idx: number) => (
             <motion.div
               key={idx}
