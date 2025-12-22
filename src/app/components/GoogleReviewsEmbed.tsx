@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { sportySectionTheme } from '../styles/sportyTheme';
 
-const PLACE_ID = 'ChIJHQRNu_JHkWsRm2wLIhPdCyk';
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY; 
+
 
 interface Review {
   author_name: string;
@@ -24,12 +23,10 @@ const GoogleReviewsEmbed: React.FC = () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(
-          `https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews,rating,user_ratings_total&key=${API_KEY}`
-        );
+        const res = await fetch('/api/google-reviews');
         const data = await res.json();
-        if (data.result && data.result.reviews) {
-          setReviews(data.result.reviews);
+        if (data.reviews) {
+          setReviews(data.reviews);
         } else {
           setError('No reviews found.');
         }
