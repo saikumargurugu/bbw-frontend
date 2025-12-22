@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 const PLACE_ID = 'ChIJHQRNu_JHkWsRm2wLIhPdCyk';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+  const apiKey = process.env.GOOGLE_API_KEY;
   if (!apiKey) {
     return res.status(500).json({ error: 'Google API key not set in environment variables.' });
   }
