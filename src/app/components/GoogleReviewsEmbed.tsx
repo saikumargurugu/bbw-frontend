@@ -25,6 +25,7 @@ const GoogleReviewsEmbed: React.FC = () => {
       try {
         const res = await fetch('/api/google-reviews');
         const data = await res.json();
+        console.log(data);
         if (data.reviews) {
           setReviews(data.reviews);
         } else {
