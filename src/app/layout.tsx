@@ -43,7 +43,7 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
     return () => clearTimeout(timer);
   }, []);
 
-  const showBanner = !hideBannerRoutes.includes(pathname);
+  const showBanner = !hideBannerRoutes.includes(pathname||'');
 
   return (
     <html lang="en">
