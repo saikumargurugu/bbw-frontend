@@ -171,12 +171,15 @@
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/CLUB_WHITE.png",
         "description_disabled": "Growing club of 200+ members across juniors and adultsStrong junior base with players from U9 to U19 regularly training and competing Active adult community – social, league and tournament players Full grade spread from D grade to Open & A grade, including state-level and national-pathway athletes Members travelling from Brisbane, Logan, Ipswich and the Gold Coast to train and compete Mix of local Australian and international backgrounds, reflecting Brisbane's multicultural badminton community Full grade spread from D grade to Open & A grade, including state-level and national-pathway athletes Members travelling from Brisbane, Logan, Ipswich and the Gold Coast to train and compete Mix of local Australian and international backgrounds, reflecting Brisbane's multicultural badminton community",
         "keyFeatures": [
-          "Fully incorporated not-for-profit.",
-          "Officially registered under Badminton Australia and the Queensland Badminton Association (QBA).",
-          "Over 233+ active club members."
+          "QBA affiliated club recognised by Badminton Australia",
+          "Safe, structured environment for junior and adult players",
+          "Access to QBA-sanctioned tournaments and competitions",
+          "Eligible to compete in affiliated events across Queensland and Australia",
+          "Insurance coverage at QBA tournaments and affiliated clubs",
+          "Pathways to state squads, coaching programs, and representative teams"
         ],
         "config": {
-          "url": "https://badmintonbrisbane.yepbooking.com.au/",
+        "url": "https://forms.gle/S4xo9s1Yd2w5DwmQ7",
           "name": "Join The Club",
           "newTab": true
         }
@@ -533,19 +536,6 @@
       },
       {
         "type": "Question",
-        "name": "Do I need a partner for social badminton?",
-        "acceptedAnswer": {
-          "type": "Answer",
-          "text": "No. Just turn up — we’ll match you on arrival by skill level."
-        },
-        "link": {
-          "url": "/socials",
-          "name": "Click here",
-          "newTab": false
-        }
-      },
-      {
-        "type": "Question",
         "name": "How do I book a court?",
         "acceptedAnswer": {
           "type": "Answer",
@@ -568,14 +558,6 @@
           "url": "/academy",
           "name": "Click here",
           "newTab": false
-        }
-      },
-      {
-        "type": "Question",
-        "name": "Are you tournament-certified?",
-        "acceptedAnswer": {
-          "type": "Answer",
-          "text": "Yes — our purpose-built venue is approved for state, national, and international events."
         }
       },
       {
@@ -614,10 +596,10 @@
       },
       {
         "type": "Question",
-        "name": "What should I wear?",
+        "name": "What shoes are required?",
         "acceptedAnswer": {
           "type": "Answer",
-          "text": "Indoor court shoes (non-marking) and comfortable sportswear."
+          "text": "non-marking shoes.(Indoor sports shoes)"
         }
       },
       {
