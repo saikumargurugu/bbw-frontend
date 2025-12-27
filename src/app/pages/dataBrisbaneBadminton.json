@@ -100,15 +100,16 @@
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/courtHire.jpeg",
         "description_disabled": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members for all 7 days a week throughout the year.",
         "keyFeatures": [
-          "Court Hire – Open 7 Days",
+          "Open 7 Days a week, year-round",
           "Queensland’s highest ceiling Courts",
           "Instant Online Booking",
           "From $15/hr Off-Peak",
+          "Ideal venue for events, corporate badminton, and school programs",
           "Play more, pay less."
         ],
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
-          "name": "Book Now",
+          "name": "Book a Court",
           "newTab": true
         }
       },
@@ -138,14 +139,15 @@
         "description_disabled": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
         "fitImage": true,
         "keyFeatures": [
-          "Community-hosted social badminton",
-          "Open to all ages and skill levels",
-          "Mixed and open groups welcome"
+          "Open to all communities, ages, and skill levels",
+          "Mixed and open groups welcome",
+          "Suitable for regular community bookings",
+          "Professional facility with front desk support available"
         ],
         "config": {
-          "url": "https://chat.whatsapp.com/FGZOTERLPJAAQQcLj4S5bd",
-          "name": "Join Group",
-          "newTab": true
+          "url": "/contact",
+          "name": "Get Involved",
+          "newTab": false
         }
       },
       {
@@ -349,19 +351,14 @@
   "academy": {
     "heroSlides": [
       {
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS2.jpg",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Academy/Academy27jan.jpeg",
         "caption": "Academy",
         "description": "",
         "buttons": [
           {
-            "label": "Book Now",
-            "url": "https://badmintonbrisbane.yepbooking.com.au/",
+            "label": "Enroll Now",
+            "url": "https://docs.google.com/forms/d/1AXQmG-RcCtAhBNrpngIXt72eK7Ybi8L4kJrkQuFEdT4/edit?usp=drivesdk",
             "newTab": true
-          },
-          {
-            "label": "Learn More",
-            "url": "/services/",
-            "newTab": false
           }
         ]
       }
@@ -370,12 +367,12 @@
   "club": {
     "heroSlides": [
       {
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/club.jpg",
-        "caption": "Join Our Club",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/CLUB/clubBanner.jpeg",
+        "caption": "",
         "description": "",
         "buttons": [
           {
-            "label": "Join Now",
+            "label": "Join the Club",
             "url": "https://docs.google.com/forms/d/e/1FAIpQLSdWs7zumvUU2oMHOuO-CdM6vh4x01_JKIr0KyFjb218WvJYtQ/viewform?usp=send_form",
             "newTab": true
           }

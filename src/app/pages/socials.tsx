@@ -81,9 +81,9 @@ export default function SocialsPage() {
 				 Join WhatsApp Group
 			 </a>
 		 </div>
-		 <div className="w-full">
+		 {/* <div className="w-full">
 			 <CardCarousel events={events} />
-		 </div>
+		 </div> */}
 	 </div>
  );
 }

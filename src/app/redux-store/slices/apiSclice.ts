@@ -25,24 +25,24 @@ const initialState: ApiState = {
             "href": "/about"
         },
         {
-            "label": "Club",
-            "href": "/club"
-        },
-        {
-            "label": "Services",
-            "href": "/services"
+            "label": "Court Hire",
+            "href": "/court-hire"
         },
         {
             "label": "Academy",
             "href": "/academy"
         },
         {
-            "label": "Court Hire",
-            "href": "/court-hire"
-        },
-        {
             "label": "Socials",
             "href": "/socials"
+        },
+        {
+            "label": "Services",
+            "href": "/services"
+        },
+        {
+            "label": "Club",
+            "href": "/club"
         },
         {
             "label": "Contact",
@@ -51,11 +51,7 @@ const initialState: ApiState = {
         {
             "label": "Pro Shop",
             "href": "/pro_shop"
-        },
-        // {
-        //     "label": "Sign In",
-        //     "href": "/sign-up"
-        // }
+        }
     ],
       fotterText: "© Badminton Brisbane. All rights reserved.",
     },

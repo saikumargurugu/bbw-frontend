@@ -81,7 +81,16 @@ const ServiceSidebarModal: React.FC<ServiceSidebarModalProps> = ({ open, service
           height: `calc(100vh - 64px)`
         }}
       >
-        <div className="flex justify-between items-center px-4 sm:px-8 py-4 sm:py-6 border-b border-red-700 bg-black/60 rounded-tl-2xl" style={{zIndex: 2, position: 'relative'}}>
+              <div className="flex justify-between items-center px-4 sm:px-8 py-4 sm:py-6 border-b border-red-700 bg-gradient-to-b from-black/90 via-black/70 to-transparent rounded-tl-2xl"
+                style={{
+                  zIndex: 9999,
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  paddingTop: 'env(safe-area-inset-top, 0px)'
+                }}
+              >
           <h2 className="text-lg sm:text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-0 drop-shadow-xl font-sans uppercase" style={sportySectionTheme.font.title.style}>
             {isFullData && data ? data.title : service.title}
           </h2>

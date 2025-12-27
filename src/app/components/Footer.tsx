@@ -50,7 +50,14 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             alignItems: "center"
           }}
         >
-          <Link href="/" style={{ display: 'inline-block' }}>
+          <Link
+            href="/"
+            style={{ display: 'inline-block' }}
+            onClick={e => {
+              e.preventDefault();
+              window.location.href = '/';
+            }}
+          >
             <LogWhite variant="full" height={100} width={360} />
           </Link>
         </Box>

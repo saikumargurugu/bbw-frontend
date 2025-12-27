@@ -112,7 +112,7 @@ className={`w-full flex flex-col md:flex-row items-stretch m-0 p-0 ${idx % 2 ===
                   {service.description}
                 </p>
                 {service.keyFeatures && (
-                <ul className="list-disc pl-5 text-white mb-4">
+                <ul className="list-disc text-white mb-4">
                     {service.keyFeatures.map((feature, index) => (
                         // use ArrowRightIcon for each feature insdead of bullet point
                         <li key={index} className="flex items-center mb-1">

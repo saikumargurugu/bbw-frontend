@@ -53,7 +53,7 @@ export default function ClubPage() {
                 </ul>
               </div>
             )}
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdWs7zumvUU2oMHOuO-CdM6vh4x01_JKIr0KyFjb218WvJYtQ/viewform?usp=send_form"
                 target="_blank"
@@ -61,9 +61,9 @@ export default function ClubPage() {
                 className={sportySectionTheme.sharpButton.className}
                 style={sportySectionTheme.sharpButton.style}
               >
-                Join Now
+                Join the Club
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </motion.section>
