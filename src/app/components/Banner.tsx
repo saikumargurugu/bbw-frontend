@@ -53,9 +53,10 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         <h2
           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-2 drop-shadow-xl font-sans uppercase"
           style={{ letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' }}
-        >
-          {caption}
-        </h2>
+          dangerouslySetInnerHTML={{ __html: caption }}
+        ></h2>
+          {/* {caption} */}
+        {/* </h2> */}
         <p className="text-white mb-4 max-w-xl text-sm sm:text-base md:text-lg lg:text-xl drop-shadow font-normal font-sans px-2">
           {description}
         </p>

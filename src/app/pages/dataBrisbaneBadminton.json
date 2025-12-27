@@ -3,8 +3,8 @@
     "heroSlides": [
       {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/MainPage.jpeg",
-        "caption": "Welcome to Brisbane Badminton Centre",
-        "description": "Brisbane's Home Of Badminton Excellence",
+        "caption": "Welcome to <br/> Brisbane Badminton",
+        "description": "Built For Badminton",
         "buttons": [
           {
             "label": "Book A Court",
