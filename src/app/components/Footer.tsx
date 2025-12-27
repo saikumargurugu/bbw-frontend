@@ -44,7 +44,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
           sx={{
             flex: "0 1 auto",
             minWidth: 0,
-            mb: { xs: 2, md: 0 },
+            mb: { xs: 6, md: 0 }, // Increased margin-bottom for mobile
             display: "flex",
             justifyContent: { xs: "center", md: "flex-start" },
             alignItems: "center"
