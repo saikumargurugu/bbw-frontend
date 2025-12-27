@@ -269,7 +269,7 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             <br />
             {openingHours.weekends}
             <br />
-            {openingHours.holidays}
+            {/* {openingHours.holidays} */}
           </Typography>
 
         </Box>
