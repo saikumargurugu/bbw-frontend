@@ -7,6 +7,7 @@ import { sportySectionTheme } from '../styles/sportyTheme';
 import courtHireData from './CourHire.json';
 
 export default function CourtHirePage() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showBooking, setShowBooking] = useState(false);
   const [selectedSlots, setSelectedSlots] = useState(new Set<string>());
   const [openTerms, setOpenTerms] = useState(false);
