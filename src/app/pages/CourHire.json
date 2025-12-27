@@ -1,0 +1,49 @@
+{
+  "title": "COURT HIRE – BRISBANE BADMINTON CENTRE",
+  "description": "Play on Brisbane’s highest-ceiling indoor badminton courts in a clean, fully lit and professionally managed environment. Ideal for casual play, training, social groups and competition.",
+  "facilityHighlights": [
+    "9 premium indoor courts with professional flooring & lighting",
+    "Badminton shoes only for player safety and court protection",
+    "Online booking or walk-in welcome",
+    "Singles, doubles & group bookings available",
+    "Free parking & easy access from major roads",
+    "On-site pro shop & refreshments"
+  ],
+  "membershipAndSavings": {
+    "courtHireMembership": {
+      "title": "Court Hire Membership – $69 per year",
+      "benefits": [
+        "Save $5 per hour, per court during peak times",
+        "Priority booking access",
+        "Best value for regular players"
+      ]
+    },
+    "bulkAndGroupDiscounts": {
+      "title": "Bulk & Group Discounts (No Membership Required)",
+      "benefits": [
+        "Discounted rates for:",
+        "Multiple courts",
+        "Longer sessions",
+        "Regular weekly bookings",
+        "Suitable for social groups, clubs, schools & corporate bookings"
+      ]
+    }
+  },
+  "customerFocusedService": [
+    "Walk-ins always welcome",
+    "Flexible booking support at the front desk",
+    "Friendly, professional service",
+    "Players always come first"
+  ],
+  "groupsAndEvents": {
+    "description": "We support:",
+    "types": [
+      "Social groups",
+      "Training squads",
+      "Club sessions",
+      "School & corporate bookings"
+    ],
+    "note": "Custom packages available on request."
+  },
+  "termsNote": "Terms & Conditions Apply"
+}

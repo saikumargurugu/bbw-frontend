@@ -29,11 +29,11 @@ export default function PersonalTraining({ info }: { info: PersonalTrainingInfo 
       )}
       <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
         <a
-          href="mailto:admin@badmintonbrisbane.com.au"
+          href="https://forms.gle/caCASRDZrJWbvnEg6"
           className="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl shadow transition"
           style={{ fontFamily: sportySectionTheme.font.button.style.fontFamily }}
         >
-          Contact Us
+          Enroll Now
         </a>
       </div>
     </div>

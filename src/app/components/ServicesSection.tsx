@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { sportySectionTheme } from "../styles/sportyTheme";
 import ServiceSidebarModal from "./ServiceSidebarModal";
 import restringingData from '../pages/restringing.json';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 // Font styles from Banner/Home for sporty look
 const bannerTitleClass = "text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-3 drop-shadow-xl font-sans uppercase";
@@ -55,10 +56,7 @@ export default function ServicesSection({
         {services.map((service, idx) => (
           <div
             key={service.title}
-            className={
-              `w-full flex flex-col md:flex-row items-stretch m-0 p-0 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`
-            }
-            style={{
+className={`w-full flex flex-col md:flex-row items-stretch m-0 p-0 ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`}            style={{
               minHeight: "400px",
               borderRadius: 0,
               margin: 0,
@@ -87,27 +85,48 @@ export default function ServicesSection({
               />
             </div>
             {/* Text Side */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center bg-white/10 backdrop-blur-md border border-white/10 p-8">
-              <h2
-                className={sportySectionTheme.font.title.className + ' mb-2'}
-                style={sportySectionTheme.font.title.style}
-              >
-                {service.title}
-              </h2>
-              <p
-                className={sportySectionTheme.font.description.className + ' mb-4'}
-                style={sportySectionTheme.font.description.style}
-              >
-                {service.description}
-              </p>
-              {service.keyFeatures && (
-                <ul className="list-disc pl-5 text-white mb-4">
-                  {service.keyFeatures.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              )}
-              <div className="flex flex-row gap-3 justify-start">
+            <div className="w-full md:w-1/2 flex flex-col h-full bg-white/10 backdrop-blur-md border border-white/10 p-8 justify-between md:min-h-[520px] md:max-h-[520px]">
+              {/* Heading at top */}
+              <div>
+                <h2
+                  className={sportySectionTheme.font.title.className + ' mb-2'}
+                  style={{ ...sportySectionTheme.font.title.style, color: '#ef4444' ,
+                    fontSize: '2rem'
+                  }}
+                >
+                  {service.title}
+                </h2>
+              </div>
+              {/* Content in the middle, justified */}
+              <div className="flex-1 flex flex-col justify-center">
+                <p
+                  className={sportySectionTheme.font.description.className + ' mb-4'}
+                  style={{
+                    ...sportySectionTheme.font.description.style,
+                    fontSize: '0.99rem',
+                    textAlign: 'justify',
+                    width: '100%',
+                    maxWidth: 'none'
+                  }}
+                >
+                  {service.description}
+                </p>
+                {service.keyFeatures && (
+                <ul className="list-disc text-white mb-4">
+                    {service.keyFeatures.map((feature, index) => (
+                        // use ArrowRightIcon for each feature insdead of bullet point
+                        <li key={index} className="flex items-center mb-1">
+                          <ArrowRightIcon className="text-red-500 mr-2" />
+                          <span style={{
+                            fontSize:'1.2rem'
+                          }}>{feature}</span>
+                        </li>
+                      ))}
+                  </ul>
+                )}
+              </div>
+              {/* Buttons at the bottom */}
+              <div className="flex flex-row gap-3 justify-start mt-4">
                 {service.config  && (
                   <a
                     onClick={(e) => {
@@ -139,23 +158,21 @@ export default function ServicesSection({
                     {service.config.name}
                   </a>
                 )}
-             
               </div>
+              {/* Sidebar Modal is now rendered outside the map for full-screen overlay */}
             </div>
-            {/* Sidebar Modal using new component only if type is sidebar */}
-            {service.config && service.config.type === 'sidebar' && (
-              <ServiceSidebarModal
-                open={openServiceIdx === idx}
-                service={openServiceDetails}
-                onClose={() => {
-                  setOpenServiceDetails(null);
-                  setOpenServiceIdx(null);
-                }}
-                idx={idx}
-              />
-            )}
           </div>
         ))}
+      {/* Render the sidebar modal once, outside the map, for proper fullscreen overlay */}
+      <ServiceSidebarModal
+        open={openServiceIdx !== null}
+        service={openServiceDetails}
+        onClose={() => {
+          setOpenServiceDetails(null);
+          setOpenServiceIdx(null);
+        }}
+        idx={openServiceIdx ?? undefined}
+      />
       </div>
     </div>
   );

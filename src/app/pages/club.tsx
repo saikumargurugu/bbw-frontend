@@ -53,7 +53,7 @@ export default function ClubPage() {
                 </ul>
               </div>
             )}
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdWs7zumvUU2oMHOuO-CdM6vh4x01_JKIr0KyFjb218WvJYtQ/viewform?usp=send_form"
                 target="_blank"
@@ -61,30 +61,34 @@ export default function ClubPage() {
                 className={sportySectionTheme.sharpButton.className}
                 style={sportySectionTheme.sharpButton.style}
               >
-                Join Now
+                Join the Club
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </motion.section>
 
       {/* QBA Membership & Court Hire Section */}
       <motion.section
-        className="max-w-4xl mx-auto px-4 sm:px-6 py-12 text-center bg-white/10 rounded-3xl mb-8 border border-white/10"
+        className="max-w-4xl mx-auto px-4 sm:px-6 py-12 bg-white/10 rounded-3xl mb-8 border border-white/10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h3 className="text-2xl sm:text-3xl font-bold text-red-400 mb-4">{clubPageData.qba.title}</h3>
-        <p className="text-lg text-gray-100 mb-4" dangerouslySetInnerHTML={{ __html: clubPageData.qba.description }} />
-        <h4 className="text-xl font-bold text-cyan-200 mb-2">{clubPageData.qba.courtTitle}</h4>
-        <p className="text-lg text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.courtDescription }} />
-        <ul className="text-lg text-gray-100 mb-4 text-left max-w-xl mx-auto">
-          {clubPageData.qba.courtList.map((item, idx) => (
-            <li key={idx} className="font-normal">{item}</li>
-          ))}
-        </ul>
-        <p className="text-lg text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: clubPageData.qba.bookingNote }} />
+        <div className="w-full flex flex-col items-center">
+          <div className="w-full max-w-2xl text-left">
+            <h3 className="text-2xl sm:text-3xl font-bold text-red-400 mb-4">{clubPageData.qba.title}</h3>
+            <p className="text-lg text-gray-100 mb-4" style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: clubPageData.qba.description }} />
+            <h4 className="text-xl font-bold text-cyan-200 mb-2">{clubPageData.qba.courtTitle}</h4>
+            <p className="text-lg text-gray-100 mb-2" style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: clubPageData.qba.courtDescription }} />
+            <ul className="text-lg text-gray-100 mb-4 text-left list-disc list-inside" style={{ paddingLeft: 20 }}>
+              {clubPageData.qba.courtList.map((item, idx) => (
+                <li key={idx} className="font-normal" style={{ textAlign: 'justify' }}>{item}</li>
+              ))}
+            </ul>
+            <p className="text-lg text-gray-100 mb-2" style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: clubPageData.qba.bookingNote }} />
+          </div>
+        </div>
         {/* <button
           className="mt-4 text-sm text-cyan-200 underline hover:text-red-400 transition"
           onClick={() => setOpenTerms(true)}

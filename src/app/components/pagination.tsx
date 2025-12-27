@@ -10,11 +10,11 @@ interface PaginationProps {
 export default function Pagination({ totalPages }: PaginationProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const currentPage = Number(searchParams.get('page')) || 1;
+  const currentPage = Number(searchParams?.get('page')) || 1;
 
   const changePage = (page: number) => {
     
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParams?.toString());
     params.set('page', String(page));
     router.push(`?${params.toString()}`);
   };

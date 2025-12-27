@@ -46,16 +46,8 @@
         "description": "One-on-one training tailored to individual goals, available in flexible packages."
       },
       {
-        "title": "Advanced Training & Development",
-        "description": "High-performance group sessions preparing athletes for state, national, and international competition."
-      },
-      {
         "title": "Sparring Sessions",
         "description": "Invite-only matchplay for advanced players seeking competitive experience."
-      },
-      {
-        "title": "Tournament Prep",
-        "description": "Specialized coaching for players preparing for tournaments. Mental preparation, strategy, and match simulation."
       }
     ],
     "coaches": {
@@ -71,17 +63,7 @@
         },
         {
           "name": "Arthur Lee",
-          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/ArthurLee.jpeg"
-        },
-        {
-          "name": "Ankith Mohan",
-          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/Ankit.jpeg",
-          "acheivements": []
-        },
-        {
-          "name": "Jacqueline Zhang",
-          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/JacquelineZhang.jpeg",
-          "acheivements": []
+          "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Coaches/AuthrLee.jpeg"
         },
         {
           "name": "Chinmay Dhawale",
@@ -92,6 +74,19 @@
     },
     "tabsView": [
       {
+        "label": "Personal training",
+        "render": "personalTraining",
+        "info": {
+          "title": "Personal Training",
+          "description": "Get personalized coaching to improve your skills and performance. Our expert coaches will work with you one-on-one to develop a training plan tailored to your needs.",
+          "contact": {
+            "email": "admin@badmintonbrisbane.com.au"
+          }
+        }
+      }
+    ],
+    "tabsDisabled":[
+            {
         "label": "Academy",
         "render": "academy",
         "info": {
@@ -155,17 +150,6 @@
             "Training arrangements are made accordingly if any events are hosted in the facility.",
             "Further notices will be informed and discussed in the WhatsApp group/E-mail or DM Parent/Student."
           ]
-        }
-      },
-      {
-        "label": "Personal training",
-        "render": "personalTraining",
-        "info": {
-          "title": "Personal Training",
-          "description": "Get personalized coaching to improve your skills and performance. Our expert coaches will work with you one-on-one to develop a training plan tailored to your needs.",
-          "contact": {
-            "email": "admin@badmintonbrisbane.com.au"
-          }
         }
       }
     ]

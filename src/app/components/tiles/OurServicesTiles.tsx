@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { sportySectionTheme } from "../styles/sportyTheme";
+import { sportySectionTheme } from "../../styles/sportyTheme";
 import bestSaverImg from "../../public/icons/bestSaver.png";
 import communityImg from "../../public/icons/community.png";
 import courtsImg from "../../public/icons/Courts.png";
@@ -8,18 +8,18 @@ import onlineShopingImg from "../../public/icons/onlineShoping.png";
 import socialImg from "../../public/icons/social.png";
 import upskillImg from "../../public/icons/upskill.png";
 
-interface AboutTile {
+interface OurService {
   icon: string;
   title: string;
   description: string;
   image?: string;
 }
 
-const aboutTiles: AboutTile[] = [
+const OurService: OurService[] = [
   {
     icon: "🏸",
     title: "Tournament Ready Courts",
-    description: "9 BWF & OBA Certified Courts For Serious Play.",
+    description: "9 BWF & QBA Certified Courts For Serious Play.",
     image:  courtsImg.src
   },
   {
@@ -54,10 +54,10 @@ const aboutTiles: AboutTile[] = [
   }
 ];
 
-const AboutTiles: React.FC = () => (
+const OurServices: React.FC = () => (
   <div className="w-full flex justify-center z-10 mb-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-2 justify-items-stretch">
-      {aboutTiles.map((tile, idx) => (
+      {OurService.map((tile, idx) => (
         <div
           key={idx}
           className="flex flex-col items-center rounded-xl shadow-md p-6 h-full min-h-[180px]"
@@ -84,11 +84,17 @@ const AboutTiles: React.FC = () => (
             )}
           </div>
           <div className="font-bold text-lg text-cyan-200 mb-2 text-center" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>{tile.title}</div>
-          <div className="text-gray-200 text-sm text-center" style={{ minHeight: '2.5em', fontFamily: sportySectionTheme.font.description.style.fontFamily }}>{tile.description}</div>
+          <div className="text-gray-200 text-sm text-left" style={{ minHeight: '2.5em', fontFamily: sportySectionTheme.font.description.style.fontFamily }}>
+            <ul className="list-disc list-outside pl-5 m-0">
+              {tile.description.split(/\n|•|\u2022/).map((line, i) =>
+                line.trim() ? <li key={i}>{line.trim()}</li> : null
+              )}
+            </ul>
+          </div>
         </div>
       ))}
     </div>
   </div>
 );
 
-export default AboutTiles;
+export default OurServices;

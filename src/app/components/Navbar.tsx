@@ -110,7 +110,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
                 {!isMobile ? (
                   <div className="flex items-center space-x-2">
                     {navLinks.map((link, idx) => {
-                      const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+                      const isActive = pathname === link.href || (pathname && link.href !== '/' && pathname.startsWith(link.href));
                       return (
                         <React.Fragment key={idx}>
                           <Link
