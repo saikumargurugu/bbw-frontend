@@ -50,7 +50,9 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             alignItems: "center"
           }}
         >
-          <LogWhite variant="full" height={100} width={360} />
+          <Link href="/" style={{ display: 'inline-block' }}>
+            <LogWhite variant="full" height={100} width={360} />
+          </Link>
         </Box>
         {/* Contact & Socials (aligned headings) */}
         <Box

@@ -41,11 +41,19 @@ export default function Home() {
 						className={sportySectionTheme.card.className.replace('font-extrabold', 'font-normal')}
 						style={{ ...sportySectionTheme.card.style, fontWeight: 'normal', textAlign: 'justify', marginBottom: '2rem' }}
 					>
-						<Heading title={about.title} />
+						{/* <Heading title={about.title} /> */}
+								  <h2
+									className={sportySectionTheme.font.title.className + ' mb-8 '}
+									style={{ ...sportySectionTheme.font.title.style, fontSize: '2.5rem' }}
+								  >
+									{about.title}
+								  </h2>
 						<AboutTiles />
 						<p
 							className={bannerDescClass.replace('font-medium', 'font-normal') + ' text-center text-sm md:text-base'}
-							style={{ ...bannerDescStyle, textAlign: 'center', width: '100%', maxWidth: 'none' }}
+							style={{ ...bannerDescStyle, textAlign: 'center', width: '100%',
+								 maxWidth: 'none',
+								fontSize: '1rem'}}
 						>
 							{about.description}
 						</p>
@@ -79,7 +87,7 @@ export default function Home() {
 				</div>
 			</section>
 			<ServicesSection services={services} />
-			<GoogleReviewsEmbed />
+			{/* <GoogleReviewsEmbed /> */}
 		</div>
 	);
 }

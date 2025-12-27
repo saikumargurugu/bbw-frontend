@@ -45,7 +45,7 @@
     ],
     "about": {
       "title": "About Us",
-      "description": "Play. Train. Connect. BRISBANE's HOME OF BADMINTON.",
+      "description": "More Than Just Courts.",
       "buttons": [
         {
           "label": "Know More",
@@ -97,16 +97,12 @@
     "services": [
       {
         "title": "Court Hire",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/COURTS3.jpg",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/courtHire.jpeg",
         "description_disabled": "9 fully-lit, soft flooring, high ceiling badminton courts available for hire to both members and non-members for all 7 days a week throughout the year.",
         "keyFeatures": [
           "Court Hire – Open 7 Days",
-          "9 fully lit indoor courts with Queensland’s highest ceiling.",
+          "Queensland’s highest ceiling Courts",
           "Instant Online Booking",
-          "Secure your court in seconds, anytime.",
-          "Member Pricing Advantage save $5 per hour during peak times.",
-          "Priority Court Access",
-          "Members book first during high-demand hours.",
           "From $15/hr Off-Peak",
           "Play more, pay less."
         ],
@@ -118,40 +114,22 @@
       },
       {
         "title": "Academy",
-        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/SOCIAL.jpg",
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Academy/Academy27jan.jpeg",
         "description_disabled": "Our academy operates as both a community sports provider and an elite junior athlete development centre with over 233 active members.",
         "fitImage": true,
         "keyFeatures": [
-          "Group Training",
-          "Personal Training",
-          "Elite junior athlete development",
-          "Over 233 active members",
-          "Skill development for all ages",
-          "Development Pack",
-          "Flexible booking with the Coach",
-          "Personalized assessment (Postural, Movement)"
+          "Structured Training Programs",
+          "Junior Development Pathway",
+          "Personal & Group Training",
+          "All-Age Skill Development",
+          "Individual Player Assessments ",
+          "Flexible Training Schedules",
+          "100+ Active Academy Members"
         ],
         "config": {
-          "url": "/academy/",
-          "name": "Join Now",
-          "newTab": false
-        }
-      },
-      {
-        "title": "Personal Training",
-        "image": "https://storage.cloud.google.com/badminton_brisabane_gallery/web_gallery/Home/HomeAcademy.jpeg",
-        "description_disabled": "Personal coaching sessions tailored to your skill level. Our certified coaches focus on technique, strategy, and fitness.",
-        "keyFeatures": [
-          "Tailored coaching sessions",
-          "Focus on technique and strategy",
-          "Personal 1 on 1 Training",
-          "Discounted rates for packages",
-          "Certified coaches"
-        ],
-        "config": {
-          "url": "/academy/",
-          "name": "Academy",
-          "newTab": false
+          "url": "https://docs.google.com/forms/d/1AXQmG-RcCtAhBNrpngIXt72eK7Ybi8L4kJrkQuFEdT4/edit?usp=drivesdk",
+          "name": "Explore Now",
+          "newTab": true
         }
       },
       {
@@ -160,12 +138,9 @@
         "description_disabled": "Hosting regular social play sessions fostering community engagement and active participation for all age groups.",
         "fitImage": true,
         "keyFeatures": [
-          "Daily social sessions – 7 days a week",
-          "Welcoming community across all age groups",
-          "Reliable indoor venue – no weather cancellations",
-          "Easy walk-in access or organiser contact",
-          "Support from front desk when needed",
-          "On-site pro shop, refreshments & free parking"
+          "Community-hosted social badminton",
+          "Open to all ages and skill levels",
+          "Mixed and open groups welcome"
         ],
         "config": {
           "url": "https://chat.whatsapp.com/FGZOTERLPJAAQQcLj4S5bd",
@@ -179,13 +154,15 @@
         "descriptionOLD": "Top-quality restringing service with fast turnaround. We use premium strings and professional techniques to ensure your racket performs at its best. Our experts can advise on string tension and type for your playing style. Drop off your racket and pick it up ready for your next match!",
         "description_disabled": "Fast, professional restringing service for all racket types",
         "keyFeatures": [
-          "Fast turnaround",
-          "Premium strings",
-          "Expert advice on string tension and type"
+          "Best-value in Queensland",
+          "Same-day & express service",
+          "4-knot method restringing",
+          "Wide range of strings available",
+          "BYO string accepted"
         ],
         "config": {
-          "url": "/services/",
-          "name": "String Now",
+          "url": "/contact",
+          "name": "Contact Us",
           "newTab": false
         }
       },
@@ -200,7 +177,7 @@
         ],
         "config": {
           "url": "https://badmintonbrisbane.yepbooking.com.au/",
-          "name": "Join Now",
+          "name": "Join The Club",
           "newTab": true
         }
       }

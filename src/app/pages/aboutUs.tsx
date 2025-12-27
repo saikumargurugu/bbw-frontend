@@ -34,7 +34,7 @@ export default function AboutUsPage() {
         <div className={sportySectionTheme.card.className} style={{ ...sportySectionTheme.card.style, width: '90%' }}>
           <h2
             className={sportySectionTheme.font.title.className + ' mb-8'}
-            style={{ ...sportySectionTheme.font.title.style, textShadow: '0 4px 24px #000, 0 1px 0 #c53030' }}
+            style={{ ...sportySectionTheme.font.title.style }}
           >
             {aboutHero.title}
           </h2>

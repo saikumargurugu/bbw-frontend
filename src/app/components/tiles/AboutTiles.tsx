@@ -11,22 +11,22 @@ import upskillImg from "../../../public/icons/upskill.png";
 interface AboutTile {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
   image?: string;
 }
 
 const aboutTiles: AboutTile[] = [
   {
-    icon: "🏸",
-    title: "Tournament Ready Courts",
-    description: "9 BWF & QBA Certified Courts For Serious Play.",
-    image:  courtsImg.src
-  },
-  {
     icon: "🎓",
-    title: "Expert Coaching",
+    title: "Academy",
     description: "Kids, Adults, & elite players welcome.",
     image:  upskillImg.src
+  },
+  {
+    icon: "🏸",
+    title: "9 BWF Standard Indoor Courts",
+    // description: "9 BWF & QBA Certified Courts For Serious Play.",
+    image:  courtsImg.src
   },
   {
     icon: "🌐",
@@ -36,13 +36,13 @@ const aboutTiles: AboutTile[] = [
   },
   {
     icon: "🤝",
-    title: "Community & Social Play",
+    title: "Queensland Affliated Club",
     description: "Weekly Sessions, No partner Needed, All Levels Welcome.",
     image:  socialImg.src
   },
   {
     icon: "🛒",
-    title: "Pro Shop",
+    title: "PlayOn & Blue Card Approved",
     description: "Rackets, shoes, shuttles, and accessories available.",
     image:  onlineShopingImg.src
   },
@@ -83,13 +83,16 @@ const AboutTiles: React.FC = () => (
               tile.icon
             )}
           </div>
-          <div className="font-bold text-lg text-cyan-200 mb-2 text-center" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>{tile.title}</div>
+          <div className="font-bold text-lg  mb-2 text-center" 
+          style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily,
+            fontSize: '1.6rem'
+          }}>{tile.title}</div>
           <div className="text-gray-200 text-sm text-left" style={{ minHeight: '2.5em', fontFamily: sportySectionTheme.font.description.style.fontFamily }}>
-            <ul className="list-disc list-outside pl-5 m-0">
-              {tile.description.split(/\n|•|\u2022/).map((line, i) =>
+            {/* <ul className="list-disc list-outside pl-5 m-0">
+              {tile?.description.split(/\n|•|\u2022/).map((line, i) =>
                 line.trim() ? <li key={i}>{line.trim()}</li> : null
               )}
-            </ul>
+            </ul> */}
           </div>
         </div>
       ))}
