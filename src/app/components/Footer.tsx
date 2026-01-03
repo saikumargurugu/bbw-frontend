@@ -55,7 +55,9 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             style={{ display: 'inline-block' }}
             onClick={e => {
               e.preventDefault();
-              window.location.href = '/';
+              if (typeof window !== 'undefined') {
+                window.location.href = '/';
+              }
             }}
           >
             <LogWhite variant="full" height={100} width={360} />
@@ -190,60 +192,6 @@ export default function Footer({ fotterText }: { fotterText: string }) {
               </div>
             </Box>
           </Box>
-        </Box>
-        {/* Quick Links */}
-        <Box
-          sx={{
-            flex: "1 1 160px",
-            minWidth: 140,
-            mx: { xs: 2, md: 6 }, // Move right a bit more
-            mb: { xs: 2, md: 0 },
-            textAlign: { xs: "center", md: "left" },
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', width: '100%' }}>
-            <Typography
-              variant="h6"
-                  sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.05rem', md: '1.2rem' }, textAlign: 'left', color: 'white', minWidth: 140, pl: 0, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
-                  style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily, textAlign: 'left', color: 'white', minWidth: 140, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
-            >
-              Quick Links
-            </Typography>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 0, alignItems: 'flex-start' }}>
-            {links.length > 0 ? (
-              links.map((link: any, idx: number) => (
-                <Link
-                  key={idx}
-                  href={link.url}
-                  className="text-white hover:text-cyan-400 transition-colors duration-200 no-underline"
-                  style={{ textDecoration: 'none', WebkitTextDecorationLine: 'none', MozTextDecorationLine: 'none', marginBottom: 0 }}
-                  target={link.newTab ? "_blank" : undefined}
-                  rel={link.newTab ? "noopener noreferrer" : undefined}
-                >
-                  {link.text}
-                </Link>
-              ))
-            ) : (
-              <>
-                <Link href="/academy" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
-                  Academy
-                </Link>
-                <Link href="/services" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
-                  Services
-                </Link>
-                <Link href="/club" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
-                  Club
-                </Link>
-                <Link href="/court-hire" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
-                  Court Hire
-                </Link>
-                <Link href="/contact" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
-                  Contact
-                </Link>
-              </>
-            )}
-          </div>
         </Box>
 
         {/* About/Hours */}

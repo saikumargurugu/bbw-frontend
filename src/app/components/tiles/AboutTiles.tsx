@@ -62,7 +62,7 @@ const AboutTiles: React.FC = () => (
           key={idx}
           className="flex flex-col items-center md:rounded-xl md:shadow-md md:p-6 h-full min-h-[120px] md:min-h-[180px]"
           style={{
-            background: window.innerWidth >= 768 ? "rgba(10, 20, 30, 0.92)" : "transparent",
+            background: typeof window !== 'undefined' && window.innerWidth >= 768 ? "rgba(10, 20, 30, 0.92)" : "transparent",
             ...sportySectionTheme.card.style,
             fontFamily: sportySectionTheme.font.title.style.fontFamily
           }}
@@ -84,7 +84,7 @@ const AboutTiles: React.FC = () => (
             )}
           </div>
           <div className="font-bold text-base md:text-lg mb-1 md:mb-2 text-center"
-            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily, fontSize: window.innerWidth >= 768 ? '1.6rem' : '1.1rem' }}>
+            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily, fontSize: typeof window !== 'undefined' && window.innerWidth >= 768 ? '1.6rem' : '1.1rem' }}>
             {tile.title}
           </div>
         </div>

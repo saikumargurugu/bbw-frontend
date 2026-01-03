@@ -70,7 +70,9 @@ export default function Banner({ banner }: { banner: BannerObject }) {
                 key={idx}
                 onClick={() => {
                   if (btn.newTab) {
-                    window.open(btn.url, '_blank');
+                    if (typeof window !== 'undefined') {
+                      window.open(btn.url, '_blank');
+                    }
                   } else {
                     router.push(btn.url);
                   }
