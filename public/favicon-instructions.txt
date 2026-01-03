@@ -1,0 +1,3 @@
+<!-- Place this in your public directory as favicon.svg or favicon.ico for best browser support -->
+<link rel="icon" type="image/svg+xml" href="/logos/LogoMin.svg" />
+<link rel="icon" type="image/png" href="/logos/LogoMini.svg" />

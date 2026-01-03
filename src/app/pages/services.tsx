@@ -11,7 +11,7 @@ const services = [
     title: 'Restringing Service',
     description:
       'Get your racket restrung with high-quality strings to maintain optimum performance. Fast turnaround and expert advice on string tension and type for your playing style.',
-    image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Gallery/minified/stringer.jpeg',
+    image : 'https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/restrininging.jpeg',
     config: {
       url: '/services/restringing',
       name: 'See Details',

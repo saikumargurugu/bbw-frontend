@@ -49,6 +49,8 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
     <html lang="en">
       <head>
         <title>Badminton Brisbane</title>
+        <link rel="icon" type="image/svg+xml" href="/logos/LogoMin.svg" />
+        <link rel="icon" type="image/png" href="/logos/LogoMin.png" />
       </head>
       <body className="relative flex flex-col min-h-screen">
         {/* Loading Spinner */}

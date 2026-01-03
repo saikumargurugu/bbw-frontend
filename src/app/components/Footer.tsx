@@ -61,13 +61,13 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             <LogWhite variant="full" height={100} width={360} />
           </Link>
         </Box>
-        {/* Contact & Socials (aligned headings) */}
+        {/* Contact, Socials, and Quick Links (responsive row on mobile, stacked on desktop) */}
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            alignItems: { xs: 'center', md: 'flex-start' },
-            gap: { xs: 0, md: 6 },
+            flexDirection: { xs: 'row', md: 'column' },
+            alignItems: { xs: 'stretch', md: 'flex-start' },
+            gap: { xs: 2, md: 6 },
             flex: '0 1 auto',
             minWidth: 0,
             mx: { xs: 0, md: 4 },
@@ -76,115 +76,119 @@ export default function Footer({ fotterText }: { fotterText: string }) {
             width: 'auto',
           }}
         >
-          {/* Contact Us */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, minWidth: 0 }}>
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', width: '100%' }}>
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.05rem', md: '1.2rem' }, textAlign: 'left', color: 'white', minWidth: 140, pl: 0, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
-                style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily, textAlign: 'left', color: 'white', minWidth: 140, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
-              >
-                Contact Us
-              </Typography>
-            </div>
-            <Typography
-              variant="body2"
+          {/* Socials and Quick Links side by side on mobile, stacked on desktop */}
+          <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, width: '100%' }}>
+            {/* Follow us on Socials */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, minWidth: 0, mt: { xs: 0, md: 0 }, flex: 1 }}>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', width: '100%' }}>
+                <Typography
+                  variant="h6"
+                  sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.05rem', md: '1.2rem' }, textAlign: 'left', color: 'white', minWidth: 140, pl: 0, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
+                  style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily, textAlign: 'left', color: 'white', minWidth: 140, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
+                >
+                  Follow Us On
+                </Typography>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6, width: '100%' }}>
+                {/* Social Links */}
+                {socials.map((social: any, idx: number) => (
+                  <a
+                    key={idx}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "white",
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                      fontWeight: 600,
+                      fontSize: 18,
+                      marginBottom: 2,
+                      width: '100%',
+                      minWidth: 0,
+                    }}
+                  >
+                    <Image
+                      src={
+                        social.name.toLowerCase().includes("instagram")
+                          ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                          : social.name.toLowerCase().includes("facebook")
+                          ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                          : social.name.toLowerCase().includes("whatsapp")
+                          ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+                          : ""
+                      }
+                      alt={social.name}
+                      width={20}
+                      height={20}
+                      style={{ filter: "invert(1)", marginRight: 6 }}
+                      unoptimized
+                    />
+                    {social.name}
+                  </a>
+                ))}
+              </div>
+            </Box>
+            {/* Quick Links */}
+            <Box
               sx={{
-                fontFamily: sportySectionTheme.font.description.style.fontFamily,
-                fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                flex: 1,
+                minWidth: 140,
+                mx: { xs: 2, md: 6 },
+                mb: { xs: 2, md: 0 },
+                textAlign: { xs: "center", md: "left" },
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: { xs: 'center', md: 'flex-start' },
-                gap: 0.5,
-                width: '100%',
-                textAlign: { xs: 'center', md: 'left' },
-                lineHeight: 1.7,
-                mt: 1
+                justifyContent: 'flex-start',
               }}
             >
-              <span style={{ display: 'flex', alignItems: 'baseline', minWidth: 80 }}>
-                <span style={{ minWidth: 70, display: 'inline-block' }}>Address:</span>
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "white", textDecoration: "none", marginLeft: 4, wordBreak: 'break-word' }}
-                >
-                  {address}
-                </a>
-              </span>
-              {/* <span style={{ display: 'flex', alignItems: 'baseline', minWidth: 80 }}>
-                <span style={{ minWidth: 70, display: 'inline-block' }}>Phone:</span>
-                <a
-                  href={`tel:${phone}`}
-                  style={{ color: "white", textDecoration: "none", marginLeft: 4 }}
-                >
-                  {phone}
-                </a>
-              </span> */}
-              <span style={{ display: 'flex', alignItems: 'baseline', minWidth: 80 }}>
-                <span style={{ minWidth: 70, display: 'inline-block' }}>Email:</span>
-                <a
-                  href={`mailto:${email}`}
-                  style={{ color: "white", textDecoration: "none", marginLeft: 4, wordBreak: 'break-all' }}
-                >
-                  {email}
-                </a>
-              </span>
-            </Typography>
-          </Box>
-          {/* Socials */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, minWidth: 0, mt: { xs: 3, md: 0 } }}>
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', width: '100%' }}>
-              <Typography
-                variant="h6"
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', width: '100%' }}>
+                <Typography
+                  variant="h6"
                   sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.05rem', md: '1.2rem' }, textAlign: 'left', color: 'white', minWidth: 140, pl: 0, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
                   style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily, textAlign: 'left', color: 'white', minWidth: 140, lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: 4 }}
-              >
-                Follow Us On
-              </Typography>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6, width: '100%' }}>
-              {/* Social Links */}
-              {socials.map((social: any, idx: number) => (
-                <a
-                  key={idx}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: "white",
-                    textDecoration: "none",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 6,
-                    fontWeight: 600,
-                    fontSize: 18,
-                    marginBottom: 2,
-                    width: '100%',
-                    minWidth: 0,
-                  }}
                 >
-                  <Image
-                    src={
-                      social.name.toLowerCase().includes("instagram")
-                        ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-                        : social.name.toLowerCase().includes("facebook")
-                        ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
-                        : social.name.toLowerCase().includes("whatsapp")
-                        ? "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-                        : ""
-                    }
-                    alt={social.name}
-                    width={20}
-                    height={20}
-                    style={{ filter: "invert(1)", marginRight: 6 }}
-                    unoptimized
-                  />
-                  {social.name}
-                </a>
-              ))}
-            </div>
+                  Quick Links
+                </Typography>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0, alignItems: 'flex-start', width: '100%' }}>
+                {links.length > 0 ? (
+                  links.map((link: any, idx: number) => (
+                    <Link
+                      key={idx}
+                      href={link.url}
+                      className="text-white hover:text-cyan-400 transition-colors duration-200 no-underline"
+                      style={{ textDecoration: 'none', WebkitTextDecorationLine: 'none', MozTextDecorationLine: 'none', marginBottom: 0 }}
+                      target={link.newTab ? "_blank" : undefined}
+                      rel={link.newTab ? "noopener noreferrer" : undefined}
+                    >
+                      {link.text}
+                    </Link>
+                  ))
+                ) : (
+                  <>
+                    <Link href="/academy" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
+                      Academy
+                    </Link>
+                    <Link href="/services" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
+                      Services
+                    </Link>
+                    <Link href="/club" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
+                      Club
+                    </Link>
+                    <Link href="/court-hire" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
+                      Court Hire
+                    </Link>
+                    <Link href="/contact" style={{ color: "white", textDecoration: "underline", marginBottom: 0 }}>
+                      Contact
+                    </Link>
+                  </>
+                )}
+              </div>
+            </Box>
           </Box>
         </Box>
         {/* Quick Links */}
