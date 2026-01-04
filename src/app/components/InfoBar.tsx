@@ -11,7 +11,7 @@ const InfoBarComponent: React.FC<InfoBarProps> = ({ infoBar }) => (
     className="w-full"
     style={{
       position: 'fixed',
-      top: 60, // No gap between Navbar and InfoBar
+      top: 55, // No gap between Navbar and InfoBar
       left: 0,
       width: '100vw',
       zIndex: 99,

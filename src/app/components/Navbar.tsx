@@ -90,7 +90,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         elevation={0}
         sx={{
           background: darkNav ? 'transparent' : 'rgba(255,255,255,1)',
-          boxShadow: darkNav ? "0 4px 20px 0 rgba(0,0,0,0.5)" : "0 4px 20px 0 rgba(255,255,255,1)",
+          // boxShadow: darkNav ? "0 4px 20px 0 rgba(0,0,0,0.5)" : "0 4px 20px 0 rgba(255,255,255,1)",
           transition: `background-color 0.6s ${EASING}, backdrop-filter 0.6s ${EASING}`,
           width: '100%',
           top: 0,

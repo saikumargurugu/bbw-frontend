@@ -3,9 +3,10 @@ import Image from "next/image";
 import { sportySectionTheme } from "../../styles/sportyTheme";
 import bestSaverImg from "../../../public/icons/bestSaver.png";
 import communityImg from "../../../public/icons/community.png";
-import courtsImg from "../../../public/icons/Courts.png";
-import onlineShopingImg from "../../../public/icons/onlineShoping.png";
+import courtsImg from "../../../public/icons/Courts1.png";
+// import onlineShopingImg from "../../../public/icons/onlineShoping.png";
 import socialImg from "../../../public/icons/social.png";
+import PlayOn from "../../../public/icons/PlayOn.png";
 import upskillImg from "../../../public/icons/upskill.png";
 
 interface AboutTile {
@@ -44,7 +45,7 @@ const aboutTiles: AboutTile[] = [
     icon: "🛒",
     title: "PlayOn & Blue Card Approved",
     description: "Rackets, shoes, shuttles, and accessories available.",
-    image:  onlineShopingImg.src
+    image:  PlayOn.src
   },
   {
     icon: "💰",
