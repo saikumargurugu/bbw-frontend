@@ -49,7 +49,7 @@ export default function Banner({ banner }: { banner: BannerObject }) {
       />
       {/* Gradient overlay for a dynamic sports look */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
-      <div className="absolute inset-0 flex flex-col justify-end items-start  pb-20 p-6 z-20 w-full max-w-screen-xl ">
+      <div className="absolute inset-0 flex flex-col justify-end items-start  pb-30 p-6 z-20 w-full max-w-screen-xl ">
         <h2
           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-2 drop-shadow-xl font-sans uppercase"
           style={{ letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' }}
