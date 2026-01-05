@@ -11,7 +11,6 @@ const InfoBarComponent: React.FC<InfoBarProps> = ({ infoBar }) => (
     className="w-full"
     style={{
       position: 'fixed',
-      top: 55, // No gap between Navbar and InfoBar
       left: 0,
       width: '100vw',
       zIndex: 99,
@@ -23,12 +22,14 @@ const InfoBarComponent: React.FC<InfoBarProps> = ({ infoBar }) => (
       alignItems: 'center',
       justifyContent: 'center',
       fontFamily: sportySectionTheme.font.description.style.fontFamily,
-  fontSize: '0.82rem',
+      fontSize: '0.82rem',
       fontWeight: 400,
       boxShadow: '0 2px 12px 0 #0006',
+      margin: 0,
+      marginTop: '55px', // Adjust
     }}
   >
-  <span style={{ marginBottom: 4, fontSize: '0.82rem' }}>{infoBar.text}</span>
+  <span style={{ marginBottom: 4, marginTop: 4, fontSize: '0.82rem' }}>{infoBar.text}</span>
     <div style={{ display: 'flex', flexDirection: 'row', gap: 12, flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
       {Array.isArray(infoBar.buttons) && infoBar.buttons.map((btn: any, idx: number) => (
         <button
