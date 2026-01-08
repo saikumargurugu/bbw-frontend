@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { sportySectionTheme } from "../styles/sportyTheme";
 
 interface BannerButton {
@@ -19,6 +19,7 @@ interface BannerObject {
 export default function Banner({ banner }: { banner: BannerObject }) {
   const { image, caption, description, buttons } = banner;
   const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <div
@@ -26,9 +27,8 @@ export default function Banner({ banner }: { banner: BannerObject }) {
       style={{
         aspectRatio: '16/9',
         width: '100vw',
-        // height: 'clamp(320px, 75vh, 900px)',
         height: '100vh',
-        marginTop: '64px', // adjust if your navbar is a different height
+        marginTop: '120px', // adjust if your navbar is a different height
         borderRadius: 0,
         paddingTop: 'env(safe-area-inset-top, 0px)',
       }}
@@ -39,7 +39,16 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
       }} />
-      <Image
+      {pathname === '/careers' ? (
+        <Image
+          src={image}
+          alt={caption}
+          fill
+          className="w-full h-full object-cover sm:rounded-none rounded-none bg-black"
+          style={{ height: "100%", objectFit: 'cover', objectPosition: 'center', background: '#000' }}
+          priority
+        />
+      ) :       <Image
         src={image}
         alt={caption}
         fill
@@ -47,16 +56,15 @@ export default function Banner({ banner }: { banner: BannerObject }) {
         style={{ height: "100%", objectFit: 'cover', objectPosition: 'center', background: '#000' }}
         priority
       />
+}
       {/* Gradient overlay for a dynamic sports look */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
-      <div className="absolute inset-0 flex flex-col justify-end items-start  pb-30 p-6 z-20 w-full max-w-screen-xl ">
+      <div className="absolute inset-0 flex flex-col justify-end items-start pb-40 p-6 z-20 w-full max-w-screen-xl ">
         <h2
           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-2 drop-shadow-xl font-sans uppercase"
           style={{ letterSpacing: '0.04em', fontFamily: 'Oswald, Montserrat, Arial, sans-serif' }}
           dangerouslySetInnerHTML={{ __html: caption }}
         ></h2>
-        {/* {caption} */}
-        {/* </h2> */}
         <p className="text-white mb-4 max-w-xl text-sm sm:text-base md:text-lg lg:text-xl drop-shadow font-normal font-sans px-2">
           {description}
         </p>
@@ -78,7 +86,11 @@ export default function Banner({ banner }: { banner: BannerObject }) {
                   }
                 }}
                 className={sportySectionTheme.sharpButton.className + ' px-6 py-3'}
-                style={{ ...sportySectionTheme.sharpButton.style, padding: '0.75rem 1.5rem' }}
+                style={{
+                  ...sportySectionTheme.sharpButton.style,
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.9rem' // Increased font size
+                }}
               >
                 {btn.label}
               </button>

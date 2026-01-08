@@ -22,10 +22,10 @@ const InfoBarComponent: React.FC<InfoBarProps> = ({ infoBar }) => (
       alignItems: 'center',
       justifyContent: 'center',
       fontFamily: sportySectionTheme.font.description.style.fontFamily,
-      fontSize: '0.82rem',
+  fontSize: '0.82rem',
       fontWeight: 400,
       boxShadow: '0 2px 12px 0 #0006',
-      margin: 0,
+        margin: 0,
       marginTop: '55px', // Adjust
     }}
   >
@@ -43,6 +43,8 @@ const InfoBarComponent: React.FC<InfoBarProps> = ({ infoBar }) => (
             minWidth: 140,
             width: 'auto',
             maxWidth: '100%',
+            clipPath: 'none', // Override to rectangle shape only for InfoBar button
+            borderRadius: 6 // Optional: slight rounding for rectangle look
           }}
           onClick={() => {
             if (btn.newTab) {

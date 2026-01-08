@@ -1,22 +1,25 @@
 {
-  "title": "Casual Badminton Coach",
+  "title": "Badminton Coach",
   "heroSlides": [
     {
         "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/careers.jpeg",
         "caption": "",
         "description": "",
         "buttons": [
-          {
-            "label": "Apply Now",
-            "url": "https://forms.gle/reB8MuF77MxtuFgS7",
-            "newTab": true
-          }
         ]
       }],
   "bannerImage":"https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/careers.jpeg",
-  "description": "We are looking for passionate and reliable badminton coaches to join Brisbane Badminton on a casual basis. This role suits coaches who enjoy working with kids, juniors, and adults in a friendly, high-energy training environment. Sessions are mainly afternoons, evenings, and weekends, with opportunities to grow as the academy expands.",
+  "description": "We welcome expressions of interest from passionate badminton coaches to join our academy on a casual basis. This role involves coaching juniors and adults within a structured, term-based training system aligned with Queensland school terms.",
+  "bulletPoints": [
+    "Group coaching: $30–$40 per hour (based on experience & level)",
+    "Personal training opportunities: $40–$50 per hour",
+    "Flexible session-based hours (afternoons, evenings & weekends)",
+    "Opportunities to grow into long-term academy roles"
+    ],
+    "subText":"Coaching opportunities are offered based on program demand and suitability.",
+    "ButtonHeading":"👉 Submit your expression of interest via our application form.",
   "registration": {
-    "label": "Register Now",
+    "label": "Submit EOI",
     "url": "https://forms.gle/reB8MuF77MxtuFgS7"
   }
 }
