@@ -11,6 +11,7 @@ import ProductDetailPage from '../pages/shop/products/details/page';
 import Home from '@/app/pages/Home';
 import ProShopLoading from '../pages/shop/ProShopLoading';
 import AboutUsPage from '../pages/aboutUs';
+import CareersPage from '../pages/careers';
 
 // const SignUp = dynamic(() => import('../pages/signUp'), { ssr: false });
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -45,6 +46,8 @@ export default async function Page({ params }: any) {
       return <Contact />;
     case 'services':
       return <Services />;
+    case 'careers':
+      return <CareersPage />;
     case 'court-hire':
       return <CourtHirePage />;
     case 'about':

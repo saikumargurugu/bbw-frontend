@@ -4,8 +4,9 @@ import { sportySectionTheme } from "../../styles/sportyTheme";
 import bestSaverImg from "../../../public/icons/bestSaver.png";
 import communityImg from "../../../public/icons/community.png";
 import courtsImg from "../../../public/icons/Courts.png";
-import onlineShopingImg from "../../../public/icons/onlineShoping.png";
+// import onlineShopingImg from "../../../public/icons/onlineShoping.png";
 import socialImg from "../../../public/icons/social.png";
+import PlayOn from "../../../public/icons/PlayOn.png";
 import upskillImg from "../../../public/icons/upskill.png";
 
 interface AboutTile {
@@ -44,7 +45,7 @@ const aboutTiles: AboutTile[] = [
     icon: "🛒",
     title: "PlayOn & Blue Card Approved",
     description: "Rackets, shoes, shuttles, and accessories available.",
-    image:  onlineShopingImg.src
+    image:  PlayOn.src
   },
   {
     icon: "💰",
@@ -56,20 +57,20 @@ const aboutTiles: AboutTile[] = [
 
 const AboutTiles: React.FC = () => (
   <div className="w-full flex justify-center z-10 mb-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-2 justify-items-stretch">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-6xl px-2 justify-items-stretch">
       {aboutTiles.map((tile, idx) => (
         <div
           key={idx}
-          className="flex flex-col items-center rounded-xl shadow-md p-6 h-full min-h-[180px]"
+          className="flex flex-col items-center md:rounded-xl md:shadow-md md:p-6 h-full min-h-[120px] md:min-h-[180px]"
           style={{
-            background: "rgba(10, 20, 30, 0.92)",
+            background: typeof window !== 'undefined' && window.innerWidth >= 768 ? "rgba(10, 20, 30, 0.92)" : "transparent",
             ...sportySectionTheme.card.style,
             fontFamily: sportySectionTheme.font.title.style.fontFamily
           }}
         >
-          <div className="text-5xl mb-3 flex items-center justify-center" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>
+          <div className="text-5xl mb-2 flex items-center justify-center" style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}>
             {tile.image ? (
-              <div className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+              <div className="w-[60px] h-[60px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:shadow-lg">
                 <Image
                   src={tile.image}
                   alt={tile.title}
@@ -83,16 +84,9 @@ const AboutTiles: React.FC = () => (
               tile.icon
             )}
           </div>
-          <div className="font-bold text-lg  mb-2 text-center" 
-          style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily,
-            fontSize: '1.6rem'
-          }}>{tile.title}</div>
-          <div className="text-gray-200 text-sm text-left" style={{ minHeight: '2.5em', fontFamily: sportySectionTheme.font.description.style.fontFamily }}>
-            {/* <ul className="list-disc list-outside pl-5 m-0">
-              {tile?.description.split(/\n|•|\u2022/).map((line, i) =>
-                line.trim() ? <li key={i}>{line.trim()}</li> : null
-              )}
-            </ul> */}
+          <div className="font-bold text-base md:text-lg mb-1 md:mb-2 text-center"
+            style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily, fontSize: typeof window !== 'undefined' && window.innerWidth >= 768 ? '1.6rem' : '1.1rem' }}>
+            {tile.title}
           </div>
         </div>
       ))}

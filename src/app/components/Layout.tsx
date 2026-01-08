@@ -2,9 +2,20 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import InfoBarComponent from "./InfoBar";
 import { layOutProps } from "../types";
 
 export default function Layout({ children, layOutProps }: { children: React.ReactNode; layOutProps: layOutProps }) {  
+  const infoBarSample = {
+  text: "Welcome to Brisbane Badminton!, Get Involved?",
+  buttons: [
+    { 
+        label: "Book Court",
+        newTab: true,
+        url: "https://badmintonbrisbane.yepbooking.com.au/" 
+      },
+  ]
+};
   return (
     <div
       style={{
@@ -17,6 +28,10 @@ export default function Layout({ children, layOutProps }: { children: React.Reac
       className="dark"
     >
       <Navbar navLinks={layOutProps.navLinks} />
+      {/* Small full-width info bar with buttons */}
+      {infoBarSample && (
+          <InfoBarComponent infoBar={infoBarSample} />
+      )}
       <main style={{ flex: 1 }}>
         {children}
       </main>

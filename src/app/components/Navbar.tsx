@@ -90,7 +90,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
         elevation={0}
         sx={{
           background: darkNav ? 'transparent' : 'rgba(255,255,255,1)',
-          boxShadow: darkNav ? "0 4px 20px 0 rgba(0,0,0,0.5)" : "0 4px 20px 0 rgba(255,255,255,1)",
+          // boxShadow: darkNav ? "0 4px 20px 0 rgba(0,0,0,0.5)" : "0 4px 20px 0 rgba(255,255,255,1)",
           transition: `background-color 0.6s ${EASING}, backdrop-filter 0.6s ${EASING}`,
           width: '100%',
           top: 0,
@@ -103,7 +103,7 @@ export default function Navbar({ navLinks }: { navLinks: navBarTypes[] }) {
             style={{ fontFamily: sportySectionTheme.font.title.style.fontFamily }}
           >
             <div className="flex w-full items-center justify-between">
-              <div onClick={() => window.location.href = '/'}>
+              <div onClick={() => { if (typeof window !== 'undefined') window.location.href = '/'; }}>
                 {darkNav?<Logo variant={isMobile ? "min" : "full"} />:<Logo variant={isMobile ? "min" : "full"} />}
               </div>
               <div className="flex items-center gap-4">

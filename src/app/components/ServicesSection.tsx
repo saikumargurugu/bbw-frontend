@@ -132,7 +132,9 @@ className={`w-full flex flex-col md:flex-row items-stretch m-0 p-0 ${idx % 2 ===
                     onClick={(e) => {
                       e.preventDefault();
                       if (service.config?.newTab) {
-                        window.open(service.config.url, '_blank');
+                        if (typeof window !== 'undefined') {
+                          window.open(service.config.url, '_blank');
+                        }
                       } else if (service.config?.type === 'sidebar') {
                         setOpenServiceIdx(idx);
                         getServiceDetails(service);

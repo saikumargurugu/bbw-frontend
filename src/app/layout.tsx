@@ -9,6 +9,7 @@ import MainComponent from "./MainComponent";
 import Banner from "./components/Banner";
 import data from "./pages/dataBrisbaneBadminton.json";
 import { usePathname } from "next/navigation";
+import CareersData from  "./pages/careersData.json";
 import '@fontsource/roboto'
 
 export default function RootLayout({
@@ -37,7 +38,7 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
   let banner = null;
   if (pathname === "/club") banner = data.club.heroSlides[0];
   if (pathname === "/academy") banner = data.academy.heroSlides[0];
-
+  if (pathname === "/careers") banner = CareersData.heroSlides[0];
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000); // Simulated delay for UI smoothness
     return () => clearTimeout(timer);
@@ -49,6 +50,8 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
     <html lang="en">
       <head>
         <title>Badminton Brisbane</title>
+        <link rel="icon" type="image/svg+xml" href="/logos/LogoMin.svg" />
+        <link rel="icon" type="image/png" href="/logos/LogoMin.png" />
       </head>
       <body className="relative flex flex-col min-h-screen">
         {/* Loading Spinner */}
