@@ -21,9 +21,22 @@ export default function CareersPage() {
           </h1>
         </div>
         <hr className="w-16 border-red-500 mb-6" />
-        <p className={sportySectionTheme.font.description.className + " text-center mb-8"} style={sportySectionTheme.font.description.style}>
+        <p className={sportySectionTheme.font.description.className + " text-center mb-6"} style={sportySectionTheme.font.description.style}>
           {careersData.description}
         </p>
+        {careersData.bulletPoints && careersData.bulletPoints.length > 0 && (
+          <ul className="list-disc list-inside text-left mb-6">
+            {careersData.bulletPoints.map((point: string, idx: number) => (
+              <li key={idx} className="mb-1">{point}</li>
+            ))}
+          </ul>
+        )}
+        {careersData.subText && (
+          <p className="text-sm text-gray-700 mb-4 text-center">{careersData.subText}</p>
+        )}
+        {careersData.ButtonHeading && (
+          <p className="text-base font-medium text-center mb-4">{careersData.ButtonHeading}</p>
+        )}
         <a
           href={careersData.registration.url}
           target="_blank"

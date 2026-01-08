@@ -54,8 +54,8 @@ export const sportySectionTheme = {
       padding: '0.75rem 1.5rem',
       backgroundSize: '200% auto',
       transition: 'all 1s ease-in-out',
-      backgroundPosition: 'left center',
-      clipPath: 'polygon(32px 0, 100% 0, calc(100% - 32px) 100%, 0 100%)'
+      backgroundPosition: 'left center'
+      // Removed clipPath for rectangle shape
     }
   }
 };
