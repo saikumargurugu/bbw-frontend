@@ -43,7 +43,7 @@ const aboutTiles: AboutTile[] = [
   },
   {
     icon: "🛒",
-    title: "PlayOn & Blue Card Approved",
+    title: "PlayOn Voucher Accepted",
     description: "Rackets, shoes, shuttles, and accessories available.",
     image:  PlayOn.src
   },

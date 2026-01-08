@@ -21,11 +21,11 @@ export default function CareersPage() {
           </h1>
         </div>
         <hr className="w-16 border-red-500 mb-6" />
-        <p className={sportySectionTheme.font.description.className + " text-center mb-6"} style={sportySectionTheme.font.description.style}>
+        <p className={sportySectionTheme.font.description.className + " text-center text-justify mb-6"} style={sportySectionTheme.font.description.style}>
           {careersData.description}
         </p>
         {careersData.bulletPoints && careersData.bulletPoints.length > 0 && (
-          <ul className="list-disc list-inside text-left mb-6">
+          <ul className="list-disc list-inside text-left text-justify mb-6">
             {careersData.bulletPoints.map((point: string, idx: number) => (
               <li key={idx} className="mb-1">{point}</li>
             ))}
