@@ -1,0 +1,22 @@
+{
+  "title": "Casual Badminton Coach",
+  "heroSlides": [
+    {
+        "image": "https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/careers.jpeg",
+        "caption": "",
+        "description": "",
+        "buttons": [
+          {
+            "label": "Apply Now",
+            "url": "https://forms.gle/reB8MuF77MxtuFgS7",
+            "newTab": true
+          }
+        ]
+      }],
+  "bannerImage":"https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/careers.jpeg",
+  "description": "We are looking for passionate and reliable badminton coaches to join Brisbane Badminton on a casual basis. This role suits coaches who enjoy working with kids, juniors, and adults in a friendly, high-energy training environment. Sessions are mainly afternoons, evenings, and weekends, with opportunities to grow as the academy expands.",
+  "registration": {
+    "label": "Register Now",
+    "url": "https://forms.gle/reB8MuF77MxtuFgS7"
+  }
+}

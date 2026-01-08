@@ -45,6 +45,10 @@ const initialState: ApiState = {
             "href": "/club"
         },
         {
+          "label": "Careers",
+          "href": "/careers"
+        },
+        {
             "label": "Contact",
             "href": "/contact"
         },

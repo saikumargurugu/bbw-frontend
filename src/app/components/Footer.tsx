@@ -159,16 +159,20 @@ export default function Footer({ fotterText }: { fotterText: string }) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 0, alignItems: 'flex-start', width: '100%' }}>
                 {links.length > 0 ? (
                   links.map((link: any, idx: number) => (
-                    <Link
-                      key={idx}
-                      href={link.url}
-                      className="text-white hover:text-cyan-400 transition-colors duration-200 no-underline"
-                      style={{ textDecoration: 'none', WebkitTextDecorationLine: 'none', MozTextDecorationLine: 'none', marginBottom: 0 }}
-                      target={link.newTab ? "_blank" : undefined}
-                      rel={link.newTab ? "noopener noreferrer" : undefined}
-                    >
-                      {link.text}
-                    </Link>
+                    link.url ? (
+                      <Link
+                        key={idx}
+                        href={link.url}
+                        className="text-white hover:text-cyan-400 transition-colors duration-200 no-underline"
+                        style={{ textDecoration: 'none', WebkitTextDecorationLine: 'none', MozTextDecorationLine: 'none', marginBottom: 0 }}
+                        target={link.newTab ? "_blank" : undefined}
+                        rel={link.newTab ? "noopener noreferrer" : undefined}
+                      >
+                        {link.text}
+                      </Link>
+                    ) : (
+                      <span key={idx} style={{ color: 'white', marginBottom: 0 }}>{link.text || 'Link'}</span>
+                    )
                   ))
                 ) : (
                   <>

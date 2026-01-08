@@ -3,7 +3,7 @@ import Image from "next/image";
 import { sportySectionTheme } from "../../styles/sportyTheme";
 import bestSaverImg from "../../../public/icons/bestSaver.png";
 import communityImg from "../../../public/icons/community.png";
-import courtsImg from "../../../public/icons/Courts1.png";
+import courtsImg from "../../../public/icons/Courts.png";
 // import onlineShopingImg from "../../../public/icons/onlineShoping.png";
 import socialImg from "../../../public/icons/social.png";
 import PlayOn from "../../../public/icons/PlayOn.png";

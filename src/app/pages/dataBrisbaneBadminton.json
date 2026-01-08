@@ -207,6 +207,10 @@
         "url": "/club"
       },
       {
+          "label": "Careers",
+          "href": "/careers"
+      },
+      {
         "text": "Court Hire",
         "url": "/court-hire"
       },
