@@ -7,7 +7,7 @@ import { layOutProps } from "../types";
 
 export default function Layout({ children, layOutProps }: { children: React.ReactNode; layOutProps: layOutProps }) {  
   const infoBarSample = {
-  text: "Welcome to Brisbane Badminton!, Get Involved?",
+  text: "Your Court. Your Time, Get Involved?",
   buttons: [
     { 
         label: "Book Court",

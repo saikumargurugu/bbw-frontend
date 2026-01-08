@@ -43,6 +43,8 @@ const InfoBarComponent: React.FC<InfoBarProps> = ({ infoBar }) => (
             minWidth: 140,
             width: 'auto',
             maxWidth: '100%',
+            clipPath: 'none', // Override to rectangle shape only for InfoBar button
+            borderRadius: 6 // Optional: slight rounding for rectangle look
           }}
           onClick={() => {
             if (btn.newTab) {

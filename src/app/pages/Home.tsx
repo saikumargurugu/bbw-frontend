@@ -81,8 +81,8 @@ export default function Home() {
 						className={sportySectionTheme.card.className.replace('font-extrabold', 'font-normal') + ' flex flex-col items-center text-center'}
 						style={{ ...sportySectionTheme.card.style, fontWeight: 'normal', textAlign: 'center', marginBottom: '2rem' }}
 					>
-						<Heading title='Get Involved With Us' />
-						<GetInvolvedTiles />
+						<Heading title='lved With Us' />
+						<GetInvolvedTiles />Get Invo
 					</div> */}
 				</div>
 			</section>

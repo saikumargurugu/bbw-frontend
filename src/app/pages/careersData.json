@@ -6,11 +6,6 @@
         "caption": "",
         "description": "",
         "buttons": [
-          {
-            "label": "Apply Now",
-            "url": "https://forms.gle/reB8MuF77MxtuFgS7",
-            "newTab": true
-          }
         ]
       }],
   "bannerImage":"https://storage.googleapis.com/badminton_brisabane_gallery/web_gallery/Home/careers.jpeg",
@@ -24,7 +19,7 @@
     "subText":"Coaching opportunities are offered based on program demand and suitability.",
     "ButtonHeading":"👉 Submit your expression of interest via our application form.",
   "registration": {
-    "label": "Register Now",
+    "label": "Submit EOI",
     "url": "https://forms.gle/reB8MuF77MxtuFgS7"
   }
 }
