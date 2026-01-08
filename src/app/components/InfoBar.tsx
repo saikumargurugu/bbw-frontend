@@ -22,10 +22,10 @@ const InfoBarComponent: React.FC<InfoBarProps> = ({ infoBar }) => (
       alignItems: 'center',
       justifyContent: 'center',
       fontFamily: sportySectionTheme.font.description.style.fontFamily,
-      fontSize: '0.82rem',
+  fontSize: '0.82rem',
       fontWeight: 400,
       boxShadow: '0 2px 12px 0 #0006',
-      margin: 0,
+        margin: 0,
       marginTop: '55px', // Adjust
     }}
   >
