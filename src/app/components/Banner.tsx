@@ -89,7 +89,7 @@ export default function Banner({ banner }: { banner: BannerObject }) {
                 style={{
                   ...sportySectionTheme.sharpButton.style,
                   padding: '0.75rem 1.5rem',
-                  fontSize: '1.0rem' // Increased font size
+                  fontSize: '0.9rem' // Increased font size
                 }}
               >
                 {btn.label}
